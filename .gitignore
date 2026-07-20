@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 output/
 output_all/
+.github_token
+*_analysis.json
+_redact_secrets.py
