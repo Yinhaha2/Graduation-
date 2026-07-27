@@ -1,4 +1,4 @@
-# AI Agent 性能 Pull Request 数据集 — 仓库文件结构说明
+# AI Agent 性能 Pull Request 数据集 — 仓库文件结构说明（由AI生成）
 
 本仓库以 `finaldatabase/` 为核心，存放毕业设计研究所用的 AI Agent 性能 Pull Request 语料：主表、GitHub 附属数据与 LLM 结构化分析结果；根目录脚本与配置文件负责 PR 状态同步与 LLM 分析流程。下文按目录说明各文件含义，并总结重复出现的命名规律。
 
