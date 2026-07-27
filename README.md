@@ -1,4 +1,4 @@
-# 影子仓（Graduation PR Dataset）
+# （Graduation PR Dataset）
 
 本仓库是毕业设计用的 **AI Agent 性能 Pull Request** 数据集与研究工作流：在 `finaldatabase/` 中维护结构化 PR 数据，并通过脚本对 GitHub 状态做增量刷新、对单条 PR 调用 LLM 生成结构化分析 JSON。
 
