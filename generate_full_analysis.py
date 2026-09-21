@@ -12,7 +12,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
 PER_PR = ROOT / "finaldatabase" / "per_pr"
-OUT_MD = ROOT / "FullAnalysis.md"
+OUT_MD = ROOT / "analysis_viz" / "FullAnalysis.md"
 OUT_CSV = ROOT / "full_analysis_distilled.csv"
 
 FEWSHOT_ROOT_ONLY = [
@@ -266,11 +266,31 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
             elif row["status"] == "closed":
                 anti_closed[ap] += 1
 
+    outcome_rows = [
+        f"| merged | {len(merged)} | {pct(len(merged), n)} |",
+        f"| closed (not merged) | {len(closed)} | {pct(len(closed), n)} |",
+    ]
+    if len(open_):
+        outcome_rows.append(f"| open | {len(open_)} | {pct(len(open_), n)} |")
+        rate_lines = [
+            f"- **Overall merge rate** (incl. open): {pct(len(merged), n)} ({len(merged)}/{n})",
+            f"- **Terminal merge rate** (merged + closed only, n={len(terminal)}): **{pct(len(merged), len(terminal))}**",
+            "",
+            "Note: `closed` means closed without merge on GitHub (not “approved”); `open` is still open at snapshot time.",
+        ]
+    else:
+        rate_lines = [
+            f"- **Merge rate** (merged / n): **{pct(len(merged), n)}** ({len(merged)}/{n})",
+            "",
+            "Note: this snapshot is **terminal-only** (`merged` vs `closed` without merge). Still-open PRs were removed and are not in the denominator.",
+        ]
+
     lines = [
         "# Full Analysis — Agent Performance PR Corpus",
         "",
-        f"> Built from `finaldatabase/per_pr/{{pr_id}}/{{pr_id}}_analysis.json` (plus 6 root few-shot gold labels); **{n}** PRs aligned with the master table.",
-        f"> Wide table: `full_analysis_distilled.csv` (regenerate with `python3 generate_full_analysis.py`).",
+        f"> **最终数据集**：{n} PR，{len(merged)} merged，{len(closed)} closed。合并率 **{pct(len(merged), n)}**（{len(merged)}/{n}）。全库统一口径：仅终态 merged / closed，不含 open。",
+        f"> Built from `finaldatabase/per_pr/{{pr_id}}/{{pr_id}}_analysis.json` (plus 6 root few-shot gold labels).",
+        f"> Wide table: `full_analysis_distilled.csv` (regenerate with `python generate_full_analysis.py`).",
         "",
         "---",
         "",
@@ -278,14 +298,9 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "| Status | Count | Share |",
         "|--------|-------|-------|",
-        f"| merged | {len(merged)} | {pct(len(merged), n)} |",
-        f"| closed (terminal, not merged) | {len(closed)} | {pct(len(closed), n)} |",
-        f"| open | {len(open_)} | {pct(len(open_), n)} |",
+        *outcome_rows,
         "",
-        f"- **Overall merge rate** (incl. open): {pct(len(merged), n)} ({len(merged)}/{n})",
-        f"- **Terminal merge rate** (merged + closed only, n={len(terminal)}): **{pct(len(merged), len(terminal))}**",
-        "",
-        "Note: `closed` means closed without merge on GitHub (not “approved”); `open` is still open at snapshot time.",
+        *rate_lines,
         "",
         "---",
         "",
@@ -422,11 +437,12 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     for k, v in det.most_common(10):
         lines.append(f"| `{k}` | {v} | {pct(v, n)} |")
 
+    no_review_share = (df["review_count"].fillna(0) == 0).mean() if "review_count" in df.columns else 0
     lines += [
         "",
-        "- **Dominant when observable:** **`code_reading`** (~378 PRs with at least one hit).",
-        "- Next: **`ci_auto`** (~93); `profiler` / `load_test` / `benchmark` alone are rare.",
-        "- ~**786** labeled `unknown`, consistent with ~**71%** lacking formal review — detection is often unobservable.",
+        f"- **Dominant when observable:** **`code_reading`** (~{det.get('code_reading', 0)} PRs with at least one hit).",
+        f"- Next: **`ci_auto`** (~{det.get('ci_auto', 0)}); `profiler` / `load_test` / `benchmark` alone are rare.",
+        f"- ~**{det.get('unknown', 0)}** labeled `unknown`, consistent with ~**{100*no_review_share:.0f}%** lacking formal review — detection is often unobservable.",
         "",
         "---",
         "",
@@ -490,7 +506,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "## 10. Pass rate, focus distribution, capability boundaries",
         "",
-        f"- **Terminal merge rate for AI perf PRs: ~{100*len(merged)/len(terminal):.1f}%** ({len(merged)}/{len(terminal)}).",
+        f"- **Merge rate for AI perf PRs: ~{100*len(merged)/n:.1f}%** ({len(merged)}/{n}).",
         "",
         "### 10.1 Common `perf_focus` on merged",
         "",
@@ -530,11 +546,11 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "**Strengths (merged-side signals)**",
         "- Small-scope control-flow / compiler constant-folding / build-and-cache changes merge more easily under low review friction.",
-        "- `technical_stack` dominates (608), i.e. problems in a routine stack layer agents can often handle.",
+        f"- `technical_stack` dominates ({int((df['boundary_tag']=='technical_stack').sum())}), i.e. problems in a routine stack layer agents can often handle.",
         "",
         "**Boundaries (closed / higher-risk signals)**",
         "- Process closes (stale / no review) dominate and mask true “perf rejected” rates.",
-        "- `evidence_required` boundaries (35) align with `missing_benchmark` / insufficient reproducibility.",
+        f"- `evidence_required` boundaries ({int((df['boundary_tag']=='evidence_required').sum())}) align with `missing_benchmark` / insufficient reproducibility.",
         "- Large churn (>10k changes) does not merge better; `repeated_io` is slightly higher on closed.",
         "- Without reproducible materials, review is hard to close.",
         "",
@@ -557,7 +573,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "- Stats use **labels and narrative fields** in analysis JSON, not a fresh GitHub event re-crawl.",
         "- Labels such as `outcome_reason` are LLM-generated (synonym inflation); this report coarsens merge/close groups.",
         "- Fix actor / new-issue-in-fix findings are **text heuristics** — sample-check before paper use.",
-        "- Open PRs should usually be excluded or reported separately when computing pass rates.",
+        "- Merge rate is merged / corpus n on the terminal snapshot (open PRs are not in this dataset).",
         "",
     ]
     return "\n".join(lines)

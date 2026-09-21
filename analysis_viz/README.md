@@ -1,10 +1,10 @@
 # analysis_viz — Figure guide
 
 Notebook: `perf_pr_visualization.ipynb`  
-Data: `../full_analysis_distilled.csv` (**1219** PRs; terminal merge rate **56.9%** on 1180 merged+closed)  
+Data: `../full_analysis_distilled.csv`（**最终数据集：1183 PR，672 merged，511 closed**；合并率 **56.8%** = 672/1183）  
 Figures: `figures/`
 
-Numbers below match the current distilled table. Merge-rate charts for size/lifespan/comments/reviews use **terminal PRs only**; the boundary-tag chart uses **all PRs** for the rate line (open counts as not merged), with overall ≈ **57%**.
+Numbers below match the current distilled table. Merge-rate charts use the terminal corpus (open PRs were removed). Overall merge rate ≈ **56.8%**.
 
 ---
 
@@ -16,9 +16,9 @@ Numbers below match the current distilled table. Merge-rate charts for size/life
 
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| ≤100 | 476 | **63.2%** |
-| 101–500 | 349 | 52.4% |
-| 501–2k | 195 | 54.4% |
+| ≤100 | 477 | **63.1%** |
+| 101–500 | 350 | 52.6% |
+| 501–2k | 196 | 54.1% |
 | 2k–10k | 107 | 56.1% |
 | >10k | 40 | 52.5% |
 
@@ -35,8 +35,8 @@ Median `changes`: merged **141**, closed **172**.
 | Files bin | Terminal PRs | Merge rate |
 |-----------|--------------|------------|
 | 1 | 240 | **62.9%** |
-| 2–5 | 464 | 54.7% |
-| 6–20 | 286 | 55.6% |
+| 2–5 | 466 | 54.7% |
+| 6–20 | 287 | 55.4% |
 | 21–100 | 114 | 59.6% |
 | >100 | 63 | 61.9% |
 
@@ -53,9 +53,9 @@ Median `changes`: merged **141**, closed **172**.
 | <1h | 573 | **76.6%** |
 | 1–24h | 236 | 57.2% |
 | 1–7d | 180 | 40.0% |
-| >7d | 150 | **16.7%** |
+| >7d | 153 | **17.0%** |
 
-Median lifespan: merged **~0.08 h (~5 min)**; closed **~23.6 h (~1 day)**. Among merged, `fast_merge=true` is **78.7%**.
+Median lifespan: merged **~0.08 h (~5 min)**; closed **~24.3 h (~1 day)**. Among merged, `fast_merge=true` is **78.6%**.
 
 ---
 
@@ -70,7 +70,7 @@ Median lifespan: merged **~0.08 h (~5 min)**; closed **~23.6 h (~1 day)**. Among
 | 0 | 161 | 47.8% |
 | 1–2 | 202 | **35.1%** (lowest) |
 | 3–9 | 197 | 47.7% |
-| ≥10 | 75 | 50.7% |
+| ≥10 | 76 | 51.3% |
 
 Median comments: merged **0** (58% zero); closed **2** (30% zero).
 
@@ -92,10 +92,10 @@ Median comments: merged **0** (58% zero); closed **2** (30% zero).
 
 | Method | PR hits | Share of corpus |
 |--------|---------|-----------------|
-| `unknown` (often omitted from bar) | 786 | **64.5%** |
-| `code_reading` | 378 | 31.0% |
-| `ci_auto` | 93 | 7.6% |
-| `manual_testing` / `manual_test` | 18+8 | ~2% |
+| `unknown` (often omitted from bar) | 766 | **64.8%** |
+| `code_reading` | 363 | 30.7% |
+| `ci_auto` | 92 | 7.8% |
+| `manual_testing` / `manual_test` | 16+8 | ~2% |
 | `benchmark` / `load_test` / `profiler` | ≤6 each | rare |
 
 Large `unknown` share aligns with ~71% lacking formal review — detection is often unobservable.
@@ -108,7 +108,7 @@ Large `unknown` share aligns with ~71% lacking formal review — detection is of
 
 **Phenomenon:** Work concentrates in application / build / UI / library layers, not deep compiler/VM work.
 
-Top layers: `application_service` **201 (16.5%)**, `build` **165 (13.5%)**, `frontend_ui` **137 (11.2%)**, `runtime_library` **122 (10.0%)**, `application_control_flow` **87 (7.1%)**. Compiler-related layers are each under ~4%.
+Top layers: `application_service` **193 (16.3%)**, `build` **163 (13.8%)**, `frontend_ui` **135 (11.4%)**, `runtime_library` **117 (9.9%)**, `application_control_flow` **83 (7.0%)**. Compiler-related layers are each under ~4%.
 
 ---
 
@@ -120,9 +120,9 @@ Top layers: `application_service` **201 (16.5%)**, `build` **165 (13.5%)**, `fro
 
 | Label | Count | Share |
 |-------|-------|-------|
-| `not_applicable` | 626 | **51.4%** |
-| `reject_close` | 397 | 32.6% |
-| `fix_in_pr` | 148 | 12.1% |
+| `not_applicable` | 598 | **50.5%** |
+| `reject_close` | 398 | 33.6% |
+| `fix_in_pr` | 143 | 12.1% |
 | `revert` | 2 | 0.2% |
 
 ---
@@ -131,7 +131,7 @@ Top layers: `application_service` **201 (16.5%)**, `build` **165 (13.5%)**, `fro
 
 **What it shows:** Whether the fix itself introduces a new antipattern (`antipattern_in_fix`).
 
-**Phenomenon:** Almost never labeled as introducing a new issue — **`none` on 1211 / 1219 (99.3%)**. Non-none cases are **8** one-off labels (e.g. `fabricated_benchmark`, `mutable_global_state`, `incorrect_lru_eviction`), each n=1. Treat as rare anecdotes, not a systematic failure mode.
+**Phenomenon:** Almost never labeled as introducing a new issue — **`none` on 1174 / 1183 (99.2%)**. Non-none cases are **7** one-off labels (e.g. `fabricated_benchmark`, `mutable_global_state`, `incorrect_lru_eviction`), each n=1. Treat as rare anecdotes, not a systematic failure mode.
 
 ---
 
@@ -139,7 +139,7 @@ Top layers: `application_service` **201 (16.5%)**, `build` **165 (13.5%)**, `fro
 
 **What it shows:** Share of merged vs closed among terminal PRs (open excluded from this pie).
 
-**Phenomenon:** Corpus is roughly a coin-flip on terminal outcomes: **merged 671 (55.0% of all; 56.9% of terminal)**, **closed 509 (41.8%)**, **open 39 (3.2%)**.
+**Phenomenon:** Corpus is roughly a coin-flip on terminal outcomes: **merged 672 (56.8%)**, **closed 511 (43.2%)**. Open PRs are not in this snapshot.
 
 ---
 
@@ -151,10 +151,10 @@ Top layers: `application_service` **201 (16.5%)**, `build` **165 (13.5%)**, `fro
 
 | Agent | PRs | Merge rate |
 |-------|-----|------------|
-| OpenAI_Codex | 639 | **70.7%** |
-| Claude_Code | 38 | 55.3% |
-| Cursor | 95 | 50.5% |
-| Copilot | 222 | 34.7% |
+| OpenAI_Codex | 629 | **71.9%** |
+| Claude_Code | 34 | 61.8% |
+| Cursor | 89 | 53.9% |
+| Copilot | 206 | 37.9% |
 | Devin | 225 | **32.4%** |
 
 ---
@@ -165,31 +165,31 @@ Top layers: `application_service` **201 (16.5%)**, `build` **165 (13.5%)**, `fro
 
 **Phenomenon:** Materials are usually weak; “sufficient” is rare. Better material labels correlate with higher merge share, but sample for `sufficient` is tiny.
 
-| reproducibility | Count | Share | Merged / Closed / Open |
-|-----------------|-------|-------|-------------------------|
-| `insufficient` | 754 | **61.9%** | 356 / 373 / 25 |
-| `partial` | 240 | 19.7% | 172 / 61 / 7 |
-| `unknown` | 200 | 16.4% | 127 / 67 / 6 |
-| `sufficient` | 25 | **2.1%** | 16 / 8 / 1 |
+| reproducibility | Count | Share | Merged / Closed |
+|-----------------|-------|-------|-----------------|
+| `insufficient` | 730 | **61.7%** | 356 / 374 |
+| `partial` | 235 | 19.9% | 173 / 62 |
+| `unknown` | 194 | 16.4% | 127 / 67 |
+| `sufficient` | 24 | **2.0%** | 16 / 8 |
 
-Auxiliary: `body_has_repro_steps=true` only **55 (4.5%)**.
+Auxiliary: `body_has_repro_steps=true` only **53 (4.5%)**.
 
 ---
 
 ## 17 · Agent capability boundary (`boundary_tag`)
 
-**What it shows:** Which capability boundary each PR illustrates, with PR count bars and merge-rate line (overall ≈ **57%**).
+**What it shows:** Which capability boundary each PR illustrates, with PR count bars and merge-rate line (overall ≈ **56.8%**).
 
 **Phenomenon:** Agents look strong on **technical stack** work, weak on **process/workflow** and especially on **evidence / reproducibility** demands.
 
-| Boundary | PR count | Merge rate (all PRs) |
-|----------|----------|----------------------|
-| Technical stack (stack / framework depth) | **608** | **~77%** (well above overall) |
-| Process / workflow (review, scope, CI) | **575** | **~35%** (well below overall) |
-| Evidence required (benchmark / repro gap) | **35** | **~11%** |
+| Boundary | PR count | Merge rate |
+|----------|----------|------------|
+| Technical stack (stack / framework depth) | **588** | **79.6%** (well above overall) |
+| Process / workflow (review, scope, CI) | **562** | **35.6%** (well below overall) |
+| Evidence required (benchmark / repro gap) | **32** | **12.5%** |
 | Unknown | 1 | 0% |
 
-Reading: volume is split between technical and process (~608 vs ~575), but success diverges sharply — stack-depth changes often merge; process friction and missing evidence mark clear capability boundaries.
+Reading: volume is split between technical and process (588 vs 562), but success diverges sharply — stack-depth changes often merge; process friction and missing evidence mark clear capability boundaries.
 
 ---
 
@@ -201,10 +201,10 @@ Reading: volume is split between technical and process (~608 vs ~575), but succe
 
 | Review count | Terminal PRs | Merge rate |
 |--------------|--------------|------------|
-| 0 | 835 | 53.9% |
+| 0 | 837 | 53.8% |
 | 1 | 146 | **65.1%** |
 | 2–3 | 97 | 63.9% |
-| ≥4 | 102 | 62.7% |
+| ≥4 | 103 | 63.1% |
 
 ---
 
@@ -212,5 +212,10 @@ Reading: volume is split between technical and process (~608 vs ~575), but succe
 
 ```bash
 python generate_full_analysis.py
-# then Run All in perf_pr_visualization.ipynb
+python generate_rq_analysis.py
+python analysis_viz/run_corpus_figures.py
+python analysis_viz/plot_rq1_paper_figures.py
+python analysis_viz/plot_rq2_paper_figures.py
+python analysis_viz/plot_rq3_paper_figures.py
+python analysis_viz/redraw_paper_figures.py
 ```

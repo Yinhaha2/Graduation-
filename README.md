@@ -7,6 +7,9 @@
 ├── finaldatabase/                 # 数据集根目录（见下文）
 ├── output_pr_analysis/             # run_pr_analysis.py 批量运行汇总（可选，本地生成）
 ├── refresh.py
+├── freeze_terminal_dataset.py
+├── generate_full_analysis.py
+├── generate_rq_analysis.py
 ├── run_pr_analysis.py
 ├── prompt.md
 ├── schema.json
@@ -25,6 +28,9 @@
 |-------------|------|
 | `finaldatabase/` | 全部结构化 PR 数据与按 PR 拆分的附属文件 |
 | `refresh.py` | 调用 GitHub API 复核 open PR 状态；404 从数据集中删除；更新主表与 `summary/` 报告 |
+| `freeze_terminal_dataset.py` | 剔除仍为 open 的 PR，冻结终态语料（仅 merged / closed）；合并率 = merged / n |
+| `generate_full_analysis.py` | 按最终数据集聚合 `FullAnalysis.md` 与 `full_analysis_distilled.csv` |
+| `generate_rq_analysis.py` | 按最终数据集重写 `analysis_viz/RQ_Analysis.md` 并绘制 `rq_analysis_figures/` |
 | `run_pr_analysis.py` | 从 `per_pr/{id}/` 与主表组装 prompt，调用 DeepSeek，写入 `{id}_analysis.json` 等 |
 | `prompt.md` | LLM 系统提示词（固定指令块；与 `schema.json`、目标 PR 数据拼成完整 prompt） |
 | `schema.json` | 分析输出 JSON 的字段说明与模板（`run_pr_analysis.py` 校验结构时参照） |
@@ -54,7 +60,7 @@ finaldatabase/
 └── summary/                        # 覆盖率、刷新报告、GitHub 缓存与调试样例
 ```
 
-当前规模（以 `summary/coverage_stats.json` 为准）：主表 **1219** 条 PR；`per_pr/` 下 **1219** 个子目录（与主表 `id` 一一对应，删除 404 PR 后会同步减少）。
+当前规模（以 `summary/coverage_stats.json` 为准）：**终态语料**主表 **1183** 条 PR（merged 672 / closed 511，合并率 56.8%）；`per_pr/` 下 **1183** 个子目录与主表 `id` 一一对应。仍开放的 PR 已从数据集中剔除，合并率分母不再含 open。
 
 ---
 
@@ -66,7 +72,7 @@ finaldatabase/
 | `perf_prs_expanded_final.parquet` | 同上内容的 Parquet 版 |
 | `POP_PULL_Requests_LLM_filtered_final.csv` | **论文/下游用窄表**：在完整主表基础上去掉部分扩展列（如 `row_1based`、`status`、Topic 相关、`llm_output` 等，逻辑见 `refresh.py` 中 `PAPER_BASE_EXCLUDE`） |
 
-主表关键列（节选）：`id`（GitHub PR 全局 id，全库主键）、`number`、`title`、`body`、`agent`、`user`、`state`、`status`（derived：open / merged / closed）、`html_url`、`created_at` / `merged_at` / `closed_at`、`detection_source`、`aidev_task_*`、`Topic` / `Probability` 等。
+主表关键列（节选）：`id`（GitHub PR 全局 id，全库主键）、`number`、`title`、`body`、`agent`、`user`、`state`、`status`（derived：merged / closed；open 已从终态快照中剔除）、`html_url`、`created_at` / `merged_at` / `closed_at`、`detection_source`、`aidev_task_*`、`Topic` / `Probability` 等。
 
 ---
 

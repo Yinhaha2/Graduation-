@@ -950,111 +950,6 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 * **Documentation**
   * Expanded best practices and lessons learned on defensive coding, testing, atomic usage, performance, and error handling.
 <!-- end of auto-generated comment: release notes by coderabbit.ai -->",Claude_Code,7030001,tphakala,closed,2025-06-30 15:10:13+00:00,2025-06-30 15:35:07+00:00,2025-06-30 15:35:07+00:00,707764474,https://api.github.com/repos/tphakala/birdnet-go,https://github.com/tphakala/birdnet-go/pull/834
-3090065215,19,Add Claude CLI support with Strategy Pattern architecture (v0.6.0),"## 🚀 Major Enhancement: Claude CLI Support & Strategy Pattern Architecture
-
-This PR introduces comprehensive Claude CLI support with a robust Strategy Pattern architecture, bringing the MCP installer to v0.6.0 with significant performance and extensibility improvements.
-
-## ✨ New Features
-
-### Claude CLI Integration
-- **Automatic Detection**: Detects if `claude` CLI is available at startup
-- **Immediate Availability**: Servers installed via CLI are available instantly (no restart required)
-- **Graceful Fallback**: Falls back to Claude Desktop config if CLI unavailable
-- **Enhanced UX**: Clear feedback on installation method and availability status
-
-### Strategy Pattern Architecture
-- **Extensible Design**: Clean interface ready for multiple installation environments
-- **Performance Optimized**: Early strategy detection (1 call vs 4 calls per operation)
-- **Future-Ready**: Prepared for Docker, Kubernetes, VS Code Extensions, and more
-- **Maintainable**: Eliminated conditional branching duplication throughout codebase
-
-## 🏗️ Technical Improvements
-
-### Architecture Changes
-- Added `InstallationStrategy` interface with concrete implementations:
-  - `ClaudeCliStrategy` - For `claude` CLI installations
-  - `ClaudeDesktopStrategy` - For traditional config file approach
-- Global strategy initialization at server startup
-- Unified installation interface across all environments
-
-### Performance Enhancements
-- **Before**: 4 `hasClaudeCLI()` calls per installation operation
-- **After**: 1 `hasClaudeCLI()` call per server startup
-- Eliminated redundant environment detection
-- Streamlined installation flow
-
-### Code Quality
-- Removed legacy `installToClaudeCLI`/`installToClaudeDesktop` functions
-- Simplified conditional logic throughout the codebase
-- Better separation of concerns
-- Enhanced error handling and user feedback
-
-## 📦 Installation & Usage
-
-### For Claude CLI (New - Recommended):
-```bash
-claude mcp add mcp-installer npx --args @o2alexanderfedin/mcp-installer
-```
-
-### For Claude Desktop (Existing):
-```json
-{
-  ""mcpServers"": {
-    ""mcp-installer"": {
-      ""command"": ""npx"",
-      ""args"": [""@o2alexanderfedin/mcp-installer""]
-    }
-  }
-}
-```
-
-## 🔄 Backward Compatibility
-
-✅ **No Breaking Changes**: All existing Claude Desktop installations continue to work exactly as before
-✅ **Enhanced Experience**: Existing users get improved performance and better error messages
-✅ **Seamless Migration**: No action required for current users
-
-## 🧪 Testing
-
-- ✅ TypeScript compilation passes
-- ✅ Build system works correctly  
-- ✅ Module loads without runtime errors
-- ✅ Backward compatibility verified
-- ✅ Strategy pattern functionality confirmed
-
-## 📋 Commits Included
-
-1. **Add Claude CLI support with automatic detection and fallback** (`8e50814`)
-   - Core Claude CLI integration
-   - Automatic detection logic
-   - Enhanced README documentation
-
-2. **Remove unused function to fix TypeScript compilation** (`dd6e4a9`)
-   - Clean up legacy code
-   - Fix compilation issues
-
-3. **Refactor installation logic using Strategy Pattern** (`a778373`)
-   - Complete Strategy Pattern implementation
-   - Performance optimizations
-   - Code simplification
-
-4. **Bump version to 0.6.0** (`ce7ed5c`)
-   - Version update for release
-
-## 🎯 Future Roadmap
-
-This architecture enables easy addition of new installation environments:
-- Docker containers (`docker run` commands)
-- Kubernetes deployments (`kubectl apply`)
-- VS Code Extensions (`.vscode/settings.json`)
-- JetBrains IDEs (plugin configuration)
-- Cloud deployments (AWS Lambda, Google Cloud Functions)
-
----
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,77516945,o2alexanderfedin,open,2025-05-26 05:38:39+00:00,,,894640711,https://api.github.com/repos/anaisbetts/mcp-installer,https://github.com/anaisbetts/mcp-installer/pull/19
 3133544722,42,Fix: Remove unnecessary async declarations from synchronous methods,"## Summary
 - Removed unnecessary `async` declarations from all manager methods that don't contain any `await` statements
 - Fixed test fixture to not await the now-synchronous `cleanup()` method
@@ -1242,30 +1137,6 @@ const staticPath = join(__dirname, ""../static"");
 🤖 Generated with [Claude Code](https://claude.ai/code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,80381,sugyan,closed,2025-07-19 14:33:10+00:00,2025-07-19 14:41:39+00:00,2025-07-19 14:41:39+00:00,999285986,https://api.github.com/repos/sugyan/claude-code-webui,https://github.com/sugyan/claude-code-webui/pull/195
-3159415433,83,fix: memory leaks and server stability issues,"## Summary
-This PR addresses critical memory leaks and stability issues in the Zen MCP server that were causing server crashes during heavy usage, requiring frequent reinstallation.
-
-### Fixed Issues
-- **Memory leaks in GeminiModelProvider**: Added bounded token cache with automatic cleanup (max 100 entries, LRU-style cleanup)
-- **Background thread race conditions**: Fixed cleanup worker thread shutdown handling in storage backend
-- **Silent exception swallowing**: Replaced silent exception handling with proper logging in server.py
-
-### Technical Details
-- **Token Cache Management**: Implemented cache size limits, cleanup methods, and performance monitoring
-- **Thread Safety**: Improved background thread lifecycle management with graceful shutdown
-- **Error Visibility**: Enhanced error logging to help diagnose future issues
-
-### Testing
-- ✅ All 583 unit tests pass (100%)
-- ✅ All simulator tests pass
-- ✅ Code quality checks pass (ruff, black, isort)
-- ✅ Memory usage monitoring and cleanup verified
-
-These changes ensure the MCP server can handle long-running sessions and heavy usage without memory leaks or stability issues.
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,2609417,dsaluja,open,2025-06-19 08:15:56+00:00,,,998428732,https://api.github.com/repos/BeehiveInnovations/zen-mcp-server,https://github.com/BeehiveInnovations/zen-mcp-server/pull/83
 3275149041,1884,N-API Go html-to-markdown,"## Summary
 - Replace unstable koffi FFI with robust N-API implementation
 - Add hybrid fallback system: N-API → koffi → JavaScript
@@ -1744,51 +1615,6 @@ Addresses issue #78.
 🤖 Generated with [Claude Code](https://claude.ai/code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,22616578,busser,closed,2025-06-06 10:02:14+00:00,2025-06-06 10:21:59+00:00,2025-06-06 10:21:58+00:00,482225540,https://api.github.com/repos/busser/tfautomv,https://github.com/busser/tfautomv/pull/107
-3124595999,388,Add Python stub file generation with documentation parsing,"### Summary
-
-This PR adds comprehensive Python stub file (.pyi) generation for the LVGL MicroPython bindings, providing full IDE support with autocompletion, type hints, and rich documentation.
-
-**Key Features:**
-- 🚀 **Fast Parallel Processing**: 6 seconds vs. minutes (uses all CPU cores)
-- 📝 **Rich Documentation**: Automatic extraction from 1400+ LVGL functions  
-- 🎯 **IDE Integration**: Full autocompletion and type hints (.pyi files)
-- ⚡ **Separate Build**: Doesn't slow down main MicroPython builds
-- 🔧 **Smart Formatting**: Bullet points, text wrapping, proper Python conventions
-- 🔗 **Source Navigation**: File:line references to original C implementation
-
-The implementation includes:
-1. **Stub Generation**: Creates `.pyi` files with proper Python type hints
-2. **Documentation Parsing**: Extracts Doxygen comments from C headers using parallel processing
-3. **Smart Parameter Handling**: Converts `obj` to `self` for class methods
-4. **Performance Optimization**: Processes 209 header files in ~6 seconds using all CPU cores
-5. **Source References**: Adds file:line references for navigation to C implementation
-
-### Testing
-
-Tested on Unix port with full stub generation:
-- Processes 209 LVGL header files using parallel processing
-- Extracts documentation from 1423 functions
-- Generates type hints for 41 widget classes and 64 enums
-- Produces comprehensive `.pyi` files for IDE consumption
-
-The generated stubs provide full autocompletion and documentation in modern Python IDEs like VS Code, PyCharm, etc.
-
-### Trade-offs and Alternatives
-
-**Trade-offs:**
-- Adds ~6 seconds to generate full documentation (but as separate optional target)
-- Increases repository size slightly with documentation files
-
-**Alternatives considered:**
-- External documentation parsing libraries (rejected to minimize dependencies)
-- Manual stub file maintenance (rejected due to maintenance burden)
-- No documentation extraction (rejected as it provides significant developer value)
-
-The implementation uses custom regex-based Doxygen parsing to avoid external dependencies while providing exactly the functionality needed for LVGL's documentation format.
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,3318786,andrewleech,open,2025-06-06 12:10:03+00:00,,,167166039,https://api.github.com/repos/lvgl/lv_binding_micropython,https://github.com/lvgl/lv_binding_micropython/pull/388
 3235395709,34529,Fix file save blocking on entry refresh for improved hot reload performance,"## Summary
 
 Fixes file save operations blocking on filesystem entry refresh, which was causing hot reload systems to detect file changes later than other editors like VS Code or Sublime Text.
@@ -2220,82 +2046,6 @@ None - all changes are internal optimizations that maintain the same external AP
 🤖 Generated with [Claude Code](https://claude.ai/code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,7235481,mldangelo,closed,2025-07-13 02:47:49+00:00,,,633927609,https://api.github.com/repos/promptfoo/promptfoo,https://github.com/promptfoo/promptfoo/pull/4902
-3226627949,94,feat(cpu-threading): integrate CLI with threading system and unify TTS API,"## Summary
-- **🔥 Major Update**: Integrates CLI modes with CPU-specific ONNX Runtime threading optimization
-- Unifies TTS API architecture by removing dual constructor patterns  
-- Implements comprehensive logging system with flexible output destinations
-- Adds chunking boundary safety fix and global CLI speed parameter support
-- Updates documentation with latest benchmark data and enhanced configuration options
-
-## Key Changes
-
-### CLI Threading Integration ⭐
-- **CLI modes now leverage CPU threading optimizations** for optimal performance
-- CLI automatically uses single instance with intelligent CPU threading (ignores `--instances` with informative logging)
-- **API Unification**: Removed old `TTSKoko::new()` method, renamed `new_with_instances` to `new` everywhere
-- All TTS creation now uses unified `TTSKoko::new(path, data, instances)` signature
-- Added ""WIP: to be supported in future"" messaging for CLI parallel processing
-
-### CPU Threading Optimization
-- Detects available CPU cores and calculates optimal thread distribution per instance
-- Prevents memory bandwidth contention through intelligent core allocation
-- Adds comprehensive performance warnings for multiple instances on CPU
-- Implements platform-aware optimizations (CPU vs GPU execution providers)
-
-### Enhanced Logging System
-- **Comprehensive CLI logging options**: `--log cli/file/all/none` with custom `--log-file` paths  
-- **Rich HTTP request/response logging** with timing, headers, and payload tracking
-- Structured logging with request IDs and slow request warnings (>5s)
-- Daily log rotation and non-blocking file appenders
-
-### Performance & Reliability Improvements
-- **Chunking boundary fix**: Prevents index out of bounds in break word processing
-- **Global CLI speed parameter**: `--speed` now properly applies to OpenAI server mode as default
-- **Updated benchmark data**: Latest performance metrics showing 4-instance optimal at 13.7s total time
-- **CoreML context**: Documents node limitation issues causing CPU fallback on Apple Silicon
-
-### Documentation Updates
-- **July 15th release entry** highlighting CLI optimization and enhanced logging  
-- **Logging configuration section** with comprehensive examples
-- **Updated benchmark table** with latest test results (1/2/4/8 instance comparisons)
-- **Enhanced parallel processing notes** reflecting CLI integration with threading system
-
-## Performance Results
-| Instances | TTFA | Total Time | Notes |
-|-----------|------|------------|--------|
-| 1 | 1.87s | 25.1s | Optimal for real-time |
-| 2 | 2.15s | 16.0s | Balanced performance |  
-| 4 | 3.56s | 13.7s | **Best throughput** |
-| 8 | 7.73s | 14.7s | Diminishing returns |
-
-## Breaking Changes
-- **API Change**: `TTSKoko::new()` removed, all constructors now require instance count parameter
-- **CLI Behavior**: CLI modes ignore `--instances > 1` with informative logging (WIP message displayed)
-
-## Test Plan
-- [x] Verify CLI threading integration works correctly
-- [x] Test API unification maintains compatibility  
-- [x] Confirm logging options work across all destinations
-- [x] Validate chunking boundary fix prevents crashes
-- [x] Test global speed parameter in OpenAI server mode
-- [x] Verify performance improvements with benchmark testing
-- [x] Confirm documentation accuracy reflects actual changes
-
-## Migration Guide
-```rust
-// Before
-let tts = TTSKoko::new(&model_path, &data_path).await;
-
-// After  
-let tts = TTSKoko::new(&model_path, &data_path, 1).await;
-```
-
-## Rationale
-CLI processes text sequentially without chunking logic, making multiple instances counterproductive. Server mode has intelligent chunking that can effectively utilize parallel instances. This change optimizes CLI for immediate use while preserving server scalability.
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,1172235,miteshashar,open,2025-07-13 16:21:50+00:00,,,915610024,https://api.github.com/repos/lucasjinreal/Kokoros,https://github.com/lucasjinreal/Kokoros/pull/94
 2986072834,202,Add customizable PostgreSQL connection pool settings,"- Create explicit connection pool with configurable settings
 - Use settings for min_size, max_size, and max_idle
 - Update documentation with examples
@@ -3866,52 +3616,6 @@ Fixes #39.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-25 23:49:08+00:00,2025-06-26 20:35:31+00:00,2025-06-26 20:35:31+00:00,668062221,https://api.github.com/repos/microsoft/Spartan2,https://github.com/microsoft/Spartan2/pull/40
-3074606452,74,Convert internal Arrays to Vectors for better performance,"This PR converts internal Array usage to Vector for improved performance while maintaining backward compatibility. 
-
-## Changes
-
-1. Changed internal storage from Array to Vector:
-   - `Vector.<Class>` for `_valueClasses` in `MonoSignal` and `OnceSignal`
-   - `Vector.<Object>` for `_params` in `Slot`
-   - Updated `NativeMappedSignal` to properly handle Vectors
-
-2. Maintained backward compatibility:
-   - All public methods still accept and return Arrays
-   - Added conversion functions between Arrays and Vectors
-   - Added null checks for Vectors to ensure stability
-   - No changes to public interfaces (`ISignal`, `IOnceSignal`)
-
-## Benefits
-
-- **Better performance**: Vectors are more efficient than Arrays for typed collections
-- **Type safety**: `Vector.<Class>` provides compile-time type checking
-- **Identical API**: All existing code using the library will continue to work
-
-This addresses the request to use the more efficient `Vector.<>` type internally instead of Arrays, while keeping backward compatibility with existing code.
-
-Fixes #66.
-
-> [!WARNING]
->
-> <details>
-> <summary>Firewall rules blocked me from connecting to one or more addresses</summary>
->
-> #### I tried to connect to the following addresses, but was blocked by firewall rules:
->
-> - `archive.apache.org`
->   - Triggering command: `wget -q REDACTED ` (dns block)
->
-> If you need me to access, download, or install something from one of these locations, you can either:
->
-> - Configure [Actions setup steps](https://gh.io/copilot/actions-setup-steps) to set up my environment, which run before the firewall is enabled
-> - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
->
-> </details>
-
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-19 17:52:33+00:00,,,302662,https://api.github.com/repos/robertpenner/as3-signals,https://github.com/robertpenner/as3-signals/pull/74
 3074681764,13829,Update build documentation with quick build optimization flags,"This PR updates the build documentation (`toolkit/docs/building/building.md`) to include the latest optimization flags and best practices for building Azure Linux more efficiently.
 
 ## Changes
@@ -4297,51 +4001,6 @@ In relation to #181545.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-16 09:29:21+00:00,2025-06-16 11:57:59+00:00,2025-06-16 11:57:59+00:00,41881900,https://api.github.com/repos/microsoft/vscode,https://github.com/microsoft/vscode/pull/251578
-3079146299,94,Add BitmapContext extension methods for direct drawing operations,"This PR adds extension methods for the `BitmapContext` class that allow users to perform drawing operations directly on a `BitmapContext` instead of having to go through the `WriteableBitmap`. This enables more efficient code when doing multiple drawing operations since the `BitmapContext` only needs to be created once.
-
-## Key changes
-
-- Created a new `BitmapContextExtensions` class with extension methods that mirror existing `WriteableBitmap` extension methods
-- Implemented drawing methods: lines, rectangles, ellipses
-- Implemented fill methods: rectangles, ellipses
-- Implemented blit operations for copying pixels between contexts
-- Implemented transform operations (flip)
-- Added the class to all relevant project files
-
-## Usage example
-
-Before, users needed to use `WriteableBitmap` methods that create/dispose contexts internally:
-
-```csharp
-var bmp = new WriteableBitmap(500, 500);
-// Each call creates and disposes a BitmapContext internally
-bmp.DrawLine(10, 10, 100, 100, Colors.Red);
-bmp.DrawRectangle(50, 50, 150, 150, Colors.Blue);
-bmp.FillEllipse(200, 200, 300, 300, Colors.Green);
-```
-
-Now, users can reuse the same context for multiple operations:
-
-```csharp
-var bmp = new WriteableBitmap(500, 500);
-// Create the context once
-using(var ctx = bmp.GetBitmapContext())
-{
-    // Multiple drawing operations using the same context
-    ctx.DrawLine(10, 10, 100, 100, Colors.Red);
-    ctx.DrawRectangle(50, 50, 150, 150, Colors.Blue);
-    ctx.FillEllipse(200, 200, 300, 300, Colors.Green);
-}
-// Context is disposed only once
-```
-
-This provides better performance when doing many consecutive drawing operations, especially in loops, and also allows users to perform drawing operations from multiple threads.
-
-Fixes #92.
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-21 06:56:43+00:00,,,42940997,https://api.github.com/repos/reneschulte/WriteableBitmapEx,https://github.com/reneschulte/WriteableBitmapEx/pull/94
 3212230718,26149,[Backport][release-474-e] Parallelize Iceberg materialized view base table freshness retrieval,"Backport of #24734 to release-474-e. This change parallelizes freshness retrieval for Iceberg materialized view base tables. See original PR for details and discussion: https://github.com/trinodb/trino/pull/24734
 
 ## Summary
@@ -4761,35 +4420,6 @@ Fixes #24522.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-14 15:57:48+00:00,,,156939672,https://api.github.com/repos/microsoft/onnxruntime,https://github.com/microsoft/onnxruntime/pull/25061
-3146329050,25066,[WIP] [tracking] Improve Sequence operator handling,"Analyzing sequence operator handling efficiency improvements in ONNX Runtime
-
-**Overview**: The current sequence operator implementation relies heavily on tensor copies as noted in the TODO comment. This PR aims to improve efficiency by reducing unnecessary tensor copying through better use of move semantics and avoiding redundant allocations.
-
-**Plan**:
-- [x] Analyze current sequence operator implementation and identify inefficiencies
-- [x] Understand the current test structure and codebase organization
-- [x] Optimize SequenceInsert to reduce tensor copying where possible
-- [x] Optimize SequenceConstruct to use move semantics when appropriate
-- [x] Add CreateTensorOrtValue function to enable direct OrtValue creation with move semantics
-- [ ] Create performance benchmark tests to measure current copying overhead
-- [ ] Investigate SequenceAt optimization opportunities (limited due to operational requirements)
-- [ ] Run existing tests to ensure no regression
-- [ ] Validate performance improvements with benchmarks
-
-**Key optimizations implemented**:
-- Added `CreateTensorOrtValue()` function that creates OrtValue directly with move semantics instead of creating Tensor first then converting
-- Updated SequenceInsert and SequenceConstruct to use the optimized function
-- This reduces the number of copy operations and temporary object creation
-- Maintains compatibility with DataTransferManager for cross-EP support
-
-**Note**: SequenceErase is already well-optimized as it avoids copying non-erased tensors. SequenceAt requires copying due to operational requirements but uses efficient DataTransferManager.
-
-Fixes #18355.
-
-<!-- START COPILOT CODING AGENT TIPS -->
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-06-14 16:00:00+00:00,,,156939672,https://api.github.com/repos/microsoft/onnxruntime,https://github.com/microsoft/onnxruntime/pull/25066
 3100789352,414,Add performance benchmarking and AOT file size tracking with Azure storage,"Implements a comprehensive performance tracking system that monitors benchmark execution times and AOT native file sizes, storing historical data in Azure Table Storage and detecting performance regressions in pull requests.
 
 ## Features
@@ -5833,56 +5463,6 @@ Fixes the hydration system to work with the modern Crank architecture while main
 ---
 
 💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-10 12:54:35+00:00,2025-07-10 22:03:25+00:00,2025-07-10 22:03:24+00:00,206439707,https://api.github.com/repos/bikeshaving/crank,https://github.com/bikeshaving/crank/pull/286
-3134916409,251153,Fix notebook sticky scroll flashing by using single reusable delayer,"The notebook sticky scroll was experiencing continuous flashing when scrolling headers close to the sticky scroll area. This was caused by improper debouncing in the scroll event handler.
-
-## Root Cause
-
-Each scroll event created a new `Delayer(100)` instance, but multiple delayers could be active simultaneously when scroll events occurred rapidly (faster than 100ms apart). This caused:
-
-1. Multiple delayed updates to be pending at once
-2. Rapid successive content updates
-3. Visual flashing as the sticky scroll content updated repeatedly
-4. Potential memory inefficiency from creating/disposing many delayer instances
-
-## Solution
-
-Replace the per-event delayer creation with a single reusable delayer instance:
-
-**Before:**
-```typescript
-this._disposables.add(this.notebookEditor.onDidScroll(() => {
-    const d = new Delayer(100);  // ❌ New delayer each time
-    d.trigger(() => {
-        d.dispose();
-        // ... update logic
-    });
-}));
-```
-
-**After:**
-```typescript
-private readonly scrollDelayer = this._register(new Delayer(100));
-
-this._disposables.add(this.notebookEditor.onDidScroll(() => {
-    this.scrollDelayer.trigger(() => {  // ✅ Reuse same delayer
-        // ... update logic
-    });
-}));
-```
-
-## Benefits
-
-- **Eliminates flashing**: Only one delayed update can be pending at a time
-- **Improves performance**: No overhead from creating/disposing multiple delayers
-- **Better memory usage**: Single reusable instance vs multiple short-lived instances
-- **Maintains functionality**: All existing behavior preserved
-- **Minimal change**: Only 6 lines added, 4 removed
-
-## Testing
-
-Validated with a mock implementation that simulates rapid scroll events - the fix successfully debounces multiple events into a single update call.
-
-Fixes #211114.",Copilot,198982749,Copilot,open,2025-06-10 21:45:31+00:00,,,41881900,https://api.github.com/repos/microsoft/vscode,https://github.com/microsoft/vscode/pull/251153
 3087519869,9493,[CI] Handle failure to download Playwright dependencies,"This PR implements caching for Playwright dependencies in GitHub Actions workflows to prevent repeated downloads and handle network failures gracefully.
 
 ## Changes
@@ -7134,98 +6714,6 @@ This ensures the plugin is future-proof and compatible with Figma's performance 
 ---
 
 💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-01 20:09:53+00:00,2026-07-13 09:02:36+00:00,,265001214,https://api.github.com/repos/tokens-studio/figma-plugin,https://github.com/tokens-studio/figma-plugin/pull/3401
-3132905408,107,[gh-flow] Add minimal Azure provisioning for local development,"This PR implements a split provisioning solution for the gh-flow sample, allowing developers to provision only essential Azure resources when developing locally instead of the full production infrastructure.
-
-## Problem
-
-Previously, developers working locally on gh-flow had to run `azd provision` which creates the complete Azure infrastructure including:
-- Container Apps Environment & Registry
-- Azure-hosted Qdrant on Container Apps  
-- Cosmos DB
-- Application Insights & Log Analytics
-- Monitoring dashboards
-- The gh-flow Container App service
-
-This resulted in:
-- Slow provisioning (20+ minutes)
-- High Azure costs during development ($50+/month)
-- Unnecessary complexity for local development
-
-## Solution
-
-Added a minimal provisioning option that only creates essential Azure resources while leveraging the existing containerized services in the devcontainer:
-
-### New Files
-- **`infra/main.local.bicep`** - Minimal bicep template (49 lines vs 160 lines in full template)
-- **`infra/main.local.parameters.json`** - Parameters for local development
-- **`provision-local.sh`** - Helper script for easy provisioning
-- **`LOCAL-DEVELOPMENT.md`** - Detailed documentation
-- **`.gitignore`** - Ignore generated bicep artifacts
-
-### Updated Files
-- **`docs/github-flow-getting-started.md`** - Added Option 2 for minimal provisioning
-
-## What Gets Provisioned
-
-| Deployment Type | Resources | Estimated Cost |
-|---|---|---|
-| **Full** (`azd provision`) | Storage + Container Apps + Qdrant + Cosmos + Monitoring + App Service | $50+/month |
-| **Local** (`./provision-local.sh`) | Storage account only | ~$1/month |
-
-## Usage
-
-```bash
-# Full deployment (unchanged)
-azd provision
-
-# Local development (new)
-./provision-local.sh my-local-env
-```
-
-## Benefits
-
-- **90%+ resource reduction**: 1 storage account vs 10+ resources
-- **Faster provisioning**: Minutes instead of 20+ minutes  
-- **Lower cost**: ~$1/month vs $50+/month
-- **Better developer experience**: Local debugging, containerized Qdrant, faster iteration
-- **Easy cleanup**: Minimal resources to delete when done
-
-## Technical Details
-
-The local template reuses existing core bicep modules but only provisions:
-- Resource group
-- Storage account with file shares (needed for Azure Container Instances)
-
-Local development uses:
-- Containerized Qdrant (`http://qdrant:6333`) from devcontainer
-- Local application debugging via VS Code
-- User-configured OpenAI and GitHub App settings
-
-Both templates are validated and compile successfully. The solution maintains full backward compatibility with existing workflows.
-
-Fixes #72.
-
-> [!WARNING]
->
-> <details>
-> <summary>Firewall rules blocked me from connecting to one or more addresses</summary>
->
-> #### I tried to connect to the following addresses, but was blocked by firewall rules:
->
-> - `aka.ms`
->   - Triggering command: `curl -fsSL REDACTED ` (dns block)
->   - Triggering command: `/usr/bin/../../opt/az/bin/python3 -Im azure.cli bicep validate --file main.local.bicep ` (dns block)
->   - Triggering command: `bicep lint main.local.bicep ` (dns block)
-> - `app.aladdin.microsoft.com`
->   - Triggering command: `/usr/bin/../../opt/az/bin/python3 -Im azure.cli bicep validate --file main.local.bicep ` (dns block)
->
-> If you need me to access, download, or install something from one of these locations, you can either:
->
-> - Configure [Actions setup steps](https://gh.io/copilot/actions-setup-steps) to set up my environment, which run before the firewall is enabled
-> - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
->
-> </details>
-",Copilot,198982749,Copilot,open,2025-06-10 09:52:32+00:00,,,676195998,https://api.github.com/repos/microsoft/project-oagents,https://github.com/microsoft/project-oagents/pull/107
 3145702280,2826,Move BarChart to ui-graphs package with SCSS modules and bigint support,"This PR migrates the `BarChart` components from `packages/app/src/library/BarChart` to the `ui-graphs` package, following the established patterns and conventions of the ui-graphs package.
 
 ## Key Changes
@@ -7526,17 +7014,6 @@ All changes maintain full backward compatibility. Existing code continues to wor
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-11 15:09:01+00:00,2025-07-11 15:12:15+00:00,,517492055,https://api.github.com/repos/replugged-org/replugged,https://github.com/replugged-org/replugged/pull/705
-3095248857,168,[WIP] Fix optimizing list insertion/deletion diffs,"- [x] Analyze the issue with optimizing list insertion/deletion diffs
-- [x] Create tests to reproduce and understand the problem
-- [ ] Enhance the DiffBuilder.execute() method to optimize list operations
-- [ ] Add additional test cases to verify the fix
-- [ ] Run all tests to ensure backward compatibility
-
-Fixes #83.
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-27 21:15:53+00:00,,,1915437,https://api.github.com/repos/stefankoegl/python-json-patch,https://github.com/stefankoegl/python-json-patch/pull/168
 3226357274,4052,[WIP] @clash-verge-rev/clash-verge-rev/pull/4051 协助修复,"## PR #4051 Fix Summary - COMPLETED ✅
 
 ### Problem Statement
@@ -9023,66 +8500,6 @@ Fixes #5462.
 ---
 
 💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-24 09:01:04+00:00,2025-06-26 10:07:38+00:00,2025-06-26 10:07:38+00:00,274495425,https://api.github.com/repos/remotion-dev/remotion,https://github.com/remotion-dev/remotion/pull/5463
-3104322035,64,[WIP] CachedVariable for ChildSelectors,"Thanks for assigning this issue to me. I'm starting to work on it and will keep this PR's description up to date as I form a plan and make progress.
-
-Original issue description:
-
-> 	• Add CachedVariable (name pending) property that caches the result of an expression for use in the ChildSelectors.
-> 		○ A common pattern in ChildSelectors is a switch statement, where you calculate some value and visit different children depending on the result. The issue today is this calculation must be done for each child selector. This feature would allow you to calculate the result once and use it directly multiple times. 
-> 		○ Allows you to evaluate an expression and save the result (non-persisted?).
-> 		○ ChildSelectors then have access to that variable to simplify their ShouldSelect statements.
-> 		○ Consider allowing the variable to be a dynamic object. So could be bool, string, object, etc.. This allows users to set as many properties as they wish.
-> 		○ Consider what using a dynamic object would look like. If we have to wrap it every time with (Session.CachedVariable as string), then the usability goes down. In this case, it may be better to just set it as a string. Users could still use it as a bool or object by converting the string if they desire.
-> 		○ Consider if this should be localized to just the current TreeNode's ChildSelector, or if you can access parent's CachedVariables as well.
-> 		○ Consider if this should be tied to ChildSelector at all. Perhaps just adding a way to persist data in the ForgeStateDictionary from the tree would be cool.
-> 			§ Perhaps they both could happen though. This would be a helper property to make the feature intention clear. If we decide to add more functionality later for setting ForgeState, we can still do that.
-> 		○ Considerations:
-> 			§ Persisted vs non-persisted
-> 			§ Useable from ChildSelector only or everywhere?
-> 			§ Save as String vs Object
-> 			§ Cache result vs expression itself. Specify if you want to cache the expression result, or reevaluate.
-> 			§ Consider defining at the tree level.
-> 			§ Add flag to dictate behavior of CachedVariable. Whether or not to reevaluate each time. Could be unclear what the behavior is by default, make sure to set up the right expectations.
-> 		○ Issue with tree structure
-> 			§ How to enforce that people are calling it at the right time? For example, the expression could GetOutput of a TreeNode that hasn't executed yet.
-> 		○ Issue with node structure
-> 			§ If we decide to persist, not having good discoverability on parent nodes persisted data.
-> 		○ Example Old way:
-> 	                ""ChildSelector"": [
-> 	                    {
-> 	                        ""ShouldSelect"": ""C#|(await Session.GetLastActionResponseAsync()).Status == \""Failure\"""",
-> 	                        ""Child"": ""SoC_HS_RebootOnly_Failure""
-> 	                    },
-> 	                    {
-> 	                        ""ShouldSelect"": ""C#|(await Session.GetLastActionResponseAsync()).Status == \""Timeout\"""",
-> 	                        ""Child"": ""SoC_HS_RebootOnly_Timeout""
-> 	                    },
-> 	                    {
-> 	                        ""ShouldSelect"": ""C#|(await Session.GetLastActionResponseAsync()).Status == \""Success\"""",
-> 	                        ""Child"": ""SoC_HS_RebootOnly_Success""
-> 	                    }
-> 		○ Example New way:
-> 	                ""ChildSelectorVariable"": ""C#|(await Session.GetLastActionResponseAsync()).Status"",
-> 	                ""ChildSelector"": [
-> 	                    {
-> 	                        ""ShouldSelect"": ""C#|Session.CachedVariable == \""Failure\"""",
-> 	                        ""Child"": ""SoC_HS_RebootOnly_Failure""
-> 	                    },
-> 	                    {
-> 	                        ""ShouldSelect"": ""C#|Session.CachedVariable == \""Timeout\"""",
-> 	                        ""Child"": ""SoC_HS_RebootOnly_Timeout""
-> 	                    },
-> 	                    {
-> 	                        ""ShouldSelect"": ""C#|Session.CachedVariable == \""Success\"""",
-> 	                        ""Child"": ""SoC_HS_RebootOnly_Success""
->                     }
-
-
-Fixes #29.
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-30 21:32:31+00:00,,,162360309,https://api.github.com/repos/microsoft/Forge,https://github.com/microsoft/Forge/pull/64
 3215073469,10963,[Feature]: Sync with latest binding.js from napi-rs to fix performance issue,"This PR syncs the binding.js files with the latest napi-rs template to fix a performance issue where `process.report.getReport()` was taking up to 5 seconds on some systems due to network information collection.
 
 ## Problem
@@ -9445,62 +8862,6 @@ This fix resolves the file picker performance issues while maintaining all exist
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-22 16:49:17+00:00,,,882482569,https://api.github.com/repos/folke/snacks.nvim,https://github.com/folke/snacks.nvim/pull/1991
-3166183819,25,Add source generator for compile-time extraction plan compilation,"This PR implements a C# source generator to eliminate runtime reflection overhead by generating compile-time extraction plans for types with `REGEXTRACT_REGEX_PATTERN` constants.
-
-## What's Added
-
-### Source Generator Infrastructure
-- **New project**: `RegExtract.SourceGenerator` - A .NET Standard 2.0 source generator
-- **Syntax receiver**: Detects types with `REGEXTRACT_REGEX_PATTERN` fields at compile time
-- **Code generation**: Creates pre-compiled extraction plans as static classes
-- **Project integration**: Properly configured as an analyzer for supported target frameworks
-
-### Generated Code Structure
-For a type like:
-```csharp
-public record TestRecord(int Number, string Text)
-{
-    public const string REGEXTRACT_REGEX_PATTERN = @""(\d+): (.+)"";
-}
-```
-
-The generator creates:
-```csharp
-public static class TestRecordExtractionPlan
-{
-    private static readonly Regex _regex = new Regex(@""(\d+): (.+)"");
-    private static readonly ExtractionPlan<TestRecord> _plan = ExtractionPlan<TestRecord>.CreatePlan(_regex);
-    
-    public static TestRecord? Extract(string input) => _plan.Extract(input);
-    public static TestRecord? Extract(Match match) => _plan.Extract(match);
-    public static ExtractionPlan<TestRecord> Plan => _plan;
-}
-```
-
-### Test Infrastructure
-- **Comprehensive tests**: Verify both reflection-based and generated approaches
-- **Debug capabilities**: Extensive logging to troubleshoot generator execution
-- **Backward compatibility**: Existing reflection-based extraction continues to work
-
-## Current Status
-
-The source generator infrastructure is complete and compiles successfully. However, the generator is not currently executing during the build process, which requires further investigation of MSBuild configuration or version compatibility issues.
-
-The reflection-based approach remains fully functional, ensuring no breaking changes while this enhancement is being completed.
-
-## Benefits (When Complete)
-
-- **Performance**: Eliminates runtime reflection overhead
-- **Compile-time safety**: Regex patterns validated at build time  
-- **Backward compatibility**: Existing code continues to work unchanged
-- **Opt-in**: Only types with `REGEXTRACT_REGEX_PATTERN` get generated plans
-
-Addressing #24.
-
-<!-- START COPILOT CODING AGENT TIPS -->
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-06-22 18:59:23+00:00,,,318049537,https://api.github.com/repos/sblom/RegExtract,https://github.com/sblom/RegExtract/pull/25
 3197896940,1033,ci: Add conditional testing for wef and webview crates,"This PR optimizes the CI workflow by implementing conditional testing for the `wef` and `webview` crates, which significantly improves CI performance while maintaining full test coverage when needed.
 
 ## Problem
@@ -9731,7 +9092,7 @@ Fixes #5321.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-28 12:16:41+00:00,,,65080725,https://api.github.com/repos/microsoft/testfx,https://github.com/microsoft/testfx/pull/6203
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-28 12:16:41+00:00,2025-07-31 10:43:59+00:00,2025-07-31 10:43:59+00:00,65080725,https://api.github.com/repos/microsoft/testfx,https://github.com/microsoft/testfx/pull/6203
 3206330418,3547,Add comprehensive FrankenPHP support for phpMyFAQ,"This PR adds full support for [FrankenPHP](https://frankenphp.dev), a modern PHP application server built on Caddy, providing high-performance capabilities and modern web server features for phpMyFAQ.
 
 ## What's Added
@@ -10003,7 +9364,7 @@ Fixes #593.
 > - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
 >
 > </details>
-",Copilot,198982749,Copilot,open,2025-06-11 02:50:00+00:00,,,89300492,https://api.github.com/repos/microsoft/vs-mef,https://github.com/microsoft/vs-mef/pull/594
+",Copilot,198982749,Copilot,closed,2025-06-11 02:50:00+00:00,2026-09-01 04:15:54+00:00,2026-09-01 04:15:54+00:00,89300492,https://api.github.com/repos/microsoft/vs-mef,https://github.com/microsoft/vs-mef/pull/594
 3150152410,2395,Implement E-graph based pattern matching for efficient and robust rewriting,"This PR introduces a comprehensive e-graph (equality graph) based pattern matching system that provides significant improvements over traditional tree-based pattern matching for ONNX rewriting.
 
 ## Problem
@@ -10125,68 +9486,6 @@ Fixes #2394.
 ---
 
 💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-16 14:02:49+00:00,2025-07-18 22:59:33+00:00,,464577591,https://api.github.com/repos/microsoft/onnxscript,https://github.com/microsoft/onnxscript/pull/2395
-3175558732,724,Add yearly and monthly sitemap organization for large sites,"This PR implements a new sitemap feature that organizes content by publication year and month, similar to the approach used by Metro.co.uk. This is particularly beneficial for large sites like news websites that host substantial amounts of historical content.
-
-## Key Features
-
-**Yearly/Monthly Sitemap Organization:**
-- When enabled, the main `sitemap.xml` becomes an index that links to yearly or monthly sitemaps
-- URLs like `sitemap.xml?yyyy=2024` show all posts from 2024
-- URLs like `sitemap.xml?yyyy=2024&m=12` show posts from December 2024
-- Maintains existing query limits and honors all current settings
-
-**Benefits:**
-- **Optimized crawl budget** - Search engines can focus on newer content while still indexing older content efficiently
-- **Faster generation** - Individual yearly/monthly sitemaps are smaller and generate faster
-- **Better cache efficiency** - Each time period can be cached independently
-
-## Implementation Details
-
-**Settings & UI:**
-- Added ""Use yearly sitemaps"" option (hidden when optimized sitemap is disabled)
-- Added ""Use monthly sitemaps"" sub-option (hidden until yearly is enabled)
-- Proper JavaScript visibility toggles following existing patterns
-- Both options default to disabled for backward compatibility
-
-**Backend Changes:**
-- Enhanced `Registry::_init()` to capture and sanitize `$_GET` parameters
-- Modified `Base::generate_sitemap()` to accept year/month filtering parameters
-- Added intelligent date filtering using WordPress `date_query` for efficient database queries
-- Implemented per-period caching with unique cache keys (e.g., `base_2024_12`)
-
-**URL Structure:**
-```
-# Main sitemap (when yearly enabled) - shows sitemap index
-/sitemap.xml
-
-# Yearly sitemap - shows all posts from 2024
-/sitemap.xml?yyyy=2024
-
-# Monthly sitemap - shows posts from December 2024
-/sitemap.xml?yyyy=2024&m=12
-```
-
-**Parameter Sanitization:**
-- Years: 4-digit format (1900-2099 range)
-- Months: 1-2 digit format (1-12 range)
-- Invalid parameters are safely ignored
-
-## Developer Features
-
-- **New public method:** `\The_SEO_Framework\Sitemap\Registry::get_sitemap_parameters()` - Gets sanitized year and month parameters
-- **New filter:** `the_seo_framework_sitemap_index_schemas` - Filter sitemap index XML schemas
-- **Backward compatible** - No changes to existing functionality when feature is disabled
-
-## Testing
-
-All modified files pass PHP syntax validation. The implementation includes comprehensive parameter sanitization with proper regex patterns and follows WordPress coding standards.
-
-Fixes #649.
-
-<!-- START COPILOT CODING AGENT TIPS -->
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-06-25 12:58:25+00:00,,,47667822,https://api.github.com/repos/sybrew/the-seo-framework,https://github.com/sybrew/the-seo-framework/pull/724
 3259387186,4471,Fix Gradle build failures due to Maven Central rate limiting (HTTP 429),"## Problem
 
 CI jobs were failing due to Maven Central rate limiting with HTTP 429 errors:
@@ -12287,82 +11586,6 @@ Fixes #52.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-22 15:03:53+00:00,2025-07-22 16:26:24+00:00,2025-07-22 16:26:24+00:00,833525364,https://api.github.com/repos/GMPrakhar/MAUI-Designer,https://github.com/GMPrakhar/MAUI-Designer/pull/53
-3096236895,694,Increase WebSocket reconnect retry limit from 5 to 10 on agent side,"## Description
-This PR increases the WebSocket reconnect retry attempts on the agent side when the connection is closed with code 1008 (VIOLATED_POLICY) from 5 to 10. This change allows the agent to make more reconnection attempts before exiting, improving resilience during temporary network issues.
-
-## Changes made
-- Modified the condition check in `AgentWebSocketClient.java` from `violatedReconnectTime > 5` to `violatedReconnectTime > 10`
-- Added a comment to clearly document the reconnection retry logic
-
-## Why these changes
-When the WebSocket connection is closed with code 1008 (VIOLATED_POLICY), the agent previously would only attempt to reconnect 5 times before exiting. This limit was too low for environments with less stable connections. By increasing the retry limit to 10, we provide more opportunity for the agent to recover from temporary network disruptions before giving up.
-
-## Testing
-The change is a simple value modification and doesn't require special testing beyond the existing test suite.
-
-```java
-// Before:
-if(violatedReconnectTime > 5) {
-    log.error(""onClose, code: {}, reason: {}, remote: {}, reconnectTime: {}, {}"", code, reason, remote, reconnectTime, violatedReconnectTime);
-    System.exit(code);
-}
-
-// After:
-// Allow up to 10 reconnect attempts before exiting
-if(violatedReconnectTime > 10) {
-    log.error(""onClose, code: {}, reason: {}, remote: {}, reconnectTime: {}, {}"", code, reason, remote, reconnectTime, violatedReconnectTime);
-    System.exit(code);
-}
-```
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-28 06:47:28+00:00,,,486525050,https://api.github.com/repos/microsoft/HydraLab,https://github.com/microsoft/HydraLab/pull/694
-3096249565,695,Increase WebSocket reconnect wait time from 10 to 30 seconds,"## Description
-
-This PR increases the wait time between WebSocket reconnect attempts from 10 seconds to 30 seconds when handling the VIOLATED_POLICY (code 1008) closing code in the AgentWebSocketClient.
-
-## Changes Made
-
-1. Modified `AgentWebSocketClient.java` to increase the sleep duration between reconnect attempts from 10 seconds to 30 seconds
-2. Updated the related code comment to reflect this change
-3. Updated the log message to indicate 30 seconds sleep time instead of 10 seconds
-
-## Details
-
-Changes were made in the `onClose` method of the `AgentWebSocketClient` class where it handles the VIOLATED_POLICY case. The longer wait time will reduce reconnection frequency when agents encounter this specific closing code, potentially reducing network load and allowing more time for transient issues to resolve.
-
-```java
-// Before:
-// wait for 10 seconds and then retry
-try {
-    log.info(""onClose, code: {}, reason: {}, remote: {}, reconnectTime: {}, {} sleep 10 seconds"", code, reason, remote, reconnectTime, violatedReconnectTime);
-    Thread.sleep(10000);
-} catch (InterruptedException e) {
-    log.error(""onClose, sleep error"", e);
-}
-
-// After:
-// wait for 30 seconds and then retry
-try {
-    log.info(""onClose, code: {}, reason: {}, remote: {}, reconnectTime: {}, {} sleep 30 seconds"", code, reason, remote, reconnectTime, violatedReconnectTime);
-    Thread.sleep(30000);
-} catch (InterruptedException e) {
-    log.error(""onClose, sleep error"", e);
-}
-```
-
-## Testing
-
-This change makes only a timing modification and doesn't alter any logic or control flow.
-
-## Related Issue
-
-This addresses the need to increase sleep duration between reconnection attempts when encountering VIOLATED_POLICY WebSocket close codes.
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-28 06:52:39+00:00,,,486525050,https://api.github.com/repos/microsoft/HydraLab,https://github.com/microsoft/HydraLab/pull/695
 3116658648,3405,Implement selective file push for GitHub multi-file sync to reduce unnecessary writes,"## Problem
 
 Currently, when syncing to GitHub in multi-file mode, all JSON files (token sets, themes, metadata) are pushed regardless of whether they've actually changed. This results in:
@@ -12761,55 +11984,6 @@ Fixes #3186.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-30 19:35:07+00:00,,,349385543,https://api.github.com/repos/Krande/adapy,https://github.com/Krande/adapy/pull/146
-3088691462,1751,Add Performance Testing Infrastructure,"This PR adds a comprehensive performance testing infrastructure to the project using the `benny` benchmarking library. The implementation enables automated detection of performance regressions between PRs and the main branch.
-
-## Features Added
-
-- Added performance testing framework with `benny` library
-- Created TypeScript configuration for performance tests
-- Implemented a sample model creation performance test
-- Added npm scripts for running performance tests locally:
-  - `npm run performance` - Builds and runs all performance tests
-  - `npm run performance:build` - Just builds the performance tests
-  - `npm run performance:run` - Runs pre-built performance tests
-  - `npm run performance:compare` - Compares results between two test runs
-
-- Added GitHub Actions workflow that:
-  - Runs performance tests on each PR
-  - Stores results as artifacts
-  - Downloads previous results from the main branch
-  - Compares current performance with baseline
-  - Fails the check if performance decreases beyond a threshold (default 20%)
-
-## Usage
-
-To run performance tests locally:
-
-```bash
-npm run performance
-```
-
-To compare two result files:
-
-```bash
-npm run performance:compare -- path/to/baseline.json path/to/current.json [threshold]
-```
-
-The performance tests save results in JSON, CSV, and HTML chart formats for easy analysis.
-
-## Documentation
-
-Added documentation in `packages/dynamoose/performance/README.md` that explains:
-- How to run performance tests
-- How to add new performance tests
-- How performance regression detection works
-- How to interpret the results
-
-Fixes #1681.
-
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-05-24 19:48:28+00:00,,,16962535,https://api.github.com/repos/dynamoose/dynamoose,https://github.com/dynamoose/dynamoose/pull/1751
 3134374490,14756,Defer UIA accessibility provider initialization until requested,"## Summary
 
 This PR optimizes the initialization of UIA (UI Automation) accessibility providers by deferring their creation until they are actually requested by the UIA agent, rather than eagerly creating them in the constructor.
@@ -13745,72 +12919,6 @@ Fixes #14653.
 >
 > </details>
 ",Copilot,198982749,Copilot,closed,2025-06-11 08:58:57+00:00,2025-07-14 15:23:48+00:00,,48009214,https://api.github.com/repos/microsoft/react-native-windows,https://github.com/microsoft/react-native-windows/pull/14760
-3136224160,1923,Add native ARM64 GitHub Actions runner support,"This PR implements native ARM64 GitHub Actions runners to replace QEMU emulation for better performance and reliability.
-
-## Changes Made
-
-### 🚀 Docker Image Builds (`push-image.yml`)
-- **Before**: All builds ran on `ubuntu-latest` with QEMU emulation for ARM64
-- **After**: Native builds using appropriate runners:
-  - AMD64 builds: `ubuntu-latest` 
-  - ARM64 builds: `ubuntu-24.04-arm64`
-- **Removed**: QEMU setup step (no longer needed for native builds)
-- **Result**: Faster, more reliable ARM64 Docker image builds
-
-### 🧪 Testing & Validation (`build.yml`)
-- **Before**: Tests only ran on `ubuntu-latest` (AMD64)
-- **After**: Matrix testing on both architectures:
-  - `ubuntu-latest` (AMD64)
-  - `ubuntu-24.04-arm64` (ARM64)
-- **Result**: Comprehensive cross-platform testing ensures code compatibility
-
-## Key Benefits
-
-- 🏃‍♂️ **Performance**: Native ARM64 execution vs emulated builds
-- 🔍 **Coverage**: Testing on both AMD64 and ARM64 platforms  
-- 🛠️ **Maintenance**: Cleaner workflows without QEMU complexity
-- 🔮 **Future-ready**: Uses latest GitHub Actions ARM64 runners
-
-## Technical Details
-
-The changes use GitHub's native ARM64 runners ([ubuntu-24.04-arm](https://github.com/actions/partner-runner-images/blob/main/images/arm-ubuntu-24-image.md)) which provide:
-- Better performance than QEMU emulation
-- Native ARM64 instruction execution
-- More reliable builds for ARM64 Docker images
-
-**Impact**: Minimal changes (8 additions, 8 deletions) with no breaking changes to existing functionality.
-
-Fixes #1922.
-
-> [!WARNING]
->
-> <details>
-> <summary>Firewall rules blocked me from connecting to one or more addresses</summary>
->
-> #### I tried to connect to the following addresses, but was blocked by firewall rules:
->
-> - `api.github.com`
->   - Triggering command: `node download.js ` (dns block)
-> - `api.nektosact.com`
->   - Triggering command: `act --list ` (dns block)
->   - Triggering command: `act --list --workflows=.github/workflows/build.yml ` (dns block)
->   - Triggering command: `act --list --workflows=.github/workflows/push-image.yml ` (dns block)
->
-> If you need me to access, download, or install something from one of these locations, you can either:
->
-> - Configure [Actions setup steps](https://gh.io/copilot/actions-setup-steps) to set up my environment, which run before the firewall is enabled
-> - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
->
-> </details>
-
-
----
-
-blocked by #1926 
-
----
-
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,open,2025-06-11 09:58:23+00:00,,,35017238,https://api.github.com/repos/hackmdio/codimd,https://github.com/hackmdio/codimd/pull/1923
 3173779555,2114,Use async generators for GitLab getGroups() method to improve memory efficiency,"## Problem
 
 The `getGroups()` method in the GitLab source client was unnecessarily collecting all groups into an array before returning them, despite using `keysetPagination` which already provides streaming via async generators. This defeats the purpose of streaming and can cause memory issues with large GitLab instances.
@@ -14074,163 +13182,6 @@ Fixes #30214.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-25 19:40:48+00:00,,,262395224,https://api.github.com/repos/dotnet/maui,https://github.com/dotnet/maui/pull/30219
-3203303674,4435,Refactor UNICHARSET script storage to use hash map instead of raw array,"## Summary
-
-This PR refactors the script storage mechanism in the UNICHARSET class to replace manual memory management with modern C++ STL containers, improving performance, memory safety, and maintainability.
-
-## Problem
-
-The original implementation used a raw `char**` array with manual memory management:
-- `char **script_table` - array of C-style strings
-- `int script_table_size_used` - current number of scripts  
-- `int script_table_size_reserved` - allocated capacity
-- Manual `new`/`delete[]` operations with potential memory leaks
-- O(n) linear search in `get_script_id_from_name()` 
-- Complex manual array resizing logic
-
-## Solution
-
-**Replaced raw arrays with STL containers:**
-- `std::unordered_map<std::string, int> script_name_to_id_` - for O(1) name→id lookup
-- `std::vector<std::string> script_names_` - for O(1) id→name reverse lookup
-
-**Key improvements:**
-- **Performance**: Script lookup is now O(1) hash map lookup instead of O(n) linear search
-- **Memory Safety**: Automatic memory management eliminates potential leaks and double-free errors
-- **Exception Safety**: STL containers provide strong exception safety guarantees  
-- **Maintainability**: Cleaner, simpler code using standard data structures
-- **API Compatibility**: All public methods maintain identical signatures and behavior
-
-## Changes Made
-
-### Header file (`src/ccutil/unicharset.h`):
-- Added includes for `<unordered_map>` and `<vector>`
-- Replaced manual script storage variables with STL containers
-- Updated inline method implementations for `get_script_table_size()` and `get_script_from_script_id()`
-- Simplified `clear()` method to use container methods
-- Updated comments to reflect O(1) performance characteristics
-
-### Source file (`src/ccutil/unicharset.cpp`):
-- Simplified constructor (removed manual script table initialization)
-- Rewrote `add_script()` to use hash map for uniqueness and vector for storage
-- Rewrote `get_script_id_from_name()` to use hash map lookup
-- Updated `post_load_setup()` to work with vector size
-
-## Testing
-
-Comprehensive testing was performed to ensure:
-- ✅ All existing UNICHARSET functionality works unchanged
-- ✅ Script uniqueness is preserved  
-- ✅ Forward and reverse lookups work correctly
-- ✅ Performance scales well with 45+ scripts
-- ✅ Edge cases (invalid IDs, non-existent scripts) handled properly
-- ✅ Memory cleanup works correctly with `clear()`
-- ✅ Full library builds and links successfully
-
-## Backward Compatibility
-
-This is a pure refactoring with **no breaking changes**:
-- All public method signatures remain identical
-- All method behaviors remain the same
-- Script ID assignment order is preserved
-- Existing code continues to work without modification
-
-The change is completely internal to the UNICHARSET implementation and invisible to users of the class.
-
-> [!WARNING]
->
-> <details>
-> <summary>Firewall rules blocked me from connecting to one or more addresses</summary>
->
-> #### I tried to connect to the following addresses, but was blocked by firewall rules:
->
-> - `esm.ubuntu.com`
->   - Triggering command: `/usr/lib/apt/methods/https` (dns block)
->
-> If you need me to access, download, or install something from one of these locations, you can either:
->
-> - Configure [Actions setup steps](https://gh.io/copilot/actions-setup-steps) to set up my environment, which run before the firewall is enabled
-> - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
->
-> </details>
-
-
-
-<!-- START COPILOT CODING AGENT TIPS -->
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-07-04 16:56:43+00:00,,,22887094,https://api.github.com/repos/tesseract-ocr/tesseract,https://github.com/tesseract-ocr/tesseract/pull/4435
-3138279170,541,Implement global PopenExecutor with tagging for improved process control and probe isolation,"## Problem
-
-The current architecture creates a separate `PopenExecutor` for each `FunctionContext`, which defeats the purpose of controlling concurrent external solver processes globally. This causes two main issues:
-
-1. **Poor process control**: Having multiple process pools prevents effective management of total concurrent solver processes across all tests
-2. **Probe isolation issues**: During invariant testing, all probes share a dummy `FunctionContext` with the same `PopenExecutor`, causing one probe's successful query to interrupt queries from other probes
-
-## Solution
-
-This PR implements a single global `PopenExecutor` with a tagging system that enables selective query interruption while maintaining test isolation.
-
-### Key Changes
-
-1. **Global PopenExecutor**: Created `get_global_executor()` function with singleton pattern and thread safety
-2. **Tagging System**: Added `tag` parameter to `PopenFuture` and `PathContext` for query grouping
-3. **Selective Interruption**: Added `interrupt(tag)` method to cancel queries by tag instead of shutting down entire executor
-4. **Architecture Cleanup**: Removed `executor` field from `SolvingContext` and updated all call sites
-
-### Implementation Details
-
-- Regular tests use function names as tags (e.g., `""testFoo""`)
-- Probes use unique tags (e.g., `""probe-MyContract-invariant_balance""`) 
-- Early exit now uses `interrupt(tag)` instead of `shutdown()` for selective cancellation
-- Global executor is properly registered with `ExecutorRegistry` for cleanup
-
-### Example Usage
-
-```python
-# Before: Each function had its own executor
-ctx.solving_ctx.executor.submit(future)  # Multiple executors
-ctx.solving_ctx.executor.shutdown()     # Shuts down whole executor
-
-# After: Single global executor with tagging
-get_global_executor().submit(future)    # One shared executor
-get_global_executor().interrupt(tag)    # Selective cancellation
-```
-
-### Testing
-
-Added comprehensive tests covering:
-- Global executor singleton behavior
-- Multi-threading safety
-- Tagging functionality in solver pipeline
-- Selective interruption by tag
-
-All existing tests continue to pass, ensuring backward compatibility.
-
-Fixes #540.
-
-> [!WARNING]
->
-> <details>
-> <summary>Firewall rules blocked me from connecting to one or more addresses</summary>
->
-> #### I tried to connect to the following addresses, but was blocked by firewall rules:
->
-> - `binaries.soliditylang.org`
->   - Triggering command: `forge build --ast --root tests/regression --extra-output storageLayout metadata ` (dns block)
->
-> If you need me to access, download, or install something from one of these locations, you can either:
->
-> - Configure [Actions setup steps](https://gh.io/copilot/actions-setup-steps) to set up my environment, which run before the firewall is enabled
-> - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
->
-> </details>
-
-
-<!-- START COPILOT CODING AGENT TIPS -->
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-06-11 22:37:20+00:00,,,577492459,https://api.github.com/repos/a16z/halmos,https://github.com/a16z/halmos/pull/541
 3206743230,300,"Replace es-toolkit/compat with es-toolkit for difference, intersection, and keyBy","This PR optimizes the bundle size and performance by replacing imports from `es-toolkit/compat` with the standard `es-toolkit` module for the `difference`, `intersection`, and `keyBy` functions in `jsonDiff.ts`.
 
 ## Changes Made
@@ -16122,116 +15073,6 @@ Fixes #486.
 ---
 
 💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-07 21:46:36+00:00,,,22580980,https://api.github.com/repos/tonihele/OpenKeeper,https://github.com/tonihele/OpenKeeper/pull/489
-3195078514,883,Add force_mode_constant parameter to bypass psutil overhead,"This PR adds a new `force_mode_constant` parameter to `EmissionsTracker` that allows users to bypass psutil completely and use constant CPU power estimation instead. This addresses significant performance overhead issues where `psutil.cpu_percent(interval=0.5)` calls were causing 10x+ slowdowns in ML training workflows.
-
-## Problem
-
-Users reported severe performance overhead when tracking short ML training iterations:
-- **Without CodeCarbon**: 11 seconds
-- **With CodeCarbon v3.0.2**: 1 minute 55 seconds (10x slower!)
-
-The overhead was caused by repeated `psutil.cpu_percent(interval=0.5)` calls that take 0.5 seconds each. Additionally, uninstalling psutil to force fallback mode resulted in `ModuleNotFoundError` due to unconditional imports.
-
-## Solution
-
-### 1. Graceful psutil imports
-Made psutil imports conditional in `codecarbon/core/cpu.py` and `codecarbon/core/util.py`:
-
-```python
-try:
-    import psutil
-    PSUTIL_AVAILABLE = True
-except ImportError:
-    PSUTIL_AVAILABLE = False
-    psutil = None
-```
-
-### 2. New force_mode_constant parameter
-Added `force_mode_constant` parameter to bypass psutil entirely:
-
-```python
-# Bypass psutil completely - eliminates 0.5s overhead per measurement
-tracker = EmissionsTracker(force_mode_constant=True)
-
-# Works with custom CPU power for better accuracy
-tracker = EmissionsTracker(
-    force_mode_constant=True, 
-    force_cpu_power=100  # 100W TDP
-)
-```
-
-### 3. Updated CPU tracking logic
-Modified `codecarbon/core/resource_tracker.py` to prioritize `force_mode_constant` before all other tracking methods, ensuring it completely bypasses psutil when enabled.
-
-## Features
-
-- ✅ **Zero psutil overhead**: Completely eliminates `psutil.cpu_percent()` calls
-- ✅ **Graceful fallback**: Handles missing psutil without crashing
-- ✅ **Custom power support**: Works with `force_cpu_power` parameter
-- ✅ **Precedence control**: Takes priority over `force_mode_cpu_load`
-- ✅ **Backward compatibility**: No breaking changes to existing code
-- ✅ **Comprehensive testing**: Full test suite covering all scenarios
-
-## Performance Impact
-
-Testing shows successful elimination of psutil overhead:
-- **Normal mode**: Uses CPU load tracking (slower due to psutil calls)
-- **Force constant mode**: Uses constant power estimation (eliminates overhead)
-- Both produce valid emissions measurements
-
-## Documentation
-
-Added parameter documentation to `docs/edit/parameters.rst`:
-
-```rst
-* - force_mode_constant
-  - | Force the use of constant mode for CPU power consumption measurement,
-    | defaults to ``False``. When enabled, bypasses psutil completely and
-    | uses a constant power consumption based on CPU TDP. Useful when
-    | psutil overhead is significant or psutil is unavailable.
-```
-
-Fixes #878.
-
-> [!WARNING]
->
-> <details>
-> <summary>Firewall rules blocked me from connecting to one or more addresses</summary>
->
-> #### I tried to connect to the following addresses, but was blocked by firewall rules:
->
-> - `get.geojs.io`
->   - Triggering command: `python /tmp/test_force_constant.py` (dns block)
->   - Triggering command: `python -c 
-from codecarbon import EmissionsTracker
-import tempfile
-with tempfile.TemporaryDirectory() as temp_dir:
-    tracker = EmissionsTracker(output_dir=temp_dir)
-    print(&#39;Available attributes:&#39;, [attr for attr in dir(tracker) if &#39;resource&#39; in attr.lower() or &#39;tracker&#39; in attr.lower()])` (dns block)
->   - Triggering command: `python /tmp/test_simple_constant.py` (dns block)
-> - `ip-api.com`
->   - Triggering command: `python /tmp/test_force_constant.py` (dns block)
->   - Triggering command: `python -c 
-from codecarbon import EmissionsTracker
-import tempfile
-with tempfile.TemporaryDirectory() as temp_dir:
-    tracker = EmissionsTracker(output_dir=temp_dir)
-    print(&#39;Available attributes:&#39;, [attr for attr in dir(tracker) if &#39;resource&#39; in attr.lower() or &#39;tracker&#39; in attr.lower()])` (dns block)
->   - Triggering command: `python /tmp/test_simple_constant.py` (dns block)
->
-> If you need me to access, download, or install something from one of these locations, you can either:
->
-> - Configure [Actions setup steps](https://gh.io/copilot/actions-setup-steps) to set up my environment, which run before the firewall is enabled
-> - Add the appropriate URLs or hosts to my [firewall allow list](https://gh.io/copilot/firewall-config)
->
-> </details>
-
-
-
-<!-- START COPILOT CODING AGENT TIPS -->
----
-
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,open,2025-07-02 08:34:17+00:00,,,263364731,https://api.github.com/repos/mlco2/codecarbon,https://github.com/mlco2/codecarbon/pull/883
 3212763311,47134,Improve `in` parameter modifier example with meaningful struct-based demonstration,"Fixes #25422
 
 ## Problem
@@ -16388,7 +15229,7 @@ Fixes #777.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,open,2025-07-07 03:24:11+00:00,,,624615692,https://api.github.com/repos/shiosyakeyakini-info/miria,https://github.com/shiosyakeyakini-info/miria/pull/780
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-07 03:24:11+00:00,2026-08-05 22:05:39+00:00,,624615692,https://api.github.com/repos/shiosyakeyakini-info/miria,https://github.com/shiosyakeyakini-info/miria/pull/780
 3207425781,74,Optimize CI workflow with Cargo.lock-based caching for faster builds,"## 🚀 Problem
 
 The CI workflow was not utilizing optimal caching strategies, leading to:
@@ -18105,12 +16946,6 @@ https://chatgpt.com/codex/tasks/task_e_684a13e49de083298a30fd95bd6c063f
 - **Chores**
   - Updated automated workflows to utilize the new parallel test execution scripts for running unit tests.
 <!-- end of auto-generated comment: release notes by coderabbit.ai -->",OpenAI_Codex,5108069,elazarg,closed,2025-06-11 23:58:56+00:00,2025-06-12 15:47:24+00:00,,137548993,https://api.github.com/repos/vbpf/prevail,https://github.com/vbpf/prevail/pull/892
-3078518733,9,Add FastMCP server,"## Summary
-- add `run_fastmcp.py` for running DeepSearchAgents via FastMCP
-- document running the new MCP server in README
-
-## Testing
-- `make test` *(fails: No route to host)*",OpenAI_Codex,11715013,lwyBZss8924d,open,2025-05-21 00:28:08+00:00,,,966679215,https://api.github.com/repos/lwyBZss8924d/DeepSearchAgents,https://github.com/lwyBZss8924d/DeepSearchAgents/pull/9
 3078795559,72,fix tts queue final segment,"## Summary
 - queue final AI chat segment immediately instead of using setTimeout
 
@@ -18708,19 +17543,6 @@ https://chatgpt.com/codex/tasks/task_e_68611419206083209e3be1b1abf8c6b2",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_6870f08bdb6083208d78e4956c95bd2a",OpenAI_Codex,1218621,tamnd,closed,2025-07-11 12:09:49+00:00,2025-07-11 12:10:02+00:00,2025-07-11 12:10:02+00:00,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/7751
-3187260592,1663,Add column-aware scan feature,"## Summary
-- add `scan_data_with_columns` method to `Store` trait with default implementation
-- test default method via memory storage integration test
-- implement optimized projection for Parquet storage
-- add Parquet integration test using new method
-
-## Testing
-- `cargo clippy --all-targets -- -D warnings`
-- `cargo fmt --all`
-
-
-------
-https://chatgpt.com/codex/tasks/task_e_6862225bceb0832aae028b4b5082ca86",OpenAI_Codex,2025065,panarch,open,2025-06-30 06:03:34+00:00,,,227265548,https://api.github.com/repos/gluesql/gluesql,https://github.com/gluesql/gluesql/pull/1663
 3164738704,2463,Improve Java compiler runtime emission,"## Summary
 - only emit Java runtime helpers when they are actually required
 
@@ -19437,13 +18259,6 @@ https://chatgpt.com/codex/tasks/task_e_686589273e44832a9572b181db583a6a",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_6859c22dfb408333a87ac97cf278a7cc",OpenAI_Codex,24208299,MontrealAI,closed,2025-06-23 21:27:35+00:00,2025-06-23 21:27:42+00:00,2025-06-23 21:27:42+00:00,922805069,https://api.github.com/repos/MontrealAI/AGI-Alpha-Agent-v0,https://github.com/MontrealAI/AGI-Alpha-Agent-v0/pull/2526
-3087062778,615,[alpha_factory] improve metrics setup and memory defaults,"## Summary
-- avoid duplicate prometheus metrics when multiple PingAgent instances run in the same process
-- default MemoryFabric vector store to RAM unless VECTOR_STORE_USE_SQLITE=true
-
-## Testing
-- `pytest alpha_factory_v1/tests/test_memory_provider.py::MemoryFabricFallbackTest::test_vector_ram_mode tests/test_ping_agent.py::TestPingAgent::test_run_cycle_publishes -q`
-- `pytest -q` *(fails: 32 failed, 190 passed, 7 skipped)*",OpenAI_Codex,24208299,MontrealAI,open,2025-05-23 17:33:40+00:00,,,922805069,https://api.github.com/repos/MontrealAI/AGI-Alpha-Agent-v0,https://github.com/MontrealAI/AGI-Alpha-Agent-v0/pull/615
 3164722645,2457,Optimize Erlang runtime helpers,"## Summary
 - minimize Erlang runtime output by tracking which helper functions are used
 - generate helper code only when required
@@ -19586,19 +18401,6 @@ https://chatgpt.com/codex/tasks/task_e_684318723bac832bbc92ef8e817e5301",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_683fd207c44c8329bf681180cc5770ef",OpenAI_Codex,1070321,peter-lawrey,closed,2025-06-04 05:52:53+00:00,2025-06-04 06:50:37+00:00,,31261671,https://api.github.com/repos/OpenHFT/Chronicle-Bytes,https://github.com/OpenHFT/Chronicle-Bytes/pull/686
-3165893721,84,Add cache options to prefetch,"## Summary
-- expose `PrefetchOptions` for headers, cachePolicy and ignoreQueryParamsForCacheKey
-- support the new options in JS layer
-- implement cache policy and query param logic in iOS prefetch
-- implement same logic in Android prefetch
-- document extended `prefetch` usage in README
-
-## Testing
-- `yarn typecheck`
-- `yarn test` *(fails: react-native tried to access @babel/runtime)*
-
-------
-https://chatgpt.com/codex/tasks/task_e_6857e990675483208750a30512459e80",OpenAI_Codex,105071743,candle-admin,open,2025-06-22 11:54:34+00:00,,,618961414,https://api.github.com/repos/candlefinance/faster-image,https://github.com/candlefinance/faster-image/pull/84
 3168894363,2745,Update benchmark with PyPy and Cython,"## Summary
 - add PyPy and Cython benchmarks
 - ensure PyPy and Cython are available before running benchmarks
@@ -19764,7 +18566,7 @@ I double checked the results and it seems to confirm this[^1]:
  
 That makes me think that it's better to assign thin LTO for the release profile by default. In case somebody needs to squeeze extra juice, they can add extra rustc flags.
 
-[^2]: IPC is better by 0.5%, 0.7% less instruction executed. 0.8% faster wallclock time.",OpenAI_Codex,2205845,pepyakin,closed,2025-06-14 14:20:29+00:00,2025-06-15 14:52:32+00:00,,742623962,https://api.github.com/repos/IrreducibleOSS/binius,https://github.com/IrreducibleOSS/binius/pull/759
+[^2]: IPC is better by 0.5%, 0.7% less instruction executed. 0.8% faster wallclock time.",OpenAI_Codex,2205845,pepyakin,closed,2025-06-14 14:20:29+00:00,2025-06-15 14:52:32+00:00,2025-06-15 14:52:32+00:00,742623962,https://api.github.com/repos/IrreducibleOSS/binius,https://github.com/IrreducibleOSS/binius/pull/759
 3085814797,569,Experiment: enable multi-threaded rendering,"## Summary
 - add `num_cpus` to rendering crate
 - make `RenderSegment` clonable
@@ -20434,7 +19236,6 @@ https://chatgpt.com/codex/tasks/task_b_685be68bd9808328be2b79d10dfbed0d",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_6876ec7ca3dc83318ce01950914aa611",OpenAI_Codex,9633,dlwh,closed,2025-07-16 00:16:42+00:00,2025-07-16 00:16:51+00:00,2025-07-16 00:16:50+00:00,496005961,https://api.github.com/repos/stanford-crfm/levanter,https://github.com/stanford-crfm/levanter/pull/1066
-3240593081,9,Codex/integrate tygent module for performance,,OpenAI_Codex,212389004,tygent0,open,2025-07-17 19:00:42+00:00,,,1020430400,https://api.github.com/repos/Doriandarko/make-it-heavy,https://github.com/Doriandarko/make-it-heavy/pull/9
 3120573460,112,Integrate cached block decomposition,"## Summary
 - store the first-order block decomposition after computing derivatives
 - keep decomposition when clearing caches
@@ -22415,21 +21216,6 @@ https://chatgpt.com/codex/tasks/task_e_68621ea9039483208f671c2955bca4c8",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_686cf5fa0f4883208298c19221e8a6e8",OpenAI_Codex,1218621,tamnd,closed,2025-07-08 10:58:57+00:00,2025-07-08 10:59:40+00:00,2025-07-08 10:59:40+00:00,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/6457
-3243098553,300,Add cache size limit support,"## Summary
-- implement `cache_size_limit` and `replacement_policy` parameters
-- default to LRU policy and enforce limit in memory core
-- document cache size limiting in README
-- test LRU eviction behaviour
-- update default params test
-
-## Testing
-- `ruff check .`
-- `mypy src/cachier`
-- `pytest -m ""memory or pickle"" --cov=cachier --cov-report=term`
-- `./scripts/test-local.sh all` *(fails: Docker is not installed)*
-
-------
-https://chatgpt.com/codex/tasks/task_e_687a30b9d6dc8323931ef5c545e0c3bb",OpenAI_Codex,917954,shaypal5,open,2025-07-18 12:37:46+00:00,,,66466789,https://api.github.com/repos/python-cachier/cachier,https://github.com/python-cachier/cachier/pull/300
 3098901968,19979,Fix net server noDelay handling,"## Summary
 - add Node.js test `test-net-server-nodelay`
 - call `Socket.setNoDelay()` when server `noDelay` option is enabled
@@ -22562,17 +21348,6 @@ https://chatgpt.com/codex/tasks/task_e_688137cdeac0832dbee4584fd3de9cfc",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_6881464bcb60832d80ded62053ac13c8",OpenAI_Codex,61864357,MihaiCristianCondrea,closed,2025-07-23 20:44:16+00:00,2025-07-23 21:00:09+00:00,2025-07-23 21:00:09+00:00,600355571,https://api.github.com/repos/MihaiCristianCondrea/Smart-Cleaner-for-Android,https://github.com/MihaiCristianCondrea/Smart-Cleaner-for-Android/pull/220
-3154423776,5272,Support database-level pagination for user/group search,"**Issue:**
-
-getQueryForPattern() in the UserManagerImpl class omits limit and offset, leading `/nuxeo/api/v1/user/search` and `/nuxeo/api/v1/group/search` to load all matching entries before paging them in memory. This can become inefficient with large datasets.
-
-**Solution:**
-
-- Added new limit and offset parameters to UserManagerImpl.getQueryForPattern so that paging can be pushed down to the directory query
-
-- Reworked both AbstractUsersPageProvider and AbstractGroupsPageProvider to build a QueryBuilder with the requested page size and offset rather than fetching all entries then slicing in memory
-
-- Updated tests to accommodate the new method signature when verifying the generated query for a pattern",OpenAI_Codex,90603477,majd-alhafi,open,2025-06-17 18:38:49+00:00,,,2988101,https://api.github.com/repos/nuxeo/nuxeo,https://github.com/nuxeo/nuxeo/pull/5272
 3158692241,976,Batch device inserts for device manager,"## Summary
 - batch device processing to avoid excessive inserts
 - extend device processor with helpers and batch method
@@ -24286,26 +23061,6 @@ In order to support large evals we're updating the Results View to do server sid
 
 ------
 https://chatgpt.com/codex/tasks/task_b_687fd6a72e188328986f67952dce65fe",OpenAI_Codex,49331357,jamesros161,closed,2025-07-22 18:30:26+00:00,2025-07-22 18:41:58+00:00,2025-07-22 18:41:58+00:00,125211182,https://api.github.com/repos/BoldGrid/w3-total-cache,https://github.com/BoldGrid/w3-total-cache/pull/1131
-3121998374,1435,Improved prefix caching for paged attention,"## Summary
-- fix `LogicalTokenBlock::pop_token` so block size stays constant
-- re-enable paged prefix caching now that it works
-
-## Testing
-- `cargo test -p mistralrs-core --no-run` *(fails: extern location for darling_core does not exist)*
-
-------
-https://chatgpt.com/codex/tasks/task_e_6841cd341b30832290902dc473c3c3f4
-
-<!-- This is an auto-generated comment: release notes by coderabbit.ai -->
-## Summary by CodeRabbit
-
-- **Bug Fixes**
-  - Improved internal token management to ensure more reliable token removal and memory handling.
-
-- **New Features**
-  - Enabled functional caching for sequences backed by the block engine, ensuring proper cache creation and reference count management.
-  - Enhanced block caching and matching logic for better handling of token blocks and offsets in paged-attention sequences.
-<!-- end of auto-generated comment: release notes by coderabbit.ai -->",OpenAI_Codex,65165915,EricLBuehler,open,2025-06-05 17:15:20+00:00,,,763774926,https://api.github.com/repos/EricLBuehler/mistral.rs,https://github.com/EricLBuehler/mistral.rs/pull/1435
 3186001186,3944,Implement pure function folding in VM,"## Summary
 - fold pure function calls at compile time using VM
 - regenerate IR output for `fun_call` test
@@ -24737,7 +23492,6 @@ https://chatgpt.com/codex/tasks/task_e_68835ebfe1188320b1afcb083715ac75",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_6883636054b48320a4b6e5736c3d22b6",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 11:19:21+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13066
-3153767204,2516,alpaka kernels for matrix multiplication and addition,,OpenAI_Codex,115539225,Akasxh,open,2025-06-17 14:42:57+00:00,,,26217535,https://api.github.com/repos/alpaka-group/alpaka,https://github.com/alpaka-group/alpaka/pull/2516
 3071077630,78,Optimize reflection,"## Summary
 - reduce reflection with property and type caching in `ChangePropertyAction`
 - compile property setters with expressions
@@ -24810,26 +23564,6 @@ https://chatgpt.com/codex/tasks/task_e_683c607a6db083338e1992b8f000e0c0",OpenAI_
   - Improved internal resource management to ensure sockets are closed automatically, enhancing reliability and maintainability. No changes to app behavior or visible features.
 
 <!-- end of auto-generated comment: release notes by coderabbit.ai -->",OpenAI_Codex,7733989,Syn-McJ,closed,2025-05-17 08:06:21+00:00,2025-05-20 16:26:46+00:00,2025-05-20 16:26:46+00:00,20371637,https://api.github.com/repos/dashpay/dash-wallet,https://github.com/dashpay/dash-wallet/pull/1394
-3070949788,1343,Add blockwise fp8 gemm kernel,"## Summary
-- add CUDA kernels for blockwise FP8 matmul
-- wire up new FFI and rust bindings
-- provide helper `fp8_blockwise_gemm` and test
-- compile new kernels only on CUDA >= 8.0
-
-## Testing
-- `cargo test -p mistralrs-quant test_blockwise_fp8_gemm --features=cuda` *(fails: failed to get `candle-core` as a dependency due to network issues)*
-
-<!-- This is an auto-generated comment: release notes by coderabbit.ai -->
-
-## Summary by CodeRabbit
-
-- **New Features**
-  - Added support for blockwise FP8 matrix multiplication (GEMM) on CUDA, enabling efficient computation with FP8 weights and multiple input/output precisions (FP16, BF16, FP32).
-  - Introduced a new operation for blockwise FP8 GEMM, accessible via a public function.
-- **Tests**
-  - Added tests to validate the new blockwise FP8 GEMM operation against reference outputs.
-
-<!-- end of auto-generated comment: release notes by coderabbit.ai -->",OpenAI_Codex,65165915,EricLBuehler,open,2025-05-17 17:25:12+00:00,,,763774926,https://api.github.com/repos/EricLBuehler/mistral.rs,https://github.com/EricLBuehler/mistral.rs/pull/1343
 3070954603,1398,Implement streaming uploads and tool formatting,"### **User description**
 ## Summary
 - support system, integration, and API call tools in `format_tool`
@@ -25063,66 +23797,6 @@ https://chatgpt.com/codex/tasks/task_e_6877c4b01fd883328aa5d436c8985ae2",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_6858bb1ec430832082dcc7bd8456a320",OpenAI_Codex,1218621,tamnd,closed,2025-06-23 02:43:25+00:00,2025-06-23 02:51:04+00:00,2025-06-23 02:51:04+00:00,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/2684
-3198797332,297,Integrate trigger.dev functions for plaid and gocardless,"## Description
-Integrates `trigger.dev` for Plaid and GoCardless operations to enable asynchronous processing and scheduled data synchronization. This improves UI responsiveness, reliability with retries, and provides flexible update frequency management for financial data.
-
-Fixes # (issue number)
-
-## Type of Change
-- [x] New feature (non-breaking change which adds functionality)
-- [x] Refactoring (no functional changes)
-
-## Changes Made
-- [x] Created `src/trigger/plaid-tasks.ts` for Plaid-related `trigger.dev` tasks (e.g., `exchangePlaidPublicToken`, `importPlaidTransactions`, `syncPlaidBalances`).
-- [x] Created `src/trigger/gocardless-tasks.ts` for GoCardless-related `trigger.dev` tasks (e.g., `completeGoCardlessConnection`, `importGoCardlessTransactions`, `syncGoCardlessBalances`).
-- [x] Added scheduled tasks for daily balance sync and transaction import for both providers.
-- [x] Created `src/trigger/index.ts` to export all `trigger.dev` tasks.
-- [x] Added `TRIGGER_INTEGRATION.md` with comprehensive documentation on usage, configuration, and integration steps.
-- [x] Removed `src/trigger/example.ts`.
-
-## Testing
-Please describe the tests that you ran to verify your changes:
-
-- [ ] Unit tests pass
-- [ ] Integration tests pass
-- [x] Manual testing completed
-
-## Screenshots (if applicable)
-Please add screenshots of any UI changes:
-
-**Before:**
-<!-- Add screenshot -->
-
-**After:**
-<!-- Add screenshot -->
-
-## Database Changes
-- [ ] No database changes
-- [ ] Database migration required (include migration details)
-- [x] New Prisma schema changes (run `pnpm db:generate` and `pnpm db:push` to ensure generated client is up-to-date with new imports like `Prisma`)
-
-## Checklist
-- [x] My code follows the project's style guidelines
-- [x] I have performed a self-review of my code
-- [x] I have commented my code, particularly in hard-to-understand areas
-- [x] I have made corresponding changes to the documentation
-- [x] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published
-
-## Additional Notes
-This PR introduces `trigger.dev` to handle financial data operations (Plaid and GoCardless) asynchronously and with scheduled tasks. This significantly improves:
-- **UI Responsiveness**: Long-running imports/syncs now run in the background.
-- **Reliability**: Built-in retries and error handling for external API calls.
-- **Maintainability**: Centralized logic for financial data processing.
-- **Scalability**: Background tasks can scale independently.
-
-**Next Steps for Reviewer/User**:
-1.  Run `pnpm db:generate` and `pnpm db:push` to ensure Prisma client is updated.
-2.  Update existing synchronous calls in your application (e.g., in `src/actions/plaid-actions.ts`) to use the new `trigger.dev` tasks as detailed in `TRIGGER_INTEGRATION.md`.
-3.  Deploy the `trigger.dev` functions (`npx trigger.dev@latest deploy`).
-4.  Review `TRIGGER_INTEGRATION.md` for detailed usage and configuration.",Cursor,24507211,Codehagen,open,2025-07-03 09:57:34+00:00,,,737550719,https://api.github.com/repos/Codehagen/Badget,https://github.com/Codehagen/Badget/pull/297
 3198941408,38,Optimize client and server performance,"Add a markdown document detailing optimization strategies for the client and server.
 
 This PR introduces a comprehensive optimization plan for the GB28181-Proxy project's client and server components, covering performance, memory, network I/O, client/server specific enhancements, monitoring, configuration, and security, to improve overall system stability, scalability, and maintainability.",Cursor,52351139,lunasaw,closed,2025-07-03 10:48:03+00:00,2025-07-03 11:59:42+00:00,2025-07-03 11:59:42+00:00,703394622,https://api.github.com/repos/lunasaw/gb28181-proxy,https://github.com/lunasaw/gb28181-proxy/pull/38
@@ -25962,9 +24636,6 @@ Previously, `call_delete_seer_grouping_records_by_hash` would dispatch a single 
 This enhances memory efficiency, improves task distribution across workers, and increases scalability for large-scale deletions.
 
 A new test `test_call_delete_seer_grouping_records_by_hash_chunked` has been added to verify the chunking logic.",Cursor,1976777,JoshFerge,closed,2025-07-08 17:33:07+00:00,2025-07-08 17:36:45+00:00,,873328,https://api.github.com/repos/getsentry/sentry,https://github.com/getsentry/sentry/pull/95050
-3240738542,38,Optimize recursive dns bruteforce method,"Refactor `_recursive_dnsx_bruteforce` method to enhance reliability, performance, and resource management.
-
-The previous implementation suffered from race conditions due to shared file I/O, inefficient memory usage from duplicate data, and lacked robust error handling and progress tracking. This refactor addresses these issues by introducing thread-safe operations, proper deduplication, adaptive threading, and comprehensive resource management.",Cursor,100861363,Bandit-HaxUnit,open,2025-07-17 19:52:50+00:00,,,465787727,https://api.github.com/repos/Bandit-HaxUnit/haxunit,https://github.com/Bandit-HaxUnit/haxunit/pull/38
 3240935078,280,Resolve db self-join memory bug,"Add comprehensive self-join tests to verify correct behavior and investigate a reported cartesian product bug.
 
 The bug report described self-joins causing memory exhaustion and cartesian products. These new tests, including scenarios with larger datasets and `limit`, demonstrate that the core `db` join logic correctly handles self-joins without producing cartesian products. This suggests the reported issue might stem from the `useLiveQuery` integration or an environment-specific factor, as the underlying join mechanism appears to be working as expected.",Cursor,31130,samwillis,closed,2025-07-17 21:15:07+00:00,2025-07-18 10:18:19+00:00,,946895816,https://api.github.com/repos/TanStack/db,https://github.com/TanStack/db/pull/280
@@ -26784,16 +25455,10 @@ Limited the wait action to a maximum of 10 seconds to prevent long delays and up
 3228764972,5637,Retrieve GitHub release asset checksums,"Refactor lockfile to store detailed asset information including URLs and sizes, and enable automatic retrieval of GitHub release asset checksums to improve security and avoid API rate limits.
 
 The existing lockfile only stored checksums in a flat map. This PR introduces a more structured `assets` section within the lockfile, allowing for storage of checksums, file sizes, and original download URLs for each asset. For GitHub, this enables `mise` to automatically discover and verify checksums provided alongside release assets (e.g., `checksums.txt`). Furthermore, by storing the download URLs, subsequent `mise install` operations can bypass API calls to GitHub (and other providers), significantly reducing the risk of hitting API rate limits and improving installation speed, especially in CI/CD environments.",Cursor,216188,jdx,closed,2025-07-14 13:22:23+00:00,2025-07-24 02:42:22+00:00,,586920414,https://api.github.com/repos/jdx/mise,https://github.com/jdx/mise/pull/5637
-3223281368,82,Use of generators to reduce memory usage via a LazyMultiSet,"Also converts almost all operators to use them wherever possible.
-
-We should benchmark this against main to see how what it does with the memory usage and allocations.",Cursor,31130,samwillis,open,2025-07-11 15:19:11+00:00,,,884778513,https://api.github.com/repos/electric-sql/d2ts,https://github.com/electric-sql/d2ts/pull/82
 3217675934,246,Cursor/analyze and optimize code performance 4130,,Cursor,5333537,gmathi,closed,2025-07-10 02:36:33+00:00,,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/246
 3217742863,247,Optimize HTMLHelper file,"Optimize `HtmlCleaner.kt` for improved performance, memory usage, and code readability.
 
 This PR refactors `HtmlCleaner.kt` by introducing cached constants and regex patterns, utilizing more efficient data structures (Sets), implementing lazy initialization for selectors, and extracting CSS generation into dedicated functions. These changes reduce redundant operations, improve lookup times, and enhance overall code maintainability and efficiency.",Cursor,5333537,gmathi,closed,2025-07-10 03:23:25+00:00,,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/247
-3201181526,6,Introduce the project,"Modernize the frontend project to enhance development experience, performance, and maintainability.
-
-This PR comprehensively upgrades the frontend stack to Vue 3.4.21, TypeScript 5.4.3, and Vite 5.2.6, replacing Vuex with Pinia and introducing Element Plus for UI. It also refactors the architecture with clear service and store layers, implements a robust CSS variable-based styling system with multi-theme support, and includes various performance optimizations like code splitting and lazy loading.",Cursor,26037703,liyupi,open,2025-07-04 03:27:32+00:00,,,970578570,https://api.github.com/repos/liyupi/yu-ai-agent,https://github.com/liyupi/yu-ai-agent/pull/6
 3124507979,20228,Cursor/fix next auth test timeouts and memory issues 43d5,"### What does this PR do?
 
 <!-- **Please explain what your changes do**, example: -->
@@ -26882,7 +25547,6 @@ A new migration (`OptimizePressure: 3`) is included to safely convert existing d
 ### Release notes
 
 - Optimized draw shapes by storing pressure as an integer (0-100) only when provided, reducing file size and improving data clarity. Non-pressure inputs (e.g., mouse) no longer store a pressure value. Existing draw shapes will be automatically migrated.",Cursor,23072548,steveruizok,closed,2025-07-17 11:42:48+00:00,2025-07-28 13:50:13+00:00,,365739812,https://api.github.com/repos/tldraw/tldraw,https://github.com/tldraw/tldraw/pull/6472
-3239609997,35,Implement unbound dns caching,Implement unbound dns caching,Cursor,100861363,Bandit-HaxUnit,open,2025-07-17 13:30:47+00:00,,,465787727,https://api.github.com/repos/Bandit-HaxUnit/haxunit,https://github.com/Bandit-HaxUnit/haxunit/pull/35
 3138324206,505,Cursor Agent: Process rules in parallel,"The `ProcessRules.tsx` file was modified to enable parallel processing of messages within the `handleRunAll` function.
 
 Key changes include:
@@ -27033,7 +25697,7 @@ Fixes # (issue)
 - [x] I haven't checked if my PR needs changes to the documentation
 - [ ] I haven't checked if my changes generate no new warnings (`npm run lint`)
 - [ ] I haven't added tests that prove my fix is effective or that my feature works
-- [ ] I haven't checked if new and existing unit tests pass locally with my changes",Cursor,2834609,marcklingen,open,2025-07-01 07:19:19+00:00,,,642497346,https://api.github.com/repos/langfuse/langfuse,https://github.com/langfuse/langfuse/pull/7585
+- [ ] I haven't checked if new and existing unit tests pass locally with my changes",Cursor,2834609,marcklingen,closed,2025-07-01 07:19:19+00:00,2026-07-25 00:45:09+00:00,,642497346,https://api.github.com/repos/langfuse/langfuse,https://github.com/langfuse/langfuse/pull/7585
 3250808281,3345,[CursorTest] [Upon #3344] Optimize qwen-moe layer ,"## Dependency of the PR
 This PR introduces the foundational structure for a Causal Language Model (CausalLM) application and optimizes core layers. It depends on the `nntrainer` core library.
 
@@ -27093,15 +25757,6 @@ These changes aim to reduce memory usage, improve render performance, and provid
 - **Style**
   - Reformatted code for clarity and consistency without changing functionality.
 <!-- end of auto-generated comment: release notes by coderabbit.ai -->",Cursor,4142719,haydenbleasel,closed,2025-06-15 17:52:11+00:00,2025-06-15 23:59:20+00:00,2025-06-15 23:59:20+00:00,847167817,https://api.github.com/repos/haydenbleasel/kibo,https://github.com/haydenbleasel/kibo/pull/153
-3148216316,456,Add context window percentage to ClickHouse,"A new spec file, `context-window-percentage-storage.md`, was created in a new `.specs/` directory.
-
-The spec details the addition of a `context_window_usage_percent` field to the ClickHouse runs table.
-
-*   **Purpose**: To store the pre-calculated context window usage as a percentage (0-100), simplifying analytical queries that currently require complex joins and on-the-fly calculations.
-*   **Data Type**: `UInt8` (0-255), consistent with existing percentage fields. A default of `0` indicates unknown or unavailable context window data.
-*   **Calculation**: The percentage will be computed in `ClickhouseRun.from_domain()` when a run is saved. It uses `input_token_count`, `output_token_count`, and the `model_context_window_size` extracted from `LLMCompletion.usage` within the run.
-*   **Searchability**: A new `SearchField.CONTEXT_WINDOW_USAGE` will enable direct filtering of runs by this percentage.
-*   **Outcome**: A PR has been prepared with this spec, providing a roadmap for the implementation, including database migration, model updates, and testing strategy.",Cursor,11172,pierrevalade,open,2025-06-16 00:40:35+00:00,,,899127822,https://api.github.com/repos/WorkflowAI/WorkflowAI,https://github.com/WorkflowAI/WorkflowAI/pull/456
 3165644329,144,Investigate ai prompt caching issue,"Anthropic's prompt caching mechanism requires the `cacheControl` tag to be applied to a message block. Previously, the large `STATIC_SYSTEM_PROMPT` was passed via the `system` parameter in `api/chat.ts`, which does not support this tag. The only message carrying the tag was the smaller dynamic system message, which typically fell below the 1024-token minimum required for caching.
 
 To address this in `api/chat.ts`:

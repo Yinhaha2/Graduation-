@@ -1,0 +1,88 @@
+{
+  "n": 1183,
+  "merged": 672,
+  "closed": 511,
+  "open": 0,
+  "terminal_n": 1183,
+  "closed_is_rejected_at_status": true,
+  "open_excluded_from_merged_closed_contrast": true,
+  "terminal_merge_rate": 0.5680473372781065,
+  "merged_path": {
+    "fast_low_friction": 507,
+    "reviewed_iteration": 143,
+    "no_formal_review": 22
+  },
+  "close_motivation": {
+    "silent_abandonment": 284,
+    "real_rejection": 164,
+    "unclear": 37,
+    "other_process": 26
+  },
+  "reviewed_closed_n": 195,
+  "fast_merge_in_merged": 528,
+  "failure_type": {
+    "functional_or_correctness": 85,
+    "design_or_approach": 51,
+    "other_or_mixed": 23,
+    "missing_evidence": 14,
+    "ci_or_tests": 10,
+    "silent_or_unexplained": 9,
+    "scope": 3
+  },
+  "fix_modes": {
+    "human_led_or_requested": 80,
+    "human_ai_collaborative": 21,
+    "ai_author_in_pr": 32,
+    "unclear": 10
+  },
+  "agent": {
+    "OpenAI_Codex": {
+      "n": 629,
+      "merged": 452,
+      "closed": 177,
+      "merge_rate": 0.7186009538950715
+    },
+    "Devin": {
+      "n": 225,
+      "merged": 73,
+      "closed": 152,
+      "merge_rate": 0.3244444444444444
+    },
+    "Copilot": {
+      "n": 206,
+      "merged": 78,
+      "closed": 128,
+      "merge_rate": 0.3786407766990291
+    },
+    "Cursor": {
+      "n": 89,
+      "merged": 48,
+      "closed": 41,
+      "merge_rate": 0.5393258426966292
+    },
+    "Claude_Code": {
+      "n": 34,
+      "merged": 21,
+      "closed": 13,
+      "merge_rate": 0.6176470588235294
+    }
+  },
+  "boundary_terminal_merge": {
+    "technical_stack": {
+      "n": 588,
+      "merge_rate": 0.7959183673469388
+    },
+    "process": {
+      "n": 562,
+      "merge_rate": 0.35587188612099646
+    },
+    "evidence_required": {
+      "n": 32,
+      "merge_rate": 0.125
+    },
+    "unknown": {
+      "n": 1,
+      "merge_rate": 0.0
+    }
+  }
+}
