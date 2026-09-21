@@ -22,6 +22,7 @@ Note: this snapshot is **terminal-only** (`merged` vs `closed` without merge). S
 ## 2. Main reasons for merge vs close
 
 Grouped from `perf_labels.outcome_reason` (LLM labels in analysis JSON, not raw review text).
+This is a **string-cluster of `outcome_reason`**, not the RQ1.2 behavioral `merged_path` taxonomy (`fast_low_friction` / `reviewed_iteration` / `no_formal_review`). Do not treat the two tables as the same partition.
 
 ### 2.1 Merged — grouped reasons
 
@@ -32,7 +33,9 @@ Grouped from `perf_labels.outcome_reason` (LLM labels in analysis JSON, not raw 
 | without_formal_review | 77 | 11.5% |
 | other | 69 | 10.3% |
 
-**Reading (descriptive, not causal):** most merged PRs are labeled **small scope / low risk** (`small_scope_low_risk`); next is **merged after review iteration** (`after_review_iteration`); ~10% lack formal-review signals (`without_formal_review`).
+Grouped-reason rows sum to 672/672. This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review).
+
+**Reading (descriptive, not causal):** most merged PRs have an `outcome_reason` that clusters as **small scope / low risk**; next is **after review iteration**. The `without_formal_review` cluster here is an `outcome_reason` string group, not the RQ1.2 path `no_formal_review`.
 
 Merged `outcome_reason` raw Top 5:
 
@@ -56,6 +59,8 @@ Merged `outcome_reason` raw Top 5:
 | performance_regression_or_no_gain | 3 | 0.6% |
 | scope_too_large | 1 | 0.2% |
 
+Grouped-reason rows sum to 511/511.
+
 **Reading:** closed is dominated by **process closes** (stale / no review / author closed), not a single “perf failed” label; among PRs with review text, `functional_failure` and `correctness_edge_case` stand out more.
 
 Closed `outcome_reason` raw Top 5:
@@ -76,26 +81,28 @@ Closed `outcome_reason` raw Top 5:
 
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| ≤100 | 477 | 63.1% |
+| ≤100 | 490 | 61.4% |
 | 101–500 | 350 | 52.6% |
 | 501–2k | 196 | 54.1% |
 | 2k–10k | 107 | 56.1% |
 | >10k | 40 | 52.5% |
 
 - Median changes — merged: **141**; closed: **172**
-- **No “more changes ⇒ more merges” pattern:** ≤100-line bin has the highest merge rate (~63%); >10k is ~52%.
+- Zero-line churn (`changes=0`) is counted in ≤100 (13 PRs, all closed).
+- Change-size bins sum to 1183/1183.
+- **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; >10k is near the closed-side average.
 
 ### 3.2 Comment volume (review + PR comments)
 
 | Comment bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| 0 | 161 | 47.8% |
-| 1–2 | 202 | 35.1% |
-| 3–9 | 197 | 47.7% |
-| ≥10 | 76 | 51.3% |
+| 0 | 547 | 71.5% |
+| 1–2 | 294 | 43.2% |
+| 3–9 | 255 | 43.1% |
+| ≥10 | 87 | 50.6% |
 
 - Median comment total — merged: **0**; closed: **2**
-- Zero-comment PRs have higher merge rates (fast merge / no review path); high comment volume does not imply higher merge rate.
+- Zero-comment PRs: **547** (46.2%); this bin is `comment_total==0`, not a `pd.cut` interval that starts after 0. Comment bins sum to 1183/1183. High comment volume does not imply a higher merge rate.
 
 ---
 
@@ -107,6 +114,7 @@ Closed `outcome_reason` raw Top 5:
 | 1–24h | 236 | 57.2% |
 | 1–7d | 180 | 40.0% |
 | >7d | 153 | 17.0% |
+| (lifespan missing) | 41 | 0.0% |
 
 - Median lifespan — merged: **0.079 h** (~5 min)
 - Median lifespan — closed: **24.3 h** (~1.0 d)
@@ -135,6 +143,8 @@ Closed `outcome_reason` raw Top 5:
 | `compiler_codegen` | 14 | 1.2% |
 | `test_infrastructure` | 12 | 1.0% |
 
+Top 12 sum to 865; the remaining 318 PRs sit in less frequent layers and are not listed.
+
 ### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none)
 
 **Merged top:** `repeated_io`(32), `nested_loop`(9), `unknown`(4), `lock_misuse`(2), `main_thread_blocking`(2), `memory_leak`(2)
@@ -162,9 +172,10 @@ Field: `perf_labels.detection_method` (multi-label).
 | `profiler` | 3 | 0.3% |
 | `unit_test` | 3 | 0.3% |
 
-- **Dominant when observable:** **`code_reading`** (~363 PRs with at least one hit).
-- Next: **`ci_auto`** (~92); `profiler` / `load_test` / `benchmark` alone are rare.
-- ~**766** labeled `unknown`, consistent with ~**71%** lacking formal review — detection is often unobservable.
+Counts are PR hits (multi-label); row totals can exceed corpus n. Labels beyond the top 10 account for 20 additional hits.
+- **Dominant when observable:** **`code_reading`** (363 PRs with at least one hit).
+- Next: **`ci_auto`** (92); `profiler` / `load_test` / `benchmark` alone are rare.
+- **766** labeled `unknown`, consistent with **70.8%** (837/1183) having `review_count=0` — detection is often unobservable.
 
 ---
 
@@ -176,6 +187,8 @@ Field: `perf_labels.detection_method` (multi-label).
 | `partial` | 235 | 19.9% |
 | `unknown` | 194 | 16.4% |
 | `sufficient` | 24 | 2.0% |
+
+Rows sum to 1183/1183.
 
 Auxiliary signals:
 - `body_has_repro_steps=true`: **53** (4.5%)
@@ -203,6 +216,8 @@ Auxiliary signals:
 | `closed_no_merge` | 1 | 0.1% |
 | `draft_converted_no_fix` | 1 | 0.1% |
 
+Rows sum to 1183/1183.
+
 - **`not_applicable`** (50.5%): no clear regression-handling context (often direct merge or process close).
 - **`reject_close`** (33.6%): reject/close dominant; mostly among closed.
 - **`fix_in_pr`** (143): fixed in the same PR; `revert` only **2**.
@@ -224,7 +239,7 @@ Auxiliary signals:
 ## 9. Linked issues
 
 - `linked_issue_count > 0`: **203** (**17.2%**)
-- No linked issue: **980** (**82.8%**)
+- No linked issue: **980** (**82.8%** of corpus); merged **582/672** (86.6%); closed **398/511** (77.9%).
 
 Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizations are often agent-initiated.
 
@@ -232,7 +247,7 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 
 ## 10. Pass rate, focus distribution, capability boundaries
 
-- **Merge rate for AI perf PRs: ~56.8%** (672/1183).
+- **Merge rate for AI perf PRs: 56.8%** (672/1183).
 
 ### 10.1 Common `perf_focus` on merged
 
@@ -255,7 +270,7 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 
 **Strengths (merged-side signals)**
 - Small-scope control-flow / compiler constant-folding / build-and-cache changes merge more easily under low review friction.
-- `technical_stack` dominates (588), i.e. problems in a routine stack layer agents can often handle.
+- `technical_stack` dominates (588); this is an analytic tag for routine stack-layer work, not a measured agent ability.
 
 **Boundaries (closed / higher-risk signals)**
 - Process closes (stale / no review) dominate and mask true “perf rejected” rates.

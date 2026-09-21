@@ -19,6 +19,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from generate_full_analysis import (
+    CHANGES_BINS,
+    CHANGES_LABELS,
+    LIFESPAN_BINS,
+    LIFESPAN_LABELS,
+    assign_bin,
     classify_fix_mode,
     flatten_record,
     load_all_analyses,
@@ -381,6 +386,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
     merged_zero_comment = int((merged["comment_total"].fillna(0) == 0).sum())
     merged_no_review = int((merged["review_count"].fillna(0) == 0).sum())
     no_issue_n = int((~df["has_linked_issue"].fillna(False)).sum())
+    no_issue_merged = int((~merged["has_linked_issue"].fillna(False)).sum())
 
     # ---- RQ1.3 ----
     mot_counts = closed["close_motivation"].value_counts()
@@ -389,16 +395,12 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
     abandon_sub = abandon["abandon_subtype"].value_counts()
 
     # ---- RQ2 ----
-    life_bins = [0, 1, 24, 168, 10**9]
-    life_labels = ["<1h", "1–24h", "1–7d", ">7d"]
     t2 = terminal.copy()
-    t2["lifespan_bin"] = pd.cut(t2["lifespan_hours"], bins=life_bins, labels=life_labels)
+    t2["lifespan_bin"] = assign_bin(t2["lifespan_hours"], LIFESPAN_BINS, LIFESPAN_LABELS)
     merge_by_life = t2.groupby("lifespan_bin", observed=True)["status"].apply(lambda s: (s == "merged").mean())
     life_n = t2["lifespan_bin"].value_counts()
 
-    change_bins = [0, 100, 500, 2000, 10000, 10**9]
-    change_labels = ["≤100", "101–500", "501–2k", "2k–10k", ">10k"]
-    t2["changes_bin"] = pd.cut(t2["changes"], bins=change_bins, labels=change_labels)
+    t2["changes_bin"] = assign_bin(t2["changes"], CHANGES_BINS, CHANGES_LABELS)
     merge_by_chg = t2.groupby("changes_bin", observed=True)["status"].apply(lambda s: (s == "merged").mean())
     chg_n = t2["changes_bin"].value_counts()
 
@@ -414,7 +416,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
 
     # ---- RQ3 ----
     fail_counts = reviewed_closed["failure_type"].value_counts()
-    bucket_closed = closed["review_comment_bucket"].value_counts()
+    bucket_closed = closed["review_comment_bucket"].fillna("(empty)").value_counts()
     blocking_closed = int(closed["blocking"].fillna(False).sum())
     anti_m = split_multi(merged["inefficiency_antipattern"])
     anti_c = split_multi(closed["inefficiency_antipattern"])
@@ -423,7 +425,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         anti_c.pop(drop, None)
 
     repro = df["reproducibility"].value_counts()
-    reg = df["regression_handling"].value_counts()
+    reg = df["regression_handling"].fillna("(empty)").value_counts()
     fix_in_pr = df[df["regression_handling"] == "fix_in_pr"]
     fix_modes: Counter = Counter()
     rec_by_id = {int(d["pr_id"]): d for d in records}
@@ -668,12 +670,15 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
             [[f"`{k}`", v, pct(v, n)] for k, v in opt_layer.items()],
         ),
         "",
+        f"上表是频次 Top 12（合计 {int(opt_layer.sum())}），其余层面 {n - int(opt_layer.sum())} 条未列，不是 1183 条的穷尽表。",
+        "",
         f"**RQ1.1 小结**：终态语料里合入占 {pct(len(merged), n)}、被拒（closed）占 {pct(len(closed), n)}。"
         "不同 Agent 的合入机会差一倍以上；改动主要落在应用服务、构建和前端。",
         "",
         "### RQ1.2 Merged 的真实情况如何划分",
         "",
-        "合入不是单一路径。按行为规则（优先「经审查迭代」，其次「极速低摩擦」，再次「无 formal review」）划分：",
+        "合入不是单一路径。按**行为规则**划分（优先「经审查迭代」，其次「极速低摩擦」，再次「无 formal review」）。"
+        "这套 `merged_path` 与 `FullAnalysis.md` §2 的 `outcome_reason` 粗分组不是同一张表，不能把 small_scope 计数和快合并计数加在一起或互相替代。",
         "",
         md_table(
             ["Merged 路径", "数量", "占 merged"],
@@ -682,6 +687,8 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                 for k, v in path_counts.items()
             ],
         ),
+        "",
+        f"上表合计 {int(path_counts.sum())}/{len(merged)}。规则见附录 A，不要和 FullAnalysis §2 的 small_scope 分组混用。",
         "",
         "配套行为事实：",
         "",
@@ -692,9 +699,11 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                 ["fast_merge=true", f"{fast_n}（{pct(fast_n, len(merged))}）"],
                 ["评论数为 0", f"{merged_zero_comment}（{pct(merged_zero_comment, len(merged))}）"],
                 ["review_count=0", f"{merged_no_review}（{pct(merged_no_review, len(merged))}）"],
-                ["无关联 Issue", f"{no_issue_n}（{pct(no_issue_n, n)}）"],
+                ["无关联 Issue", f"{no_issue_merged}（{pct(no_issue_merged, len(merged))}）"],
             ],
         ),
+        "",
+        f"另：全库无关联 Issue **{no_issue_n}/{n}**（{pct(no_issue_n, n)}）。上表该行分母是 merged（{no_issue_merged}/{len(merged)}），不是全库。",
         "",
         "**低摩擦快合并示例：**",
         "",
@@ -826,6 +835,9 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "![lifespan](rq_analysis_figures/rq2_lifespan.png)",
         "",
+        f"上图是各档**合并率**（不是条数），且只含有 lifespan 的 {n - int(t2['lifespan_hours'].isna().sum())} 条；"
+        f"缺失 {int(t2['lifespan_hours'].isna().sum())} 条见上表，不在图中。",
+        "",
         md_table(
             ["changes 分箱", "PR 数", "合并率"],
             [
@@ -833,6 +845,8 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                 for idx, rate in merge_by_chg.items()
             ],
         ),
+        "",
+        f"分箱含 `changes=0`（计入 ≤100）：{int((t2['changes']==0).sum())} 条，全部 closed。上表各档合计 {int(chg_n.sum())}/{len(t2)}。",
         "",
         md_table(
             ["特征", "merged", "closed"],
@@ -868,7 +882,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "### RQ2.2 维护者凭何放行？无人审更像质量门槛，还是注意力 / 流程错配？",
         "",
-        "维护者**可观测**的排查方式（`detection_method`，可多选）：",
+        "维护者**可观测**的排查方式（`detection_method`，可多选；一行是 PR 命中，行合计可以超过 n）：",
         "",
         md_table(
             ["detection_method", "全库", "merged", "closed"],
@@ -879,7 +893,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                     str(det_merged.get(k, 0)),
                     str(det_closed.get(k, 0)),
                 ]
-                for k, _ in det_all.most_common(8)
+                for k, _ in det_all.most_common(10)
             ],
         ),
         "",
@@ -938,7 +952,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "存活超过 7 天的合并率掉到约 17%。这些更像评审注意力和流程错配，而不是「质量门槛把差 PR 拦下来」。",
         "",
         "**小结**：维护者放行主要靠「改动小、读得懂、没把 CI 搞红」；"
-        "大量 PR 无人审，成功与失败都发生在低注意力环境中。卡住智能体性能 PR 的经常不是审查标准本身，而是有没有人愿意看。",
+        "大量 PR 无人审，成功与失败都发生在低注意力环境中。把这些 PR 留在未合入状态的，经常不是审查标准本身，而是有没有人愿意看。",
         "",
         "---",
         "",
@@ -954,8 +968,23 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         md_table(
             ["review_comment_bucket", "数量", "占 closed"],
-            [[f"`{k}`", int(v), pct(int(v), len(closed))] for k, v in bucket_closed.head(8).items()],
+            (
+                [[f"`{k}`", int(v), pct(int(v), len(closed))] for k, v in bucket_closed.head(8).items()]
+                + (
+                    [
+                        [
+                            "其余长尾标签",
+                            int(len(closed) - int(bucket_closed.head(8).sum())),
+                            pct(int(len(closed) - int(bucket_closed.head(8).sum())), len(closed)),
+                        ]
+                    ]
+                    if int(bucket_closed.head(8).sum()) < len(closed)
+                    else []
+                )
+            ),
         ),
+        "",
+        f"上表合计 {len(closed)}/{len(closed)}（含长尾）。",
         "",
         "被审 / 被否决子集的失败类型：",
         "",
@@ -968,6 +997,10 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         )
         if len(reviewed_closed)
         else "_子集为空_",
+        "",
+        f"上表合计 {int(fail_counts.sum())}/{len(reviewed_closed)}。"
+        if len(reviewed_closed)
+        else "",
         "",
         "**功能 / 正确性示例：**",
         "",
@@ -987,19 +1020,19 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "两侧都是 `repeated_io` 最多，数量接近，**不能当成主拒因**。",
         "",
-        "**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近导师说的「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。"
+        "**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。"
         "静默 maintainer 关闭仍需单独看待，它介于拒绝和遗弃之间。",
         "",
         "### RQ3.2 证据生成、流程协作与同 PR 修复分别暴露了哪些能力边界？",
         "",
-        "三条既有 `boundary_tag` 直接对应三种非代码能力：",
+        "三条既有 `boundary_tag` 是分析标签（不是测得的认知能力），对应三种非代码摩擦：",
         "",
         md_table(
             ["边界", "含义", "n", "合并率"],
             [
                 [
                     "`technical_stack`",
-                    "常规技术栈改动（Agent 相对能做）",
+                    "常规技术栈改动（分析标签，不是能力测定）",
                     int(bound_term.loc["technical_stack"]["n"]) if "technical_stack" in bound_term.index else 0,
                     pct(float(bound_term.loc["technical_stack"]["merge_rate"]), 1)
                     if "technical_stack" in bound_term.index
@@ -1031,9 +1064,11 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "退化 / 审查问题处置（`regression_handling`）：",
         "",
         md_table(
-            ["regression_handling", "数量", "占全库"],
-            [[f"`{k}`", int(v), pct(int(v), n)] for k, v in reg.head(8).items()],
+            ["regression_handling", "数量", "占 n"],
+            [[f"`{k}`", int(v), pct(int(v), n)] for k, v in reg.items()],
         ),
+        "",
+        f"上表合计 {int(reg.sum())}/{n}。",
         "",
         f"`fix_in_pr` 共 {len(fix_in_pr)} 条（{pct(len(fix_in_pr), n)}）。修复主体启发式：",
         "",
@@ -1053,7 +1088,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "- **证据生成**：一进入 `evidence_required`，合并率掉到约一成；sufficient 材料只有约 2%。",
         "- **流程协作**：process 边界合入率大约只有 technical_stack 的一半；closed 里沉默遗弃仍是大头。",
-        "- **同 PR 修复**：能在原 PR 里把问题修完的是少数，且过半要人类主导。Agent 独立消化 CHANGES_REQUESTED 的能力有限。",
+        "- **同 PR 修复**：能在原 PR 里把问题修完的是少数，且过半要人类主导。现有启发式并不支持把 CHANGES_REQUESTED 主要写成 Agent 独立消化。",
         "",
         "---",
         "",
@@ -1139,7 +1174,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "**路径 B — 需要被认真审的难 PR（RQ1.3 / RQ3）**",
         "",
         "- 工具链补可复现材料：前后对比表 + 复现步骤，对准 `evidence_required` 的悬崖，而不是给快合并路径加表。",
-        "- Review 阶段把 CHANGES_REQUESTED 当成一等任务；当前 `fix_in_pr` 过半是人类主导，Agent 需要稳定消化审查意见。",
+        "- Review 阶段把 CHANGES_REQUESTED 当成一等任务；当前 `fix_in_pr` 过半是人类主导，不能默认审查意见会被自动消化。",
         "- 对 `runtime_vm`、大范围控制流、包体积类改动提前声明风险，或拆成可独立合入的证据提交 + 代码提交。",
         "- 沉默遗弃是注意力问题：超时提醒、把 stale bot 关闭改成「需要 maintainer 一句话」而不是直接关。",
         "",
@@ -1185,7 +1220,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "1. 标签来自 LLM 分析 JSON，建议对 real rejection / silent abandonment 各抽检数十条 `rejection_signals`。",
         "2. Agent 差异、边界与合并率、benchmark 与合并率都是相关不是因果。合并率分母为最终数据集 n。",
         "3. `fix_in_pr` 主体与 `antipattern_in_fix` 是启发式。",
-        "4. 与 `FullAnalysis.md` 若有个别计数差，以本脚本现场聚合为准（分类规则已更新）。",
+        "4. `FullAnalysis.md` §2 的 `outcome_reason` 粗分组（如 small_scope_low_risk）与本报告 RQ1.2 的 `merged_path`（如低摩擦快合并）是两套规则，数字不可互换。两侧都从同一终态 1183 条聚合。",
         "",
     ]
 

@@ -135,6 +135,21 @@ def pct(n: int, total: int) -> str:
     return f"{100 * n / total:.1f}%" if total else "0.0%"
 
 
+# Inclusive left edges so 0-line / 0-comment PRs are not dropped by pd.cut.
+CHANGES_BINS = [-0.1, 100, 500, 2000, 10000, 10**9]
+CHANGES_LABELS = ["≤100", "101–500", "501–2k", "2k–10k", ">10k"]
+COMMENT_BINS = [-0.1, 0.5, 2.5, 9.5, 10**9]
+COMMENT_LABELS = ["0", "1–2", "3–9", "≥10"]
+FILE_BINS = [-0.1, 0.5, 1.5, 5.5, 20.5, 100.5, 10**9]
+FILE_LABELS = ["0", "1", "2–5", "6–20", "21–100", ">100"]
+LIFESPAN_BINS = [-0.1, 1, 24, 168, 10**9]
+LIFESPAN_LABELS = ["<1h", "1–24h", "1–7d", ">7d"]
+
+
+def assign_bin(series: pd.Series, bins: list, labels: list) -> pd.Series:
+    return pd.cut(series, bins=bins, labels=labels, include_lowest=True)
+
+
 def top_counter(series: pd.Series, n: int = 10) -> str:
     c = series.value_counts().head(n)
     lines = []
@@ -166,7 +181,7 @@ def classify_close_reason(reason: str) -> str:
         return "missing_evidence_or_benchmark"
     if "scope" in r:
         return "scope_too_large"
-    if "regression" in r or "performance" in r and "fail" in r:
+    if "regression" in r or "no_gain" in r or ("performance" in r and "fail" in r):
         return "performance_regression_or_no_gain"
     return "other"
 
@@ -197,27 +212,24 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     merged_groups = merged["merge_reason_group"].value_counts()
     closed_groups = closed["close_reason_group"].value_counts()
 
-    # bins
-    bins = [0, 100, 500, 2000, 10000, 10**9]
-    labels = ["≤100", "101–500", "501–2k", "2k–10k", ">10k"]
     terminal = terminal.copy()
-    terminal["changes_bin"] = pd.cut(terminal["changes"], bins=bins, labels=labels)
+    terminal["changes_bin"] = assign_bin(terminal["changes"], CHANGES_BINS, CHANGES_LABELS)
     merge_by_bin = terminal.groupby("changes_bin", observed=True)["status"].apply(
         lambda s: (s == "merged").mean()
     )
 
-    comment_bins = [0, 1, 3, 10, 10**9]
-    comment_labels = ["0", "1–2", "3–9", "≥10"]
-    terminal["comment_bin"] = pd.cut(terminal["comment_total"], bins=comment_bins, labels=comment_labels)
+    terminal["comment_bin"] = assign_bin(terminal["comment_total"], COMMENT_BINS, COMMENT_LABELS)
     merge_by_comment = terminal.groupby("comment_bin", observed=True)["status"].apply(
         lambda s: (s == "merged").mean()
     )
 
-    lifespan_bins = [0, 1, 24, 168, 10**9]
-    lifespan_labels = ["<1h", "1–24h", "1–7d", ">7d"]
-    terminal["lifespan_bin"] = pd.cut(terminal["lifespan_hours"], bins=lifespan_bins, labels=lifespan_labels)
+    terminal["lifespan_bin"] = assign_bin(terminal["lifespan_hours"], LIFESPAN_BINS, LIFESPAN_LABELS)
     merge_by_life = terminal.groupby("lifespan_bin", observed=True)["status"].apply(
         lambda s: (s == "merged").mean()
+    )
+    life_missing = int(terminal["lifespan_hours"].isna().sum())
+    life_missing_merged = int(
+        ((terminal["lifespan_hours"].isna()) & (terminal["status"] == "merged")).sum()
     )
 
     det = Counter()
@@ -228,7 +240,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         for m in methods.split("|"):
             det[m] += 1
 
-    reg = df["regression_handling"].value_counts()
+    reg = df["regression_handling"].fillna("(empty)").value_counts()
     repro = df["reproducibility"].value_counts()
 
     fix_modes = Counter()
@@ -307,6 +319,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "## 2. Main reasons for merge vs close",
         "",
         "Grouped from `perf_labels.outcome_reason` (LLM labels in analysis JSON, not raw review text).",
+        "This is a **string-cluster of `outcome_reason`**, not the RQ1.2 behavioral `merged_path` taxonomy (`fast_low_friction` / `reviewed_iteration` / `no_formal_review`). Do not treat the two tables as the same partition.",
         "",
         "### 2.1 Merged — grouped reasons",
         "",
@@ -315,10 +328,15 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     ]
     for k, v in merged_groups.items():
         lines.append(f"| {k} | {v} | {pct(v, len(merged))} |")
+    lines.append("")
+    lines.append(
+        f"Grouped-reason rows sum to {int(merged_groups.sum())}/{len(merged)}. "
+        "This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review)."
+    )
 
     lines += [
         "",
-        "**Reading (descriptive, not causal):** most merged PRs are labeled **small scope / low risk** (`small_scope_low_risk`); next is **merged after review iteration** (`after_review_iteration`); ~10% lack formal-review signals (`without_formal_review`).",
+        "**Reading (descriptive, not causal):** most merged PRs have an `outcome_reason` that clusters as **small scope / low risk**; next is **after review iteration**. The `without_formal_review` cluster here is an `outcome_reason` string group, not the RQ1.2 path `no_formal_review`.",
         "",
         "Merged `outcome_reason` raw Top 5:",
         "",
@@ -337,6 +355,8 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     ]
     for k, v in closed_groups.items():
         lines.append(f"| {k} | {v} | {pct(v, len(closed))} |")
+    lines.append("")
+    lines.append(f"Grouped-reason rows sum to {int(closed_groups.sum())}/{len(closed)}.")
 
     lines += [
         "",
@@ -368,7 +388,9 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     lines += [
         "",
         f"- Median changes — merged: **{merged['changes'].median():.0f}**; closed: **{closed['changes'].median():.0f}**",
-        "- **No “more changes ⇒ more merges” pattern:** ≤100-line bin has the highest merge rate (~63%); >10k is ~52%.",
+        f"- Zero-line churn (`changes=0`) is counted in ≤100 ({int((terminal['changes']==0).sum())} PRs, all closed).",
+        f"- Change-size bins sum to {int(terminal['changes_bin'].notna().sum())}/{len(terminal)}.",
+        "- **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; >10k is near the closed-side average.",
         "",
         "### 3.2 Comment volume (review + PR comments)",
         "",
@@ -382,7 +404,11 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     lines += [
         "",
         f"- Median comment total — merged: **{merged['comment_total'].median():.0f}**; closed: **{closed['comment_total'].median():.0f}**",
-        "- Zero-comment PRs have higher merge rates (fast merge / no review path); high comment volume does not imply higher merge rate.",
+        f"- Zero-comment PRs: **{int((terminal['comment_total'].fillna(0)==0).sum())}** "
+        f"({pct(int((terminal['comment_total'].fillna(0)==0).sum()), len(terminal))}); "
+        "this bin is `comment_total==0`, not a `pd.cut` interval that starts after 0. "
+        f"Comment bins sum to {int(terminal['comment_bin'].notna().sum())}/{len(terminal)}. "
+        "High comment volume does not imply a higher merge rate.",
         "",
         "---",
         "",
@@ -394,6 +420,9 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     for idx, rate in merge_by_life.items():
         cnt = int((terminal["lifespan_bin"] == idx).sum())
         lines.append(f"| {idx} | {cnt} | {100*rate:.1f}% |")
+    if life_missing:
+        miss_rate = life_missing_merged / life_missing if life_missing else 0
+        lines.append(f"| (lifespan missing) | {life_missing} | {100*miss_rate:.1f}% |")
 
     lines += [
         "",
@@ -417,6 +446,8 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
 
     lines += [
         "",
+        f"Top 12 sum to {int(opt_layer.sum())}; the remaining {n - int(opt_layer.sum())} PRs sit in less frequent layers and are not listed.",
+        "",
         "### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none)",
         "",
         "**Merged top:** " + ", ".join(f"`{k}`({v})" for k, v in anti_merged.most_common(6)),
@@ -437,12 +468,15 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     for k, v in det.most_common(10):
         lines.append(f"| `{k}` | {v} | {pct(v, n)} |")
 
+    extra_det = int(sum(det.values()) - sum(v for _, v in det.most_common(10)))
     no_review_share = (df["review_count"].fillna(0) == 0).mean() if "review_count" in df.columns else 0
     lines += [
         "",
-        f"- **Dominant when observable:** **`code_reading`** (~{det.get('code_reading', 0)} PRs with at least one hit).",
-        f"- Next: **`ci_auto`** (~{det.get('ci_auto', 0)}); `profiler` / `load_test` / `benchmark` alone are rare.",
-        f"- ~**{det.get('unknown', 0)}** labeled `unknown`, consistent with ~**{100*no_review_share:.0f}%** lacking formal review — detection is often unobservable.",
+        "Counts are PR hits (multi-label); row totals can exceed corpus n."
+        + (f" Labels beyond the top 10 account for {extra_det} additional hits." if extra_det else ""),
+        f"- **Dominant when observable:** **`code_reading`** ({det.get('code_reading', 0)} PRs with at least one hit).",
+        f"- Next: **`ci_auto`** ({det.get('ci_auto', 0)}); `profiler` / `load_test` / `benchmark` alone are rare.",
+        f"- **{det.get('unknown', 0)}** labeled `unknown`, consistent with **{100*no_review_share:.1f}%** ({int((df['review_count'].fillna(0)==0).sum())}/{n}) having `review_count=0` — detection is often unobservable.",
         "",
         "---",
         "",
@@ -453,6 +487,8 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     ]
     for k, v in repro.items():
         lines.append(f"| `{k}` | {v} | {pct(v, n)} |")
+    lines.append("")
+    lines.append(f"Rows sum to {int(repro.sum())}/{n}.")
 
     lines += [
         "",
@@ -476,6 +512,8 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     fix_total = int((df["regression_handling"] == "fix_in_pr").sum())
     lines += [
         "",
+        f"Rows sum to {int(reg.sum())}/{n}.",
+        "",
         f"- **`not_applicable`** ({pct(int((df['regression_handling']=='not_applicable').sum()), n)}): no clear regression-handling context (often direct merge or process close).",
         f"- **`reject_close`** ({pct(int((df['regression_handling']=='reject_close').sum()), n)}): reject/close dominant; mostly among closed.",
         f"- **`fix_in_pr`** ({fix_total}): fixed in the same PR; `revert` only **{int((df['regression_handling']=='revert').sum())}**.",
@@ -498,7 +536,11 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "## 9. Linked issues",
         "",
         f"- `linked_issue_count > 0`: **{linked}** (**{pct(linked, n)}**)",
-        f"- No linked issue: **{n - linked}** (**{pct(n - linked, n)}**)",
+        f"- No linked issue: **{n - linked}** (**{pct(n - linked, n)}** of corpus); "
+        f"merged **{int((~merged['has_linked_issue'].fillna(False)).sum())}/{len(merged)}** "
+        f"({pct(int((~merged['has_linked_issue'].fillna(False)).sum()), len(merged))}); "
+        f"closed **{int((~closed['has_linked_issue'].fillna(False)).sum())}/{len(closed)}** "
+        f"({pct(int((~closed['has_linked_issue'].fillna(False)).sum()), len(closed))}).",
         "",
         "Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizations are often agent-initiated.",
         "",
@@ -506,7 +548,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "## 10. Pass rate, focus distribution, capability boundaries",
         "",
-        f"- **Merge rate for AI perf PRs: ~{100*len(merged)/n:.1f}%** ({len(merged)}/{n}).",
+        f"- **Merge rate for AI perf PRs: {100*len(merged)/n:.1f}%** ({len(merged)}/{n}).",
         "",
         "### 10.1 Common `perf_focus` on merged",
         "",
@@ -546,7 +588,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "**Strengths (merged-side signals)**",
         "- Small-scope control-flow / compiler constant-folding / build-and-cache changes merge more easily under low review friction.",
-        f"- `technical_stack` dominates ({int((df['boundary_tag']=='technical_stack').sum())}), i.e. problems in a routine stack layer agents can often handle.",
+        f"- `technical_stack` dominates ({int((df['boundary_tag']=='technical_stack').sum())}); this is an analytic tag for routine stack-layer work, not a measured agent ability.",
         "",
         "**Boundaries (closed / higher-risk signals)**",
         "- Process closes (stale / no review) dominate and mask true “perf rejected” rates.",
@@ -585,8 +627,8 @@ def main() -> None:
         raise SystemExit("No analysis JSON files found.")
 
     df = pd.DataFrame([flatten_record(d) for d in records])
-    df["merge_reason_group"] = df["outcome_reason"].map(classify_merge_reason)
-    df["close_reason_group"] = df["outcome_reason"].map(classify_close_reason)
+    df["merge_reason_group"] = df["outcome_reason"].fillna("").map(classify_merge_reason)
+    df["close_reason_group"] = df["outcome_reason"].fillna("").map(classify_close_reason)
     df.to_csv(OUT_CSV, index=False, encoding="utf-8")
 
     md = build_markdown(df, records)

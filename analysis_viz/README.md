@@ -16,13 +16,13 @@ Numbers below match the current distilled table. Merge-rate charts use the termi
 
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| ≤100 | 477 | **63.1%** |
+| ≤100 | 490 | **61.4%** |
 | 101–500 | 350 | 52.6% |
 | 501–2k | 196 | 54.1% |
 | 2k–10k | 107 | 56.1% |
 | >10k | 40 | 52.5% |
 
-Median `changes`: merged **141**, closed **172**.
+Median `changes`: merged **141**, closed **172**. Zero-line churn (`changes=0`) is **13** PRs (all closed) and is counted in ≤100. Bins sum to 1183.
 
 ---
 
@@ -34,11 +34,14 @@ Median `changes`: merged **141**, closed **172**.
 
 | Files bin | Terminal PRs | Merge rate |
 |-----------|--------------|------------|
+| 0 | 13 | 0.0% |
 | 1 | 240 | **62.9%** |
 | 2–5 | 466 | 54.7% |
 | 6–20 | 287 | 55.4% |
 | 21–100 | 114 | 59.6% |
 | >100 | 63 | 61.9% |
+
+The 13 zero-file PRs are the same 13 zero-churn closed PRs. Bins sum to 1183.
 
 ---
 
@@ -54,8 +57,9 @@ Median `changes`: merged **141**, closed **172**.
 | 1–24h | 236 | 57.2% |
 | 1–7d | 180 | 40.0% |
 | >7d | 153 | **17.0%** |
+| (lifespan missing) | 41 | 0.0% |
 
-Median lifespan: merged **~0.08 h (~5 min)**; closed **~24.3 h (~1 day)**. Among merged, `fast_merge=true` is **78.6%**.
+Median lifespan: merged **~0.08 h (~5 min)**; closed **~24.3 h (~1 day)**. Among merged, `fast_merge=true` is **78.6%**. Figure 06 uses the four non-missing bins only; the 41 PRs with missing lifespan (merge rate 0%) are in the table, not the chart.
 
 ---
 
@@ -67,12 +71,12 @@ Median lifespan: merged **~0.08 h (~5 min)**; closed **~24.3 h (~1 day)**. Among
 
 | Comment bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| 0 | 161 | 47.8% |
-| 1–2 | 202 | **35.1%** (lowest) |
-| 3–9 | 197 | 47.7% |
-| ≥10 | 76 | 51.3% |
+| 0 | 547 | **71.5%** |
+| 1–2 | 294 | 43.2% |
+| 3–9 | 255 | 43.1% |
+| ≥10 | 87 | 50.6% |
 
-Median comments: merged **0** (58% zero); closed **2** (30% zero).
+Median comments: merged **0** (391/672 = 58.2% zero); closed **2** (156/511 = 30.5% zero). Bins sum to 1183. The 0 bin is `comment_total==0`, not a `pd.cut` interval that starts after 0.
 
 ---
 
@@ -98,7 +102,7 @@ Median comments: merged **0** (58% zero); closed **2** (30% zero).
 | `manual_testing` / `manual_test` | 16+8 | ~2% |
 | `benchmark` / `load_test` / `profiler` | ≤6 each | rare |
 
-Large `unknown` share aligns with ~71% lacking formal review — detection is often unobservable.
+Large `unknown` share aligns with **70.8%** (`837/1183`) having `review_count=0` — detection is often unobservable. Detection is multi-label, so method rows can sum past 1183.
 
 ---
 
@@ -123,7 +127,17 @@ Top layers: `application_service` **193 (16.3%)**, `build` **163 (13.8%)**, `fro
 | `not_applicable` | 598 | **50.5%** |
 | `reject_close` | 398 | 33.6% |
 | `fix_in_pr` | 143 | 12.1% |
+| `ignore` | 18 | 1.5% |
+| `unknown` | 17 | 1.4% |
 | `revert` | 2 | 0.2% |
+| `fix_followup` | 2 | 0.2% |
+| `close_no_merge` | 1 | 0.1% |
+| `abandon` | 1 | 0.1% |
+| `recreated_in_new_pr` | 1 | 0.1% |
+| `closed_no_merge` | 1 | 0.1% |
+| `draft_converted_no_fix` | 1 | 0.1% |
+
+Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_no_merge` / `draft_converted_no_fix`) are kept so the table is exhaustive.
 
 ---
 
@@ -139,7 +153,7 @@ Top layers: `application_service` **193 (16.3%)**, `build` **163 (13.8%)**, `fro
 
 **What it shows:** Share of merged vs closed among terminal PRs (open excluded from this pie).
 
-**Phenomenon:** Corpus is roughly a coin-flip on terminal outcomes: **merged 672 (56.8%)**, **closed 511 (43.2%)**. Open PRs are not in this snapshot.
+**Phenomenon:** Terminal outcomes split as **merged 672 (56.8%)** vs **closed 511 (43.2%)**. Open PRs are not in this snapshot.
 
 ---
 
@@ -180,7 +194,7 @@ Auxiliary: `body_has_repro_steps=true` only **53 (4.5%)**.
 
 **What it shows:** Which capability boundary each PR illustrates, with PR count bars and merge-rate line (overall ≈ **56.8%**).
 
-**Phenomenon:** Agents look strong on **technical stack** work, weak on **process/workflow** and especially on **evidence / reproducibility** demands.
+**Phenomenon:** Merge rate is highest on PRs tagged **technical stack**, lower on **process/workflow**, and lowest when the tag is **evidence / reproducibility**. These are analytic tags, not measured cognitive abilities.
 
 | Boundary | PR count | Merge rate |
 |----------|----------|------------|
@@ -189,7 +203,7 @@ Auxiliary: `body_has_repro_steps=true` only **53 (4.5%)**.
 | Evidence required (benchmark / repro gap) | **32** | **12.5%** |
 | Unknown | 1 | 0% |
 
-Reading: volume is split between technical and process (588 vs 562), but success diverges sharply — stack-depth changes often merge; process friction and missing evidence mark clear capability boundaries.
+Reading: volume is split between technical and process (588 vs 562), but merge rates diverge — stack-depth changes often merge; process friction and missing evidence mark lower-merge strata. `boundary_tag` stratifies the corpus; it does not cause merge.
 
 ---
 

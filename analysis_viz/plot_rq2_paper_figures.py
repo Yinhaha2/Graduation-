@@ -46,9 +46,10 @@ def save(fig: plt.Figure, stem: str) -> None:
 def plot_lifespan() -> None:
     df = pd.read_csv(CSV)
     t = df[df["status"].isin(["merged", "closed"])].copy()
-    bins = [0, 1, 24, 168, 10**9]
+    # Same inclusive edges as generate_full_analysis.LIFESPAN_BINS (0h stays in <1h).
+    bins = [-0.1, 1, 24, 168, 10**9]
     labels = ["< 1 hour", "1 hour – 1 day", "1–7 days", "> 7 days"]
-    t["bin"] = pd.cut(t["lifespan_hours"], bins=bins, labels=labels)
+    t["bin"] = pd.cut(t["lifespan_hours"], bins=bins, labels=labels, include_lowest=True)
     n = []
     rate = []
     for lab in labels:

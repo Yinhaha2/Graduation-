@@ -57,17 +57,21 @@ n≥30 的断层仍然清楚：OpenAI_Codex 合并率最高，Devin / Copilot �
 | `compiler_codegen` | 14 | 1.2% |
 | `test_infrastructure` | 12 | 1.0% |
 
+上表是频次 Top 12（合计 865），其余层面 318 条未列，不是 1183 条的穷尽表。
+
 **RQ1.1 小结**：终态语料里合入占 56.8%、被拒（closed）占 43.2%。不同 Agent 的合入机会差一倍以上；改动主要落在应用服务、构建和前端。
 
 ### RQ1.2 Merged 的真实情况如何划分
 
-合入不是单一路径。按行为规则（优先「经审查迭代」，其次「极速低摩擦」，再次「无 formal review」）划分：
+合入不是单一路径。按**行为规则**划分（优先「经审查迭代」，其次「极速低摩擦」，再次「无 formal review」）。这套 `merged_path` 与 `FullAnalysis.md` §2 的 `outcome_reason` 粗分组不是同一张表，不能把 small_scope 计数和快合并计数加在一起或互相替代。
 
 | Merged 路径 | 数量 | 占 merged |
 |---|---|---|
 | 低摩擦快合并 | 507 | 75.4% |
 | 经 review 迭代后合入 | 143 | 21.3% |
 | 无 formal review 合入（非极速） | 22 | 3.3% |
+
+上表合计 672/672。规则见附录 A，不要和 FullAnalysis §2 的 small_scope 分组混用。
 
 配套行为事实：
 
@@ -77,7 +81,9 @@ n≥30 的断层仍然清楚：OpenAI_Codex 合并率最高，Devin / Copilot �
 | fast_merge=true | 528（78.6%） |
 | 评论数为 0 | 391（58.2%） |
 | review_count=0 | 450（67.0%） |
-| 无关联 Issue | 980（82.8%） |
+| 无关联 Issue | 582（86.6%） |
+
+另：全库无关联 Issue **980/1183**（82.8%）。上表该行分母是 merged（582/672），不是全库。
 
 **低摩擦快合并示例：**
 
@@ -166,13 +172,17 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 
 ![lifespan](rq_analysis_figures/rq2_lifespan.png)
 
+上图是各档**合并率**（不是条数），且只含有 lifespan 的 1142 条；缺失 41 条见上表，不在图中。
+
 | changes 分箱 | PR 数 | 合并率 |
 |---|---|---|
-| ≤100 | 477 | 63.1% |
+| ≤100 | 490 | 61.4% |
 | 101–500 | 350 | 52.6% |
 | 501–2k | 196 | 54.1% |
 | 2k–10k | 107 | 56.1% |
 | >10k | 40 | 52.5% |
+
+分箱含 `changes=0`（计入 ≤100）：13 条，全部 closed。上表各档合计 1183/1183。
 
 | 特征 | merged | closed |
 |---|---|---|
@@ -188,7 +198,7 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 
 ### RQ2.2 维护者凭何放行？无人审更像质量门槛，还是注意力 / 流程错配？
 
-维护者**可观测**的排查方式（`detection_method`，可多选）：
+维护者**可观测**的排查方式（`detection_method`，可多选；一行是 PR 命中，行合计可以超过 n）：
 
 | detection_method | 全库 | merged | closed |
 |---|---|---|---|
@@ -200,6 +210,8 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 | `benchmark` | 6（0.5%） | 4 | 2 |
 | `load_test` | 4（0.3%） | 2 | 2 |
 | `(empty)` | 4（0.3%） | 2 | 2 |
+| `profiler` | 3（0.3%） | 0 | 3 |
+| `unit_test` | 3（0.3%） | 3 | 0 |
 
 边界标签在终态上的合并率：
 
@@ -230,7 +242,7 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 
 **为何不审**：无人审既可以合入也可以关闭。merged 中 67.0%、closed 中 75.7% 无 formal review。`process` 边界合并率只有 35.6%；82.8% 的 PR 没有关联 Issue，优化常是 Agent 主动发起，不在维护者既有队列里。存活超过 7 天的合并率掉到约 17%。这些更像评审注意力和流程错配，而不是「质量门槛把差 PR 拦下来」。
 
-**小结**：维护者放行主要靠「改动小、读得懂、没把 CI 搞红」；大量 PR 无人审，成功与失败都发生在低注意力环境中。卡住智能体性能 PR 的经常不是审查标准本身，而是有没有人愿意看。
+**小结**：维护者放行主要靠「改动小、读得懂、没把 CI 搞红」；大量 PR 无人审，成功与失败都发生在低注意力环境中。把这些 PR 留在未合入状态的，经常不是审查标准本身，而是有没有人愿意看。
 
 ---
 
@@ -252,6 +264,9 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 | `code_quality` | 3 | 0.6% |
 | `ci_failure` | 2 | 0.4% |
 | `scope` | 2 | 0.4% |
+| 其余长尾标签 | 27 | 5.3% |
+
+上表合计 511/511（含长尾）。
 
 被审 / 被否决子集的失败类型：
 
@@ -264,6 +279,8 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 | CI / 测试失败 | 10 | 5.1% |
 | 静默或缺乏说明 | 9 | 4.6% |
 | 范围过大或越界 | 3 | 1.5% |
+
+上表合计 195/195。
 
 **功能 / 正确性示例：**
 
@@ -293,11 +310,11 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 
 两侧都是 `repeated_io` 最多，数量接近，**不能当成主拒因**。
 
-**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近导师说的「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。静默 maintainer 关闭仍需单独看待，它介于拒绝和遗弃之间。
+**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。静默 maintainer 关闭仍需单独看待，它介于拒绝和遗弃之间。
 
 ### RQ3.2 证据生成、流程协作与同 PR 修复分别暴露了哪些能力边界？
 
-三条既有 `boundary_tag` 直接对应三种非代码能力：
+三条既有 `boundary_tag` 是分析标签（不是测得的认知能力），对应三种非代码摩擦：
 
 | 边界 | 含义 | n | 合并率 |
 |---|---|---|---|
@@ -316,7 +333,7 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 
 退化 / 审查问题处置（`regression_handling`）：
 
-| regression_handling | 数量 | 占全库 |
+| regression_handling | 数量 | 占 n |
 |---|---|---|
 | `not_applicable` | 598 | 50.5% |
 | `reject_close` | 398 | 33.6% |
@@ -326,6 +343,12 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 | `revert` | 2 | 0.2% |
 | `fix_followup` | 2 | 0.2% |
 | `close_no_merge` | 1 | 0.1% |
+| `abandon` | 1 | 0.1% |
+| `recreated_in_new_pr` | 1 | 0.1% |
+| `closed_no_merge` | 1 | 0.1% |
+| `draft_converted_no_fix` | 1 | 0.1% |
+
+上表合计 1183/1183。
 
 `fix_in_pr` 共 143 条（12.1%）。修复主体启发式：
 
@@ -342,7 +365,7 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 
 - **证据生成**：一进入 `evidence_required`，合并率掉到约一成；sufficient 材料只有约 2%。
 - **流程协作**：process 边界合入率大约只有 technical_stack 的一半；closed 里沉默遗弃仍是大头。
-- **同 PR 修复**：能在原 PR 里把问题修完的是少数，且过半要人类主导。Agent 独立消化 CHANGES_REQUESTED 的能力有限。
+- **同 PR 修复**：能在原 PR 里把问题修完的是少数，且过半要人类主导。现有启发式并不支持把 CHANGES_REQUESTED 主要写成 Agent 独立消化。
 
 ---
 
@@ -408,7 +431,7 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 **路径 B — 需要被认真审的难 PR（RQ1.3 / RQ3）**
 
 - 工具链补可复现材料：前后对比表 + 复现步骤，对准 `evidence_required` 的悬崖，而不是给快合并路径加表。
-- Review 阶段把 CHANGES_REQUESTED 当成一等任务；当前 `fix_in_pr` 过半是人类主导，Agent 需要稳定消化审查意见。
+- Review 阶段把 CHANGES_REQUESTED 当成一等任务；当前 `fix_in_pr` 过半是人类主导，不能默认审查意见会被自动消化。
 - 对 `runtime_vm`、大范围控制流、包体积类改动提前声明风险，或拆成可独立合入的证据提交 + 代码提交。
 - 沉默遗弃是注意力问题：超时提醒、把 stale bot 关闭改成「需要 maintainer 一句话」而不是直接关。
 
@@ -453,4 +476,4 @@ Closed 中 `blocking=true` 仅 89 条；「真正被审过或有否决信号」�
 1. 标签来自 LLM 分析 JSON，建议对 real rejection / silent abandonment 各抽检数十条 `rejection_signals`。
 2. Agent 差异、边界与合并率、benchmark 与合并率都是相关不是因果。合并率分母为最终数据集 n。
 3. `fix_in_pr` 主体与 `antipattern_in_fix` 是启发式。
-4. 与 `FullAnalysis.md` 若有个别计数差，以本脚本现场聚合为准（分类规则已更新）。
+4. `FullAnalysis.md` §2 的 `outcome_reason` 粗分组（如 small_scope_low_risk）与本报告 RQ1.2 的 `merged_path`（如低摩擦快合并）是两套规则，数字不可互换。两侧都从同一终态 1183 条聚合。
