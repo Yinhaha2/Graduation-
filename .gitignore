@@ -4,3 +4,4 @@ output/
 output_all/
 .github_token
 _redact_secrets.py
+.ipynb_checkpoints/

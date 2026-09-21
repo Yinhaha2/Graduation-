@@ -1025,37 +1025,27 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "### RQ3.2 证据生成、流程协作与同 PR 修复分别暴露了哪些能力边界？",
         "",
-        "三条既有 `boundary_tag` 是分析标签（不是测得的认知能力），对应三种非代码摩擦：",
+        "三条既有 `boundary_tag` 是分析标签（不是测得的认知能力），对应三种非代码摩擦；`unknown` 仅 1 条，一并列出以免看起来像 1182。",
         "",
         md_table(
             ["边界", "含义", "n", "合并率"],
             [
                 [
-                    "`technical_stack`",
-                    "常规技术栈改动（分析标签，不是能力测定）",
-                    int(bound_term.loc["technical_stack"]["n"]) if "technical_stack" in bound_term.index else 0,
-                    pct(float(bound_term.loc["technical_stack"]["merge_rate"]), 1)
-                    if "technical_stack" in bound_term.index
-                    else "—",
-                ],
-                [
-                    "`process`",
-                    "协作 / 审查 / 流程推进",
-                    int(bound_term.loc["process"]["n"]) if "process" in bound_term.index else 0,
-                    pct(float(bound_term.loc["process"]["merge_rate"]), 1)
-                    if "process" in bound_term.index
-                    else "—",
-                ],
-                [
-                    "`evidence_required`",
-                    "维护者要求可复现性能证据",
-                    int(bound_term.loc["evidence_required"]["n"]) if "evidence_required" in bound_term.index else 0,
-                    pct(float(bound_term.loc["evidence_required"]["merge_rate"]), 1)
-                    if "evidence_required" in bound_term.index
-                    else "—",
-                ],
+                    f"`{idx}`",
+                    {
+                        "technical_stack": "常规技术栈改动（分析标签，不是能力测定）",
+                        "process": "协作 / 审查 / 流程推进",
+                        "evidence_required": "维护者要求可复现性能证据",
+                        "unknown": "未归入以上三档",
+                    }.get(str(idx), str(idx)),
+                    int(r["n"]),
+                    pct(float(r["merge_rate"]), 1),
+                ]
+                for idx, r in bound_term.iterrows()
             ],
         ),
+        "",
+        f"上表合计 {int(bound_term['n'].sum())}/{n}。",
         "",
         "**证据边界示例（evidence_required × closed）：**",
         "",

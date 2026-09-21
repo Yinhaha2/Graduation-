@@ -1,4 +1,5 @@
 {
+  "corpus_note": "Historical LLM batch log (2026-07). Current terminal corpus is 1183 PRs (672 merged / 511 closed); some ids in this log were later removed as still-open.",
   "model": "deepseek-v4-pro",
   "batch_count": 14,
   "updated_at": "2026-07-26T18:42:44.850079+00:00",

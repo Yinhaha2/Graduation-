@@ -164,8 +164,9 @@ per_pr/{pr_id}/
 
 | 文件 | 含义 |
 |------|------|
-| `coverage_stats.json` | 数据集总览：PR 数量、状态分布、最近一次 status refresh、附属表删行统计等 |
-| `status_refresh_report.json` | `refresh.py` 明细：哪些 open PR 变更、哪些 404 被移除 |
+| `coverage_stats.json` | **当前语料总览**：PR 数量、`status_counts`（672 merged / 511 closed）、附属表统计。看合并率用这里，不要用 freeze 里过期的拆分 |
+| `terminal_freeze_report.json` | 终态冻结日志：剔除了哪些 open PR（36 条）。`remaining_status_counts` 与主表对齐；本文件不是第二套语料 |
+| `status_refresh_report.json` | **冻结前** `refresh.py` 明细（当时仍有 36 条 open）。已被 freeze 取代，当前语料 0 条 open |
 | `github_status_cache.json` | GitHub PR 状态 API 缓存（按 `pr_id`） |
 | `github_auxiliary_cache.json` | 拉取附属数据时的 GitHub 缓存 |
 | `auxiliary_incremental_report.json` | 附属表增量同步记录（按 PR 统计新增行） |
@@ -206,7 +207,7 @@ flowchart LR
 ```
 
 - **查一条 PR 的全貌：** `pr_master` 行 → `per_pr/{id}/` → 需要时 JOIN `auxiliary` 或 `classification`。
-- **全库统计 / 论文表：** `pr_master` 或 `paper_source_copy` 的 POP 筛选 CSV + `summary/coverage_stats.json`。
+- **全库统计 / 论文表：** `pr_master` 或 `paper_source_copy` 的 POP 筛选 CSV + `summary/coverage_stats.json` 顶层 `status_counts`（672/511）。不要用 freeze 日志里的状态拆分当第二套语料。
 - **LLM 分析：** 输入来自 `per_pr/{id}/` + 主表；输出写回同目录下 `{id}_analysis.json`。
 
-更细的单次刷新数字见 [`finaldatabase/README.md`](finaldatabase/README.md) 与 [`finaldatabase/summary/coverage_stats.json`](finaldatabase/summary/coverage_stats.json)。
+更细的单次刷新数字见 [`finaldatabase/README.md`](finaldatabase/README.md) 与 [`finaldatabase/summary/coverage_stats.json`](finaldatabase/summary/coverage_stats.json) 顶层 `status_counts`。`terminal_freeze_report.json` 只说明剔除了哪些 open PR。

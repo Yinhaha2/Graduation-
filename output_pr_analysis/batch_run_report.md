@@ -1,5 +1,7 @@
 # PR analysis batch report
 
+> 这是 LLM 分析跑批的历史账本（2026-07），不是当前语料清单。最终数据集已冻结为 **1183** 条终态 PR（672 merged / 511 closed）；本报告里出现的部分 id 后来作为仍 open 被剔除。
+
 - Model: `deepseek-v4-pro`
 - Batch runs (cumulative): **14**
 - Last batch at: 2026-07-26T18:42:44.844886+00:00

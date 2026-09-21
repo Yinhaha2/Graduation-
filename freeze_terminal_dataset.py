@@ -112,6 +112,51 @@ def prune_json_id_map(path: Path, remove_ids: set[int], *map_keys: str) -> int:
     return n
 
 
+def sync_remaining_status_from_master() -> None:
+    """Keep freeze remaining_status_counts aligned to current master.
+
+    Freeze records which open PRs were dropped. The live merged/closed split
+    lives on pr_master / coverage_stats.status_counts and can move if GitHub
+    derived status is later corrected on the same 1183 IDs.
+    """
+    master_path = OUT / "pr_master" / "perf_prs_expanded_final.csv"
+    master = R.attach_status(pd.read_csv(master_path))
+    counts = {k: int(v) for k, v in master["status"].value_counts().items()}
+    n = len(master)
+    n_merged = int(counts.get("merged", 0))
+    note = (
+        "pr_master.status (GitHub-derived). Live split is coverage_stats.status_counts; "
+        "do not treat this freeze log as a second corpus."
+    )
+
+    freeze_path = OUT / "summary" / "terminal_freeze_report.json"
+    if freeze_path.exists():
+        freeze = json.loads(freeze_path.read_text(encoding="utf-8"))
+        freeze["remaining_pr_count"] = n
+        freeze["remaining_status_counts"] = counts
+        freeze["remaining_status_source"] = note
+        freeze["leftover_open_in_master"] = int((master["status"] == "open").sum())
+        freeze_path.write_text(json.dumps(freeze, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    cov_path = OUT / "summary" / "coverage_stats.json"
+    if cov_path.exists():
+        coverage = json.loads(cov_path.read_text(encoding="utf-8"))
+        coverage["pr_count"] = n
+        coverage["status_counts"] = counts
+        coverage["merge_rate"] = (n_merged / n) if n else None
+        tf = coverage.get("terminal_freeze")
+        if isinstance(tf, dict):
+            tf["remaining_pr_count"] = n
+            tf["remaining_status_counts"] = counts
+            tf["remaining_status_source"] = note
+            tf["leftover_open_in_master"] = int((master["status"] == "open").sum())
+            coverage["terminal_freeze"] = tf
+        coverage.pop("prior_status_refresh", None)
+        cov_path.write_text(json.dumps(coverage, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    print(f"Synced remaining_status_counts -> {counts} (n={n})")
+
+
 def write_frozen_outputs(master: pd.DataFrame, report: dict) -> None:
     paper_cols = [c for c in master.columns if c not in R.PAPER_BASE_EXCLUDE]
     paper_df = master[paper_cols].copy()
@@ -140,11 +185,6 @@ def write_frozen_outputs(master: pd.DataFrame, report: dict) -> None:
     }
     summary_dir = OUT / "summary"
     summary_dir.mkdir(parents=True, exist_ok=True)
-    prior_cov = summary_dir / "coverage_stats.json"
-    if prior_cov.exists():
-        old = json.loads(prior_cov.read_text(encoding="utf-8"))
-        if "status_refresh" in old:
-            coverage["prior_status_refresh"] = old["status_refresh"]
     (summary_dir / "coverage_stats.json").write_text(
         json.dumps(coverage, ensure_ascii=False, indent=2), encoding="utf-8"
     )
@@ -167,7 +207,8 @@ def write_frozen_outputs(master: pd.DataFrame, report: dict) -> None:
 - `pr_master/`：终态主表 CSV/Parquet
 - `auxiliary/`：PR 聚合附属表（parquet）
 - `per_pr/{{pr_id}}/`：每条 PR 的独立 parquet 与分析 JSON
-- `summary/terminal_freeze_report.json`：open 剔除明细
+- `summary/coverage_stats.json`：当前语料 `status_counts`（看合并率用这个）
+- `summary/terminal_freeze_report.json`：open 剔除明细；`remaining_status_counts` 与主表对齐，不是第二套语料
 """
     (OUT / "README.md").write_text(readme, encoding="utf-8")
 
@@ -182,7 +223,8 @@ def main() -> None:
     json_open = open_ids_from_analyses()
     remove_ids = gh_open | json_open
     if not remove_ids:
-        print("No open PRs to remove.")
+        print("No open PRs to remove; syncing freeze remaining_status_counts from master.")
+        sync_remaining_status_from_master()
         return
 
     rows = master[master["id"].isin(remove_ids)][
@@ -206,6 +248,7 @@ def main() -> None:
 
     leftover_open = int((updated["status"] == "open").sum())
     leftover_json = open_ids_from_analyses()
+    status_counts = {k: int(v) for k, v in updated["status"].value_counts().items()}
     report = {
         "frozen_at": datetime.now(timezone.utc).isoformat(),
         "corpus_definition": "terminal_only",
@@ -221,7 +264,8 @@ def main() -> None:
         "github_status_cache_pruned": cache_pruned,
         "github_auxiliary_cache_pruned": aux_cache_pruned,
         "remaining_pr_count": len(updated),
-        "remaining_status_counts": updated["status"].value_counts().to_dict(),
+        "remaining_status_counts": status_counts,
+        "remaining_status_source": "pr_master.status (GitHub-derived). Live split is coverage_stats.status_counts; do not treat this freeze log as a second corpus.",
         "leftover_open_in_master": leftover_open,
         "leftover_open_in_json": sorted(leftover_json),
     }
