@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-29 18:36:58+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-01 15:48:46+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -65,7 +65,7 @@
         "labeled": 1,
         "renamed": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 1533.197,
       "first_review_delay_hours": 3.05,
       "review_rounds": 5,
       "has_revert": false,
@@ -116,7 +116,7 @@
         "interpretation": "At 1123 changed lines, this is a medium-to-large refactor by absolute volume (mostly deletions). As a simplification perf PR it was closed—not merged—due to low priority despite functional acceptance."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 1533.197,
         "fast_merge": false
       }
     },

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-24 12:15:27+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-05-12 13:15:31+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -58,7 +58,7 @@
         "mentioned": 4,
         "subscribed": 4
       },
-      "lifespan_hours": 860.0,
+      "lifespan_hours": 7009.001,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -110,7 +110,7 @@
         "interpretation": "At 30478 changed lines, this is a very large addition by absolute volume, mostly adding a new benchmark package with many files, making it a substantial feature PR. It was closed without merge after extensive iterative review and remained incomplete."
       },
       "lifecycle": {
-        "lifespan_hours": 860.0,
+        "lifespan_hours": 7009.001,
         "fast_merge": false
       }
     },

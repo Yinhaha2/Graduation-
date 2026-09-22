@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-16 07:57:43+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-01-15 15:50:29+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -53,7 +53,7 @@
         "commented": 2,
         "deployed": 3
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 4399.879,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -100,7 +100,7 @@
         "interpretation": "At 16772 changed lines, this is a large change by absolute volume, mostly driven by pnpm-lock.yaml (14204 lines). The PR is a major refactor of a webpack plugin, but it did not merge, likely due to CI failures and lack of review engagement."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 4399.879,
         "fast_merge": false
       }
     },

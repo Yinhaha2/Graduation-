@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-30 19:35:07+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-06 12:24:46+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -61,7 +61,7 @@
         "review_requested": 1,
         "commented": 2
       },
-      "lifespan_hours": 392.87,
+      "lifespan_hours": 880.827,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -109,7 +109,7 @@
         "interpretation": "The PR contains 2519 changed lines, mostly from merging the main branch; the actual optimization code was never implemented, making this a planning-only PR."
       },
       "lifecycle": {
-        "lifespan_hours": 392.87,
+        "lifespan_hours": 880.827,
         "fast_merge": false
       }
     },

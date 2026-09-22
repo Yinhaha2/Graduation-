@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-22 08:37:59+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-05-01 15:06:51+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -62,7 +62,7 @@
         "copilot_work_finished": 2,
         "reviewed": 1
       },
-      "lifespan_hours": 8256.575,
+      "lifespan_hours": 8262.481,
       "first_review_delay_hours": 3.836,
       "review_rounds": 1,
       "has_revert": false,
@@ -113,7 +113,7 @@
         "interpretation": "At 370 changed lines across 8 files, this is a small-to-medium edit by absolute volume. It fits a targeted performance feature addition, but was closed without merge due to fundamental design issues and later superseded by another PR."
       },
       "lifecycle": {
-        "lifespan_hours": 8256.575,
+        "lifespan_hours": 8262.481,
         "fast_merge": false
       }
     },

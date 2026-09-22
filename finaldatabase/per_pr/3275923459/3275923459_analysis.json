@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-30 07:03:53+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-25 05:43:28+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -58,7 +58,7 @@
         "ready_for_review": 1,
         "unlabeled": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 622.66,
       "first_review_delay_hours": 0.0025,
       "review_rounds": 1,
       "has_revert": false,
@@ -105,7 +105,7 @@
         "interpretation": "At 37 changed lines across 14 files, this is a very small and scattered change typical of a simple column addition. The PR was closed without merge, which is unexpected for such a low-risk change; likely due to missing reviewer attention or submission process issues."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 622.66,
         "fast_merge": false
       }
     },

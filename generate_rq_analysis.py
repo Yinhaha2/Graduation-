@@ -291,10 +291,10 @@ def _clean_text(v) -> str | None:
     return s
 
 
-def pick_examples(df: pd.DataFrame, n: int = 3) -> list[dict]:
+def pick_examples(df: pd.DataFrame, n: int = 3, *, include_rejection: bool = True) -> list[dict]:
     rows = []
     for _, r in df.head(n).iterrows():
-        sig = _clean_text(r.get("rejection_signals"))
+        sig = _clean_text(r.get("rejection_signals")) if include_rejection else None
         rows.append(
             {
                 "pr_id": int(r["pr_id"]),
@@ -479,11 +479,16 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
     ranked_rev = reviewed_closed.copy()
     ranked_rev["_score"] = ranked_rev.apply(example_score, axis=1)
 
+    merged_labeled = merged[merged["outcome_reason"].fillna("").astype(str).str.strip().ne("")]
     ex_fast = pick_examples(
-        merged[merged["merged_path"] == "fast_low_friction"].sort_values("lifespan_hours")
+        merged_labeled[merged_labeled["merged_path"] == "fast_low_friction"].sort_values("lifespan_hours"),
+        include_rejection=False,
     )
     ex_rev = pick_examples(
-        merged[merged["merged_path"] == "reviewed_iteration"].sort_values("lifespan_hours", ascending=False)
+        merged_labeled[merged_labeled["merged_path"] == "reviewed_iteration"].sort_values(
+            "lifespan_hours", ascending=False
+        ),
+        include_rejection=False,
     )
     ex_rej = pick_examples(
         ranked_closed[ranked_closed["close_motivation"] == "real_rejection"].sort_values("_score", ascending=False)

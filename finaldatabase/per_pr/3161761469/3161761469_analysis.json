@@ -6,11 +6,11 @@
     "repo": "reown-com/appkit",
     "agent": "Devin",
     "user": "devin-ai-integration[bot]",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-06-20 02:48:30+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-08-11 07:23:47+00:00",
+    "closed_at": "2025-08-11 07:23:47+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -64,7 +64,7 @@
         "review_request_removed": 1,
         "reviewed": 3
       },
-      "lifespan_hours": 816.13,
+      "lifespan_hours": 1252.588,
       "first_review_delay_hours": 0.0,
       "review_rounds": 3,
       "has_revert": false,
@@ -90,7 +90,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "correctness_issue_not_fixed_and_stale",
+    "outcome_reason": null,
     "review_dimensions": [
       "correctness",
       "tests",
@@ -109,13 +109,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 4174,
         "interpretation": "The large change scale (4174 lines, 196 files) is mostly from a merge commit pulling in unrelated main changes; the actual perf-related change is a small front-end optimization. The closure was due to an unresolved correctness bug, not the size."
       },
       "lifecycle": {
-        "lifespan_hours": 816.13,
+        "lifespan_hours": 1252.588,
         "fast_merge": false
       }
     },

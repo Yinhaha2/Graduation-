@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-19 18:25:04+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-06-18 17:47:03+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "docs",
     "aidev_task_confidence": 10,
@@ -56,7 +56,7 @@
         "copilot_work_finished": 3,
         "commented": 4
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 9479.366,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -105,7 +105,7 @@
         "interpretation": "At 671 changed lines across 4 documentation files, this is a medium-sized documentation update. It fits a documentation-driven performance PR, which was closed without merging after the maintainer requested a more thorough Diátaxis-based restructuring."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 9479.366,
         "fast_merge": false
       }
     },

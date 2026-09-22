@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-15 21:45:50+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-11-03 19:31:45+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -49,7 +49,7 @@
         "committed": 1,
         "labeled": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 3381.765,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -96,7 +96,7 @@
         "interpretation": "At 19 changed lines, this is a tiny edit. It fits a small-step startup optimization PR, but was closed likely due to failing tests and lack of performance evidence."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 3381.765,
         "fast_merge": false
       }
     },

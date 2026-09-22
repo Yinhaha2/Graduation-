@@ -6,11 +6,11 @@
     "repo": "dsccommunity/SqlServerDsc",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-10 16:11:24+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-09-13 09:45:39+00:00",
+    "closed_at": "2025-09-13 09:45:39+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -61,7 +61,7 @@
         "commented": 3,
         "labeled": 2
       },
-      "lifespan_hours": 1550,
+      "lifespan_hours": 1553.571,
       "first_review_delay_hours": 1525,
       "review_rounds": 5,
       "has_revert": false,
@@ -87,7 +87,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "closed_not_merged_after_approval_inactivity",
+    "outcome_reason": null,
     "review_dimensions": [
       "design_or_approach",
       "style",
@@ -110,13 +110,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 536,
         "interpretation": "At 536 changed lines initially, this is a medium-sized addition of PowerShell commands. The PR was closed without merge after prolonged review, design overhaul, and eventual approval but abandonment."
       },
       "lifecycle": {
-        "lifespan_hours": 1550,
+        "lifespan_hours": 1553.571,
         "fast_merge": false
       }
     },

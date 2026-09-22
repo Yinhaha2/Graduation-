@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-14 17:31:20+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-01-27 09:43:20+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -51,7 +51,7 @@
         "labeled": 1,
         "commented": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 5440.2,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -98,7 +98,7 @@
         "interpretation": "At 561 changed lines across 2 files (both in benchmark/), this is a small-to-medium addition by absolute volume. It is a benchmarking PR that was likely an experiment left incomplete; not merged."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 5440.2,
         "fast_merge": false
       }
     },

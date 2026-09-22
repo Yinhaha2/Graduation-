@@ -1,6 +1,6 @@
 {
   "superseded_by_terminal_freeze": true,
-  "corpus_note": "Pre-freeze GitHub refresh log. still_open_n=36 was true at checked_at. Current corpus: 1183 terminal PRs, 0 open; live split is coverage_stats.status_counts (672 merged / 511 closed).",
+  "corpus_note": "Pre-freeze GitHub refresh log. still_open_n=36 was true at checked_at. Current corpus: 1183 terminal PRs, 0 open; live split is coverage_stats.status_counts (694 merged / 489 closed).",
   "checked_at": "2026-09-21T02:19:36.953386+00:00",
   "formerly_open_n": 147,
   "status_changed_n": 109,

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-21 02:47:05+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-19 13:14:58+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
@@ -67,7 +67,7 @@
         "copilot_work_finished": 4,
         "commented": 4
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 2170.465,
       "first_review_delay_hours": 0.086,
       "review_rounds": 29,
       "has_revert": false,
@@ -122,7 +122,7 @@
         "interpretation": "At 10338 changed lines, this is a large-scale change by absolute volume, but the overwhelming majority comes from master merges; the actual trace fix is ~100 lines. The PR was closed without merge after maintainer requested perf run validation, which was not provided."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 2170.465,
         "fast_merge": false
       }
     },

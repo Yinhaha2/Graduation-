@@ -59,7 +59,7 @@
         "mentioned": 4,
         "subscribed": 4
       },
-      "lifespan_hours": 8811.8,
+      "lifespan_hours": 8787.829,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -111,7 +111,7 @@
         "interpretation": "At 2361 changed lines across 199 files, this is a large, codebase-wide refactor. It is consistent with the closed outcome given the incomplete conversion and leftover TypeScript errors."
       },
       "lifecycle": {
-        "lifespan_hours": 8811.8,
+        "lifespan_hours": 8787.829,
         "fast_merge": false
       }
     },

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-23 20:56:44+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-11-22 09:38:35+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "ci",
     "aidev_task_confidence": 9,
@@ -56,7 +56,7 @@
         "review_requested": 1,
         "copilot_work_finished": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 4380.698,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -103,7 +103,7 @@
         "interpretation": "At 317 changed lines across 3 workflow files, this is a small-to-medium CI workflow change by absolute volume. As a CI performance/reliability PR, it was closed without merge—no human review engagement, suggesting the change did not gain traction."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 4380.698,
         "fast_merge": false
       }
     },

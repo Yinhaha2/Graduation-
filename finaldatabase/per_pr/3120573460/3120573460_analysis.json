@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-05 09:53:19+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-01-27 09:43:19+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -51,7 +51,7 @@
         "committed": 2,
         "labeled": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 5663.833,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -97,7 +97,7 @@
         "interpretation": "At 232 changed lines across 9 files, this is a small-to-medium edit by absolute volume, concentrated in the core perturbation solver. As a performance caching PR it was closed without merge—no review engagement, consistent with a stale or abandoned patch."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 5663.833,
         "fast_merge": false
       }
     },

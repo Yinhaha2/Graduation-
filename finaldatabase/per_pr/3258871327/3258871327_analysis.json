@@ -6,11 +6,11 @@
     "repo": "binarywang/WxJava",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-24 07:42:17+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-08-08 09:47:21+00:00",
+    "closed_at": "2025-08-08 09:47:21+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -56,7 +56,7 @@
         "copilot_work_finished": 1,
         "ready_for_review": 1
       },
-      "lifespan_hours": 113.6,
+      "lifespan_hours": 362.084,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -82,7 +82,7 @@
     "inefficiency_antipattern": [
       "repeated_io"
     ],
-    "outcome_reason": "stale_no_review_engagement",
+    "outcome_reason": null,
     "review_dimensions": [],
     "blocking": false,
     "boundary_tag": "process",
@@ -97,13 +97,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 507,
         "interpretation": "At 507 changed lines over 7 files, this is a medium-sized edit by absolute volume. As a performance improvement adding connection pooling, it is a moderate change that was closed without merge, likely due to lack of review activity rather than technical rejection."
       },
       "lifecycle": {
-        "lifespan_hours": 113.6,
+        "lifespan_hours": 362.084,
         "fast_merge": false
       }
     },

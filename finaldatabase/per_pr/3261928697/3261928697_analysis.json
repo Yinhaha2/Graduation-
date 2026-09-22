@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-25 04:17:24+00:00",
     "merged_at": null,
-    "closed_at": "2026-04-16 13:54:10+00:00",
+    "closed_at": "2026-04-16 13:54:11+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -52,7 +52,7 @@
         "committed": 1,
         "labeled": 1
       },
-      "lifespan_hours": 6369.6,
+      "lifespan_hours": 6369.613,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -100,7 +100,7 @@
         "interpretation": "At 495 changed lines across 8 files, this is a small-to-medium addition by absolute volume. As a test benchmarking infrastructure PR, it was closed without merge after going stale over ~9 months, consistent with lack of review and eventual conflict."
       },
       "lifecycle": {
-        "lifespan_hours": 6369.6,
+        "lifespan_hours": 6369.613,
         "fast_merge": false
       }
     },

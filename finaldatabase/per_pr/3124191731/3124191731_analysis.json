@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-06 09:22:21+00:00",
     "merged_at": null,
-    "closed_at": "2025-11-19 00:05:24+00:00",
+    "closed_at": "2025-11-19 00:05:25+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -64,7 +64,7 @@
         "head_ref_force_pushed": 1,
         "ready_for_review": 1
       },
-      "lifespan_hours": 3974.72,
+      "lifespan_hours": 3974.718,
       "first_review_delay_hours": 1.08,
       "review_rounds": 2,
       "has_revert": false,
@@ -115,7 +115,7 @@
         "interpretation": "At 21943 changed lines across 192 files, this is a very large change by absolute volume, largely due to a merge of main bringing many unrelated changes; the core compaction configuration changes are small. The PR was closed without merge, which is not surprising given the scope management issue and unresolved design feedback."
       },
       "lifecycle": {
-        "lifespan_hours": 3974.72,
+        "lifespan_hours": 3974.718,
         "fast_merge": false
       }
     },

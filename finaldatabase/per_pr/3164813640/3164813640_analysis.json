@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-21 06:22:21+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-14 17:36:48+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -52,7 +52,7 @@
         "labeled": 1,
         "commented": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 1307.241,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -98,7 +98,7 @@
         "interpretation": "At 146 changed lines, this is a small edit by absolute volume. As a small performance PR it was closed without merge, likely due to lack of reviewer engagement rather than code quality."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 1307.241,
         "fast_merge": false
       }
     },

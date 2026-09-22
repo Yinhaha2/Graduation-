@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-27 10:09:25+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-11-27 15:54:26+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
@@ -53,7 +53,7 @@
         "committed": 19,
         "commented": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 4421.75,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -100,7 +100,7 @@
         "interpretation": "At 1337 changed lines across 39 files, this is a medium-to-large edit by absolute volume, concentrated in `added_vocabulary.rs`. The PR was closed without merge, indicating the performance optimization did not reach a mergeable state despite extensive human follow-up commits."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 4421.75,
         "fast_merge": false
       }
     },

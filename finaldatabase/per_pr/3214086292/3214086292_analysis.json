@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-09 00:27:50+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-19 18:10:45+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "test",
     "aidev_task_confidence": 9,
@@ -61,7 +61,7 @@
         "copilot_work_finished": 3,
         "commented": 6
       },
-      "lifespan_hours": 549.95,
+      "lifespan_hours": 1001.715,
       "first_review_delay_hours": 544.88,
       "review_rounds": 4,
       "has_revert": false,
@@ -111,7 +111,7 @@
         "interpretation": "At 4564 changed lines across 46 files, this is a large-scale refactor by absolute volume, driven mostly by a massive rewrite of ajax.tests.ts (2719 changes) plus a merge of upstream changes. As a test modernization performance PR it was closed—not merged—because Copilot could not produce a compiling test suite despite many rounds of targeted error fixes."
       },
       "lifecycle": {
-        "lifespan_hours": 549.95,
+        "lifespan_hours": 1001.715,
         "fast_merge": false
       }
     },

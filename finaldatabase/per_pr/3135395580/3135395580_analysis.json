@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-11 03:56:27+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-11-03 18:13:12+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
@@ -58,7 +58,7 @@
         "mentioned": 1,
         "subscribed": 1
       },
-      "lifespan_hours": 140.63,
+      "lifespan_hours": 3494.279,
       "first_review_delay_hours": 0.551,
       "review_rounds": 12,
       "has_revert": false,
@@ -111,7 +111,7 @@
         "interpretation": "At 33 changed lines across 2 files (only 4 lines in CUDACachingAllocator.cpp), this is a tiny edit by absolute volume. It fits a targeted fix for a complex memory leak, but the PR was closed without merge despite one approval, indicating the small scope did not guarantee acceptance due to unresolved CI issues and maintainer caution."
       },
       "lifecycle": {
-        "lifespan_hours": 140.63,
+        "lifespan_hours": 3494.279,
         "fast_merge": false
       }
     },

@@ -6,11 +6,11 @@
     "repo": "zpm-zsh/zpm",
     "agent": "OpenAI_Codex",
     "user": "grigorii-horos",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-06-05 09:35:02+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-11-24 16:01:38+00:00",
+    "closed_at": "2025-11-24 16:01:38+00:00",
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
@@ -49,7 +49,7 @@
         "committed": 1,
         "labeled": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 4134.443,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -74,7 +74,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "stale_no_review_engagement",
+    "outcome_reason": null,
     "review_dimensions": [],
     "blocking": false,
     "boundary_tag": "process",
@@ -89,13 +89,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 23,
         "interpretation": "At 23 changed lines, this is a tiny edit. As a minimal performance PR it was closed without review engagement rather than merged."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 4134.443,
         "fast_merge": false
       }
     },

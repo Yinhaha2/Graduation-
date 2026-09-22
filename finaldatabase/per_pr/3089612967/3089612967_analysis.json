@@ -2,7 +2,7 @@
   "pr_id": 3089612967,
   "meta": {
     "title": "Use LRU cache for preprocess",
-    "html_url": "unknown",
+    "html_url": "https://github.com/addok/addok/pull/892",
     "repo": "addok/addok",
     "agent": "OpenAI_Codex",
     "user": "jdesboeufs",

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-22 16:03:22+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-16 16:09:15+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -57,7 +57,7 @@
         "mentioned": 1,
         "subscribed": 1
       },
-      "lifespan_hours": 2808.1,
+      "lifespan_hours": 2808.098,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -103,7 +103,7 @@
         "interpretation": "At 72 changed lines across 5 files, this is a small edit by absolute volume. It adds an optional parameter with tests. The PR was closed without merge, due to lack of review engagement and being marked stale."
       },
       "lifecycle": {
-        "lifespan_hours": 2808.1,
+        "lifespan_hours": 2808.098,
         "fast_merge": false
       }
     },

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-13 16:31:20+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-13 16:17:49+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -51,7 +51,7 @@
         "committed": 1,
         "reviewed": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 743.775,
       "first_review_delay_hours": 0.152,
       "review_rounds": 1,
       "has_revert": false,
@@ -101,7 +101,7 @@
         "interpretation": "At 85 changed lines in a single file, this is a small edit by absolute volume. It fits a small-step performance PR but was closed due to a correctness bug, not because of its size or scope."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 743.775,
         "fast_merge": false
       }
     },

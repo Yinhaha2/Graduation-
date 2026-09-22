@@ -333,6 +333,14 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         f"Grouped-reason rows sum to {int(merged_groups.sum())}/{len(merged)}. "
         "This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review)."
     )
+    blank_reason = int(merged["outcome_reason"].fillna("").eq("").sum())
+    if blank_reason:
+        lines.append("")
+        lines.append(
+            f"{blank_reason} merged PRs have an empty `outcome_reason`. "
+            "Their GitHub `merged_at` was restored from the status-refresh cache after an earlier pass had stored them as closed, "
+            "so the closed-state reason strings were removed rather than counted as merge reasons."
+        )
 
     lines += [
         "",
@@ -616,6 +624,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "- Labels such as `outcome_reason` are LLM-generated (synonym inflation); this report coarsens merge/close groups.",
         "- Fix actor / new-issue-in-fix findings are **text heuristics** — sample-check before paper use.",
         "- Merge rate is merged / corpus n on the terminal snapshot (open PRs are not in this dataset).",
+        "- `merged_at` / `closed_at` on the formerly-open cohort follow `summary/github_status_cache.json` (the refresh log). Where that cache showed a merge the master had missed, status is merged and the old closed-state `outcome_reason` is left empty.",
         "",
     ]
     return "\n".join(lines)

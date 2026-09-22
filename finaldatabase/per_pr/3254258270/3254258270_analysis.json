@@ -6,11 +6,11 @@
     "repo": "3rdIteration/btcrecover",
     "agent": "OpenAI_Codex",
     "user": "3rdIteration",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-22 22:31:51+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-10-05 18:22:02+00:00",
+    "closed_at": "2025-10-05 18:22:02+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -49,7 +49,7 @@
         "committed": 1,
         "labeled": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 1795.836,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -76,7 +76,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "closed_no_review",
+    "outcome_reason": null,
     "review_dimensions": [],
     "blocking": false,
     "boundary_tag": "process",
@@ -91,13 +91,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 40,
         "interpretation": "At 40 lines in a single file, this is a trivial change. As a small GPU kernel performance PR, it was closed without merge for unclear reasons—no review or discussion occurred."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 1795.836,
         "fast_merge": false
       }
     },

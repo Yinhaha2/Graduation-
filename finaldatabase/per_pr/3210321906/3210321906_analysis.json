@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-07 21:43:20+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-26 02:02:10+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -59,7 +59,7 @@
         "copilot_work_finished": 2,
         "reviewed": 1
       },
-      "lifespan_hours": 2.415,
+      "lifespan_hours": 1924.314,
       "first_review_delay_hours": 2.319,
       "review_rounds": 3,
       "has_revert": false,
@@ -109,7 +109,7 @@
         "interpretation": "At 307 changed lines, this is a small-to-medium edit by absolute volume, concentrated in two new logger files and minor modifications to existing classes. It fits a small-step performance PR that was closed without merge after addressing design feedback."
       },
       "lifecycle": {
-        "lifespan_hours": 2.415,
+        "lifespan_hours": 1924.314,
         "fast_merge": false
       }
     },

@@ -6,11 +6,11 @@
     "repo": "static-frame/static-frame",
     "agent": "OpenAI_Codex",
     "user": "flexatone",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-06-03 19:30:02+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2026-03-11 01:59:38+00:00",
+    "closed_at": "2026-03-11 01:59:38+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -50,7 +50,7 @@
         "labeled": 1,
         "commented": 1
       },
-      "lifespan_hours": 0.028,
+      "lifespan_hours": 6726.493,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -74,7 +74,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "closed_no_review_engagement",
+    "outcome_reason": null,
     "review_dimensions": [],
     "blocking": false,
     "boundary_tag": "evidence_required",
@@ -89,13 +89,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 13,
         "interpretation": "A tiny 13-line change in type_blocks.py, consistent with a micro-optimization. Closure without merge is atypical for such small-scope perf PRs, likely due to lack of review or evidence."
       },
       "lifecycle": {
-        "lifespan_hours": 0.028,
+        "lifespan_hours": 6726.493,
         "fast_merge": false
       }
     },

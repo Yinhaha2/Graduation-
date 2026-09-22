@@ -1,10 +1,10 @@
 # analysis_viz — Figure guide
 
 Notebook: `perf_pr_visualization.ipynb`  
-Data: `../full_analysis_distilled.csv`（**最终数据集：1183 PR，672 merged，511 closed**；合并率 **56.8%** = 672/1183）  
+Data: `../full_analysis_distilled.csv`（**最终数据集：1183 PR，694 merged，489 closed**；合并率 **58.7%** = 694/1183）  
 Figures: `figures/`
 
-Numbers below match the current distilled table. Merge-rate charts use the terminal corpus (open PRs were removed). Overall merge rate ≈ **56.8%**.
+Numbers below match the current distilled table. Merge-rate charts use the terminal corpus (open PRs were removed). Overall merge rate ≈ **58.7%**.
 
 ---
 
@@ -16,13 +16,13 @@ Numbers below match the current distilled table. Merge-rate charts use the termi
 
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| ≤100 | 490 | **61.4%** |
-| 101–500 | 350 | 52.6% |
-| 501–2k | 196 | 54.1% |
-| 2k–10k | 107 | 56.1% |
-| >10k | 40 | 52.5% |
+| ≤100 | 490 | **63.1%** |
+| 101–500 | 350 | 53.1% |
+| 501–2k | 196 | 56.6% |
+| 2k–10k | 107 | 61.7% |
+| >10k | 40 | 55.0% |
 
-Median `changes`: merged **141**, closed **172**. Zero-line churn (`changes=0`) is **13** PRs (all closed) and is counted in ≤100. Bins sum to 1183.
+Median `changes`: merged **143**, closed **170**. Zero-line churn (`changes=0`) is **13** PRs (all closed) and is counted in ≤100. Bins sum to 1183.
 
 ---
 
@@ -35,11 +35,11 @@ Median `changes`: merged **141**, closed **172**. Zero-line churn (`changes=0`) 
 | Files bin | Terminal PRs | Merge rate |
 |-----------|--------------|------------|
 | 0 | 13 | 0.0% |
-| 1 | 240 | **62.9%** |
-| 2–5 | 466 | 54.7% |
-| 6–20 | 287 | 55.4% |
-| 21–100 | 114 | 59.6% |
-| >100 | 63 | 61.9% |
+| 1 | 240 | **65.4%** |
+| 2–5 | 466 | 56.0% |
+| 6–20 | 287 | 56.8% |
+| 21–100 | 114 | 63.2% |
+| >100 | 63 | 65.1% |
 
 The 13 zero-file PRs are the same 13 zero-churn closed PRs. Bins sum to 1183.
 
@@ -53,13 +53,12 @@ The 13 zero-file PRs are the same 13 zero-churn closed PRs. Bins sum to 1183.
 
 | Lifespan | Terminal PRs | Merge rate |
 |----------|--------------|------------|
-| <1h | 573 | **76.6%** |
-| 1–24h | 236 | 57.2% |
-| 1–7d | 180 | 40.0% |
-| >7d | 153 | **17.0%** |
-| (lifespan missing) | 41 | 0.0% |
+| <1h | 568 | **77.3%** |
+| 1–24h | 232 | 58.2% |
+| 1–7d | 165 | 43.6% |
+| >7d | 218 | **22.0%** |
 
-Median lifespan: merged **~0.08 h (~5 min)**; closed **~24.3 h (~1 day)**. Among merged, `fast_merge=true` is **78.6%**. Figure 06 uses the four non-missing bins only; the 41 PRs with missing lifespan (merge rate 0%) are in the table, not the chart.
+Median lifespan: merged **~0.12 h (~7 min)**; closed **~37.6 h (~1.6 day)**. Among merged, `fast_merge=true` is **76.1%** (528/694). Lifespan is filled for all 1183 PRs; bins sum to 1183.
 
 ---
 
@@ -71,12 +70,12 @@ Median lifespan: merged **~0.08 h (~5 min)**; closed **~24.3 h (~1 day)**. Among
 
 | Comment bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| 0 | 547 | **71.5%** |
-| 1–2 | 294 | 43.2% |
-| 3–9 | 255 | 43.1% |
-| ≥10 | 87 | 50.6% |
+| 0 | 547 | **72.8%** |
+| 1–2 | 294 | 43.9% |
+| 3–9 | 255 | 45.1% |
+| ≥10 | 87 | 59.8% |
 
-Median comments: merged **0** (391/672 = 58.2% zero); closed **2** (156/511 = 30.5% zero). Bins sum to 1183. The 0 bin is `comment_total==0`, not a `pd.cut` interval that starts after 0.
+Median comments: merged **0** (398/694 = 57.3% zero); closed **2** (149/489 = 30.5% zero). Bins sum to 1183. The 0 bin is `comment_total==0`, not a `pd.cut` interval that starts after 0.
 
 ---
 
@@ -84,7 +83,7 @@ Median comments: merged **0** (391/672 = 58.2% zero); closed **2** (156/511 = 30
 
 **What it shows:** Counts of non-`none` / non-`unknown` `inefficiency_antipattern` labels (multi-label exploded).
 
-**Phenomenon:** Most PRs have no antipattern label. When present, **`repeated_io`** dominates on both sides (merged **32**, closed **36**); next is `nested_loop` (merged 9, closed 5). Antipattern tags do not cleanly separate merge vs close.
+**Phenomenon:** Most PRs have no antipattern label. When present, **`repeated_io`** dominates on both sides (merged **33**, closed **35**); next is `nested_loop` (merged 10, closed 4). Antipattern tags do not cleanly separate merge vs close.
 
 ---
 
@@ -145,7 +144,7 @@ Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_
 
 **What it shows:** Whether the fix itself introduces a new antipattern (`antipattern_in_fix`).
 
-**Phenomenon:** Almost never labeled as introducing a new issue — **`none` on 1174 / 1183 (99.2%)**. Non-none cases are **7** one-off labels (e.g. `fabricated_benchmark`, `mutable_global_state`, `incorrect_lru_eviction`), each n=1. Treat as rare anecdotes, not a systematic failure mode.
+**Phenomenon:** Almost never labeled as introducing a new issue — **`none` on 1174 / 1183 (99.2%)**. Labeled non-none cases are **7** one-off labels (e.g. `fabricated_benchmark`, `mutable_global_state`, `incorrect_lru_eviction`), each n=1, and **2** rows have the field empty. Treat the labeled cases as rare anecdotes, not a systematic failure mode.
 
 ---
 
@@ -153,7 +152,7 @@ Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_
 
 **What it shows:** Share of merged vs closed among terminal PRs (open excluded from this pie).
 
-**Phenomenon:** Terminal outcomes split as **merged 672 (56.8%)** vs **closed 511 (43.2%)**. Open PRs are not in this snapshot.
+**Phenomenon:** Terminal outcomes split as **merged 694 (58.7%)** vs **closed 489 (41.3%)**. Open PRs are not in this snapshot.
 
 ---
 
@@ -165,11 +164,11 @@ Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_
 
 | Agent | PRs | Merge rate |
 |-------|-----|------------|
-| OpenAI_Codex | 629 | **71.9%** |
-| Claude_Code | 34 | 61.8% |
-| Cursor | 89 | 53.9% |
-| Copilot | 206 | 37.9% |
-| Devin | 225 | **32.4%** |
+| OpenAI_Codex | 629 | **73.1%** |
+| Claude_Code | 34 | 64.7% |
+| Cursor | 89 | 55.1% |
+| Copilot | 206 | 43.2% |
+| Devin | 225 | **32.9%** |
 
 ---
 
@@ -181,9 +180,9 @@ Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_
 
 | reproducibility | Count | Share | Merged / Closed |
 |-----------------|-------|-------|-----------------|
-| `insufficient` | 730 | **61.7%** | 356 / 374 |
-| `partial` | 235 | 19.9% | 173 / 62 |
-| `unknown` | 194 | 16.4% | 127 / 67 |
+| `insufficient` | 730 | **61.7%** | 372 / 358 |
+| `partial` | 235 | 19.9% | 176 / 59 |
+| `unknown` | 194 | 16.4% | 130 / 64 |
 | `sufficient` | 24 | **2.0%** | 16 / 8 |
 
 Auxiliary: `body_has_repro_steps=true` only **53 (4.5%)**.
@@ -192,15 +191,15 @@ Auxiliary: `body_has_repro_steps=true` only **53 (4.5%)**.
 
 ## 17 · Agent capability boundary (`boundary_tag`)
 
-**What it shows:** Which capability boundary each PR illustrates, with PR count bars and merge-rate line (overall ≈ **56.8%**).
+**What it shows:** Which capability boundary each PR illustrates, with PR count bars and merge-rate line (overall ≈ **58.7%**).
 
 **Phenomenon:** Merge rate is highest on PRs tagged **technical stack**, lower on **process/workflow**, and lowest when the tag is **evidence / reproducibility**. These are analytic tags, not measured cognitive abilities.
 
 | Boundary | PR count | Merge rate |
 |----------|----------|------------|
-| Technical stack (stack / framework depth) | **588** | **79.6%** (well above overall) |
-| Process / workflow (review, scope, CI) | **562** | **35.6%** (well below overall) |
-| Evidence required (benchmark / repro gap) | **32** | **12.5%** |
+| Technical stack (stack / framework depth) | **588** | **80.4%** (well above overall) |
+| Process / workflow (review, scope, CI) | **562** | **38.1%** (well below overall) |
+| Evidence required (benchmark / repro gap) | **32** | **21.9%** |
 | Unknown | 1 | 0% |
 
 Reading: volume is split between technical and process (588 vs 562), but merge rates diverge — stack-depth changes often merge; process friction and missing evidence mark lower-merge strata. `boundary_tag` stratifies the corpus; it does not cause merge.
@@ -215,10 +214,10 @@ Reading: volume is split between technical and process (588 vs 562), but merge r
 
 | Review count | Terminal PRs | Merge rate |
 |--------------|--------------|------------|
-| 0 | 837 | 53.8% |
-| 1 | 147 | **64.6%** |
-| 2–3 | 96 | 64.6% |
-| ≥4 | 103 | 63.1% |
+| 0 | 837 | 55.0% |
+| 1 | 147 | **66.0%** |
+| 2–3 | 95 | 68.4% |
+| ≥4 | 104 | 69.2% |
 
 ---
 

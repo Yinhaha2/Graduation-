@@ -6,11 +6,11 @@
     "repo": "prebid/Prebid.js",
     "agent": "OpenAI_Codex",
     "user": "patmmccann",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-06-30 22:54:07+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-08-21 13:51:24+00:00",
+    "closed_at": "2025-08-21 13:51:24+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
@@ -65,7 +65,7 @@
         "renamed": 1,
         "commented": 3
       },
-      "lifespan_hours": 1177.6,
+      "lifespan_hours": 1238.955,
       "first_review_delay_hours": 1177.6,
       "review_rounds": 1,
       "has_revert": false,
@@ -91,7 +91,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "closed_stale_inactive",
+    "outcome_reason": null,
     "review_dimensions": [],
     "blocking": false,
     "boundary_tag": "process",
@@ -106,13 +106,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 37656,
         "interpretation": "At 37656 changed lines, this PR is large by absolute volume, but most changes are from a large master merge (24k lines in package-lock.json). The actual performance-related change is a small library refactor (~60 lines). The PR was closed without merge, suggesting that the scale of extraneous changes or lack of evidence outweighed the core improvement."
       },
       "lifecycle": {
-        "lifespan_hours": 1177.6,
+        "lifespan_hours": 1238.955,
         "fast_merge": false
       }
     },

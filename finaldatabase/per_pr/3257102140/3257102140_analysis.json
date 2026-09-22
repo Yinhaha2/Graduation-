@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-23 17:03:02+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-06-09 07:12:41+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -64,7 +64,7 @@
         "convert_to_draft": 1,
         "reviewed": 1
       },
-      "lifespan_hours": 143.066,
+      "lifespan_hours": 7694.161,
       "first_review_delay_hours": 143.036,
       "review_rounds": 2,
       "has_revert": false,
@@ -116,7 +116,7 @@
         "interpretation": "At 630 changed lines across 23 files, this is a medium-sized change by absolute volume. As a draft compiler primitive addition, it remained unmerged, consistent with its draft status and unresolved review comments."
       },
       "lifecycle": {
-        "lifespan_hours": 143.066,
+        "lifespan_hours": 7694.161,
         "fast_merge": false
       }
     },

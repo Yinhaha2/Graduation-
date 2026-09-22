@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-08 02:08:57+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-14 03:01:12+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -60,7 +60,7 @@
         "ready_for_review": 1,
         "review_requested": 16
       },
-      "lifespan_hours": 341.38,
+      "lifespan_hours": 888.871,
       "first_review_delay_hours": 1.16,
       "review_rounds": 17,
       "has_revert": false,
@@ -114,7 +114,7 @@
         "interpretation": "At 1159 lines across 10 files, this is a large addition of greenfield infrastructure code by absolute volume. The PR introduced a full benchmarking pipeline but was closed due to persistent functional bugs, which is consistent with the scale and complexity of the change."
       },
       "lifecycle": {
-        "lifespan_hours": 341.38,
+        "lifespan_hours": 888.871,
         "fast_merge": false
       }
     },

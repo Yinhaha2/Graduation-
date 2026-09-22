@@ -1,11 +1,11 @@
 {
   "pr_count": 1183,
   "status_counts": {
-    "merged": 672,
-    "closed": 511
+    "merged": 694,
+    "closed": 489
   },
   "corpus_definition": "terminal_only",
-  "merge_rate": 0.5680473372781065,
+  "merge_rate": 0.5866441251056635,
   "terminal_freeze": {
     "frozen_at": "2026-09-21T02:51:36.843681+00:00",
     "corpus_definition": "terminal_only",
@@ -287,8 +287,8 @@
     "github_status_cache_pruned": 36,
     "remaining_pr_count": 1183,
     "remaining_status_counts": {
-      "merged": 672,
-      "closed": 511
+      "merged": 694,
+      "closed": 489
     },
     "leftover_open_in_master": 0,
     "leftover_open_in_json": [],
@@ -315,7 +315,7 @@
         "rows": 1539
       },
       "pr_reviews.parquet": {
-        "rows": 1409,
+        "rows": 1419,
         "prs_with_any_row": 346
       },
       "pr_timeline.parquet": {
@@ -332,5 +332,5 @@
     },
     "pr_count": 1183
   },
-  "generated_at": "2026-09-21T02:51:37.220073+00:00"
+  "generated_at": "2026-09-22T04:12:41.809875+00:00"
 }

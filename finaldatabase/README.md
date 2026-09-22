@@ -5,8 +5,8 @@
 ## 概要
 - **终态语料**（仅 merged / closed，已剔除 open）
 - 性能 PR 主表：**1183** 条
-- 状态分布：{'merged': 672, 'closed': 511}
-- 合并率（merged / n）：**56.8%**（672/1183）
+- 状态分布：{'merged': 694, 'closed': 489}
+- 合并率（merged / n）：**58.7%**（694/1183）
 - 本次剔除 open：**36** 条
 
 状态拆分以主表 / `summary/coverage_stats.json` 顶层 `status_counts` 为准。`terminal_freeze_report.json` 只记录剔除了哪些 open PR。

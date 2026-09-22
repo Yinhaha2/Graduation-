@@ -1,32 +1,32 @@
 {
   "n": 1183,
-  "merged": 672,
-  "closed": 511,
+  "merged": 694,
+  "closed": 489,
   "open": 0,
   "terminal_n": 1183,
   "closed_is_rejected_at_status": true,
   "open_excluded_from_merged_closed_contrast": true,
-  "terminal_merge_rate": 0.5680473372781065,
+  "terminal_merge_rate": 0.5866441251056635,
   "merged_path": {
     "fast_low_friction": 507,
-    "reviewed_iteration": 143,
-    "no_formal_review": 22
+    "reviewed_iteration": 155,
+    "no_formal_review": 32
   },
   "close_motivation": {
-    "silent_abandonment": 284,
-    "real_rejection": 164,
-    "unclear": 37,
+    "silent_abandonment": 273,
+    "real_rejection": 154,
+    "unclear": 36,
     "other_process": 26
   },
-  "reviewed_closed_n": 195,
+  "reviewed_closed_n": 182,
   "fast_merge_in_merged": 528,
   "failure_type": {
-    "functional_or_correctness": 85,
-    "design_or_approach": 51,
-    "other_or_mixed": 23,
+    "functional_or_correctness": 81,
+    "design_or_approach": 47,
+    "other_or_mixed": 20,
     "missing_evidence": 14,
-    "ci_or_tests": 10,
-    "silent_or_unexplained": 9,
+    "ci_or_tests": 9,
+    "silent_or_unexplained": 8,
     "scope": 3
   },
   "fix_modes": {
@@ -38,47 +38,47 @@
   "agent": {
     "OpenAI_Codex": {
       "n": 629,
-      "merged": 452,
-      "closed": 177,
-      "merge_rate": 0.7186009538950715
+      "merged": 460,
+      "closed": 169,
+      "merge_rate": 0.7313195548489666
     },
     "Devin": {
       "n": 225,
-      "merged": 73,
-      "closed": 152,
-      "merge_rate": 0.3244444444444444
+      "merged": 74,
+      "closed": 151,
+      "merge_rate": 0.3288888888888889
     },
     "Copilot": {
       "n": 206,
-      "merged": 78,
-      "closed": 128,
-      "merge_rate": 0.3786407766990291
+      "merged": 89,
+      "closed": 117,
+      "merge_rate": 0.4320388349514563
     },
     "Cursor": {
       "n": 89,
-      "merged": 48,
-      "closed": 41,
-      "merge_rate": 0.5393258426966292
+      "merged": 49,
+      "closed": 40,
+      "merge_rate": 0.550561797752809
     },
     "Claude_Code": {
       "n": 34,
-      "merged": 21,
-      "closed": 13,
-      "merge_rate": 0.6176470588235294
+      "merged": 22,
+      "closed": 12,
+      "merge_rate": 0.6470588235294118
     }
   },
   "boundary_terminal_merge": {
     "technical_stack": {
       "n": 588,
-      "merge_rate": 0.7959183673469388
+      "merge_rate": 0.8044217687074829
     },
     "process": {
       "n": 562,
-      "merge_rate": 0.35587188612099646
+      "merge_rate": 0.3807829181494662
     },
     "evidence_required": {
       "n": 32,
-      "merge_rate": 0.125
+      "merge_rate": 0.21875
     },
     "unknown": {
       "n": 1,

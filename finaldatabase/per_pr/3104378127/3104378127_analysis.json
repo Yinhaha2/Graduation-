@@ -6,11 +6,11 @@
     "repo": "gacela-project/gacela",
     "agent": "OpenAI_Codex",
     "user": "Chemaclass",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-05-30 22:15:08+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-10-12 16:26:38+00:00",
+    "closed_at": "2025-10-12 16:26:38+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -51,7 +51,7 @@
         "labeled": 2,
         "assigned": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 3234.192,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -76,7 +76,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "stale_no_review_engagement",
+    "outcome_reason": null,
     "review_dimensions": [],
     "blocking": false,
     "boundary_tag": "process",
@@ -91,13 +91,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 27,
         "interpretation": "At 27 changed lines, this is a tiny edit. As a small-step performance PR it was closed—not merged—with no review engagement, suggesting either a stale closure or the author abandoning the change."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 3234.192,
         "fast_merge": false
       }
     },

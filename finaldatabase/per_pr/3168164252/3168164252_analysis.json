@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-23 13:12:47+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-20 14:17:37+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -52,7 +52,7 @@
         "labeled": 1,
         "commented": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 1393.081,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -99,7 +99,7 @@
         "interpretation": "At 227 changed lines, this is a small edit by absolute volume. It targets a focused query optimization across 4 files but was closed without merge despite passing CI, indicating absent maintainer engagement."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 1393.081,
         "fast_merge": false
       }
     },

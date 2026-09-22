@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-14 15:57:48+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-02-11 18:45:15+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -54,7 +54,7 @@
         "copilot_work_started": 1,
         "copilot_work_finished_failure": 1
       },
-      "lifespan_hours": 0.664,
+      "lifespan_hours": 5810.791,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -102,7 +102,7 @@
         "interpretation": "At 616 changed lines (mostly 228 additions in the core DFT kernel), this is a moderate-sized performance PR. It was closed without merge, consistent with the [WIP] title and the agent workflow ending in failure."
       },
       "lifecycle": {
-        "lifespan_hours": 0.664,
+        "lifespan_hours": 5810.791,
         "fast_merge": false
       }
     },

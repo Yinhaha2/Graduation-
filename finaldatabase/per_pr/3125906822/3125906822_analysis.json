@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-06 21:29:48+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-05-01 04:22:17+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "build",
     "aidev_task_confidence": 9,
@@ -57,7 +57,7 @@
         "deployed": 10,
         "reviewed": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 7878.875,
       "first_review_delay_hours": 1.1,
       "review_rounds": 1,
       "has_revert": false,
@@ -107,7 +107,7 @@
         "interpretation": "At 8666 changed lines across 10 files, this is a large edit by absolute volume, heavily dominated by yarn.lock churn (7909 lines). The change includes a new turbo.json (603 lines) and workflow updates. As a build-tool performance PR it was closed—not merged—likely due to questionable dependency resolutions and lack of performance evidence."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 7878.875,
         "fast_merge": false
       }
     },

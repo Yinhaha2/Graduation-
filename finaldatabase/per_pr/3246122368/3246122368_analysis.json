@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-20 07:51:19+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-05-26 20:11:05+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -55,7 +55,7 @@
         "reviewed": 1,
         "unlabeled": 2
       },
-      "lifespan_hours": 28.3,
+      "lifespan_hours": 7452.329,
       "first_review_delay_hours": 0.011,
       "review_rounds": 1,
       "has_revert": false,
@@ -106,7 +106,7 @@
         "interpretation": "At 769 changed lines, this is a medium-sized refactor across 11 files. As a backend performance PR, it was closed without merge, likely due to lack of maintainer review or acceptance of the approach."
       },
       "lifecycle": {
-        "lifespan_hours": 28.3,
+        "lifespan_hours": 7452.329,
         "fast_merge": false
       }
     },

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-25 09:55:55+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-06 06:44:34+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
@@ -57,7 +57,7 @@
         "subscribed": 2,
         "base_ref_force_pushed": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 284.811,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -107,7 +107,7 @@
         "interpretation": "At 4 changed lines, this is an extremely small change by absolute volume. This fix was a pinpoint memory leak patch; it was closed without merge, likely due to insufficient review engagement or maintainer's desire for additional validation."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 284.811,
         "fast_merge": false
       }
     },

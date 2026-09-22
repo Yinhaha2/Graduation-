@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-20 03:07:04+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-30 20:11:03+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -55,7 +55,7 @@
         "review_requested": 1,
         "copilot_work_finished": 1
       },
-      "lifespan_hours": 1001.1,
+      "lifespan_hours": 1001.066,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -103,7 +103,7 @@
         "interpretation": "At 11664 changed lines across 21 files, this is a large refactor by absolute volume. Most churn comes from a merge commit introducing unrelated files (7264 lines in a unity scene). The core optimizations are spread across new combiner scripts and documentation. The PR was not merged via GitHub; the maintainer manually integrated the changes externally, which is unusual for such a large change but indicates acceptance of the concept without formal review."
       },
       "lifecycle": {
-        "lifespan_hours": 1001.1,
+        "lifespan_hours": 1001.066,
         "fast_merge": false
       }
     },

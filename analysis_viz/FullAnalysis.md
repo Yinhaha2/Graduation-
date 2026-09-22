@@ -1,6 +1,6 @@
 # Full Analysis — Agent Performance PR Corpus
 
-> **最终数据集**：1183 PR，672 merged，511 closed。合并率 **56.8%**（672/1183）。全库统一口径：仅终态 merged / closed，不含 open。
+> **最终数据集**：1183 PR，694 merged，489 closed。合并率 **58.7%**（694/1183）。全库统一口径：仅终态 merged / closed，不含 open。
 > Built from `finaldatabase/per_pr/{pr_id}/{pr_id}_analysis.json` (plus 6 root few-shot gold labels).
 > Wide table: `full_analysis_distilled.csv` (regenerate with `python generate_full_analysis.py`).
 
@@ -10,10 +10,10 @@
 
 | Status | Count | Share |
 |--------|-------|-------|
-| merged | 672 | 56.8% |
-| closed (not merged) | 511 | 43.2% |
+| merged | 694 | 58.7% |
+| closed (not merged) | 489 | 41.3% |
 
-- **Merge rate** (merged / n): **56.8%** (672/1183)
+- **Merge rate** (merged / n): **58.7%** (694/1183)
 
 Note: this snapshot is **terminal-only** (`merged` vs `closed` without merge). Still-open PRs were removed and are not in the denominator.
 
@@ -28,12 +28,14 @@ This is a **string-cluster of `outcome_reason`**, not the RQ1.2 behavioral `merg
 
 | Group | Count | Share of merged |
 |-------|-------|-----------------|
-| small_scope_low_risk | 437 | 65.0% |
-| after_review_iteration | 89 | 13.2% |
-| without_formal_review | 77 | 11.5% |
-| other | 69 | 10.3% |
+| small_scope_low_risk | 437 | 63.0% |
+| other | 91 | 13.1% |
+| after_review_iteration | 89 | 12.8% |
+| without_formal_review | 77 | 11.1% |
 
-Grouped-reason rows sum to 672/672. This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review).
+Grouped-reason rows sum to 694/694. This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review).
+
+22 merged PRs have an empty `outcome_reason`. Their GitHub `merged_at` was restored from the status-refresh cache after an earlier pass had stored them as closed, so the closed-state reason strings were removed rather than counted as merge reasons.
 
 **Reading (descriptive, not causal):** most merged PRs have an `outcome_reason` that clusters as **small scope / low risk**; next is **after review iteration**. The `without_formal_review` cluster here is an `outcome_reason` string group, not the RQ1.2 path `no_formal_review`.
 
@@ -51,15 +53,15 @@ Merged `outcome_reason` raw Top 5:
 
 | Group | Count | Share of closed |
 |-------|-------|-----------------|
-| other | 203 | 39.7% |
-| stale_or_inactivity | 142 | 27.8% |
-| closed_without_meaningful_review | 127 | 24.9% |
-| functional_or_correctness | 24 | 4.7% |
+| other | 195 | 39.9% |
+| stale_or_inactivity | 130 | 26.6% |
+| closed_without_meaningful_review | 125 | 25.6% |
+| functional_or_correctness | 24 | 4.9% |
 | missing_evidence_or_benchmark | 11 | 2.2% |
 | performance_regression_or_no_gain | 3 | 0.6% |
 | scope_too_large | 1 | 0.2% |
 
-Grouped-reason rows sum to 511/511.
+Grouped-reason rows sum to 489/489.
 
 **Reading:** closed is dominated by **process closes** (stale / no review / author closed), not a single “perf failed” label; among PRs with review text, `functional_failure` and `correctness_edge_case` stand out more.
 
@@ -67,11 +69,11 @@ Closed `outcome_reason` raw Top 5:
 
 | outcome_reason | Count |
 |----------------|-------|
-| `stale_no_review_engagement` | 50 |
+| `stale_no_review_engagement` | 44 |
 | `stale_inactivity` | 33 |
 | `closed_by_author_no_review` | 13 |
-| `closed_no_review_engagement` | 12 |
 | `self_closed_no_review` | 12 |
+| `closed_no_review_engagement` | 11 |
 
 ---
 
@@ -81,13 +83,13 @@ Closed `outcome_reason` raw Top 5:
 
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| ≤100 | 490 | 61.4% |
-| 101–500 | 350 | 52.6% |
-| 501–2k | 196 | 54.1% |
-| 2k–10k | 107 | 56.1% |
-| >10k | 40 | 52.5% |
+| ≤100 | 490 | 63.1% |
+| 101–500 | 350 | 53.1% |
+| 501–2k | 196 | 56.6% |
+| 2k–10k | 107 | 61.7% |
+| >10k | 40 | 55.0% |
 
-- Median changes — merged: **141**; closed: **172**
+- Median changes — merged: **143**; closed: **170**
 - Zero-line churn (`changes=0`) is counted in ≤100 (13 PRs, all closed).
 - Change-size bins sum to 1183/1183.
 - **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; >10k is near the closed-side average.
@@ -96,10 +98,10 @@ Closed `outcome_reason` raw Top 5:
 
 | Comment bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
-| 0 | 547 | 71.5% |
-| 1–2 | 294 | 43.2% |
-| 3–9 | 255 | 43.1% |
-| ≥10 | 87 | 50.6% |
+| 0 | 547 | 72.8% |
+| 1–2 | 294 | 43.9% |
+| 3–9 | 255 | 45.1% |
+| ≥10 | 87 | 59.8% |
 
 - Median comment total — merged: **0**; closed: **2**
 - Zero-comment PRs: **547** (46.2%); this bin is `comment_total==0`, not a `pd.cut` interval that starts after 0. Comment bins sum to 1183/1183. High comment volume does not imply a higher merge rate.
@@ -110,15 +112,14 @@ Closed `outcome_reason` raw Top 5:
 
 | Lifespan | Terminal PRs | Merge rate |
 |----------|--------------|------------|
-| <1h | 573 | 76.6% |
-| 1–24h | 236 | 57.2% |
-| 1–7d | 180 | 40.0% |
-| >7d | 153 | 17.0% |
-| (lifespan missing) | 41 | 0.0% |
+| <1h | 568 | 77.3% |
+| 1–24h | 232 | 58.2% |
+| 1–7d | 165 | 43.6% |
+| >7d | 218 | 22.0% |
 
-- Median lifespan — merged: **0.079 h** (~5 min)
-- Median lifespan — closed: **24.3 h** (~1.0 d)
-- Share with `fast_merge=true` — merged: **78.6%**; closed: 0%
+- Median lifespan — merged: **0.122 h** (~7 min)
+- Median lifespan — closed: **37.6 h** (~1.6 d)
+- Share with `fast_merge=true` — merged: **76.1%**; closed: 0%
 
 **Association:** merged PRs are much shorter-lived; long-lived closed PRs often track stale / no interaction, not slow rejection after review.
 
@@ -147,9 +148,9 @@ Top 12 sum to 865; the remaining 318 PRs sit in less frequent layers and are not
 
 ### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none)
 
-**Merged top:** `repeated_io`(32), `nested_loop`(9), `unknown`(4), `lock_misuse`(2), `main_thread_blocking`(2), `memory_leak`(2)
+**Merged top:** `repeated_io`(33), `nested_loop`(10), `unknown`(5), `lock_misuse`(2), `main_thread_blocking`(2), `memory_leak`(2)
 
-**Closed top:** `repeated_io`(36), `nested_loop`(5), `lock_misuse`(3), `repeated_computation`(2), `redundant_computation`(2), `blocking_io`(2)
+**Closed top:** `repeated_io`(35), `nested_loop`(4), `lock_misuse`(3), `repeated_computation`(2), `redundant_computation`(2), `blocking_io`(2)
 
 `repeated_io` leads on both sides (slightly more on closed). Most PRs are still labeled `none`.
 
@@ -239,7 +240,7 @@ Rows sum to 1183/1183.
 ## 9. Linked issues
 
 - `linked_issue_count > 0`: **203** (**17.2%**)
-- No linked issue: **980** (**82.8%** of corpus); merged **582/672** (86.6%); closed **398/511** (77.9%).
+- No linked issue: **980** (**82.8%** of corpus); merged **595/694** (85.7%); closed **385/489** (78.7%).
 
 Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizations are often agent-initiated.
 
@@ -247,15 +248,15 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 
 ## 10. Pass rate, focus distribution, capability boundaries
 
-- **Merge rate for AI perf PRs: 56.8%** (672/1183).
+- **Merge rate for AI perf PRs: 58.7%** (694/1183).
 
 ### 10.1 Common `perf_focus` on merged
 
-`constant_folding`(23), `compiler_optimization`(21), `benchmark_infrastructure`(11), `cache`(8), `lazy_loading`(7), `compile_time_optimization`(7), `caching`(6), `compiler_codegen`(6)
+`constant_folding`(24), `compiler_optimization`(21), `benchmark_infrastructure`(11), `cache`(8), `lazy_loading`(7), `compile_time_optimization`(7), `build_performance`(6), `caching`(6)
 
 ### 10.2 Common `perf_focus` on closed
 
-`bundle_size_reduction`(12), `constant_folding`(10), `cache`(9), `build_performance`(7), `lazy_load`(7), `caching`(6), `code_splitting`(6), `compiler_optimization`(6)
+`bundle_size_reduction`(12), `cache`(9), `constant_folding`(9), `lazy_load`(7), `build_performance`(6), `caching`(6), `code_splitting`(6), `compiler_optimization`(6)
 
 ### 10.3 `boundary_tag` distribution
 
@@ -284,11 +285,11 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 
 | Agent | PRs | Merge rate |
 |-------|-----|------------|
-| OpenAI_Codex | 629 | 71.9% |
-| Claude_Code | 34 | 61.8% |
-| Cursor | 89 | 53.9% |
-| Copilot | 206 | 37.9% |
-| Devin | 225 | 32.4% |
+| OpenAI_Codex | 629 | 73.1% |
+| Claude_Code | 34 | 64.7% |
+| Cursor | 89 | 55.1% |
+| Copilot | 206 | 43.2% |
+| Devin | 225 | 32.9% |
 
 ---
 
@@ -298,3 +299,4 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 - Labels such as `outcome_reason` are LLM-generated (synonym inflation); this report coarsens merge/close groups.
 - Fix actor / new-issue-in-fix findings are **text heuristics** — sample-check before paper use.
 - Merge rate is merged / corpus n on the terminal snapshot (open PRs are not in this dataset).
+- `merged_at` / `closed_at` on the formerly-open cohort follow `summary/github_status_cache.json` (the refresh log). Where that cache showed a merge the master had missed, status is merged and the old closed-state `outcome_reason` is left empty.

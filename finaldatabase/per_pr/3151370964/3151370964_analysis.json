@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-16 21:24:28+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-10-22 09:59:54+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -56,7 +56,7 @@
         "review_requested": 1,
         "copilot_work_finished": 1
       },
-      "lifespan_hours": 0.314,
+      "lifespan_hours": 3060.591,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -103,7 +103,7 @@
         "interpretation": "At 43 changed lines across 3 files, this is a very small edit by absolute volume. It fits a small-step performance optimization that was closed without merge—no human review occurred."
       },
       "lifecycle": {
-        "lifespan_hours": 0.314,
+        "lifespan_hours": 3060.591,
         "fast_merge": false
       }
     },

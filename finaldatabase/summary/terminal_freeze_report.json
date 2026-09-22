@@ -279,8 +279,8 @@
   "github_status_cache_pruned": 36,
   "remaining_pr_count": 1183,
   "remaining_status_counts": {
-    "merged": 672,
-    "closed": 511
+    "merged": 694,
+    "closed": 489
   },
   "leftover_open_in_master": 0,
   "leftover_open_in_json": [],

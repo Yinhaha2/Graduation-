@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-22 19:20:07+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-13 07:30:33+00:00",
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
@@ -49,7 +49,7 @@
         "committed": 1,
         "labeled": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 516.174,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -95,7 +95,7 @@
         "interpretation": "At 12 changed lines in a single file, this is a minimal edit. As a small-step UI/performance improvement PR, it was closed without merge and with no review engagement."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 516.174,
         "fast_merge": false
       }
     },

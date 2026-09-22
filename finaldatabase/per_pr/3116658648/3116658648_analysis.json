@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-04 06:37:46+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-16 20:29:46+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -55,7 +55,7 @@
         "review_requested": 1,
         "copilot_work_finished": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 2509.867,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -103,7 +103,7 @@
         "interpretation": "At 446 changed lines, this is a small-to-medium addition by absolute volume, concentrated in a new utility, tests, and a few integration changes. It fits a moderate performance optimization PR but was closed without merge—likely due to lack of maintainer engagement rather than scale."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 2509.867,
         "fast_merge": false
       }
     },

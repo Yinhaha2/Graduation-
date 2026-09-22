@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-03 19:18:55+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-08-13 16:47:41+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
@@ -59,7 +59,7 @@
         "commented": 6,
         "labeled": 1
       },
-      "lifespan_hours": 118.243,
+      "lifespan_hours": 981.479,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": true,
@@ -109,7 +109,7 @@
         "interpretation": "At 64804 changed lines, this is a massive change by absolute volume, but the vast majority (64379 lines) is package-lock.json churn; the actual source change is around 18 lines in ScopeSet.ts plus tests and changefiles. This is a small-scope performance fix that was closed without merge, likely due to process friction around formatting and lock file management rather than the performance claim itself."
       },
       "lifecycle": {
-        "lifespan_hours": 118.243,
+        "lifespan_hours": 981.479,
         "fast_merge": false
       }
     },

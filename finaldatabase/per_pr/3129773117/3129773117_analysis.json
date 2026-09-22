@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-09 09:45:10+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-01 13:57:20+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -65,7 +65,7 @@
         "mentioned": 2,
         "subscribed": 2
       },
-      "lifespan_hours": 1179.66,
+      "lifespan_hours": 2020.203,
       "first_review_delay_hours": 26.92,
       "review_rounds": 3,
       "has_revert": false,
@@ -116,7 +116,7 @@
         "interpretation": "At 25275 changed lines across 144 files, this is a very large change by absolute volume, but the feature-specific changes are small (BaseCachedBranchDataProvider.ts ~83 lines, retryOperation.ts ~60 lines) while most churn comes from repeated merge branches into main. As a moderate feature PR it was closed without merge after design review stalled."
       },
       "lifecycle": {
-        "lifespan_hours": 1179.66,
+        "lifespan_hours": 2020.203,
         "fast_merge": false
       }
     },

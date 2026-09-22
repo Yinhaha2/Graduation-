@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-25 11:02:34+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-04-16 13:54:36+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -50,7 +50,7 @@
         "committed": 1,
         "labeled": 1
       },
-      "lifespan_hours": 6362.87,
+      "lifespan_hours": 6362.867,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -98,7 +98,7 @@
         "interpretation": "At 37 changed lines, this is a tiny edit by absolute volume. As a small performance PR it was closed—not merged—because it became stale and conflicted with main after ~9 months."
       },
       "lifecycle": {
-        "lifespan_hours": 6362.87,
+        "lifespan_hours": 6362.867,
         "fast_merge": false
       }
     },

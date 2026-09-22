@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-10 02:36:33+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-02-24 04:07:57+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
@@ -52,7 +52,7 @@
       "event_counts": {
         "committed": 3
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 5497.523,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -102,7 +102,7 @@
         "interpretation": "At 1370 changed lines across 13 files, this is a medium-to-large edit by absolute volume, concentrated in new performance utility classes. As a substantial performance PR, it was closed without merge, likely due to lack of review engagement and missing performance evidence."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 5497.523,
         "fast_merge": false
       }
     },

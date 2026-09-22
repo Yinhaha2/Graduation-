@@ -1189,7 +1189,7 @@ Replaced the unstable koffi FFI HTML-to-Markdown integration with a new N-API Go
 
 <!-- End of auto-generated description by cubic. -->
 
-",Claude_Code,66118807,mogery,closed,2025-07-29 22:34:55+00:00,,,787076358,https://api.github.com/repos/mendableai/firecrawl,https://github.com/mendableai/firecrawl/pull/1884
+",Claude_Code,66118807,mogery,closed,2025-07-29 22:34:55+00:00,2025-09-09 12:26:50+00:00,,787076358,https://api.github.com/repos/mendableai/firecrawl,https://github.com/mendableai/firecrawl/pull/1884
 3254647682,59071,skip unnecessary alias-check in collect(::AbstractArray) from copyto\!,"As discussed on Slack with @MasonProtter & @jakobnissen, `collect` currently does a usually cheap - but sometimes expensive - aliasing check (via `unalias`->`mightalias`->`dataid` -> `objectid`) before copying contents over; this check is unnecessary, however, since the source array is newly created and cannot possibly alias the input.
 
 This PR fixes that by swapping from `copyto\!` to `copyto_unaliased\!` in the `_collect_indices` implementations where the swap is straightforward (e.g., it is not so straightforward for the fallback `_collect_indices(indsA, A)`, so I skipped it there).
@@ -2045,7 +2045,7 @@ None - all changes are internal optimizations that maintain the same external AP
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 
-Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,7235481,mldangelo,closed,2025-07-13 02:47:49+00:00,,,633927609,https://api.github.com/repos/promptfoo/promptfoo,https://github.com/promptfoo/promptfoo/pull/4902
+Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,7235481,mldangelo,closed,2025-07-13 02:47:49+00:00,2025-08-31 13:18:57+00:00,,633927609,https://api.github.com/repos/promptfoo/promptfoo,https://github.com/promptfoo/promptfoo/pull/4902
 2986072834,202,Add customizable PostgreSQL connection pool settings,"- Create explicit connection pool with configurable settings
 - Use settings for min_size, max_size, and max_idle
 - Update documentation with examples
@@ -2169,7 +2169,7 @@ This PR fixes: #32768",Claude_Code,1236198,spbolton,closed,2025-07-23 09:17:05+0
 
   🤖 Generated with https://claude.ai/code
 
-  Co-Authored-By: Claude noreply@anthropic.com",Claude_Code,36728755,nilo19,closed,2025-07-23 12:23:37+00:00,,,808146034,https://api.github.com/repos/robusta-dev/holmesgpt,https://github.com/robusta-dev/holmesgpt/pull/695
+  Co-Authored-By: Claude noreply@anthropic.com",Claude_Code,36728755,nilo19,closed,2025-07-23 12:23:37+00:00,2025-09-07 08:08:15+00:00,2025-09-07 08:08:15+00:00,808146034,https://api.github.com/repos/robusta-dev/holmesgpt,https://github.com/robusta-dev/holmesgpt/pull/695
 3257102140,4363,Primitives for raw OCaml block access,"## Summary
 
 This PR extracts the Flambda2 parts of the block indices work from PR #4017 (rtjoa.block-indices). It adds two new primitives that will enable faster field access in unusual use cases, similar to Obj.raw_field but with better performance.
@@ -2189,7 +2189,7 @@ This is a draft PR as these primitives will need user-facing wrappers before the
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 
-Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,1315488,mshinwell,closed,2025-07-23 17:03:02+00:00,,,312271526,https://api.github.com/repos/oxcaml/oxcaml,https://github.com/oxcaml/oxcaml/pull/4363
+Co-Authored-By: Claude <noreply@anthropic.com>",Claude_Code,1315488,mshinwell,closed,2025-07-23 17:03:02+00:00,2026-06-09 07:12:41+00:00,,312271526,https://api.github.com/repos/oxcaml/oxcaml,https://github.com/oxcaml/oxcaml/pull/4363
 3193198936,841,feat(telemetry): implement performance testing framework (Phase 8),"## Summary
 
 This PR implements Phase 8 of the telemetry system migration (#833), focusing on comprehensive performance testing and validation. The primary goal was to ensure the telemetry system has minimal performance impact when disabled (<100ns) while providing robust testing capabilities.
@@ -2855,7 +2855,7 @@ Fixes #12024.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-16 21:24:28+00:00,,,32051890,https://api.github.com/repos/dotnet/msbuild,https://github.com/dotnet/msbuild/pull/12025
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-16 21:24:28+00:00,2025-10-22 09:59:54+00:00,,32051890,https://api.github.com/repos/dotnet/msbuild,https://github.com/dotnet/msbuild/pull/12025
 3216159293,110,Add vcpkg dependency caching to Windows CI workflow,"## Overview
 
 This PR implements vcpkg dependency caching for the Windows CI workflow to significantly speed up build times by avoiding full dependency rebuilds on every CI run.
@@ -3211,7 +3211,7 @@ Fixes #583.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-24 12:15:27+00:00,,,349554698,https://api.github.com/repos/microsoft/graphitation,https://github.com/microsoft/graphitation/pull/584
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-24 12:15:27+00:00,2026-05-12 13:15:31+00:00,,349554698,https://api.github.com/repos/microsoft/graphitation,https://github.com/microsoft/graphitation/pull/584
 3195588879,16531,Remove duplicate yarn eslint step from .circleci/config.yml,"<details><summary>&#x1F6E0 DevTools &#x1F6E0</summary>
 <p>
 
@@ -3551,7 +3551,7 @@ Fixes #6449.
 - - -
 This change is [<img src=""https://reviewable.io/review_button.svg"" height=""34"" align=""absmiddle"" alt=""Reviewable""/>](https://reviewable.io/reviews/elsa-workflows/elsa-core/6822)
 <!-- Reviewable:end -->
-",Copilot,198982749,Copilot,closed,2025-07-25 09:55:55+00:00,,,151148482,https://api.github.com/repos/elsa-workflows/elsa-core,https://github.com/elsa-workflows/elsa-core/pull/6822
+",Copilot,198982749,Copilot,closed,2025-07-25 09:55:55+00:00,2025-08-06 06:44:34+00:00,,151148482,https://api.github.com/repos/elsa-workflows/elsa-core,https://github.com/elsa-workflows/elsa-core/pull/6822
 3177258847,40,Expand tracing instrumentation to gen_witness and PCS prove methods,"This PR expands the existing tracing infrastructure to provide detailed timing breakdown for `gen_witness` and PCS prove methods, enabling better performance analysis and debugging.
 
 ## Changes Made
@@ -3640,7 +3640,7 @@ Fixes #13828.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-19 18:25:04+00:00,,,281765424,https://api.github.com/repos/microsoft/azurelinux,https://github.com/microsoft/azurelinux/pull/13829
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-19 18:25:04+00:00,2026-06-18 17:47:03+00:00,,281765424,https://api.github.com/repos/microsoft/azurelinux,https://github.com/microsoft/azurelinux/pull/13829
 3074773765,506,[WIP] Avoid reopening /dev/kvm or /dev/mshv for every new sandbox,"Thanks for assigning this issue to me. I'm starting to work on it and will keep this PR's description up to date as I form a plan and make progress.
 
 Original issue description:
@@ -4419,7 +4419,7 @@ Fixes #24522.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-14 15:57:48+00:00,,,156939672,https://api.github.com/repos/microsoft/onnxruntime,https://github.com/microsoft/onnxruntime/pull/25061
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-14 15:57:48+00:00,2026-02-11 18:45:15+00:00,,156939672,https://api.github.com/repos/microsoft/onnxruntime,https://github.com/microsoft/onnxruntime/pull/25061
 3100789352,414,Add performance benchmarking and AOT file size tracking with Azure storage,"Implements a comprehensive performance tracking system that monitors benchmark execution times and AOT native file sizes, storing historical data in Azure Table Storage and detecting performance regressions in pull requests.
 
 ## Features
@@ -4531,7 +4531,7 @@ Fixes #413.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-29 16:02:40+00:00,,,879168187,https://api.github.com/repos/AArnott/Nerdbank.MessagePack,https://github.com/AArnott/Nerdbank.MessagePack/pull/414
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-29 16:02:40+00:00,2025-09-12 19:51:35+00:00,,879168187,https://api.github.com/repos/AArnott/Nerdbank.MessagePack,https://github.com/AArnott/Nerdbank.MessagePack/pull/414
 3159661875,183,Refactor REPL to eliminate temporary file usage,"The REPL implementation was using a ""huge hack"" of creating temporary files to conform with the existing compilation interface that expects a `BufRead` object. This approach was inefficient and unnecessary.
 
 ## Changes Made
@@ -5488,7 +5488,7 @@ Fixes #9257.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-23 20:56:44+00:00,,,696529789,https://api.github.com/repos/dotnet/aspire,https://github.com/dotnet/aspire/pull/9493
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-23 20:56:44+00:00,2025-11-22 09:38:35+00:00,,696529789,https://api.github.com/repos/dotnet/aspire,https://github.com/dotnet/aspire/pull/9493
 3147503921,5375,docs: Upgrade Docusaurus from 3.7.0 to 3.8.1,"This PR upgrades Docusaurus dependencies from version 3.7.0 to 3.8.1 (latest stable) to improve performance, security, and provide access to the latest features and bug fixes.
 
 ## Changes Made
@@ -6177,7 +6177,7 @@ Fixes #495.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-20 03:07:04+00:00,,,85005919,https://api.github.com/repos/umasteeringgroup/UMA,https://github.com/umasteeringgroup/UMA/pull/496
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-20 03:07:04+00:00,2025-08-30 20:11:03+00:00,,85005919,https://api.github.com/repos/umasteeringgroup/UMA,https://github.com/umasteeringgroup/UMA/pull/496
 3201598720,253,build: Add optional build tags to reduce binary size,"This PR implements conditional compilation using Go build tags to make optional features truly optional, allowing users to choose between a smaller binary and full functionality.
 
 ## Results
@@ -6644,7 +6644,7 @@ Fixes #12032.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-17 14:42:57+00:00,,,32051890,https://api.github.com/repos/dotnet/msbuild,https://github.com/dotnet/msbuild/pull/12033
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-17 14:42:57+00:00,2025-11-19 13:24:03+00:00,,32051890,https://api.github.com/repos/dotnet/msbuild,https://github.com/dotnet/msbuild/pull/12033
 3107779459,3401,Migrate Figma plugin to support dynamic page loading API,"## Overview
 
 This PR migrates the Tokens Studio for Figma plugin to support Figma's new dynamic page loading API, improving performance for large files by loading pages on-demand rather than loading all pages upfront.
@@ -7165,7 +7165,7 @@ Fixes #2608.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-09 00:27:50+00:00,,,33373292,https://api.github.com/repos/microsoft/ApplicationInsights-JS,https://github.com/microsoft/ApplicationInsights-JS/pull/2609
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-09 00:27:50+00:00,2025-08-19 18:10:45+00:00,,33373292,https://api.github.com/repos/microsoft/ApplicationInsights-JS,https://github.com/microsoft/ApplicationInsights-JS/pull/2609
 3088949809,77,Migrate from NextJS to RedwoodJS,"This PR migrates the application from NextJS to RedwoodJS with the goal of reducing bundle size as discussed in #46.
 
 ## Changes Overview
@@ -7832,14 +7832,7 @@ Fixes #747.
 ---
 
 💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-17 08:46:08+00:00,2025-07-24 16:31:01+00:00,,11965691,https://api.github.com/repos/bryanedds/Nu,https://github.com/bryanedds/Nu/pull/1074
-3238869981,984,"[WIP] Streaming still not working. Causing slow responses for something like 'write a report' #981
-Open
-@mzazakeith
-Description
-mzazakeith
-opened 3 hours ago
-Description
-With the latest version of PraisonAI. straming is still not real time. When in verbose mo...","Thanks for asking me to work on this. I will get started on it and keep this PR's description up to date as I form a plan and make progress.
+3238869981,984,[WIP] Streaming still not working. Causing slow responses for something like 'write a report' #981,"Thanks for asking me to work on this. I will get started on it and keep this PR's description up to date as I form a plan and make progress.
 
 Original description:
 
@@ -8206,7 +8199,7 @@ Fixes #191973.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-24 21:09:26+00:00,,,41881900,https://api.github.com/repos/microsoft/vscode,https://github.com/microsoft/vscode/pull/252342
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-24 21:09:26+00:00,2025-12-21 16:43:20+00:00,,41881900,https://api.github.com/repos/microsoft/vscode,https://github.com/microsoft/vscode/pull/252342
 3076401687,583,Cache CloudInfo / CloudSettings by authority,"This PR modifies `CloudSettings` to cache cloud information by authority (schema, host, and port) rather than by the full URL. This ensures that multiple URLs pointing to the same cluster with different paths will share the same cached `CloudInfo` object.
 
 ## Changes Made
@@ -8861,7 +8854,7 @@ This fix resolves the file picker performance issues while maintaining all exist
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-22 16:49:17+00:00,,,882482569,https://api.github.com/repos/folke/snacks.nvim,https://github.com/folke/snacks.nvim/pull/1991
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-22 16:49:17+00:00,2025-10-19 09:57:20+00:00,,882482569,https://api.github.com/repos/folke/snacks.nvim,https://github.com/folke/snacks.nvim/pull/1991
 3197896940,1033,ci: Add conditional testing for wef and webview crates,"This PR optimizes the CI workflow by implementing conditional testing for the `wef` and `webview` crates, which significantly improves CI performance while maintaining full test coverage when needed.
 
 ## Problem
@@ -10211,7 +10204,7 @@ This optimization will reduce CI pipeline execution time while maintaining full 
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-10 19:10:36+00:00,,,4127088,https://api.github.com/repos/Azure/azure-sdk-for-python,https://github.com/Azure/azure-sdk-for-python/pull/41974
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-10 19:10:36+00:00,2025-08-13 00:04:30+00:00,,4127088,https://api.github.com/repos/Azure/azure-sdk-for-python,https://github.com/Azure/azure-sdk-for-python/pull/41974
 3220396620,388,Set default worker pollers to 1 for OrchestratorMode,"This change reduces the default number of pollers from 2 to 1 for both workflows and activities when using `WorkflowOrchestrator`, making it more resource-efficient for typical orchestrator use cases.
 
 ## Changes
@@ -10277,7 +10270,7 @@ Fixes #24650.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-22 16:03:22+00:00,,,22855240,https://api.github.com/repos/Azure/azure-sdk-for-go,https://github.com/Azure/azure-sdk-for-go/pull/24667
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-22 16:03:22+00:00,2025-09-16 16:09:15+00:00,,22855240,https://api.github.com/repos/Azure/azure-sdk-for-go,https://github.com/Azure/azure-sdk-for-go/pull/24667
 3221925890,247,Trim MCP server tool payloads to reduce token consumption,"This PR implements trimmed responses for Azure DevOps MCP server tools to dramatically reduce LLM token consumption while maintaining backward compatibility.
 
 ## Problem
@@ -10715,7 +10708,7 @@ Fixes #5169.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-11 19:33:46+00:00,,,42131201,https://api.github.com/repos/PowerShell/vscode-powershell,https://github.com/PowerShell/vscode-powershell/pull/5212
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-11 19:33:46+00:00,2025-09-04 22:06:26+00:00,2025-09-04 22:06:26+00:00,42131201,https://api.github.com/repos/PowerShell/vscode-powershell,https://github.com/PowerShell/vscode-powershell/pull/5212
 3113006799,16039,Improve `dev/update_changelog.py` performance by batch-fetching PRs with GraphQL API,"- [x] Analyze current implementation of `dev/update_changelog.py`
 - [x] Understand the performance issue: currently fetches PRs one by one with REST API calls
 - [x] Explore existing codebase for GraphQL usage patterns
@@ -10821,7 +10814,7 @@ Fixes #311.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-03 08:51:26+00:00,,,126849511,https://api.github.com/repos/celestiaorg/rsmt2d,https://github.com/celestiaorg/rsmt2d/pull/361
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-03 08:51:26+00:00,2026-04-17 18:10:07+00:00,,126849511,https://api.github.com/repos/celestiaorg/rsmt2d,https://github.com/celestiaorg/rsmt2d/pull/361
 3113190475,2073,docs: update trusted hash guide,"- [x] Analyzed repository structure and understood the issue
 - [x] Confirmed build system works correctly
 - [x] Identified that quick-start.md already uses the new command format
@@ -11004,7 +10997,7 @@ Fixes #247070.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-10 04:33:41+00:00,,,41881900,https://api.github.com/repos/microsoft/vscode,https://github.com/microsoft/vscode/pull/251065
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-10 04:33:41+00:00,2025-11-07 22:55:40+00:00,,41881900,https://api.github.com/repos/microsoft/vscode,https://github.com/microsoft/vscode/pull/251065
 3272353154,283,Add winloop support for Windows platforms as uvloop alternative,"This PR implements platform-specific event loop optimization by adding `winloop` support for Windows users while maintaining `uvloop` for Unix-like systems.
 
 ## Problem
@@ -11172,7 +11165,7 @@ Fixes #7593
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-29 07:05:23+00:00,,,126178683,https://api.github.com/repos/halo-dev/halo,https://github.com/halo-dev/halo/pull/7644
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-29 07:05:23+00:00,2025-08-06 10:41:58+00:00,,126178683,https://api.github.com/repos/halo-dev/halo,https://github.com/halo-dev/halo/pull/7644
 3186447377,2086,feat!: simplify tracing by removing S3 push/pull and using atomic file writes,"This PR backports the tracer refactor from PR #1437 onto the main branch, significantly simplifying the tracing system by removing complex S3 push/pull functionality and replacing it with a reliable atomic file writing mechanism.
 
 ## Summary of Changes
@@ -11238,7 +11231,7 @@ Fixes #2085.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-29 18:36:58+00:00,,,221931137,https://api.github.com/repos/celestiaorg/celestia-core,https://github.com/celestiaorg/celestia-core/pull/2086
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-29 18:36:58+00:00,2025-09-01 15:48:46+00:00,,221931137,https://api.github.com/repos/celestiaorg/celestia-core,https://github.com/celestiaorg/celestia-core/pull/2086
 3208009671,1717,Add configurable CPU count option for containerized environments,"This PR adds a new `--cpus` configuration option to address CPU detection issues in virtualized and containerized environments where `_SC_NPROCESSORS_CONF` and `_SC_NPROCESSORS_ONLN` return host CPU counts instead of allocated container CPUs.
 
 ## Problem
@@ -11669,7 +11662,7 @@ This change is fully backward compatible and only activates when both feature fl
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-04 06:37:46+00:00,,,265001214,https://api.github.com/repos/tokens-studio/figma-plugin,https://github.com/tokens-studio/figma-plugin/pull/3405
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-04 06:37:46+00:00,2025-09-16 20:29:46+00:00,,265001214,https://api.github.com/repos/tokens-studio/figma-plugin,https://github.com/tokens-studio/figma-plugin/pull/3405
 3198732250,16551,Rewrite dev/preview_docs.py in JavaScript to simplify preview-docs workflow,"This PR rewrites the `dev/preview_docs.py` Python script in JavaScript to simplify the preview-docs workflow and eliminate unnecessary dependencies.
 
 ## Problem
@@ -11814,7 +11807,7 @@ Fixes #12108.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-03 10:42:16+00:00,,,32051890,https://api.github.com/repos/dotnet/msbuild,https://github.com/dotnet/msbuild/pull/12109
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-03 10:42:16+00:00,2025-11-19 13:24:11+00:00,,32051890,https://api.github.com/repos/dotnet/msbuild,https://github.com/dotnet/msbuild/pull/12109
 3129773117,2706,Implement error node caching for improved TreeView user experience,"## Update
 
 https://github.com/microsoft/vscode-cosmosdb/pull/2706#issuecomment-2958830169
@@ -11905,7 +11898,7 @@ Fixes #2700.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-09 09:45:10+00:00,,,100298835,https://api.github.com/repos/microsoft/vscode-cosmosdb,https://github.com/microsoft/vscode-cosmosdb/pull/2706
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-09 09:45:10+00:00,2025-09-01 13:57:20+00:00,,100298835,https://api.github.com/repos/microsoft/vscode-cosmosdb,https://github.com/microsoft/vscode-cosmosdb/pull/2706
 3193460822,3213,Fix chunk test failures on CI/CD environments,"The chunk tests were failing on CI/CD environments with three classes of errors:
 
 1. **Request timeouts**: ""Request timed out after 300000 msec"" 
@@ -11983,7 +11976,7 @@ Fixes #3186.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-30 19:35:07+00:00,,,349385543,https://api.github.com/repos/Krande/adapy,https://github.com/Krande/adapy/pull/146
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-30 19:35:07+00:00,2025-08-06 12:24:46+00:00,,349385543,https://api.github.com/repos/Krande/adapy,https://github.com/Krande/adapy/pull/146
 3134374490,14756,Defer UIA accessibility provider initialization until requested,"## Summary
 
 This PR optimizes the initialization of UIA (UI Automation) accessibility providers by deferring their creation until they are actually requested by the UIA agent, rather than eagerly creating them in the constructor.
@@ -12028,7 +12021,7 @@ if (patternId == UIA_TextPatternId && /* same conditions */) {
 - Maintains full functionality while improving performance
 - No breaking changes to the public API
 
-Fixes #14644.",Copilot,198982749,Copilot,closed,2025-06-10 17:34:56+00:00,,,48009214,https://api.github.com/repos/microsoft/react-native-windows,https://github.com/microsoft/react-native-windows/pull/14756
+Fixes #14644.",Copilot,198982749,Copilot,closed,2025-06-10 17:34:56+00:00,2025-12-16 06:54:25+00:00,2025-12-16 06:54:25+00:00,48009214,https://api.github.com/repos/microsoft/react-native-windows,https://github.com/microsoft/react-native-windows/pull/14756
 3160620876,7057,Optimize ONNX ReferenceEvaluator Resize performance with vectorized numpy implementation,"## Problem
 
 The ONNX ReferenceEvaluator Resize operator had severe performance issues due to element-by-element iteration in the `_interpolate_nd` function. For output shape `(1, 384, 40, 40)`, the operation took approximately **24 minutes** to complete, making it unusable for practical applications.
@@ -12114,7 +12107,7 @@ Fixes #6554.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-19 14:54:20+00:00,,,102692863,https://api.github.com/repos/onnx/onnx,https://github.com/onnx/onnx/pull/7057
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-19 14:54:20+00:00,2026-04-07 16:13:29+00:00,,102692863,https://api.github.com/repos/onnx/onnx,https://github.com/onnx/onnx/pull/7057
 3154652967,49459,Make GenerateDepsFile and GenerateRuntimeConfigurationFiles tasks internally-incremental,"The `GenerateDepsFile` and `GenerateRuntimeConfigurationFiles` tasks were always writing new output files, even when the content was identical to existing files. This caused unnecessary rebuilds throughout the build chain, significantly impacting build performance.
 
 ## Changes Made
@@ -12388,7 +12381,7 @@ Fixes #3640.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-24 07:42:17+00:00,,,49122742,https://api.github.com/repos/binarywang/WxJava,https://github.com/binarywang/WxJava/pull/3648
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-24 07:42:17+00:00,2025-08-08 09:47:21+00:00,2025-08-08 09:47:21+00:00,49122742,https://api.github.com/repos/binarywang/WxJava,https://github.com/binarywang/WxJava/pull/3648
 3258971322,4469,Fix socket exhaustion in GlideClusterClient tests by optimizing connection management,"## Problem
 
 The CI Full Matrix tests were failing with socket address exhaustion errors:
@@ -12595,7 +12588,7 @@ static JEST_METHOD_NAMES: [&str; 18] = [...];
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-30 01:38:39+00:00,,,599431918,https://api.github.com/repos/oxc-project/oxc,https://github.com/oxc-project/oxc/pull/12599
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-30 01:38:39+00:00,2025-09-14 09:22:53+00:00,,599431918,https://api.github.com/repos/oxc-project/oxc,https://github.com/oxc-project/oxc/pull/12599
 3275443065,434,"refactor: Python.NET wrapper with improved type conversions, error handling, and performance optimizations","This PR comprehensively refactors the Python.NET wrapper implementation to follow best practices for .NET interoperability, focusing on type conversions, error handling, and performance improvements while maintaining full backward compatibility.
 
 ## Key Improvements
@@ -12689,7 +12682,7 @@ None - this refactor maintains full backward compatibility while providing enhan
 * **Chores**
   * Updated GitHub Actions workflow to use a newer Windows runner version for tests.
 
-<!-- end of auto-generated comment: release notes by coderabbit.ai -->",Copilot,198982749,Copilot,closed,2025-07-30 02:01:42+00:00,,,385265509,https://api.github.com/repos/facioquo/stock-indicators-python,https://github.com/facioquo/stock-indicators-python/pull/434
+<!-- end of auto-generated comment: release notes by coderabbit.ai -->",Copilot,198982749,Copilot,closed,2025-07-30 02:01:42+00:00,2025-12-24 09:40:31+00:00,2025-12-24 09:40:30+00:00,385265509,https://api.github.com/repos/facioquo/stock-indicators-python,https://github.com/facioquo/stock-indicators-python/pull/434
 3088441203,6684,[WIP] Memory Leak while dispatching workflows,"Thanks for assigning this issue to me. I'm starting to work on it and will keep this PR's description up to date as I form a plan and make progress.
 
 Original issue description:
@@ -12849,7 +12842,7 @@ Fixes #5651.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-27 13:41:01+00:00,,,65080725,https://api.github.com/repos/microsoft/testfx,https://github.com/microsoft/testfx/pull/5655
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-27 13:41:01+00:00,2026-04-21 14:45:47+00:00,2026-04-21 14:45:47+00:00,65080725,https://api.github.com/repos/microsoft/testfx,https://github.com/microsoft/testfx/pull/5655
 3136041106,14760,Fix scroll wheel responsiveness in Windows App SDK by using system scroll settings,"## Problem
 
 Scroll wheel behavior in React Native Windows using the new architecture (Windows App SDK) was significantly less responsive compared to the WinUI 3 Gallery app and other native Windows applications. Users reported that scrolling felt sluggish and required much more effort, with fewer lines scrolled per wheel notch than expected.
@@ -13181,7 +13174,7 @@ Fixes #30214.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-25 19:40:48+00:00,,,262395224,https://api.github.com/repos/dotnet/maui,https://github.com/dotnet/maui/pull/30219
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-25 19:40:48+00:00,2025-08-15 23:24:35+00:00,2025-08-15 23:24:34+00:00,262395224,https://api.github.com/repos/dotnet/maui,https://github.com/dotnet/maui/pull/30219
 3206743230,300,"Replace es-toolkit/compat with es-toolkit for difference, intersection, and keyBy","This PR optimizes the bundle size and performance by replacing imports from `es-toolkit/compat` with the standard `es-toolkit` module for the `difference`, `intersection`, and `keyBy` functions in `jsonDiff.ts`.
 
 ## Changes Made
@@ -13405,7 +13398,7 @@ Closes #6094
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-18 07:09:18+00:00,,,175405157,https://api.github.com/repos/JanDeDobbeleer/oh-my-posh,https://github.com/JanDeDobbeleer/oh-my-posh/pull/6617
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-18 07:09:18+00:00,2025-09-11 07:41:39+00:00,,175405157,https://api.github.com/repos/JanDeDobbeleer/oh-my-posh,https://github.com/JanDeDobbeleer/oh-my-posh/pull/6617
 3242243860,30586,Fix ETag generation for streaming catalog entities endpoint,"## Problem
 
 In Backstage 1.41, the default behavior of the `/api/catalog/entities` endpoint changed to use streaming responses for better performance. However, this change broke browser caching because the streaming path doesn't use Express's built-in `res.json()` method, which automatically generates ETags. This resulted in significant performance degradation on the catalog homepage, which makes 3 calls to this endpoint on page load.
@@ -13523,7 +13516,7 @@ Fixes #5111.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-21 02:47:05+00:00,,,156260788,https://api.github.com/repos/Azure/azure-cosmos-dotnet-v3,https://github.com/Azure/azure-cosmos-dotnet-v3/pull/5209
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-21 02:47:05+00:00,2025-08-19 13:14:58+00:00,,156260788,https://api.github.com/repos/Azure/azure-cosmos-dotnet-v3,https://github.com/Azure/azure-cosmos-dotnet-v3/pull/5209
 3079016065,9510,Make EnvironmentStatistics CPU usage collection interval configurable,"Currently, the CPU usage collection interval in `EnvironmentStatisticsProvider` is hardcoded to 1 second, which can impact other EventListener implementations such as Application Insights.
 
 This PR makes the CPU usage collection interval configurable by:
@@ -13676,7 +13669,7 @@ Fixes #1995.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-22 00:50:31+00:00,,,201991558,https://api.github.com/repos/microsoft/Olive,https://github.com/microsoft/Olive/pull/1996
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-22 00:50:31+00:00,2025-07-30 21:13:55+00:00,2025-07-30 21:13:55+00:00,201991558,https://api.github.com/repos/microsoft/Olive,https://github.com/microsoft/Olive/pull/1996
 3082541069,755,Add -M/--find-renames option and blame.renames config to control rename detection,"When running `git blame` on large repositories, the automatic rename detection can cause performance issues because it unnecessarily compares blob contents to follow inexact renames. This PR adds options to control this behavior:
 
 ### Added new features:
@@ -13734,7 +13727,7 @@ Fixes #753.
 
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-22 08:37:59+00:00,,,79856983,https://api.github.com/repos/microsoft/git,https://github.com/microsoft/git/pull/755
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-05-22 08:37:59+00:00,2026-05-01 15:06:51+00:00,,79856983,https://api.github.com/repos/microsoft/git,https://github.com/microsoft/git/pull/755
 3083186670,18592,Auto-generate ILLink.Substitutions.xml to Remove F# Metadata Resources,"# Auto-generate ILLink.Substitutions.xml to Remove F# Metadata Resources
 
 ## 🎯 Problem Statement
@@ -14117,7 +14110,7 @@ Fixes #82.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-21 10:44:37+00:00,,,335430165,https://api.github.com/repos/alexandear/import-gitlab-commits,https://github.com/alexandear/import-gitlab-commits/pull/135
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-21 10:44:37+00:00,2025-11-07 18:02:12+00:00,,335430165,https://api.github.com/repos/alexandear/import-gitlab-commits,https://github.com/alexandear/import-gitlab-commits/pull/135
 3205497325,3046,Implement intelligent test selection for github actions,"## Summary
 
 This PR implements an intelligent test selection system that reduces CI runtime from 5+ minutes to targeted windows (1-5 minutes) based on the scope of changes in a pull request. The system analyzes git diff to determine which tests are relevant and executes only those tests, providing 60-80% time savings for focused changes while maintaining comprehensive coverage for complex changes.
@@ -14258,7 +14251,7 @@ This implementation addresses the core requirement of reducing test suite runtim
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-05 19:48:04+00:00,,,126897385,https://api.github.com/repos/DeepLabCut/DeepLabCut,https://github.com/DeepLabCut/DeepLabCut/pull/3046
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-05 19:48:04+00:00,2026-03-19 20:37:22+00:00,2026-03-19 20:37:22+00:00,126897385,https://api.github.com/repos/DeepLabCut/DeepLabCut,https://github.com/DeepLabCut/DeepLabCut/pull/3046
 3155815373,641,Make benchmarks only run with release builds,"This PR enforces that benchmarks can only be run with release builds, preventing execution with debug builds which would provide inconsistent and misleading performance data.
 
 ## Changes Made
@@ -14435,7 +14428,7 @@ Resolves #2104
 - - -
 This change is [<img src=""https://reviewable.io/review_button.svg"" height=""34"" align=""absmiddle"" alt=""Reviewable""/>](https://reviewable.io/reviews/dsccommunity/SqlServerDsc/2108)
 <!-- Reviewable:end -->
-",Copilot,198982749,Copilot,closed,2025-07-10 16:11:24+00:00,,,34022262,https://api.github.com/repos/dsccommunity/SqlServerDsc,https://github.com/dsccommunity/SqlServerDsc/pull/2108
+",Copilot,198982749,Copilot,closed,2025-07-10 16:11:24+00:00,2025-09-13 09:45:39+00:00,2025-09-13 09:45:39+00:00,34022262,https://api.github.com/repos/dsccommunity/SqlServerDsc,https://github.com/dsccommunity/SqlServerDsc/pull/2108
 3200413496,7904,Fix cache not being used when scopes are empty in acquireTokenSilent,"## Problem
 
 When `acquireTokenSilent` is called with empty scopes (`scopes: []`), the cache lookup fails with a configuration error, causing unnecessary network requests to Azure AD instead of using cached tokens.
@@ -14493,7 +14486,7 @@ Fixes #6969.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-03 19:18:55+00:00,,,83085579,https://api.github.com/repos/AzureAD/microsoft-authentication-library-for-js,https://github.com/AzureAD/microsoft-authentication-library-for-js/pull/7904
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-03 19:18:55+00:00,2025-08-13 16:47:41+00:00,,83085579,https://api.github.com/repos/AzureAD/microsoft-authentication-library-for-js,https://github.com/AzureAD/microsoft-authentication-library-for-js/pull/7904
 3200433499,4495,Migrate eBPF for Windows from packages.config to PackageReference NuGet style,"This PR migrates eBPF for Windows from the legacy `packages.config` NuGet format to the modern `PackageReference` format, improving dependency management and build performance.
 
 ## Changes Made
@@ -14665,7 +14658,7 @@ Fixes #45945.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-11 20:49:09+00:00,,,68312233,https://api.github.com/repos/microsoft/vcpkg,https://github.com/microsoft/vcpkg/pull/45946
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-06-11 20:49:09+00:00,2025-09-15 19:47:06+00:00,,68312233,https://api.github.com/repos/microsoft/vcpkg,https://github.com/microsoft/vcpkg/pull/45946
 3110867755,4915,docs: Add IAVL v1 migration guide for consensus node operators,"This PR adds comprehensive documentation for consensus node operators on how to migrate from IAVL v0 to IAVL v1 to achieve optimal performance benefits with celestia-app v4.
 
 ## Background
@@ -14968,7 +14961,7 @@ Fixes #3393.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-07 21:43:20+00:00,,,241248985,https://api.github.com/repos/AzureAD/microsoft-identity-web,https://github.com/AzureAD/microsoft-identity-web/pull/3409
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-07 21:43:20+00:00,2025-09-26 02:02:10+00:00,,241248985,https://api.github.com/repos/AzureAD/microsoft-identity-web,https://github.com/AzureAD/microsoft-identity-web/pull/3409
 3210327689,489,Refactor asset conversion/management: Move to CLI tool and enable direct WAD loading,"This PR implements a comprehensive refactoring of OpenKeeper's asset conversion and management system to address the requirements outlined in #486.
 
 ## 🎯 Key Changes
@@ -15072,7 +15065,7 @@ Fixes #486.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-07 21:46:36+00:00,,,22580980,https://api.github.com/repos/tonihele/OpenKeeper,https://github.com/tonihele/OpenKeeper/pull/489
+💡 You can make Copilot smarter by setting up custom instructions, customizing its development environment and configuring Model Context Protocol (MCP) servers. Learn more [Copilot coding agent tips](https://gh.io/copilot-coding-agent-tips) in the docs.",Copilot,198982749,Copilot,closed,2025-07-07 21:46:36+00:00,2025-08-02 12:43:55+00:00,,22580980,https://api.github.com/repos/tonihele/OpenKeeper,https://github.com/tonihele/OpenKeeper/pull/489
 3212763311,47134,Improve `in` parameter modifier example with meaningful struct-based demonstration,"Fixes #25422
 
 ## Problem
@@ -15649,7 +15642,7 @@ Fixes #478.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-27 16:06:13+00:00,,,148820496,https://api.github.com/repos/johnsusek/praeco,https://github.com/johnsusek/praeco/pull/716
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-27 16:06:13+00:00,2025-09-15 16:49:14+00:00,2025-09-15 16:49:14+00:00,148820496,https://api.github.com/repos/johnsusek/praeco,https://github.com/johnsusek/praeco/pull/716
 3183775420,30286,[Testing] Rework Catalyst Test Runner to use startup arguments instead of UI navigation,"> [!NOTE]
 > Are you waiting for the changes in this PR to be merged?
 > It would be very helpful if you could [test the resulting artifacts](https://github.com/dotnet/maui/wiki/Testing-PR-Builds) from this PR and let us know in a comment if this change resolves your issue. Thank you!
@@ -15853,7 +15846,7 @@ Fixes #116965.
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-30 16:50:45+00:00,,,210716005,https://api.github.com/repos/dotnet/runtime,https://github.com/dotnet/runtime/pull/117160
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-06-30 16:50:45+00:00,2025-08-01 03:28:13+00:00,,210716005,https://api.github.com/repos/dotnet/runtime,https://github.com/dotnet/runtime/pull/117160
 3193183157,7710,Optimize datatype CLI performance by skipping accessor loop for 0-ary constructors,"This PR fixes a significant performance regression in the CLI when declaring datatypes with many 0-ary constructors (constructors with no arguments).
 
 ## Problem
@@ -16304,7 +16297,7 @@ Resolves the issue mentioned in the problem statement about implementing Intel/A
 <!-- START COPILOT CODING AGENT TIPS -->
 ---
 
-💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-15 15:16:53+00:00,,,768813127,https://api.github.com/repos/nandyalu/trailarr,https://github.com/nandyalu/trailarr/pull/259
+💬 Share your feedback on Copilot coding agent for the chance to win a $200 gift card! Click [here](https://survey.alchemer.com/s3/8343779/Copilot-Coding-agent) to start the survey.",Copilot,198982749,Copilot,closed,2025-07-15 15:16:53+00:00,2025-08-09 05:52:31+00:00,2025-08-09 05:52:31+00:00,768813127,https://api.github.com/repos/nandyalu/trailarr,https://github.com/nandyalu/trailarr/pull/259
 3232717651,7737,Fix quantifier weight default to prevent performance regression,"This PR fixes a critical performance regression in Z3 4.15.x where quantifier-heavy SMT files experience memory and time blowup compared to Z3 4.8.17.
 
 ## Problem
@@ -16562,7 +16555,7 @@ https://chatgpt.com/codex/tasks/task_e_685370de48648320b4b91019db80c93e",OpenAI_
 - `python -m unittest`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68405ba45d8c8330a57610fd34a88119",OpenAI_Codex,4744452,arun1729,closed,2025-06-04 15:08:29+00:00,,,111333972,https://api.github.com/repos/arun1729/cog,https://github.com/arun1729/cog/pull/51
+https://chatgpt.com/codex/tasks/task_e_68405ba45d8c8330a57610fd34a88119",OpenAI_Codex,4744452,arun1729,closed,2025-06-04 15:08:29+00:00,2025-08-08 14:08:48+00:00,,111333972,https://api.github.com/repos/arun1729/cog,https://github.com/arun1729/cog/pull/51
 3217089921,7040,Add conditional runtime emission to OCaml compiler,"## Summary
 - enhance OCaml backend with feature scanning
 - emit runtime helpers only when required by a program
@@ -16614,7 +16607,7 @@ https://chatgpt.com/codex/tasks/task_e_6873f7562e188333badc4c4205818047",OpenAI_
 - `make all`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_684161e4c608832a90cad805cff163cf",OpenAI_Codex,4980269,grigorii-horos,closed,2025-06-05 09:35:02+00:00,,,32639671,https://api.github.com/repos/zpm-zsh/zpm,https://github.com/zpm-zsh/zpm/pull/65
+https://chatgpt.com/codex/tasks/task_e_684161e4c608832a90cad805cff163cf",OpenAI_Codex,4980269,grigorii-horos,closed,2025-06-05 09:35:02+00:00,2025-11-24 16:01:38+00:00,2025-11-24 16:01:38+00:00,32639671,https://api.github.com/repos/zpm-zsh/zpm,https://github.com/zpm-zsh/zpm/pull/65
 3225662609,333,Improve asciicast clear offset caching,"## Summary
 - track `lastClearOffset` in `SessionInfo`
 - initialize `lastClearOffset` on session creation
@@ -16692,7 +16685,7 @@ https://chatgpt.com/codex/tasks/task_i_6874a0bb4b6083218858bb32657453be",OpenAI_
 - `python3 run-all-tests.py`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68800afd5adc832296152e7ff9fb2a67",OpenAI_Codex,2230318,3rdIteration,closed,2025-07-22 22:31:51+00:00,,,197336679,https://api.github.com/repos/3rdIteration/btcrecover,https://github.com/3rdIteration/btcrecover/pull/607
+https://chatgpt.com/codex/tasks/task_e_68800afd5adc832296152e7ff9fb2a67",OpenAI_Codex,2230318,3rdIteration,closed,2025-07-22 22:31:51+00:00,2025-10-05 18:22:02+00:00,2025-10-05 18:22:02+00:00,197336679,https://api.github.com/repos/3rdIteration/btcrecover,https://github.com/3rdIteration/btcrecover/pull/607
 3185733825,3931,Run benchmarks,"## Summary
 - update benchmark results in BENCHMARK.md
 - refresh precompiled benchmark sources in `bench/out`
@@ -17908,7 +17901,7 @@ https://chatgpt.com/codex/tasks/task_e_6882fbca330c8320aba20e29cf392a68",OpenAI_
 - `MOCHI_ROSETTA_INDEX=1 MOCHI_BENCHMARK=1 go test -tags slow ./runtime/vm -run Rosetta -count=1`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_6883020b17188320b6159714612d08c5",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 04:17:24+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/12955
+https://chatgpt.com/codex/tasks/task_e_6883020b17188320b6159714612d08c5",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 04:17:24+00:00,2026-04-16 13:54:11+00:00,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/12955
 3261933492,12958,Fix swift rosetta benchmark runtime,"## Summary
 - improve `_now` handling in the Swift transpiler
 - seed PRNG when running benchmarks to keep rosetta programs fast
@@ -17919,7 +17912,7 @@ https://chatgpt.com/codex/tasks/task_e_6883020b17188320b6159714612d08c5",OpenAI_
 - `ROSETTA_INDEX=4 MOCHI_BENCHMARK=1 go test ./transpiler/x/swift -run TestSwiftTranspiler_Rosetta_Golden -tags=slow -count=1 -v`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68830247f8488320a30927cad865dc2b",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 04:20:51+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/12958
+https://chatgpt.com/codex/tasks/task_e_68830247f8488320a30927cad865dc2b",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 04:20:51+00:00,2026-04-16 13:54:18+00:00,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/12958
 3158264753,316,Delay class resolution during parsing,"## Summary
 - store `@type` and `@enum` strings without resolving classes
 - resolve classes later in `Resolver` and `JsonReader`
@@ -18454,7 +18447,7 @@ https://chatgpt.com/codex/tasks/task_e_68598306e0948320be0f9896b90076ec",OpenAI_
 ~~- `flutter analyze` *(fails: version solving failed)*~~
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68559334727c83268a1a79bf91ce8b32",OpenAI_Codex,77973576,CharlVS,closed,2025-06-20 17:25:10+00:00,,,225880766,https://api.github.com/repos/KomodoPlatform/komodo-wallet,https://github.com/KomodoPlatform/komodo-wallet/pull/2806
+https://chatgpt.com/codex/tasks/task_e_68559334727c83268a1a79bf91ce8b32",OpenAI_Codex,77973576,CharlVS,closed,2025-06-20 17:25:10+00:00,2025-10-27 21:07:42+00:00,,225880766,https://api.github.com/repos/KomodoPlatform/komodo-wallet,https://github.com/KomodoPlatform/komodo-wallet/pull/2806
 3218881690,3176,[alpha_factory] enhance browser size workflow caches,"## Summary
 - reuse built-in pip cache via `actions/setup-python`
 - cache npm dependencies with `actions/setup-node`
@@ -18507,7 +18500,7 @@ https://chatgpt.com/codex/tasks/task_e_6840443a5db483209d77f6eb8823bf9d",OpenAI_
 
 ------
 https://chatgpt.com/codex/tasks/task_e_68794cf6dfb48331b0f78adc90010675",OpenAI_Codex,9633,dlwh,closed,2025-07-17 19:33:10+00:00,2025-07-18 04:53:42+00:00,2025-07-18 04:53:42+00:00,775839592,https://api.github.com/repos/marin-community/marin,https://github.com/marin-community/marin/pull/1458
-3093387507,1782,Add benchmark for deserializing large added vocab +  optimizations,,OpenAI_Codex,48595927,ArthurZucker,closed,2025-05-27 10:09:25+00:00,,,219035799,https://api.github.com/repos/huggingface/tokenizers,https://github.com/huggingface/tokenizers/pull/1782
+3093387507,1782,Add benchmark for deserializing large added vocab +  optimizations,,OpenAI_Codex,48595927,ArthurZucker,closed,2025-05-27 10:09:25+00:00,2025-11-27 15:54:26+00:00,,219035799,https://api.github.com/repos/huggingface/tokenizers,https://github.com/huggingface/tokenizers/pull/1782
 3098274260,13200,"Prebid 10: Disable GREEDY feature by default, break up long tasks",fixe #10062 ,OpenAI_Codex,1683175,patmmccann,closed,2025-05-28 18:53:01+00:00,2025-05-28 19:36:11+00:00,,39321023,https://api.github.com/repos/prebid/Prebid.js,https://github.com/prebid/Prebid.js/pull/13200
 3262865664,13059,Optimize VM append,"## Summary
 - improve `OpAppend` to use Go's built-in slice growth
@@ -19006,7 +18999,7 @@ https://chatgpt.com/codex/tasks/task_e_6850218a97208320a8faa27bc6a5bacb",OpenAI_
 - test ParticleBuffer growth and shrinkage behaviour
 
 ## Testing
-- `npm test` *(fails: run-s not found)*",OpenAI_Codex,3112434,GoodBoyDigital,closed,2025-05-21 09:52:11+00:00,,,7741856,https://api.github.com/repos/pixijs/pixijs,https://github.com/pixijs/pixijs/pull/11432
+- `npm test` *(fails: run-s not found)*",OpenAI_Codex,3112434,GoodBoyDigital,closed,2025-05-21 09:52:11+00:00,2026-01-28 11:36:39+00:00,,7741856,https://api.github.com/repos/pixijs/pixijs,https://github.com/pixijs/pixijs/pull/11432
 3124462300,13297,Cricleci: establish babel cache,inspired by https://www.charpeni.com/blog/speeding-up-eslint-even-on-ci,OpenAI_Codex,1683175,patmmccann,closed,2025-06-06 11:08:50+00:00,2025-06-06 11:11:51+00:00,,39321023,https://api.github.com/repos/prebid/Prebid.js,https://github.com/prebid/Prebid.js/pull/13297
 3165179554,1338,Parallelize metadata generation,"## Summary
 - parallelize metadata generation in `regenerate_test_rustdocs.sh`
@@ -19062,7 +19055,7 @@ https://chatgpt.com/codex/tasks/task_e_683e492a82a88333ac63e88d9db12e8b",OpenAI_
 - `pytest -k meta_importer -q` *(fails: ModuleNotFoundError: dotenv)*
 
 ------
-https://chatgpt.com/codex/tasks/task_e_684f3e054b808322b47ea46902c5ea7c",OpenAI_Codex,8206008,marsninja,closed,2025-06-15 21:45:50+00:00,,,422711680,https://api.github.com/repos/jaseci-labs/jaseci,https://github.com/jaseci-labs/jaseci/pull/2146
+https://chatgpt.com/codex/tasks/task_e_684f3e054b808322b47ea46902c5ea7c",OpenAI_Codex,8206008,marsninja,closed,2025-06-15 21:45:50+00:00,2025-11-03 19:31:45+00:00,,422711680,https://api.github.com/repos/jaseci-labs/jaseci,https://github.com/jaseci-labs/jaseci/pull/2146
 3278146408,812,Fix web app screen loading,"## Summary
 - add a `lazyScreen` helper component to wrap dynamic imports in `<Suspense>`
 - use `lazyScreen` instead of `React.lazy` across navigation modules
@@ -19247,7 +19240,7 @@ https://chatgpt.com/codex/tasks/task_e_6876ec7ca3dc83318ce01950914aa611",OpenAI_
 - `julia -q -e 'using Revise, MacroModelling; include(""models/RBC_baseline.jl""); get_solution(RBC_baseline); println(""done"")'` *(failed: package Revise missing / heavy precomp)*
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68414c43a9e0832f863289be5b7c3af9",OpenAI_Codex,13523097,thorek1,closed,2025-06-05 09:53:19+00:00,,,571475096,https://api.github.com/repos/thorek1/MacroModelling.jl,https://github.com/thorek1/MacroModelling.jl/pull/112
+https://chatgpt.com/codex/tasks/task_e_68414c43a9e0832f863289be5b7c3af9",OpenAI_Codex,13523097,thorek1,closed,2025-06-05 09:53:19+00:00,2026-01-27 09:43:19+00:00,,571475096,https://api.github.com/repos/thorek1/MacroModelling.jl,https://github.com/thorek1/MacroModelling.jl/pull/112
 3083867045,534,Add GPU-accelerated Smith-Waterman module,"## Summary
 - add optional GPU Smith-Waterman implementation using PyOpenCL
 - document how to use the GPU module
@@ -19386,7 +19379,7 @@ https://issues.apache.org/jira/browse/HDDS-13114
 ## How was this patch tested?
 
 CI:
-https://github.com/peterxcli/ozone/actions/runs/15484301525",OpenAI_Codex,54034701,peterxcli,closed,2025-06-06 09:22:21+00:00,,,212382406,https://api.github.com/repos/apache/ozone,https://github.com/apache/ozone/pull/8572
+https://github.com/peterxcli/ozone/actions/runs/15484301525",OpenAI_Codex,54034701,peterxcli,closed,2025-06-06 09:22:21+00:00,2025-11-19 00:05:25+00:00,,212382406,https://api.github.com/repos/apache/ozone,https://github.com/apache/ozone/pull/8572
 3276217466,14939,Refactor json-ast go nodes,"## Summary
 - make Go json-ast nodes omit positions unless `IncludePositions` is enabled
 - regenerate Go cross_join AST without position info
@@ -19445,7 +19438,7 @@ https://chatgpt.com/codex/tasks/task_e_686207f0d0e48333bdd56cd69274b995",OpenAI_
 - `moon test`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_684bd59b9ccc8320b5e9a44429fe1b2b",OpenAI_Codex,747051,bobzhang,closed,2025-06-13 08:46:02+00:00,,,749681472,https://api.github.com/repos/moonbitlang/core,https://github.com/moonbitlang/core/pull/2267
+https://chatgpt.com/codex/tasks/task_e_684bd59b9ccc8320b5e9a44429fe1b2b",OpenAI_Codex,747051,bobzhang,closed,2025-06-13 08:46:02+00:00,2025-09-06 14:26:03+00:00,,749681472,https://api.github.com/repos/moonbitlang/core,https://github.com/moonbitlang/core/pull/2267
 3117720862,37,Add TS benchmark via compiler,"## Summary
 - add Mochi -> TypeScript compilation step to benchmarks
 - run TypeScript benchmark via Deno
@@ -19502,7 +19495,7 @@ https://chatgpt.com/codex/tasks/task_e_6871f0db1430832090e6cb81e7eb3e1b",OpenAI_
 https://chatgpt.com/codex/tasks/task_e_6871f5b0e8448320b54b959a482d541f",OpenAI_Codex,1218621,tamnd,closed,2025-07-12 07:17:42+00:00,2025-07-12 07:28:03+00:00,2025-07-12 07:28:03+00:00,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/7926
 3104378127,326,Improve config loader performance,"## Summary
 - optimize ConfigLoader::loadAll by removing intermediate arrays
-",OpenAI_Codex,5256287,Chemaclass,closed,2025-05-30 22:15:08+00:00,,,348491018,https://api.github.com/repos/gacela-project/gacela,https://github.com/gacela-project/gacela/pull/326
+",OpenAI_Codex,5256287,Chemaclass,closed,2025-05-30 22:15:08+00:00,2025-10-12 16:26:38+00:00,2025-10-12 16:26:38+00:00,348491018,https://api.github.com/repos/gacela-project/gacela,https://github.com/gacela-project/gacela/pull/326
 3104406142,823,Improve vector performance,"## Summary
 - cache tail size in `PersistentVector` and `TransientVector`
 - update tail size when modifying transient vectors
@@ -19548,7 +19541,7 @@ This change updates our docs watcher to only process a single markdown file if i
 - `python test/test_cuda.py -k test_graph_record_stream_no_leak -vv` *(fails: ModuleNotFoundError: No module named 'psutil')*
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68483c71a96483238645dff24692b5ea",OpenAI_Codex,13564,ezyang,closed,2025-06-11 03:56:27+00:00,,,65600975,https://api.github.com/repos/pytorch/pytorch,https://github.com/pytorch/pytorch/pull/155658
+https://chatgpt.com/codex/tasks/task_e_68483c71a96483238645dff24692b5ea",OpenAI_Codex,13564,ezyang,closed,2025-06-11 03:56:27+00:00,2025-11-03 18:13:12+00:00,,65600975,https://api.github.com/repos/pytorch/pytorch,https://github.com/pytorch/pytorch/pull/155658
 3070310257,29,Improve preflight checks,"## Summary
 - add module presence checks for `openai` and `openai_agents`
 - show status of these modules in the preflight banner
@@ -19847,7 +19840,7 @@ https://chatgpt.com/codex/tasks/task_e_6842078e39e48333aceccca0ecfe0599",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_b_687c96b541688328a177d53d01d1ba97",OpenAI_Codex,77850077,Frooodle,closed,2025-07-20 07:51:19+00:00,,,594155488,https://api.github.com/repos/Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF/pull/3992
+https://chatgpt.com/codex/tasks/task_b_687c96b541688328a177d53d01d1ba97",OpenAI_Codex,77850077,Frooodle,closed,2025-07-20 07:51:19+00:00,2026-05-26 20:11:05+00:00,,594155488,https://api.github.com/repos/Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF/pull/3992
 3150434121,430,Optimize simplifier loop traversal,"## Summary
 - improve graph traversal loops in `pattern-matcher.lisp`
 - remove unnecessary list consing when exploring FastGraph
@@ -19867,7 +19860,7 @@ https://chatgpt.com/codex/tasks/task_b_684fc9a0b61c83258d8809c4afe369b5",OpenAI_
 - `go test -tags=slow ./tests/vm -run TestVM_IR -update --vet=off`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_686183f9c4e08320809ddcda2753fce7",OpenAI_Codex,1218621,tamnd,closed,2025-06-30 00:49:13+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/4017
+https://chatgpt.com/codex/tasks/task_e_686183f9c4e08320809ddcda2753fce7",OpenAI_Codex,1218621,tamnd,closed,2025-06-30 00:49:13+00:00,2026-04-16 11:57:52+00:00,2026-04-16 11:57:52+00:00,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/4017
 3187015246,4055,Optimize VM pure call folding,"## Summary
 - fold user-defined pure function calls during VM compilation using the VM's constant evaluator
 - add test covering folding with a global constant
@@ -19900,7 +19893,7 @@ https://chatgpt.com/codex/tasks/task_e_6861e70f65a883208351807b1e6cce36",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_6854f2091288832e8a5d4fcc653a5b9d",OpenAI_Codex,5524043,roryaronson,closed,2025-06-21 06:22:21+00:00,,,17652873,https://api.github.com/repos/FarmBot/Farmbot-Web-App,https://github.com/FarmBot/Farmbot-Web-App/pull/2493
+https://chatgpt.com/codex/tasks/task_e_6854f2091288832e8a5d4fcc653a5b9d",OpenAI_Codex,5524043,roryaronson,closed,2025-06-21 06:22:21+00:00,2025-08-14 17:36:48+00:00,,17652873,https://api.github.com/repos/FarmBot/Farmbot-Web-App,https://github.com/FarmBot/Farmbot-Web-App/pull/2493
 3265223442,14186,14185 optimize stock deduction,"## Summary
 - add `OptimizedPharmacyBean` with batch stock deduction logic
 - integrate fast sale controller with optional optimized mode
@@ -19986,7 +19979,7 @@ https://chatgpt.com/codex/tasks/task_e_687934db21fc83208f4568578f614a93",OpenAI_
 - `go test ./cmd/... -run TestNonExisting -count=1`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_687fc4a743a0832bb96f3c2b63a79c67",OpenAI_Codex,1678394,sabrikaragonen,closed,2025-07-22 19:20:07+00:00,,,674225653,https://api.github.com/repos/bruin-data/bruin,https://github.com/bruin-data/bruin/pull/932
+https://chatgpt.com/codex/tasks/task_e_687fc4a743a0832bb96f3c2b63a79c67",OpenAI_Codex,1678394,sabrikaragonen,closed,2025-07-22 19:20:07+00:00,2025-08-13 07:30:33+00:00,,674225653,https://api.github.com/repos/bruin-data/bruin,https://github.com/bruin-data/bruin/pull/932
 3189971928,7990,Build tag to exclude Cloud archiver providers,"## What changed?
 
 Added a build tag to exclude cloud archiver providers. The filesystem one is unaffected (as it is needed for tests).
@@ -20008,7 +20001,7 @@ Reduce binary size by 24MB for when cloud archiver providers are not needed.
 ```
 -rwxr-xr-x@ 1 stephan  staff    95M Jun 30 16:23 temporal-server
 ```
-",OpenAI_Codex,159852,stephanos,closed,2025-06-30 21:58:41+00:00,,,215654064,https://api.github.com/repos/temporalio/temporal,https://github.com/temporalio/temporal/pull/7990
+",OpenAI_Codex,159852,stephanos,closed,2025-06-30 21:58:41+00:00,2025-08-22 15:49:00+00:00,,215654064,https://api.github.com/repos/temporalio/temporal,https://github.com/temporalio/temporal/pull/7990
 3170115992,2771,Add tail call optimization to VM,"## Summary
 - implement tail call optimization in `runtime/vm`
 - add `retReg` to `frame` and reuse frames for tail calls
@@ -20369,7 +20362,7 @@ https://chatgpt.com/codex/tasks/task_e_6873dae03e548333928a5753d030270a",OpenAI_
 - enable concurrent verification of replication tasks with configurable concurrency
 
 ## Testing
-- `go test ./service/worker/migration/... -run Test_verifyReplicationTasks -count=1` *(fails: download go1.24.1 toolchain)*",OpenAI_Codex,3085410,meiliang86,closed,2025-05-19 17:06:53+00:00,,,215654064,https://api.github.com/repos/temporalio/temporal,https://github.com/temporalio/temporal/pull/7794
+- `go test ./service/worker/migration/... -run Test_verifyReplicationTasks -count=1` *(fails: download go1.24.1 toolchain)*",OpenAI_Codex,3085410,meiliang86,closed,2025-05-19 17:06:53+00:00,2025-12-17 20:32:45+00:00,,215654064,https://api.github.com/repos/temporalio/temporal,https://github.com/temporalio/temporal/pull/7794
 3210496890,545,Increase TTL for older posts,"## Summary
 - set 24 hour Cache-Control header for posts older than six months
 - test TTL behavior for old and new items
@@ -20990,7 +20983,7 @@ https://chatgpt.com/codex/tasks/task_e_685ebb524f7c83208f136ac3fa2cce32",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68866679275483318b55e211a2a91eee",OpenAI_Codex,9633,dlwh,closed,2025-07-27 18:17:29+00:00,,,775839592,https://api.github.com/repos/marin-community/marin,https://github.com/marin-community/marin/pull/1489
+https://chatgpt.com/codex/tasks/task_e_68866679275483318b55e211a2a91eee",OpenAI_Codex,9633,dlwh,closed,2025-07-27 18:17:29+00:00,2025-11-13 01:00:09+00:00,,775839592,https://api.github.com/repos/marin-community/marin,https://github.com/marin-community/marin/pull/1489
 3128960984,222,Enable AOT folding in interpreter,"## Summary
 - add `FoldPureCalls` for ahead-of-time constant folding
 - expose folding via `--aot` flag in CLI and use it in benchmarks
@@ -21035,7 +21028,7 @@ https://chatgpt.com/codex/tasks/task_b_687fa69770b8833381b6d4afa2c42b46",OpenAI_
 - `julia -t auto benchmark/sparse_buffer_mult.jl | tee benchmark/sparse_buffer_mult_output.txt` *(interrupted)*
 
 ------
-https://chatgpt.com/codex/tasks/task_e_684b2fd24fd4832fb24bbb8a81955d53",OpenAI_Codex,13523097,thorek1,closed,2025-06-14 17:31:20+00:00,,,571475096,https://api.github.com/repos/thorek1/MacroModelling.jl,https://github.com/thorek1/MacroModelling.jl/pull/118
+https://chatgpt.com/codex/tasks/task_e_684b2fd24fd4832fb24bbb8a81955d53",OpenAI_Codex,13523097,thorek1,closed,2025-06-14 17:31:20+00:00,2026-01-27 09:43:20+00:00,,571475096,https://api.github.com/repos/thorek1/MacroModelling.jl,https://github.com/thorek1/MacroModelling.jl/pull/118
 3070333952,1373,fix: prevent blocking call in get_live_urls,"### **User description**
 ## Summary
 - add missing asyncio import
@@ -21204,7 +21197,7 @@ https://chatgpt.com/codex/tasks/task_e_687f7319182c83208de8db41999758f1",OpenAI_
 - `go test ./tests/vm -tags slow -run TestVM_TPCDS/q1.mochi -v`
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68621ea9039483208f671c2955bca4c8",OpenAI_Codex,1218621,tamnd,closed,2025-06-30 05:46:25+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/4084
+https://chatgpt.com/codex/tasks/task_e_68621ea9039483208f671c2955bca4c8",OpenAI_Codex,1218621,tamnd,closed,2025-06-30 05:46:25+00:00,2026-04-16 12:21:03+00:00,2026-04-16 12:21:03+00:00,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/4084
 3212056037,6457,Improve Rust compiler query loops,"## Summary
 - adjust Rust compiler to iterate over values not refs in query expressions
 - regenerate machine outputs for `exists_builtin` and `in_operator_extended`
@@ -21379,7 +21372,7 @@ https://chatgpt.com/codex/tasks/task_e_685374fcfd70832090d6f491acc8613b",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_6861747e93448320b472f1b0f1f77eff",OpenAI_Codex,1218621,tamnd,closed,2025-06-29 18:30:11+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/4016
+https://chatgpt.com/codex/tasks/task_e_6861747e93448320b472f1b0f1f77eff",OpenAI_Codex,1218621,tamnd,closed,2025-06-29 18:30:11+00:00,2026-04-16 12:17:44+00:00,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/4016
 3084684604,39,Improve entity destroy performance,"## Summary
 - optimize Entity.destroy to avoid creating new BitSet and iterating using an array
 - simplify entityCycle benchmark to iterate query set directly
@@ -21486,7 +21479,7 @@ log:
 5. 多消费者/MPMC支持
 
 多消费者（MPMC, Multi-Producer Multi-Consumer）支持是对当前队列模型（MPSC: 多生产者单消费者）的架构级增强，其核心目标是提升消费者处理吞吐能力，降低单消费者瓶颈对系统稳定性的影响
-",OpenAI_Codex,4133689,svc-design,closed,2025-07-24 04:11:19+00:00,,,448599559,https://api.github.com/repos/deepflowio/deepflow,https://github.com/deepflowio/deepflow/pull/10177
+",OpenAI_Codex,4133689,svc-design,closed,2025-07-24 04:11:19+00:00,2026-03-14 11:47:18+00:00,,448599559,https://api.github.com/repos/deepflowio/deepflow,https://github.com/deepflowio/deepflow/pull/10177
 3070936351,4050,chore: Improve memory usage when sharing results,"## Summary
 - add batched sample and counting helpers on `Eval`
 - stream results in `sendChunkedResults`
@@ -22255,7 +22248,7 @@ https://chatgpt.com/codex/tasks/task_e_6847349ad2a483238b964fc3f9b9ef25
 
 ## Testing
 - `pytest -q`",OpenAI_Codex,1231232,jdesboeufs,closed,2025-05-25 22:20:49+00:00,2025-06-01 21:24:58+00:00,,28606501,https://api.github.com/repos/addok/addok,https://github.com/addok/addok/pull/892
-3190098735,13469,Core: timeoutQueue to TS,this is used by floors and currency; the set implementation may improve performance a bit,OpenAI_Codex,1683175,patmmccann,closed,2025-06-30 22:54:07+00:00,,,39321023,https://api.github.com/repos/prebid/Prebid.js,https://github.com/prebid/Prebid.js/pull/13469
+3190098735,13469,Core: timeoutQueue to TS,this is used by floors and currency; the set implementation may improve performance a bit,OpenAI_Codex,1683175,patmmccann,closed,2025-06-30 22:54:07+00:00,2025-08-21 13:51:24+00:00,2025-08-21 13:51:24+00:00,39321023,https://api.github.com/repos/prebid/Prebid.js,https://github.com/prebid/Prebid.js/pull/13469
 3190011828,13468,Ix bid adapter: cache GPT slot lookups,trying to spped up the enormous ix bid adapter,OpenAI_Codex,1683175,patmmccann,closed,2025-06-30 22:16:38+00:00,2025-07-02 16:58:47+00:00,2025-07-02 16:58:47+00:00,39321023,https://api.github.com/repos/prebid/Prebid.js,https://github.com/prebid/Prebid.js/pull/13468
 3112264968,1484,[alpha_factory] cache runtime assets,"## Summary
 - cache fonts and IPFS JSON using Workbox runtime caching
@@ -22425,7 +22418,7 @@ https://chatgpt.com/codex/tasks/task_e_686fac0e09308320a100af9f653e14d7",OpenAI_
   * Enhanced HTTP support by adding the PATCH method for partial updates.
 * **Tests**
   * Delivered extensive unit tests covering all cached content operations and response behaviors for robustness and accuracy.
-<!-- end of auto-generated comment: release notes by coderabbit.ai --",OpenAI_Codex,3524595,michabbb,closed,2025-07-17 12:04:24+00:00,,,755889931,https://api.github.com/repos/google-gemini-php/client,https://github.com/google-gemini-php/client/pull/135
+<!-- end of auto-generated comment: release notes by coderabbit.ai --",OpenAI_Codex,3524595,michabbb,closed,2025-07-17 12:04:24+00:00,2025-09-12 13:29:29+00:00,2025-09-12 13:29:29+00:00,755889931,https://api.github.com/repos/google-gemini-php/client,https://github.com/google-gemini-php/client/pull/135
 3265736885,14205,14196 performance bottleneck fix,"## Summary
 - cache ItemBatch and Stock references on Pharmacy fast retail sale operations
 
@@ -22454,7 +22447,7 @@ https://chatgpt.com/codex/tasks/task_e_6848fdb80910832a9920ad5b82ffa9e7",OpenAI_
 - `pytest -q` *(fails: ImportError while importing tests)*
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68841b9691448327bde32d2d8d99cfb0",OpenAI_Codex,30680697,ahmeda14960,closed,2025-07-26 00:44:55+00:00,,,496005961,https://api.github.com/repos/stanford-crfm/levanter,https://github.com/stanford-crfm/levanter/pull/1102
+https://chatgpt.com/codex/tasks/task_e_68841b9691448327bde32d2d8d99cfb0",OpenAI_Codex,30680697,ahmeda14960,closed,2025-07-26 00:44:55+00:00,2025-07-31 23:12:56+00:00,,496005961,https://api.github.com/repos/stanford-crfm/levanter,https://github.com/stanford-crfm/levanter/pull/1102
 3238351006,2915,feat: Prefetch info panel data with config options `prefetchObjects` and `prefetchStale`,"## Summary
 - prefetch info panel data when browsing sequential rows
 - document new options `prefetchObjects` and `prefetchStale`
@@ -22777,7 +22770,7 @@ https://chatgpt.com/codex/tasks/task_e_683caafc60688333b384bf4cebb229ef",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_683f4a25f6648332b235929991cd0db3",OpenAI_Codex,395503,flexatone,closed,2025-06-03 19:30:02+00:00,,,116150224,https://api.github.com/repos/static-frame/static-frame,https://github.com/static-frame/static-frame/pull/1069
+https://chatgpt.com/codex/tasks/task_e_683f4a25f6648332b235929991cd0db3",OpenAI_Codex,395503,flexatone,closed,2025-06-03 19:30:02+00:00,2026-03-11 01:59:38+00:00,2026-03-11 01:59:38+00:00,116150224,https://api.github.com/repos/static-frame/static-frame,https://github.com/static-frame/static-frame/pull/1069
 3241713269,1236,Implement texture atlas,"## Summary
 - add `TextureAtlas` class to manage shared texture space
 - track atlas membership inside `Texture`
@@ -23466,7 +23459,7 @@ https://chatgpt.com/codex/tasks/task_e_6883521928e88320aa6bf001c4bdf718",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_688358317d688320ae15f6e91e6fa043",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 10:29:54+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13039
+https://chatgpt.com/codex/tasks/task_e_688358317d688320ae15f6e91e6fa043",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 10:29:54+00:00,2026-04-16 13:54:30+00:00,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13039
 3262845265,13057,Accelerate now() and update Rosetta artifacts,"## Summary
 - speed up OpNow with xorshift PRNG
 - regenerate program 4 outputs with deterministic seed
@@ -23478,7 +23471,7 @@ https://chatgpt.com/codex/tasks/task_e_688358317d688320ae15f6e91e6fa043",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_68835ebfe1188320b1afcb083715ac75",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 11:02:34+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13057
+https://chatgpt.com/codex/tasks/task_e_68835ebfe1188320b1afcb083715ac75",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 11:02:34+00:00,2026-04-16 13:54:36+00:00,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13057
 3262887238,13066,Update rosetta artifacts for 100-prisoners,"## Summary
 - speed up `now()` builtin by avoiding system calls and using `math/rand`
 - emit call to user `main` when compiling top level program
@@ -23491,7 +23484,7 @@ https://chatgpt.com/codex/tasks/task_e_68835ebfe1188320b1afcb083715ac75",OpenAI_
 
 
 ------
-https://chatgpt.com/codex/tasks/task_e_6883636054b48320a4b6e5736c3d22b6",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 11:19:21+00:00,,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13066
+https://chatgpt.com/codex/tasks/task_e_6883636054b48320a4b6e5736c3d22b6",OpenAI_Codex,1218621,tamnd,closed,2025-07-25 11:19:21+00:00,2026-04-16 13:54:43+00:00,,985853139,https://api.github.com/repos/mochilang/mochi,https://github.com/mochilang/mochi/pull/13066
 3071077630,78,Optimize reflection,"## Summary
 - reduce reflection with property and type caching in `ChangePropertyAction`
 - compile property setters with expressions
@@ -23945,7 +23938,7 @@ Closes #0000 <!-- link the related issue -->
 <!--
   Add any other context or screenshots about the pull request
 -->
-",Cursor,4548309,six7,closed,2025-05-29 10:01:09+00:00,,,265001214,https://api.github.com/repos/tokens-studio/figma-plugin,https://github.com/tokens-studio/figma-plugin/pull/3393
+",Cursor,4548309,six7,closed,2025-05-29 10:01:09+00:00,2025-09-16 20:29:32+00:00,,265001214,https://api.github.com/repos/tokens-studio/figma-plugin,https://github.com/tokens-studio/figma-plugin/pull/3393
 3105464054,46,Implement simplified dynamic registry with DTD-driven tool discovery,"
 
 <!-- This is an auto-generated comment: release notes by coderabbit.ai -->
@@ -24198,7 +24191,7 @@ This PR is ready for review. The system is:
 - **Extensible**: Easy to add new benchmarks and metrics
 - **Production-Ready**: Handles errors gracefully
 
-The placeholder `run.sh` script can be replaced with actual benchmark implementation when ready, without changing the rest of the system.",Cursor,1109011,myungjoo,closed,2025-07-08 02:08:57+00:00,,,249615315,https://api.github.com/repos/nnstreamer/nntrainer,https://github.com/nnstreamer/nntrainer/pull/3298
+The placeholder `run.sh` script can be replaced with actual benchmark implementation when ready, without changing the rest of the system.",Cursor,1109011,myungjoo,closed,2025-07-08 02:08:57+00:00,2025-08-14 03:01:12+00:00,,249615315,https://api.github.com/repos/nnstreamer/nntrainer,https://github.com/nnstreamer/nntrainer/pull/3298
 3190247421,216,Reduce Vercel deployment time by 2x,"<!-- One very short sentence on the WHAT and WHY of the PR. E.g. ""Remove pathHash attribute because it is confirmed unused."" or ""Add DNS round robin to improve load distribution."" -->
 Reduce Vercel deploy time by offloading TypeScript checks and optimizing build steps.
 
@@ -24331,7 +24324,7 @@ This PR implements comprehensive Android project optimization focusing on depend
 - **Medium Risk**: Complete KAPT to KSP migration (thoroughly tested)
 - **Mitigation**: Comprehensive testing and rollback plan available
 
-Ready for review and testing!",Cursor,206951365,cursor[bot],closed,2025-07-05 04:26:55+00:00,,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/243
+Ready for review and testing!",Cursor,206951365,cursor[bot],closed,2025-07-05 04:26:55+00:00,2026-02-24 04:07:56+00:00,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/243
 3224713270,31987,Cursor/optimize ticket buying decisions for profit 3347,"Thank you for contributing to LangChain!
 
 - [ ] **PR title**: ""package: description""
@@ -24491,7 +24484,7 @@ These changes ensure the dashboard's ""Personal · USD"" card consistently shows
 - **Improved Robustness**: Addressed type safety issues, refined regex handling, and enhanced error management.
 - **Increased Configurability**: Introduced new options for `entryAttributeName` and `chunkLoadingGlobalPrefix`.
 - **Expanded Test Coverage**: Significantly increased test cases from 4 to 56, covering various real-world scenarios, edge cases, and performance aspects, ensuring full Webpack 4/5 compatibility.
-- **Documentation**: Updated `README.md` and `README-zh.md` to reflect new features and configurations.",Cursor,5206843,kuitos,closed,2025-07-16 07:57:43+00:00,,,186754830,https://api.github.com/repos/umijs/qiankun,https://github.com/umijs/qiankun/pull/3083
+- **Documentation**: Updated `README.md` and `README-zh.md` to reflect new features and configurations.",Cursor,5206843,kuitos,closed,2025-07-16 07:57:43+00:00,2026-01-15 15:50:29+00:00,,186754830,https://api.github.com/repos/umijs/qiankun,https://github.com/umijs/qiankun/pull/3083
 3128356528,1067,fix: memory leak in createPattern,"- Partial fix #1055
 
 The loadImage seems like still leak, let's fix it in another pr
@@ -24623,7 +24616,7 @@ quick links for more information:
   </picture>
 </a>
 
-<sub>[Learn more](https://docs.cursor.com/background-agent/web-and-mobile) about Cursor Agents</sub>",Cursor,83790096,0xRobin,closed,2025-07-30 07:03:53+00:00,,,237392204,https://api.github.com/repos/duneanalytics/spellbook,https://github.com/duneanalytics/spellbook/pull/8572
+<sub>[Learn more](https://docs.cursor.com/background-agent/web-and-mobile) about Cursor Agents</sub>",Cursor,83790096,0xRobin,closed,2025-07-30 07:03:53+00:00,2025-08-25 05:43:28+00:00,,237392204,https://api.github.com/repos/duneanalytics/spellbook,https://github.com/duneanalytics/spellbook/pull/8572
 3217652543,244,Analyze and optimize code performance,"Update Gradle build configuration to enable successful builds and improve build times.
 
 These changes resolve build failures related to an outdated JVM argument (`MaxPermSize` replaced by `MaxMetaspaceSize`) and a mandatory release signing configuration when the keystore is not present. Additionally, `org.gradle.parallel` is enabled to speed up subsequent builds.",Cursor,5333537,gmathi,closed,2025-07-10 02:21:06+00:00,2025-07-10 02:21:55+00:00,2025-07-10 02:21:54+00:00,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/244
@@ -24786,7 +24779,7 @@ See contribution guidelines for more information on how to write/run tests, lint
 ----
 📚 Documentation preview 📚: https://swarms--950.org.readthedocs.build/en/950/
 
-<!-- readthedocs-preview swarms end -->",Cursor,98760976,kyegomez,closed,2025-07-09 15:25:27+00:00,,,639195966,https://api.github.com/repos/kyegomez/swarms,https://github.com/kyegomez/swarms/pull/950
+<!-- readthedocs-preview swarms end -->",Cursor,98760976,kyegomez,closed,2025-07-09 15:25:27+00:00,2025-08-04 01:13:08+00:00,,639195966,https://api.github.com/repos/kyegomez/swarms,https://github.com/kyegomez/swarms/pull/950
 3209183782,364,Evaluate app shell model compliance,"<!-- Implement comprehensive PWA optimizations to enhance performance, offline experience, and user installability. -->
 This PR includes critical CSS inlining, refined caching strategies (CacheFirst for App Shell, versioning, cleanup), background sync for offline API requests, and an improved PWA installation prompt with a dedicated offline page.",Cursor,51039935,jxxghp,closed,2025-07-07 14:06:33+00:00,2025-07-07 14:09:11+00:00,2025-07-07 14:09:11+00:00,657824656,https://api.github.com/repos/jxxghp/MoviePilot-Frontend,https://github.com/jxxghp/MoviePilot-Frontend/pull/364
 3209206554,416,Optimize unit test timeouts,Reduce mock `setTimeout` delays in `timeout.test.ts` to optimize unit test execution.,Cursor,70931746,dallinbentley,closed,2025-07-07 14:13:06+00:00,2025-07-07 14:23:34+00:00,2025-07-07 14:23:34+00:00,855264010,https://api.github.com/repos/buster-so/buster,https://github.com/buster-so/buster/pull/416
@@ -24986,7 +24979,7 @@ This approach retains full accuracy while drastically reducing average latency f
 
 ### Additional Notes
 This change does not alter any public API surface or behavior; it solely focuses on optimizing the underlying search mechanism for Windows UI elements.
-```",Cursor,25003283,louis030195,closed,2025-07-13 16:31:20+00:00,,,964314175,https://api.github.com/repos/mediar-ai/terminator,https://github.com/mediar-ai/terminator/pull/201
+```",Cursor,25003283,louis030195,closed,2025-07-13 16:31:20+00:00,2025-08-13 16:17:49+00:00,,964314175,https://api.github.com/repos/mediar-ai/terminator,https://github.com/mediar-ai/terminator/pull/201
 3226670834,202,Create speed benchmark for execute_sequence,"## Pull Request Template
 
 ### Description
@@ -25455,10 +25448,10 @@ Limited the wait action to a maximum of 10 seconds to prevent long delays and up
 3228764972,5637,Retrieve GitHub release asset checksums,"Refactor lockfile to store detailed asset information including URLs and sizes, and enable automatic retrieval of GitHub release asset checksums to improve security and avoid API rate limits.
 
 The existing lockfile only stored checksums in a flat map. This PR introduces a more structured `assets` section within the lockfile, allowing for storage of checksums, file sizes, and original download URLs for each asset. For GitHub, this enables `mise` to automatically discover and verify checksums provided alongside release assets (e.g., `checksums.txt`). Furthermore, by storing the download URLs, subsequent `mise install` operations can bypass API calls to GitHub (and other providers), significantly reducing the risk of hitting API rate limits and improving installation speed, especially in CI/CD environments.",Cursor,216188,jdx,closed,2025-07-14 13:22:23+00:00,2025-07-24 02:42:22+00:00,,586920414,https://api.github.com/repos/jdx/mise,https://github.com/jdx/mise/pull/5637
-3217675934,246,Cursor/analyze and optimize code performance 4130,,Cursor,5333537,gmathi,closed,2025-07-10 02:36:33+00:00,,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/246
+3217675934,246,Cursor/analyze and optimize code performance 4130,,Cursor,5333537,gmathi,closed,2025-07-10 02:36:33+00:00,2026-02-24 04:07:57+00:00,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/246
 3217742863,247,Optimize HTMLHelper file,"Optimize `HtmlCleaner.kt` for improved performance, memory usage, and code readability.
 
-This PR refactors `HtmlCleaner.kt` by introducing cached constants and regex patterns, utilizing more efficient data structures (Sets), implementing lazy initialization for selectors, and extracting CSS generation into dedicated functions. These changes reduce redundant operations, improve lookup times, and enhance overall code maintainability and efficiency.",Cursor,5333537,gmathi,closed,2025-07-10 03:23:25+00:00,,,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/247
+This PR refactors `HtmlCleaner.kt` by introducing cached constants and regex patterns, utilizing more efficient data structures (Sets), implementing lazy initialization for selectors, and extracting CSS generation into dedicated functions. These changes reduce redundant operations, improve lookup times, and enhance overall code maintainability and efficiency.",Cursor,5333537,gmathi,closed,2025-07-10 03:23:25+00:00,2026-02-24 03:54:09+00:00,2026-02-24 03:54:08+00:00,92864511,https://api.github.com/repos/gmathi/NovelLibrary,https://github.com/gmathi/NovelLibrary/pull/247
 3124507979,20228,Cursor/fix next auth test timeouts and memory issues 43d5,"### What does this PR do?
 
 <!-- **Please explain what your changes do**, example: -->
@@ -25510,7 +25503,7 @@ This adds a new flag --bail to bun test. When set, it will stop running tests af
 - [ ] I added a test that require() the module
 -->
 ",Cursor,709451,Jarred-Sumner,closed,2025-06-06 11:30:33+00:00,2025-06-06 11:30:43+00:00,2025-06-06 11:30:43+00:00,357728969,https://api.github.com/repos/oven-sh/bun,https://github.com/oven-sh/bun/pull/20228
-3125906822,13951,Add Turborepo configuration and scripts for improved monorepo management,"I implemented Turborepo support to optimize build times across the monorepo. I added `turbo@2.5.4` as a dev dependency and created a `turbo.json` configuration file with optimized task definitions for build, dev, lint, and test commands. In the root `package.json`, I added new turbo-specific scripts (`turbo:dev`, `turbo:build`, `turbo:lint`, `turbo:test`) and set the `packageManager` field to `yarn@1.22.22`. I configured caching by adding `.turbo` to `.gitignore`. The `turbo.json` includes task configurations with proper dependency chains, output caching for `.next/**` and `dist/**` directories, and environment variable handling. The setup enables parallel task execution and intelligent caching across workspaces, significantly improving build performance especially for unchanged code.",Cursor,23610,dcramer,closed,2025-06-06 21:29:48+00:00,,,33837371,https://api.github.com/repos/getsentry/sentry-docs,https://github.com/getsentry/sentry-docs/pull/13951
+3125906822,13951,Add Turborepo configuration and scripts for improved monorepo management,"I implemented Turborepo support to optimize build times across the monorepo. I added `turbo@2.5.4` as a dev dependency and created a `turbo.json` configuration file with optimized task definitions for build, dev, lint, and test commands. In the root `package.json`, I added new turbo-specific scripts (`turbo:dev`, `turbo:build`, `turbo:lint`, `turbo:test`) and set the `packageManager` field to `yarn@1.22.22`. I configured caching by adding `.turbo` to `.gitignore`. The `turbo.json` includes task configurations with proper dependency chains, output caching for `.next/**` and `dist/**` directories, and environment variable handling. The setup enables parallel task execution and intelligent caching across workspaces, significantly improving build performance especially for unchanged code.",Cursor,23610,dcramer,closed,2025-06-06 21:29:48+00:00,2026-05-01 04:22:17+00:00,,33837371,https://api.github.com/repos/getsentry/sentry-docs,https://github.com/getsentry/sentry-docs/pull/13951
 3239263606,6472,Optimize draw shape pressure property,"This PR refactors how draw shape point pressure is stored and handled, leading to storage optimization and improved clarity.
 
 Previously, pressure was stored as a float `0-1` in the `z` property of a point, with `0` or `0.5` indicating no pressure. This update changes the storage to:
@@ -27810,7 +27803,7 @@ The report covers:
 https://app.devin.ai/sessions/fefaf7c797b84779b33e1c393fe07729
 
 **Requested by:** Yuval Hazaz (yuval@amplication.com)
-",Devin,158243242,devin-ai-integration[bot],closed,2025-06-23 13:12:47+00:00,,,262862475,https://api.github.com/repos/amplication/amplication,https://github.com/amplication/amplication/pull/9794
+",Devin,158243242,devin-ai-integration[bot],closed,2025-06-23 13:12:47+00:00,2025-08-20 14:17:37+00:00,,262862475,https://api.github.com/repos/amplication/amplication,https://github.com/amplication/amplication/pull/9794
 3168945096,21988,feat: implement slot-level caching system with per-person storage,"# Implement Slot-Level Caching System
 
 This PR implements a holistic slot-level caching system that operates above the current Google API calendar cache, addressing the need for more efficient slot generation and caching across different calendar providers.
@@ -28887,7 +28880,7 @@ classDef context fill:#F5F5F5
 
 **Session Details:**
 - Link to Devin run: https://app.devin.ai/sessions/1d370d2ace1a4f21a282daeb23d64ff2
-- Requested by: Abdelrahman Ismail (@ismail9k)",Devin,158243242,devin-ai-integration[bot],closed,2025-07-16 11:05:12+00:00,,,258840419,https://api.github.com/repos/ismail9k/vue3-carousel,https://github.com/ismail9k/vue3-carousel/pull/526
+- Requested by: Abdelrahman Ismail (@ismail9k)",Devin,158243242,devin-ai-integration[bot],closed,2025-07-16 11:05:12+00:00,2025-10-12 15:23:48+00:00,,258840419,https://api.github.com/repos/ismail9k/vue3-carousel,https://github.com/ismail9k/vue3-carousel/pull/526
 3210823906,3119,feat: add native DeepSeek API support,"
 # Add Native DeepSeek API Support
 
@@ -29147,7 +29140,7 @@ graph TB
 - Performance benefits are theoretical until measured with real workloads
 
 **Link to Devin run:** https://app.devin.ai/sessions/30cf723242b7483d9d5a15d1d169a7a3  
-**Requested by:** @prateeksachan",Devin,158243242,devin-ai-integration[bot],closed,2025-07-26 17:34:50+00:00,,,846923721,https://api.github.com/repos/bolna-ai/bolna,https://github.com/bolna-ai/bolna/pull/236
+**Requested by:** @prateeksachan",Devin,158243242,devin-ai-integration[bot],closed,2025-07-26 17:34:50+00:00,2025-08-04 15:23:02+00:00,,846923721,https://api.github.com/repos/bolna-ai/bolna,https://github.com/bolna-ai/bolna/pull/236
 3148602658,289,perf: optimize string concatenation in template generation,"# Performance Optimization: String Concatenation in Template Generation
 
 ## Summary
@@ -30253,7 +30246,7 @@ This PR fixes issue #4475 by conditionally importing external fonts only when no
 **Requested by:** TomTom (tomas.rawski@reown.com)
 
 Fixes #4475
-",Devin,158243242,devin-ai-integration[bot],closed,2025-06-20 02:48:30+00:00,,,127246132,https://api.github.com/repos/reown-com/appkit,https://github.com/reown-com/appkit/pull/4542
+",Devin,158243242,devin-ai-integration[bot],closed,2025-06-20 02:48:30+00:00,2025-08-11 07:23:47+00:00,2025-08-11 07:23:47+00:00,127246132,https://api.github.com/repos/reown-com/appkit,https://github.com/reown-com/appkit/pull/4542
 3161908700,2102,Optimize GitHub Actions frontend-ci workflow for 2-minute target,"# Optimize GitHub Actions frontend-ci workflow for 2-minute target
 
 ## Summary
@@ -30662,7 +30655,7 @@ This is a complex low-level optimization that introduces platform-specific assem
 
 **Session Info**: Requested by Jonathan Wang (@jonathanpwang) - https://app.devin.ai/sessions/2a7e0ad4292040b28f642cf03cf2e1a2
 
-The TCO solution successfully eliminates the ""panic gets stuck"" problem from the original manual assembly approach by using the `c-unwind` ABI and proper CFI directives, as demonstrated in the standalone test implementation.",Devin,158243242,devin-ai-integration[bot],closed,2025-07-25 19:52:02+00:00,,,793399480,https://api.github.com/repos/openvm-org/openvm,https://github.com/openvm-org/openvm/pull/1904
+The TCO solution successfully eliminates the ""panic gets stuck"" problem from the original manual assembly approach by using the `c-unwind` ABI and proper CFI directives, as demonstrated in the standalone test implementation.",Devin,158243242,devin-ai-integration[bot],closed,2025-07-25 19:52:02+00:00,2025-08-03 15:00:12+00:00,,793399480,https://api.github.com/repos/openvm-org/openvm,https://github.com/openvm-org/openvm/pull/1904
 3046430027,21162,perf: optimize event type query by using team IDs instead of complex join,"# Optimize Event Type Query by Using Team IDs Instead of Complex Join
 
 ## Description
@@ -30772,7 +30765,7 @@ graph TD
 ---
 
 **Link to Devin run**: https://app.devin.ai/sessions/d8e21da1edbc49c3b2119275ebf5417c  
-**Requested by**: noritaka.ikeda@route06.co.jp",Devin,158243242,devin-ai-integration[bot],closed,2025-07-30 07:15:24+00:00,,,839216423,https://api.github.com/repos/liam-hq/liam,https://github.com/liam-hq/liam/pull/2777
+**Requested by**: noritaka.ikeda@route06.co.jp",Devin,158243242,devin-ai-integration[bot],closed,2025-07-30 07:15:24+00:00,2025-08-01 09:51:29+00:00,,839216423,https://api.github.com/repos/liam-hq/liam,https://github.com/liam-hq/liam/pull/2777
 3276815242,835,Add disable_samples column configuration flag,"# Add disable_samples column configuration flag
 
 ## Summary
@@ -31346,7 +31339,7 @@ This PR adds a new guide on using EXPLAIN ANALYZE in PostgreSQL to diagnose slow
 
 Link to Devin run: https://app.devin.ai/sessions/71ce4db5073e47e8a99a73da31443a1b
 Requested by: Daniel Price (daniel@neon.tech)
-",Devin,158243242,devin-ai-integration[bot],closed,2025-05-08 21:14:39+00:00,,,352436122,https://api.github.com/repos/neondatabase/website,https://github.com/neondatabase/website/pull/3450
+",Devin,158243242,devin-ai-integration[bot],closed,2025-05-08 21:14:39+00:00,2025-09-03 00:17:33+00:00,,352436122,https://api.github.com/repos/neondatabase/website,https://github.com/neondatabase/website/pull/3450
 3165098830,536,Remove unused code across Helper monorepo,"# Remove unused code across Helper monorepo
 
 This PR removes unused code identified by knip analysis across the Helper monorepo, significantly reducing bundle size and maintenance overhead while maintaining all core functionality.

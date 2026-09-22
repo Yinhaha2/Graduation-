@@ -1,5 +1,5 @@
 {
-  "pr_id": "Pull Request 唯一标识符（GitHub PR id，对应 finaldatabase 主表 id）",
+  "pr_id": "Pull Request 唯一标识符（GitHub issue id，对应 finaldatabase 主表 id；不是 Pulls API 的 pull id）",
   "meta": {
     "title": "PR 标题",
     "html_url": "PR 网页链接",

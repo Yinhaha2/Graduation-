@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-16 11:05:12+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-10-12 15:23:48+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -56,7 +56,7 @@
         "subscribed": 1,
         "reviewed": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 2116.31,
       "first_review_delay_hours": 0.132,
       "review_rounds": 1,
       "has_revert": false,
@@ -106,7 +106,7 @@
         "interpretation": "At 161 changed lines, this is a small edit by absolute volume. It fits a small performance optimization PR, but was closed without merge despite addressing review feedback."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 2116.31,
         "fast_merge": false
       }
     },

@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-08 21:14:39+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-03 00:17:33+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "docs",
     "aidev_task_confidence": 9,
@@ -53,7 +53,7 @@
         "commented": 2,
         "deployed": 5
       },
-      "lifespan_hours": 43.925,
+      "lifespan_hours": 2811.048,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -99,7 +99,7 @@
         "interpretation": "At 596 changed lines across 5 files, this is a medium-sized documentation addition. The change is concentrated in the new guide markdown file (566 of 596 lines). The lack of any human review or merge activity suggests the PR was closed without acceptance."
       },
       "lifecycle": {
-        "lifespan_hours": 43.925,
+        "lifespan_hours": 2811.048,
         "fast_merge": false
       }
     },

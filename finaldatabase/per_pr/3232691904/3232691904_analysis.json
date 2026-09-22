@@ -6,11 +6,11 @@
     "repo": "nandyalu/trailarr",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-15 15:16:53+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-08-09 05:52:31+00:00",
+    "closed_at": "2025-08-09 05:52:31+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -70,7 +70,7 @@
         "subscribed": 1,
         "ready_for_review": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 590.594,
       "first_review_delay_hours": 0.699,
       "review_rounds": 3,
       "has_revert": false,
@@ -98,7 +98,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "functional_failure_and_stale",
+    "outcome_reason": null,
     "review_dimensions": [
       "correctness",
       "design_or_approach",
@@ -119,13 +119,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 2703,
         "interpretation": "At 2703 changed lines across 57 files, this is a medium-to-large feature addition touching backend, frontend, Docker, and documentation. The PR was closed without merge due to unresolved correctness and design concerns."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 590.594,
         "fast_merge": false
       }
     },

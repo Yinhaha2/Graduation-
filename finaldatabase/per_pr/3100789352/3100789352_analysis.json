@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-29 16:02:40+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-12 19:51:35+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -61,7 +61,7 @@
         "commented": 4,
         "reviewed": 1
       },
-      "lifespan_hours": 108.06,
+      "lifespan_hours": 2547.815,
       "first_review_delay_hours": 3.97,
       "review_rounds": 3,
       "has_revert": false,
@@ -114,7 +114,7 @@
         "interpretation": "1,299 changed lines across 8 files is a medium‑sized addition by absolute volume. It fits a workload that adds CI infrastructure rather than optimizing code. The closure is consistent with the scale given the functional problems encountered."
       },
       "lifecycle": {
-        "lifespan_hours": 108.06,
+        "lifespan_hours": 2547.815,
         "fast_merge": false
       }
     },

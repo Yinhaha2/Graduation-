@@ -6,11 +6,11 @@
     "repo": "DeepLabCut/DeepLabCut",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-05 19:48:04+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2026-03-19 20:37:22+00:00",
+    "closed_at": "2026-03-19 20:37:22+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -46,11 +46,12 @@
       ]
     },
     "collaboration": {
-      "review_count": 3,
+      "review_count": 13,
       "review_states": {
-        "CHANGES_REQUESTED": 1,
+        "COMMENTED": 8,
+        "APPROVED": 3,
         "DISMISSED": 1,
-        "APPROVED": 1
+        "CHANGES_REQUESTED": 1
       },
       "review_comment_count": 56,
       "pr_comment_count": 10,
@@ -70,7 +71,7 @@
         "mentioned": 2,
         "subscribed": 2
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 6168.822,
       "first_review_delay_hours": 1.469,
       "review_rounds": 3,
       "has_revert": false,
@@ -97,7 +98,7 @@
     "inefficiency_antipattern": [
       "full_suite_always_run"
     ],
-    "outcome_reason": "superseded_by_rework",
+    "outcome_reason": null,
     "review_dimensions": [
       "correctness",
       "design_or_approach",
@@ -117,13 +118,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 3716,
         "interpretation": "At 3716 changed lines, this is a large change by absolute volume, reflecting addition of a new test selection system, workflow modifications, and a merge from main. As a CI optimization PR, it was closed without merge after approval, possibly due to strategic rework rather than code quality."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 6168.822,
         "fast_merge": false
       }
     },

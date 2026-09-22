@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-06-13 08:46:02+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2025-09-06 14:26:03+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
@@ -50,7 +50,7 @@
         "labeled": 1,
         "commented": 2
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 2045.667,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -97,7 +97,7 @@
         "interpretation": "At 40 changed lines in a single file, this is a very small edit. It is a targeted data-structure optimization, but it was closed without merge, likely due to lack of human review and evidence."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 2045.667,
         "fast_merge": false
       }
     },

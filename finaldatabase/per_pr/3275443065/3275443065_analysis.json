@@ -6,11 +6,11 @@
     "repo": "facioquo/stock-indicators-python",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-30 02:01:42+00:00",
-    "merged_at": null,
-    "closed_at": "2025-05-05 14:16:56+00:00",
+    "merged_at": "2025-12-24 09:40:30+00:00",
+    "closed_at": "2025-12-24 09:40:31+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
@@ -62,7 +62,7 @@
         "mentioned": 1,
         "subscribed": 1
       },
-      "lifespan_hours": 11.34,
+      "lifespan_hours": 3535.647,
       "first_review_delay_hours": 4.93,
       "review_rounds": 10,
       "has_revert": false,
@@ -88,7 +88,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "stale_after_changes_requested",
+    "outcome_reason": null,
     "review_dimensions": [
       "correctness",
       "code_quality",
@@ -109,13 +109,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 848,
         "interpretation": "At 848 changed lines across 19 files, this is a medium-sized refactor by absolute volume. As a performance-oriented wrapper refactor, it was closed—not merged—after repeated quality assurance failures and an unresolvable corrective cycle."
       },
       "lifecycle": {
-        "lifespan_hours": 11.34,
+        "lifespan_hours": 3535.647,
         "fast_merge": false
       }
     },

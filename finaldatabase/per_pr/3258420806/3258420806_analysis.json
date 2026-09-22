@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-07-24 04:11:19+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-03-14 11:47:18+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -54,7 +54,7 @@
         "committed": 24,
         "commented": 1
       },
-      "lifespan_hours": null,
+      "lifespan_hours": 5599.6,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -101,7 +101,7 @@
         "interpretation": "At 11098 changed lines across 170 files, this is an extremely large change driven almost entirely by upstream merges; only a small fraction relates to the multi-sender feature. As a massive PR with no review, closure without merge is expected."
       },
       "lifecycle": {
-        "lifespan_hours": null,
+        "lifespan_hours": 5599.6,
         "fast_merge": false
       }
     },

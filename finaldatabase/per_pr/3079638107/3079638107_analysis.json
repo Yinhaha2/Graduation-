@@ -10,7 +10,7 @@
     "state": "closed",
     "created_at": "2025-05-21 09:52:11+00:00",
     "merged_at": null,
-    "closed_at": null,
+    "closed_at": "2026-01-28 11:36:39+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
@@ -54,7 +54,7 @@
         "reviewed": 1,
         "commented": 1
       },
-      "lifespan_hours": 0.056,
+      "lifespan_hours": 6049.741,
       "first_review_delay_hours": 0.003,
       "review_rounds": 1,
       "has_revert": false,
@@ -105,7 +105,7 @@
         "interpretation": "At 70 changed lines, this is a small, focused performance PR. The change adds buffer shrinkage logic and a test. The outcome (closed) is inconsistent with a small, low-risk performance change; likely due to title format policy and test failures."
       },
       "lifecycle": {
-        "lifespan_hours": 0.056,
+        "lifespan_hours": 6049.741,
         "fast_merge": false
       }
     },

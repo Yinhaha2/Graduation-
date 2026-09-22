@@ -6,11 +6,11 @@
     "repo": "microsoft/Olive",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-07-22 00:50:31+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-07-30 21:13:55+00:00",
+    "closed_at": "2025-07-30 21:13:55+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
@@ -61,7 +61,7 @@
         "renamed": 1,
         "review_requested": 1
       },
-      "lifespan_hours": 44.0,
+      "lifespan_hours": 212.39,
       "first_review_delay_hours": 18.0,
       "review_rounds": 23,
       "has_revert": false,
@@ -87,7 +87,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "closed_unmerged_after_approval",
+    "outcome_reason": null,
     "review_dimensions": [
       "design_or_approach",
       "correctness",
@@ -108,13 +108,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 3344,
         "interpretation": "Large change (3344 lines) for a new feature; despite maintainer requests and eventual approvals, the PR was closed without merge, possibly because the feature is not fully production-ready or requires more validation."
       },
       "lifecycle": {
-        "lifespan_hours": 44.0,
+        "lifespan_hours": 212.39,
         "fast_merge": false
       }
     },

@@ -6,11 +6,11 @@
     "repo": "dotnet/maui",
     "agent": "Copilot",
     "user": "Copilot",
-    "status": "closed",
+    "status": "merged",
     "state": "closed",
     "created_at": "2025-06-25 19:40:48+00:00",
-    "merged_at": null,
-    "closed_at": null,
+    "merged_at": "2025-08-15 23:24:34+00:00",
+    "closed_at": "2025-08-15 23:24:35+00:00",
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
@@ -59,7 +59,7 @@
         "ready_for_review": 1,
         "commented": 2
       },
-      "lifespan_hours": 643.44,
+      "lifespan_hours": 1227.729,
       "first_review_delay_hours": 0.4458,
       "review_rounds": 6,
       "has_revert": false,
@@ -85,7 +85,7 @@
     "inefficiency_antipattern": [
       "none"
     ],
-    "outcome_reason": "closed_without_merge_unclear",
+    "outcome_reason": null,
     "review_dimensions": [
       "correctness",
       "design_or_approach"
@@ -103,13 +103,13 @@
   },
   "structured_analysis": {
     "merge_outcome_context": {
-      "outcome": "closed",
+      "outcome": "merged",
       "change_scale_vs_repository": {
         "pr_change_lines": 13,
         "interpretation": "At 13 changed lines, this is a tiny edit by absolute volume. It fits a small-step, fast-turnaround performance PR but was closed without merge despite multiple approvals."
       },
       "lifecycle": {
-        "lifespan_hours": 643.44,
+        "lifespan_hours": 1227.729,
         "fast_merge": false
       }
     },
