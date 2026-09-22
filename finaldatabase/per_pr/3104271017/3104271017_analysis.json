@@ -21,30 +21,30 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 2,
-      "file_count": 200,
-      "additions": 4108,
-      "deletions": 2676,
-      "changes": 6784,
+      "file_count": 302,
+      "additions": 5873,
+      "deletions": 3180,
+      "changes": 9053,
       "top1_file": "packages/next/src/build/templates/app-page.ts",
       "top1_changes": 472,
-      "top1_change_ratio": 0.0696,
+      "top1_change_ratio": 0.052,
       "files_by_status": {
-        "added": 8,
-        "modified": 184,
-        "removed": 8
+        "modified": 245,
+        "added": 47,
+        "removed": 9,
+        "renamed": 1
       },
-      "directory_count": 10,
+      "directory_count": 9,
       "directories": [
-        "(root)",
         ".changeset",
+        "(root)",
         ".github",
         ".vscode",
         "crates",
         "docs",
         "errors",
-        "lerna.json",
         "packages",
-        "package.json"
+        "test"
       ]
     },
     "collaboration": {
@@ -113,8 +113,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 6784,
-        "interpretation": "At 6784 changed lines across 200 files, this appears large, but the actual doc change is only 16 lines; most churn is from a merge of the canary branch. The outcome (merged) is consistent with a trivial documentation-only PR."
+        "pr_change_lines": 9053,
+        "interpretation": "At 9053 changed lines across 302 files, this appears large, but the actual doc change is only 16 lines; most churn is from a merge of the canary branch. The outcome (merged) is consistent with a trivial documentation-only PR."
       },
       "lifecycle": {
         "lifespan_hours": 139.9,
@@ -167,7 +167,7 @@
         "docs/01-app/01-getting-started/14-deploying.mdx"
       ],
       "files_secondary_observability": [],
-      "secondary_note": "The PR includes a merge of the canary branch, adding 6784 changed lines across many files unrelated to the doc change.",
+      "secondary_note": "The PR includes a merge of the canary branch, adding 9053 changed lines across many files unrelated to the doc change.",
       "change_trajectory": [
         "Initial commit adds Docker performance docs to two files.",
         "Merge of canary branch introduces many unrelated changes.",

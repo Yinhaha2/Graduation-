@@ -24,10 +24,10 @@
       "file_count": 36,
       "additions": 1588,
       "deletions": 389,
-      "changes": 2148,
+      "changes": 1977,
       "top1_file": "src/components/tables/HistoryTable.vue",
       "top1_changes": 576,
-      "top1_change_ratio": 0.268,
+      "top1_change_ratio": 0.2914,
       "files_by_status": {
         "added": 6,
         "modified": 30,
@@ -102,8 +102,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 2148,
-        "interpretation": "Large change across 36 files (2148 lines) with significant database and frontend refactor. Closed with maintainer comment that it could not be merged, though the database index was cherry‑picked, suggesting merge conflicts or scope issues."
+        "pr_change_lines": 1977,
+        "interpretation": "Large change across 36 files (1977 lines) with significant database and frontend refactor. Closed with maintainer comment that it could not be merged, though the database index was cherry‑picked, suggesting merge conflicts or scope issues."
       },
       "lifecycle": {
         "lifespan_hours": 30.49,

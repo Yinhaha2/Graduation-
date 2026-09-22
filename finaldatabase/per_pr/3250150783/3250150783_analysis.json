@@ -21,22 +21,23 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 2,
-      "file_count": 200,
-      "additions": 4667,
-      "deletions": 3805,
-      "changes": 8472,
-      "top1_file": "metadata/modules/conversantBidAdapter.json",
-      "top1_changes": 919,
-      "top1_change_ratio": 0.108,
+      "file_count": 302,
+      "additions": 8128,
+      "deletions": 6993,
+      "changes": 15121,
+      "top1_file": "metadata/modules/taboolaIdSystem.json",
+      "top1_changes": 943,
+      "top1_change_ratio": 0.062,
       "files_by_status": {
-        "added": 7,
-        "modified": 191,
+        "modified": 289,
+        "added": 11,
         "removed": 2
       },
-      "directory_count": 8,
+      "directory_count": 9,
       "directories": [
         ".circleci",
         ".github",
+        "(root)",
         "creative",
         "integrationExamples",
         "libraries",
@@ -110,8 +111,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 8472,
-        "interpretation": "At 8472 changed lines, the metrics are inflated by a large merge commit; the actual performance fix is small (23 lines in two files). This fits a small-scope, low-risk fix that was merged after review."
+        "pr_change_lines": 15121,
+        "interpretation": "At 15121 changed lines, the metrics are inflated by a large merge commit; the actual performance fix is small (23 lines in two files). This fits a small-scope, low-risk fix that was merged after review."
       },
       "lifecycle": {
         "lifespan_hours": 44.684,

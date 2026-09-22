@@ -24,10 +24,10 @@
       "file_count": 65,
       "additions": 1530,
       "deletions": 530,
-      "changes": 3701,
+      "changes": 2060,
       "top1_file": "multiplexer/abci/multiplexer.go",
       "top1_changes": 224,
-      "top1_change_ratio": 0.0605,
+      "top1_change_ratio": 0.1087,
       "files_by_status": {
         "added": 9,
         "modified": 55,
@@ -122,8 +122,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 3701,
-        "interpretation": "At 3701 changed lines across 65 files, this is a large PR by absolute volume, but much of the churn comes from merge commits bringing in unrelated changes. The core feature is small, concentrated in tools/talis. Merge after iterative review is appropriate."
+        "pr_change_lines": 2060,
+        "interpretation": "At 2060 changed lines across 65 files, this is a large PR by absolute volume, but much of the churn comes from merge commits bringing in unrelated changes. The core feature is small, concentrated in tools/talis. Merge after iterative review is appropriate."
       },
       "lifecycle": {
         "lifespan_hours": 161.24,

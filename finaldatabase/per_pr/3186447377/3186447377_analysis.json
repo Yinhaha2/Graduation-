@@ -21,7 +21,7 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 6,
-      "file_count": 12,
+      "file_count": 13,
       "additions": 302,
       "deletions": 821,
       "changes": 1123,
@@ -29,13 +29,14 @@
       "top1_changes": 346,
       "top1_change_ratio": 0.308,
       "files_by_status": {
-        "added": 3,
-        "modified": 6,
+        "modified": 8,
+        "added": 2,
         "removed": 3
       },
-      "directory_count": 4,
+      "directory_count": 5,
       "directories": [
         "cmd",
+        "(root)",
         "config",
         "libs",
         "test"

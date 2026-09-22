@@ -64,7 +64,7 @@
         "commented": 5,
         "ready_for_review": 1
       },
-      "lifespan_hours": 92.95,
+      "lifespan_hours": 91.945,
       "first_review_delay_hours": 6.605,
       "review_rounds": 2,
       "has_revert": false,
@@ -117,7 +117,7 @@
         "interpretation": "At 1140 changed lines across 21 files, this is a medium-sized frontend refactor by absolute volume. It represents a significant feature addition (pagination, archives, browse components) and was merged after iterative review fixes to address functional gaps and visual consistency."
       },
       "lifecycle": {
-        "lifespan_hours": 92.95,
+        "lifespan_hours": 91.945,
         "fast_merge": false
       }
     },

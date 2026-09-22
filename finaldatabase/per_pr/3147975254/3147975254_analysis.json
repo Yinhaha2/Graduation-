@@ -21,15 +21,15 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 6,
-      "file_count": 162,
-      "additions": 448,
-      "deletions": 411,
-      "changes": 859,
+      "file_count": 165,
+      "additions": 558,
+      "deletions": 511,
+      "changes": 1069,
       "top1_file": "apps/api/v1/test/lib/utils/retrieveScopedAccessibleUsers.integration-test.ts",
       "top1_changes": 44,
-      "top1_change_ratio": 0.051,
+      "top1_change_ratio": 0.041,
       "files_by_status": {
-        "modified": 162
+        "modified": 165
       },
       "directory_count": 2,
       "directories": [
@@ -109,8 +109,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 859,
-        "interpretation": "At 859 changed lines across 162 files, this is a medium-sized systematic refactor by absolute volume. It fits a broad but mechanical performance improvement that merged after maintainer manual verification and CI success."
+        "pr_change_lines": 1069,
+        "interpretation": "At 1069 changed lines across 165 files, this is a medium-sized systematic refactor by absolute volume. It fits a broad but mechanical performance improvement that merged after maintainer manual verification and CI success."
       },
       "lifecycle": {
         "lifespan_hours": 35.84,
@@ -148,7 +148,7 @@
         "ci_validation"
       ],
       "detection_detail": {
-        "code_reading": "Maintainer manually reviewed all changed Prisma queries across 162 files.",
+        "code_reading": "Maintainer manually reviewed all changed Prisma queries across 165 files.",
         "ci_auto": "Type checking and 2041 tests passed; E2E results provided by github-actions."
       },
       "material_reproducibility": "insufficient",

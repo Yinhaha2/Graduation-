@@ -21,26 +21,30 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 5,
-      "file_count": 187,
-      "additions": 14671,
-      "deletions": 2001,
-      "changes": 168238,
+      "file_count": 373,
+      "additions": 30439,
+      "deletions": 2678,
+      "changes": 33117,
       "top1_file": "tests/data/trivy/trivy_sample.py",
       "top1_changes": 1431,
-      "top1_change_ratio": 0.0085,
+      "top1_change_ratio": 0.043,
       "files_by_status": {
-        "added": 40,
-        "modified": 140,
-        "removed": 7
+        "modified": 145,
+        "added": 224,
+        "removed": 4
       },
-      "directory_count": 6,
+      "directory_count": 10,
       "directories": [
-        "(root)",
         ".github",
+        "(root)",
+        "[REDACTED_AWS_SECRET_KEY]ec2",
+        "[REDACTED_AWS_SECRET_KEY]inspector",
+        "[REDACTED_AWS_SECRET_KEY]rnetes",
+        "[REDACTED_AWS_SECRET_KEY]y",
         "cartography",
-        "tests",
+        "demo",
         "docs",
-        "demo"
+        "tests"
       ]
     },
     "collaboration": {
@@ -118,8 +122,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 168238,
-        "interpretation": "The quantitative total of 168,238 changed lines is inflated by multiple master merges; the actual batching change is concentrated in one source file and its test (~100 lines). As a small, targeted performance fix with before/after timing evidence, it fits the small-step fast-turnaround pattern and was merged after addressing review feedback."
+        "pr_change_lines": 33117,
+        "interpretation": "The quantitative total of 33117 changed lines is inflated by multiple master merges; the actual batching change is concentrated in one source file and its test (~100 lines). As a small, targeted performance fix with before/after timing evidence, it fits the small-step fast-turnaround pattern and was merged after addressing review feedback."
       },
       "lifecycle": {
         "lifespan_hours": 1165.149,

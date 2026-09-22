@@ -24,10 +24,10 @@
       "file_count": 8,
       "additions": 315,
       "deletions": 1529,
-      "changes": 1976,
+      "changes": 1844,
       "top1_file": "crates/oxc_linter/src/utils/vitest/valid_vitest_fn.rs",
       "top1_changes": 1348,
-      "top1_change_ratio": 0.682,
+      "top1_change_ratio": 0.731,
       "files_by_status": {
         "modified": 8,
         "added": 1,
@@ -112,8 +112,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 1976,
-        "interpretation": "At 1976 changed lines, this is a medium-to-large refactor across linter utilities, mostly deletions from removing static validation strings. It targets binary size reduction but was closed without merge despite multiple iterations."
+        "pr_change_lines": 1844,
+        "interpretation": "At 1844 changed lines, this is a medium-to-large refactor across linter utilities, mostly deletions from removing static validation strings. It targets binary size reduction but was closed without merge despite multiple iterations."
       },
       "lifecycle": {
         "lifespan_hours": 1111.737,

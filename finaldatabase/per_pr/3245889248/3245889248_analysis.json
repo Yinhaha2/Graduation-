@@ -21,21 +21,22 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 10,
-      "file_count": 21,
-      "additions": 7939,
-      "deletions": 3725,
-      "changes": 11664,
-      "top1_file": "UMAProject/Assets/UMA/Examples/DynamicCharacterSystem Examples/UMA DCS Demo - Simple Setup.unity",
+      "file_count": 25,
+      "additions": 8318,
+      "deletions": 3726,
+      "changes": 12044,
+      "top1_file": "[REDACTED_AWS_SECRET_KEY]aracterSystem Examples/UMA DCS Demo - Simple Setup.unity",
       "top1_changes": 7264,
-      "top1_change_ratio": 0.623,
+      "top1_change_ratio": 0.603,
       "files_by_status": {
         "added": 18,
-        "modified": 5,
-        "removed": 0
+        "modified": 7
       },
-      "directory_count": 1,
+      "directory_count": 3,
       "directories": [
-        "UMAProject"
+        "UMAProject",
+        "(root)",
+        "[REDACTED_AWS_SECRET_KEY]aracterSystem Examples"
       ]
     },
     "collaboration": {
@@ -99,8 +100,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 11664,
-        "interpretation": "At 11664 changed lines across 21 files, this is a large refactor by absolute volume. Most churn comes from a merge commit introducing unrelated files (7264 lines in a unity scene). The core optimizations are spread across new combiner scripts and documentation. The PR was not merged via GitHub; the maintainer manually integrated the changes externally, which is unusual for such a large change but indicates acceptance of the concept without formal review."
+        "pr_change_lines": 12044,
+        "interpretation": "At 12044 changed lines across 25 files, this is a large refactor by absolute volume. Most churn comes from a merge commit introducing unrelated files (7264 lines in a unity scene). The core optimizations are spread across new combiner scripts and documentation. The PR was not merged via GitHub; the maintainer manually integrated the changes externally, which is unusual for such a large change but indicates acceptance of the concept without formal review."
       },
       "lifecycle": {
         "lifespan_hours": 1001.066,

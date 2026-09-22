@@ -24,10 +24,10 @@
       "file_count": 36,
       "additions": 1517,
       "deletions": 364,
-      "changes": 2052,
+      "changes": 1881,
       "top1_file": "src/components/tables/HistoryTable.vue",
       "top1_changes": 531,
-      "top1_change_ratio": 0.2588,
+      "top1_change_ratio": 0.2823,
       "files_by_status": {
         "added": 6,
         "modified": 30,
@@ -104,8 +104,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 2052,
-        "interpretation": "At 2052 changed lines across 36 files, this is a large refactor by absolute volume. As a feature-adding performance PR, it was closed because the maintainer indicated that most of the functionality already existed, making it redundant."
+        "pr_change_lines": 1881,
+        "interpretation": "At 1881 changed lines across 36 files, this is a large refactor by absolute volume. As a feature-adding performance PR, it was closed because the maintainer indicated that most of the functionality already existed, making it redundant."
       },
       "lifecycle": {
         "lifespan_hours": 30.785,

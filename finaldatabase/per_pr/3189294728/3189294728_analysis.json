@@ -21,29 +21,33 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 3,
-      "file_count": 192,
-      "additions": 18069,
+      "file_count": 425,
+      "additions": 24193,
       "deletions": 25023,
-      "changes": 43092,
+      "changes": 49216,
       "top1_file": "package-lock.json",
       "top1_changes": 24731,
-      "top1_change_ratio": 0.574,
+      "top1_change_ratio": 0.502,
       "files_by_status": {
-        "added": 64,
-        "modified": 114,
-        "removed": 14
+        "modified": 143,
+        "added": 272,
+        "removed": 6,
+        "renamed": 4
       },
-      "directory_count": 9,
+      "directory_count": 12,
       "directories": [
         ".circleci",
+        ".devcontainer",
         ".github",
+        "(root)",
+        "[REDACTED_AWS_SECRET_KEY]",
+        "creative",
         "integrationExamples",
         "libraries",
         "metadata",
         "modules",
         "src",
-        "test",
-        "creative"
+        "test"
       ]
     },
     "collaboration": {
@@ -107,8 +111,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 43092,
-        "interpretation": "At 43092 total changed lines the diff is enormous, but nearly all lines come from two merge commits that brought in vast unrelated changes from master (e.g., 24731 lines in package-lock.json, 5766 lines in metadata/modules.json). The performance-related change itself amounts to only 6 lines in invibesBidAdapter.js. Consequently, the merge outcome fits a trivial scope; the inflated diff from merges obscures that the real edit is tiny."
+        "pr_change_lines": 49216,
+        "interpretation": "At 49216 total changed lines the diff is enormous, but nearly all lines come from two merge commits that brought in vast unrelated changes from master (e.g., 24731 lines in package-lock.json, 5766 lines in metadata/modules.json). The performance-related change itself amounts to only 6 lines in invibesBidAdapter.js. Consequently, the merge outcome fits a trivial scope; the inflated diff from merges obscures that the real edit is tiny."
       },
       "lifecycle": {
         "lifespan_hours": 236.98,

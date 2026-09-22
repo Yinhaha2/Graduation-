@@ -21,27 +21,27 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 9,
-      "file_count": 197,
-      "additions": 5440,
-      "deletions": 1719,
-      "changes": 7159,
-      "top1_file": "packages/app-store/googlecalendar/lib/__tests__/CalendarService.test.ts",
-      "top1_changes": 600,
-      "top1_change_ratio": 0.0838,
+      "file_count": 357,
+      "additions": 8793,
+      "deletions": 3068,
+      "changes": 11861,
+      "top1_file": "packages/features/insights/server/__tests__/events.test.ts",
+      "top1_changes": 849,
+      "top1_change_ratio": 0.072,
       "files_by_status": {
-        "added": 21,
-        "modified": 170,
-        "removed": 6
+        "modified": 301,
+        "removed": 11,
+        "added": 40,
+        "renamed": 5
       },
-      "directory_count": 20,
+      "directory_count": 7,
       "directories": [
+        "(root)",
         ".github",
         ".husky",
         ".yarn",
         "apps",
         "docs",
-        "i18n.lock",
-        "package.json",
         "packages"
       ]
     },
@@ -119,8 +119,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 7159,
-        "interpretation": "At 7159 changed lines across 197 files, this is a large edit by absolute volume, but most churn comes from main merges. The performance-related changes are about 200–300 lines in a few new files. The PR merged after multiple rounds of human fixes and approval, which is consistent with medium-size cross-cutting concerns."
+        "pr_change_lines": 11861,
+        "interpretation": "At 11861 changed lines across 357 files, this is a large edit by absolute volume, but most churn comes from main merges. The performance-related changes are about 200–300 lines in a few new files. The PR merged after multiple rounds of human fixes and approval, which is consistent with medium-size cross-cutting concerns."
       },
       "lifecycle": {
         "lifespan_hours": 494.23,
@@ -182,7 +182,7 @@
         "packages/app-store/googlecalendar/lib/...",
         "docs/api-reference/v2/openapi.json"
       ],
-      "secondary_note": "Most of the 7159 changed lines come from a merge of main branch, bringing extensive unrelated changes (locale files, calendar service tests, etc.).",
+      "secondary_note": "Most of the 11861 changed lines come from a merge of main branch, bringing extensive unrelated changes (locale files, calendar service tests, etc.).",
       "change_trajectory": [
         "Devin bot's initial implementation: worker pool and worker script (c1c7574).",
         "TypeScript fixes in worker implementation (04c61e1).",

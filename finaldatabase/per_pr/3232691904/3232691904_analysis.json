@@ -24,10 +24,10 @@
       "file_count": 57,
       "additions": 1607,
       "deletions": 1071,
-      "changes": 2703,
+      "changes": 2678,
       "top1_file": "docs/getting-started/02-installation/hardware-acceleration.md",
       "top1_changes": 476,
-      "top1_change_ratio": 0.176,
+      "top1_change_ratio": 0.1777,
       "files_by_status": {
         "added": 5,
         "modified": 48,
@@ -121,8 +121,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 2703,
-        "interpretation": "At 2703 changed lines across 57 files, this is a medium-to-large feature addition touching backend, frontend, Docker, and documentation. The PR was closed without merge due to unresolved correctness and design concerns."
+        "pr_change_lines": 2678,
+        "interpretation": "At 2678 changed lines across 57 files, this is a medium-to-large feature addition touching backend, frontend, Docker, and documentation. The PR was closed without merge due to unresolved correctness and design concerns."
       },
       "lifecycle": {
         "lifespan_hours": 590.594,

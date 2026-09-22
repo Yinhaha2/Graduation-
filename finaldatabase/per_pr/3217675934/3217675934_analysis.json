@@ -24,10 +24,10 @@
       "file_count": 13,
       "additions": 1283,
       "deletions": 67,
-      "changes": 1370,
+      "changes": 1350,
       "top1_file": "app/src/main/java/io/github/gmathi/novellibrary/util/PerformanceMonitor.kt",
       "top1_changes": 235,
-      "top1_change_ratio": 0.1715,
+      "top1_change_ratio": 0.1741,
       "files_by_status": {
         "added": 7,
         "modified": 5,
@@ -98,8 +98,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 1370,
-        "interpretation": "At 1370 changed lines across 13 files, this is a medium-to-large edit by absolute volume, concentrated in new performance utility classes. As a substantial performance PR, it was closed without merge, likely due to lack of review engagement and missing performance evidence."
+        "pr_change_lines": 1350,
+        "interpretation": "At 1350 changed lines across 13 files, this is a medium-to-large edit by absolute volume, concentrated in new performance utility classes. As a substantial performance PR, it was closed without merge, likely due to lack of review engagement and missing performance evidence."
       },
       "lifecycle": {
         "lifespan_hours": 5497.523,

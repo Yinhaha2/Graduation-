@@ -21,22 +21,25 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 5,
-      "file_count": 193,
-      "additions": 4572,
-      "deletions": 3701,
-      "changes": 8273,
+      "file_count": 308,
+      "additions": 8033,
+      "deletions": 5047,
+      "changes": 13080,
       "top1_file": "sdk.sln",
       "top1_changes": 1264,
-      "top1_change_ratio": 0.153,
+      "top1_change_ratio": 0.097,
       "files_by_status": {
-        "added": 12,
-        "modified": 173,
-        "removed": 8
+        "modified": 206,
+        "added": 37,
+        "renamed": 48,
+        "removed": 17
       },
-      "directory_count": 5,
+      "directory_count": 7,
       "directories": [
         ".config",
         ".github",
+        "(root)",
+        "build",
         "documentation",
         "eng",
         "src"
@@ -113,8 +116,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 8273,
-        "interpretation": "At 8273 changed lines (much due to merge), the meaningful build-optimization change is small (~52 additions, ~42 deletions across .csproj files). This fits a targeted incremental build fix that merged after iterative review despite large merge noise."
+        "pr_change_lines": 13080,
+        "interpretation": "At 13080 changed lines (much due to merge), the meaningful build-optimization change is small (~52 additions, ~42 deletions across .csproj files). This fits a targeted incremental build fix that merged after iterative review despite large merge noise."
       },
       "lifecycle": {
         "lifespan_hours": 1345.5,

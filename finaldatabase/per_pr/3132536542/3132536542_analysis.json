@@ -24,10 +24,10 @@
       "file_count": 36,
       "additions": 3110,
       "deletions": 546,
-      "changes": 4488,
+      "changes": 3656,
       "top1_file": "crates/grida-canvas/examples/camera.rs",
       "top1_changes": 702,
-      "top1_change_ratio": 0.1564,
+      "top1_change_ratio": 0.192,
       "files_by_status": {
         "modified": 29,
         "added": 8,
@@ -97,8 +97,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 4488,
-        "interpretation": "At 4488 changed lines, this is a medium-sized edit by absolute volume, but includes many lines from merged PRs and examples; the core caching logic is modest. It fits a feature addition that merged quickly with no review friction."
+        "pr_change_lines": 3656,
+        "interpretation": "At 3656 changed lines, this is a medium-sized edit by absolute volume, but includes many lines from merged PRs and examples; the core caching logic is modest. It fits a feature addition that merged quickly with no review friction."
       },
       "lifecycle": {
         "lifespan_hours": 7.296,

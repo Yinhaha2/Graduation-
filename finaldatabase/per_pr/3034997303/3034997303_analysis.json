@@ -21,23 +21,25 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 11,
-      "file_count": 158,
-      "additions": 3534,
-      "deletions": 1753,
-      "changes": 5287,
-      "top1_file": "pnpm-lock.yaml",
-      "top1_changes": 2082,
-      "top1_change_ratio": 0.394,
+      "file_count": 318,
+      "additions": 4588,
+      "deletions": 29185,
+      "changes": 33773,
+      "top1_file": "packages/next/test/fixtures/09-yarn-workspaces/yarn.lock",
+      "top1_changes": 8464,
+      "top1_change_ratio": 0.251,
       "files_by_status": {
-        "added": 13,
-        "modified": 145,
-        "removed": 0
+        "modified": 285,
+        "added": 21,
+        "removed": 12
       },
-      "directory_count": 3,
+      "directory_count": 5,
       "directories": [
+        ".changeset",
+        ".github",
         "packages",
-        "scripts",
-        "(root)"
+        "(root)",
+        "scripts"
       ]
     },
     "collaboration": {
@@ -100,8 +102,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 5287,
-        "interpretation": "At 5287 changed lines across 158 files, this is a large-scale refactor by absolute volume, primarily affecting many CLI source files and the lockfile. As a dependency optimization performance PR, it was closed without merge—likely due to the sweeping nature and lack of maintainer review, resulting in a stalemate."
+        "pr_change_lines": 33773,
+        "interpretation": "At 33773 changed lines across 318 files, this is a large-scale refactor by absolute volume, primarily affecting many CLI source files and the lockfile. As a dependency optimization performance PR, it was closed without merge—likely due to the sweeping nature and lack of maintainer review, resulting in a stalemate."
       },
       "lifecycle": {
         "lifespan_hours": 205.1,

@@ -151,6 +151,9 @@ def build_payload(pr_id: int, *, mode: str = PAYLOAD_MODE) -> dict[str, Any]:
             df[col] = df[col].map(lambda x: _clip(x, MAX_TEXT_FIELD))
 
     drop_patch = {"patch"} if mode == "standard_no_patch" else set()
+    # Hints must use every file row. The model payload is capped so the prompt
+    # stays within context; quantitative_metrics are checked against the full table.
+    full_commit_details = commit_details
     if not commit_details.empty and len(commit_details) > MAX_FILE_DETAIL_ROWS:
         commit_details = commit_details.head(MAX_FILE_DETAIL_ROWS)
 
@@ -181,7 +184,11 @@ def build_payload(pr_id: int, *, mode: str = PAYLOAD_MODE) -> dict[str, Any]:
             "per_pr_folder": (FINALDB / "per_pr" / str(pr_id)).exists(),
         },
     }
-    payload["quantitative_hints"] = _quantitative_hints(payload)
+    hint_payload = dict(payload)
+    hint_payload["commit_file_stats"] = _df_to_records(
+        full_commit_details, drop_cols=set(drop_patch) | {"patch"}
+    )
+    payload["quantitative_hints"] = _quantitative_hints(hint_payload)
     return payload
 
 
@@ -197,7 +204,11 @@ def _quantitative_hints(payload: dict[str, Any]) -> dict[str, Any]:
     for f in files:
         additions += int(f.get("additions") or 0)
         deletions += int(f.get("deletions") or 0)
-        changes += int(f.get("changes") or f.get("commit_stats_total") or 0)
+        # `changes == 0` is a real zero-line row (often a rename). Do not
+        # substitute commit_stats_total: that value is the whole commit and
+        # is repeated on every file row.
+        raw_changes = f.get("changes")
+        changes += 0 if raw_changes is None else int(raw_changes or 0)
     if changes == 0 and (additions or deletions):
         changes = additions + deletions
 

@@ -24,10 +24,10 @@
       "file_count": 45,
       "additions": 1004,
       "deletions": 275,
-      "changes": 1976,
+      "changes": 1279,
       "top1_file": "apps/studio/src/routes/projects/ProjectsTab/Create/Load/Setup.tsx",
       "top1_changes": 174,
-      "top1_change_ratio": 0.088,
+      "top1_change_ratio": 0.136,
       "files_by_status": {
         "added": 3,
         "modified": 52
@@ -100,8 +100,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 1976,
-        "interpretation": "At 1976 changed lines across 45 files, this is a medium-to-large refactor by absolute volume. It adds dispose boilerplate across many engine components. The PR was merged without formal review, consistent with a comprehensive but routine cleanup that maintainer accepted quickly."
+        "pr_change_lines": 1279,
+        "interpretation": "At 1279 changed lines across 45 files, this is a medium-to-large refactor by absolute volume. It adds dispose boilerplate across many engine components. The PR was merged without formal review, consistent with a comprehensive but routine cleanup that maintainer accepted quickly."
       },
       "lifecycle": {
         "lifespan_hours": 13.946,

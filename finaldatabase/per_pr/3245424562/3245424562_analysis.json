@@ -21,25 +21,27 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 8,
-      "file_count": 199,
-      "additions": 10355,
-      "deletions": 2406,
-      "changes": 41787,
+      "file_count": 299,
+      "additions": 12022,
+      "deletions": 3458,
+      "changes": 15480,
       "top1_file": "apps/web/src/components/ui/streaming/AppMarkdownStreaming/AppMarkdownStreaming.stories.tsx",
       "top1_changes": 744,
-      "top1_change_ratio": 0.0178,
+      "top1_change_ratio": 0.048,
       "files_by_status": {
-        "added": 60,
-        "modified": 117,
-        "removed": 20,
-        "renamed": 2
+        "modified": 188,
+        "added": 81,
+        "removed": 26,
+        "renamed": 4
       },
-      "directory_count": 4,
+      "directory_count": 6,
       "directories": [
+        "(root)",
+        ".github",
+        ".vscode",
         "apps",
         "packages",
-        ".github",
-        ".vscode"
+        "scripts"
       ]
     },
     "collaboration": {
@@ -116,8 +118,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 41787,
-        "interpretation": "At 41787 changed lines across 199 files, this is a massive change by absolute volume, driven largely by a merge commit from staging that brought in many unrelated changes. The performance-specific changes are a small fraction (barrel exports, dynamic chart loading) within a larger refactor. The merge outcome is consistent with a maintainer-led iteration that bundled performance changes with other staging work."
+        "pr_change_lines": 15480,
+        "interpretation": "At 15480 changed lines across 299 files, this is a massive change by absolute volume, driven largely by a merge commit from staging that brought in many unrelated changes. The performance-specific changes are a small fraction (barrel exports, dynamic chart loading) within a larger refactor. The merge outcome is consistent with a maintainer-led iteration that bundled performance changes with other staging work."
       },
       "lifecycle": {
         "lifespan_hours": 75.45,

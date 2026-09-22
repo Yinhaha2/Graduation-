@@ -21,23 +21,24 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 6,
-      "file_count": 198,
-      "additions": 4359,
-      "deletions": 12160,
-      "changes": 129205,
+      "file_count": 321,
+      "additions": 10535,
+      "deletions": 15819,
+      "changes": 26354,
       "top1_file": "tests/spec_decode/test_spec_decode_worker.py",
       "top1_changes": 945,
-      "top1_change_ratio": 0.007315,
+      "top1_change_ratio": 0.036,
       "files_by_status": {
-        "added": 12,
-        "modified": 149,
-        "removed": 37
+        "modified": 249,
+        "added": 24,
+        "renamed": 4,
+        "removed": 44
       },
       "directory_count": 12,
       "directories": [
-        ".",
         ".buildkite",
         ".github",
+        "(root)",
         "benchmarks",
         "csrc",
         "docker",
@@ -122,8 +123,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 129205,
-        "interpretation": "At 129,205 changed lines, this is an unusually large PR by absolute volume, but the massive churn is almost entirely from a merge commit that removes obsolete spec_decode tests and other files; the actual performance change is only ~42 lines added/modified in gpu_model_runner.py. The overall size is atypical for a perf PR and would normally be a red flag, but in context it's a side-effect of mainline rebase and cleanup. The merge outcome is consistent with a lightweight, well-benchmarked optimization that received approval despite the noisy diff."
+        "pr_change_lines": 26354,
+        "interpretation": "At 26354 changed lines, this is an unusually large PR by absolute volume, but the massive churn is almost entirely from a merge commit that removes obsolete spec_decode tests and other files; the actual performance change is only ~42 lines added/modified in gpu_model_runner.py. The overall size is atypical for a perf PR and would normally be a red flag, but in context it's a side-effect of mainline rebase and cleanup. The merge outcome is consistent with a lightweight, well-benchmarked optimization that received approval despite the noisy diff."
       },
       "lifecycle": {
         "lifespan_hours": 146.21,

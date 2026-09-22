@@ -21,23 +21,23 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 9,
-      "file_count": 168,
-      "additions": 9934,
-      "deletions": 3306,
-      "changes": 30226,
+      "file_count": 181,
+      "additions": 12036,
+      "deletions": 5450,
+      "changes": 17486,
       "top1_file": "package-lock.json",
       "top1_changes": 6487,
-      "top1_change_ratio": 0.2146,
+      "top1_change_ratio": 0.371,
       "files_by_status": {
+        "renamed": 31,
+        "modified": 121,
         "added": 15,
-        "modified": 120,
-        "removed": 12,
-        "renamed": 21
+        "removed": 14
       },
       "directory_count": 3,
       "directories": [
         ".github",
-        "package",
+        "(root)",
         "packages"
       ]
     },
@@ -105,7 +105,7 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 30226,
+        "pr_change_lines": 17486,
         "interpretation": "At over 30k total changed lines (many from merge commits), this is a large-scale refactor across many components. The close without merge aligns with a high-risk, unreviewed migration that lacked active maintainer engagement."
       },
       "lifecycle": {

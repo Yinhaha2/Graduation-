@@ -21,23 +21,25 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 28,
-      "file_count": 186,
-      "additions": 17770,
-      "deletions": 5179,
-      "changes": 22949,
-      "top1_file": "autogpt_platform/frontend/pnpm-lock.yaml",
-      "top1_changes": 2655,
-      "top1_change_ratio": 0.1157,
+      "file_count": 387,
+      "additions": 92019,
+      "deletions": 29232,
+      "changes": 121251,
+      "top1_file": "autogpt_platform/backend/poetry.lock",
+      "top1_changes": 14566,
+      "top1_change_ratio": 0.12,
       "files_by_status": {
-        "added": 40,
-        "modified": 140,
-        "removed": 6,
-        "renamed": 12
+        "added": 176,
+        "modified": 168,
+        "removed": 8,
+        "renamed": 35
       },
-      "directory_count": 11,
+      "directory_count": 4,
       "directories": [
         ".github",
-        "autogpt_platform"
+        "(root)",
+        "autogpt_platform",
+        "docs"
       ]
     },
     "collaboration": {
@@ -109,8 +111,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 22949,
-        "interpretation": "At ~23k changed lines across 186 files, this is a large refactor by absolute volume, with significant churn from lock files and merge commits. Despite the size, the core performance-related change is the introduction of a cloud storage handler. The PR was merged after multiple rounds of conflict resolution and bot feedback, indicating maintainers found the change acceptable despite its scale."
+        "pr_change_lines": 121251,
+        "interpretation": "At 121251 changed lines across 387 files, this is a large refactor by absolute volume, with significant churn from lock files and merge commits. Despite the size, the core performance-related change is the introduction of a cloud storage handler. The PR was merged after multiple rounds of conflict resolution and bot feedback, indicating maintainers found the change acceptable despite its scale."
       },
       "lifecycle": {
         "lifespan_hours": 179.47,

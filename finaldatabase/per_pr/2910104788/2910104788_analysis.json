@@ -24,10 +24,10 @@
       "file_count": 5,
       "additions": 172,
       "deletions": 20,
-      "changes": 198,
+      "changes": 192,
       "top1_file": "src/components/ApiKeys.vue",
       "top1_changes": 186,
-      "top1_change_ratio": 0.939,
+      "top1_change_ratio": 0.9688,
       "files_by_status": {
         "modified": 5
       },
@@ -99,8 +99,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 198,
-        "interpretation": "At 198 changed lines across 5 files, this is a small-to-medium absolute edit, concentrated in a single Vue component. It fits a targeted UI enhancement with perf claims that merged quickly after a maintainer design tweak."
+        "pr_change_lines": 192,
+        "interpretation": "At 192 changed lines across 5 files, this is a small-to-medium absolute edit, concentrated in a single Vue component. It fits a targeted UI enhancement with perf claims that merged quickly after a maintainer design tweak."
       },
       "lifecycle": {
         "lifespan_hours": 27.53,

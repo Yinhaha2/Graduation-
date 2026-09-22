@@ -21,20 +21,24 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 10,
-      "file_count": 18,
-      "additions": 390,
-      "deletions": 400,
-      "changes": 790,
+      "file_count": 77,
+      "additions": 1242,
+      "deletions": 912,
+      "changes": 2154,
       "top1_file": "src/Platform/Microsoft.Testing.Platform/TestHostControllers/TestHostControllersManager.cs",
       "top1_changes": 256,
-      "top1_change_ratio": 0.324,
+      "top1_change_ratio": 0.119,
       "files_by_status": {
-        "added": 1,
-        "modified": 17
+        "modified": 75,
+        "added": 2
       },
-      "directory_count": 1,
+      "directory_count": 5,
       "directories": [
-        "src"
+        ".github",
+        "(root)",
+        "eng",
+        "src",
+        "test"
       ]
     },
     "collaboration": {
@@ -108,8 +112,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 790,
-        "interpretation": "At 790 changed lines across 18 files, this is a small-to-medium refactor by absolute volume. As a targeted LINQ performance cleanup, it merged after multiple review rounds without benchmark evidence, fitting the pattern of a low-risk, correctness-focused perf PR."
+        "pr_change_lines": 2154,
+        "interpretation": "At 2154 changed lines across 77 files, this is a medium-sized refactor by absolute volume. As a targeted LINQ performance cleanup, it merged after multiple review rounds without benchmark evidence, fitting the pattern of a low-risk, correctness-focused perf PR."
       },
       "lifecycle": {
         "lifespan_hours": 22.97,

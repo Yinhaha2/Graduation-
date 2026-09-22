@@ -21,26 +21,26 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 10,
-      "file_count": 197,
-      "additions": 332,
-      "deletions": 3248,
-      "changes": 3580,
+      "file_count": 306,
+      "additions": 543,
+      "deletions": 3347,
+      "changes": 3890,
       "top1_file": "apps/next/components/DataTable.tsx",
       "top1_changes": 505,
-      "top1_change_ratio": 0.141,
+      "top1_change_ratio": 0.13,
       "files_by_status": {
-        "modified": 10,
+        "modified": 15,
+        "removed": 51,
         "added": 2,
-        "removed": 40,
-        "renamed": 145
+        "renamed": 238
       },
       "directory_count": 5,
       "directories": [
+        "(root)",
+        ".github",
         "apps",
         "backend",
-        ".github",
-        ".cursorrules",
-        "(root)"
+        "frontend"
       ]
     },
     "collaboration": {
@@ -102,8 +102,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 3580,
-        "interpretation": "At 3580 changed lines, this is a medium-sized change by absolute volume, but the high deletion count is largely due to a backend directory rename/removal during merge. The core addition of TanStack Virtual is concentrated in DataTable.tsx (~500 lines). The PR was closed without merge, consistent with lack of review and inability to resolve merge conflicts."
+        "pr_change_lines": 3890,
+        "interpretation": "At 3890 changed lines, this is a medium-sized change by absolute volume, but the high deletion count is largely due to a backend directory rename/removal during merge. The core addition of TanStack Virtual is concentrated in DataTable.tsx (~500 lines). The PR was closed without merge, consistent with lack of review and inability to resolve merge conflicts."
       },
       "lifecycle": {
         "lifespan_hours": 219.1,

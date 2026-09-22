@@ -59,7 +59,7 @@
         "closed": 1,
         "head_ref_deleted": 1
       },
-      "lifespan_hours": 295.416,
+      "lifespan_hours": 271.416,
       "first_review_delay_hours": 7.97,
       "review_rounds": 2,
       "has_revert": false,
@@ -111,7 +111,7 @@
         "interpretation": "At 84 changed lines, this is a small, focused edit that fits a typical micro-optimization. It was merged after multiple review iterations addressing correctness and style, consistent with the small-scale change."
       },
       "lifecycle": {
-        "lifespan_hours": 295.416,
+        "lifespan_hours": 271.416,
         "fast_merge": false
       }
     },

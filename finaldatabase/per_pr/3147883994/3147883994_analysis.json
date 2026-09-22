@@ -24,10 +24,10 @@
       "file_count": 13,
       "additions": 809,
       "deletions": 608,
-      "changes": 1709,
+      "changes": 1417,
       "top1_file": "OPTIMIZATION_RECOMMENDATIONS.md",
       "top1_changes": 534,
-      "top1_change_ratio": 0.312,
+      "top1_change_ratio": 0.3769,
       "files_by_status": {
         "modified": 10,
         "deleted": 3
@@ -113,8 +113,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 1709,
-        "interpretation": "At 1709 changed lines, this is a medium-sized refactor by absolute volume, though many changes come from documentation files that were later removed. It fits a broad React performance optimization PR that was merged quickly with minor concerns raised but no blocking review."
+        "pr_change_lines": 1417,
+        "interpretation": "At 1417 changed lines, this is a medium-sized refactor by absolute volume, though many changes come from documentation files that were later removed. It fits a broad React performance optimization PR that was merged quickly with minor concerns raised but no blocking review."
       },
       "lifecycle": {
         "lifespan_hours": 6.12,

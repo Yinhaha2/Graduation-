@@ -21,7 +21,7 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 19,
-      "file_count": 181,
+      "file_count": 171,
       "additions": 2206,
       "deletions": 786,
       "changes": 2992,
@@ -29,14 +29,13 @@
       "top1_changes": 590,
       "top1_change_ratio": 0.197,
       "files_by_status": {
-        "added": 3,
-        "modified": 177,
-        "removed": 1
+        "modified": 168,
+        "added": 3
       },
       "directory_count": 7,
       "directories": [
-        ".",
         ".circleci",
+        "(root)",
         "integrationExamples",
         "libraries",
         "modules",
@@ -100,7 +99,7 @@
       "outcome": "closed",
       "change_scale_vs_repository": {
         "pr_change_lines": 2992,
-        "interpretation": "At 2992 changed lines across 181 files, this is a large PR by absolute volume, but only the final 16-line commit adds ESLint caching; the vast majority are unrelated noise from branch history. Immediately closed by author, consistent with a PR that was not intended to be reviewed."
+        "interpretation": "At 2992 changed lines across 171 files, this is a large PR by absolute volume, but only the final 16-line commit adds ESLint caching; the vast majority are unrelated noise from branch history. Immediately closed by author, consistent with a PR that was not intended to be reviewed."
       },
       "lifecycle": {
         "lifespan_hours": 0.0097,

@@ -61,7 +61,7 @@
         "commented": 1,
         "closed": 1
       },
-      "lifespan_hours": 186.2,
+      "lifespan_hours": 210.164,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -110,7 +110,7 @@
         "interpretation": "At 248 changed lines, this is a small edit concentrated in two source files and a new test file. As a targeted build-step performance PR, it was closed rather than merged because the maintainer wanted a more comprehensive solution, suggesting the change was deemed too narrow in scope."
       },
       "lifecycle": {
-        "lifespan_hours": 186.2,
+        "lifespan_hours": 210.164,
         "fast_merge": false
       }
     },

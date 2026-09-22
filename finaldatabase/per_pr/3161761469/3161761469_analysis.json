@@ -21,28 +21,27 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 5,
-      "file_count": 196,
-      "additions": 3363,
-      "deletions": 811,
-      "changes": 4174,
+      "file_count": 304,
+      "additions": 5087,
+      "deletions": 1172,
+      "changes": 6259,
       "top1_file": "apps/laboratory/test-results.json",
       "top1_changes": 1384,
-      "top1_change_ratio": 0.331,
+      "top1_change_ratio": 0.221,
       "files_by_status": {
-        "added": 28,
-        "modified": 140,
-        "removed": 6,
-        "renamed": 8
+        "modified": 237,
+        "added": 19,
+        "removed": 4,
+        "renamed": 44
       },
-      "directory_count": 7,
+      "directory_count": 6,
       "directories": [
         ".changeset",
         ".github",
+        "(root)",
         "apps",
-        "packages",
-        "apps/browser-extension",
-        "apps/demo",
-        "apps/laboratory"
+        "examples",
+        "packages"
       ]
     },
     "collaboration": {
@@ -111,8 +110,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 4174,
-        "interpretation": "The large change scale (4174 lines, 196 files) is mostly from a merge commit pulling in unrelated main changes; the actual perf-related change is a small front-end optimization. The closure was due to an unresolved correctness bug, not the size."
+        "pr_change_lines": 6259,
+        "interpretation": "The large change scale (6259 lines, 304 files) is mostly from a merge commit pulling in unrelated main changes; the actual perf-related change is a small front-end optimization. The closure was due to an unresolved correctness bug, not the size."
       },
       "lifecycle": {
         "lifespan_hours": 1252.588,

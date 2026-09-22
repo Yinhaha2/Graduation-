@@ -21,25 +21,26 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 9,
-      "file_count": 192,
-      "additions": 3995,
-      "deletions": 2932,
-      "changes": 21943,
+      "file_count": 236,
+      "additions": 4351,
+      "deletions": 3330,
+      "changes": 7681,
       "top1_file": "hadoop-ozone/ozone-manager/src/main/java/org/apache/hadoop/ozone/om/service/DirectoryDeletingService.java",
       "top1_changes": 772,
-      "top1_change_ratio": 0.0352,
+      "top1_change_ratio": 0.101,
       "files_by_status": {
-        "modified": 178,
+        "modified": 222,
         "added": 10,
         "removed": 2,
         "renamed": 2
       },
-      "directory_count": 4,
+      "directory_count": 5,
       "directories": [
         ".github",
         ".mvn",
         "hadoop-hdds",
-        "hadoop-ozone"
+        "hadoop-ozone",
+        "(root)"
       ]
     },
     "collaboration": {
@@ -111,8 +112,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 21943,
-        "interpretation": "At 21943 changed lines across 192 files, this is a very large change by absolute volume, largely due to a merge of main bringing many unrelated changes; the core compaction configuration changes are small. The PR was closed without merge, which is not surprising given the scope management issue and unresolved design feedback."
+        "pr_change_lines": 7681,
+        "interpretation": "At 7681 changed lines across 236 files, this is a very large change by absolute volume, largely due to a merge of main bringing many unrelated changes; the core compaction configuration changes are small. The PR was closed without merge, which is not surprising given the scope management issue and unresolved design feedback."
       },
       "lifecycle": {
         "lifespan_hours": 3974.718,

@@ -21,25 +21,29 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 10,
-      "file_count": 200,
-      "additions": 14575,
-      "deletions": 1661,
-      "changes": 16236,
-      "top1_file": "cartography/intel/aws/ecs.py",
-      "top1_changes": 625,
-      "top1_change_ratio": 0.0385,
+      "file_count": 305,
+      "additions": 22559,
+      "deletions": 2173,
+      "changes": 24732,
+      "top1_file": "tests/data/trivy/trivy_sample.py",
+      "top1_changes": 1431,
+      "top1_change_ratio": 0.058,
       "files_by_status": {
-        "modified": 150,
-        "added": 48,
-        "removed": 2
+        "modified": 116,
+        "added": 186,
+        "removed": 3
       },
-      "directory_count": 5,
+      "directory_count": 9,
       "directories": [
+        ".github",
+        "(root)",
+        "[REDACTED_AWS_SECRET_KEY]ec2",
+        "[REDACTED_AWS_SECRET_KEY]inspector",
+        "[REDACTED_AWS_SECRET_KEY]rnetes",
         "cartography",
-        "tests",
-        "docs",
         "demo",
-        ".github"
+        "docs",
+        "tests"
       ]
     },
     "collaboration": {
@@ -118,8 +122,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 16236,
-        "interpretation": "At 16236 changed lines across 200 files, this is a large PR by absolute volume, but most changes come from a merge commit pulling in many unrelated new modules; the core snapshot refactor is only ~215 lines. This moderate-sized perf fix merged after addressing reviewer nits, consistent with outcome."
+        "pr_change_lines": 24732,
+        "interpretation": "At 24732 changed lines across 305 files, this is a large PR by absolute volume, but most changes come from a merge commit pulling in many unrelated new modules; the core snapshot refactor is only ~215 lines. This moderate-sized perf fix merged after addressing reviewer nits, consistent with outcome."
       },
       "lifecycle": {
         "lifespan_hours": 926.0,
@@ -182,7 +186,7 @@
         "cartography/models/aws/ecs/clusters.py",
         "docs/root/modules/aws/schema.md"
       ],
-      "secondary_note": "Most churn (200 files, ~16k lines) came from merging master branch, bringing in unrelated new features; the core snapshot change is ~215 lines.",
+      "secondary_note": "Most churn (305 files, ~16k lines) came from merging master branch, bringing in unrelated new features; the core snapshot change is ~215 lines.",
       "change_trajectory": [
         "Initial commit: adjust snapshot tests for new transform (809d0d8).",
         "Merged master branch (40346f9) bringing in hundreds of files from other features.",

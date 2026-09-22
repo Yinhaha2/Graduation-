@@ -24,10 +24,10 @@
       "file_count": 74,
       "additions": 3088,
       "deletions": 1692,
-      "changes": 6881,
+      "changes": 4780,
       "top1_file": "src/lockfile.rs",
       "top1_changes": 602,
-      "top1_change_ratio": 0.0875,
+      "top1_change_ratio": 0.1259,
       "files_by_status": {
         "modified": 60,
         "added": 10,
@@ -113,8 +113,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 6881,
-        "interpretation": "At 6881 changed lines across 74 files, this is a large-scale refactor by absolute volume. As a major architectural change to lockfile format and asset handling, it was closed—not merged—likely due to unresolved correctness issues and maintainer draft conversion, consistent with the high risk of large untested changes."
+        "pr_change_lines": 4780,
+        "interpretation": "At 4780 changed lines across 74 files, this is a large-scale refactor by absolute volume. As a major architectural change to lockfile format and asset handling, it was closed—not merged—likely due to unresolved correctness issues and maintainer draft conversion, consistent with the high risk of large untested changes."
       },
       "lifecycle": {
         "lifespan_hours": 229.33,

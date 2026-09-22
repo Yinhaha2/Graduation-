@@ -21,22 +21,25 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 10,
-      "file_count": 199,
-      "additions": 863,
-      "deletions": 438,
-      "changes": 2361,
-      "top1_file": "yarn.lock",
-      "top1_changes": 65,
-      "top1_change_ratio": 0.0275,
+      "file_count": 554,
+      "additions": 1754,
+      "deletions": 2366,
+      "changes": 4120,
+      "top1_file": "src/app/pages/MediaArticlePage/MediaArticlePage.module.css",
+      "top1_changes": 232,
+      "top1_change_ratio": 0.056,
       "files_by_status": {
-        "added": 70,
-        "modified": 125,
-        "removed": 4
+        "removed": 4,
+        "added": 76,
+        "renamed": 1,
+        "modified": 473
       },
-      "directory_count": 2,
+      "directory_count": 4,
       "directories": [
         ".yarn",
-        "src"
+        "(root)",
+        "src",
+        "ws-nextjs-app"
       ]
     },
     "collaboration": {
@@ -107,8 +110,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 2361,
-        "interpretation": "At 2361 changed lines across 199 files, this is a large, codebase-wide refactor. It is consistent with the closed outcome given the incomplete conversion and leftover TypeScript errors."
+        "pr_change_lines": 4120,
+        "interpretation": "At 4120 changed lines across 554 files, this is a large, codebase-wide refactor. It is consistent with the closed outcome given the incomplete conversion and leftover TypeScript errors."
       },
       "lifecycle": {
         "lifespan_hours": 8787.829,

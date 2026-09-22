@@ -21,23 +21,23 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 5,
-      "file_count": 196,
-      "additions": 7079,
+      "file_count": 303,
+      "additions": 18860,
       "deletions": 3079,
-      "changes": 1976568,
-      "top1_file": "docs/src/content/docs/fr/blog/cline.mdx",
-      "top1_changes": 430,
-      "top1_change_ratio": 0.0002175,
+      "changes": 21939,
+      "top1_file": "docs/src/content/docs/fr/reference/cli/commands.md",
+      "top1_changes": 955,
+      "top1_change_ratio": 0.044,
       "files_by_status": {
-        "added": 50,
-        "modified": 140,
-        "removed": 5,
+        "modified": 121,
+        "added": 171,
+        "removed": 10,
         "renamed": 1
       },
       "directory_count": 8,
       "directories": [
-        ".",
         ".devcontainer",
+        "(root)",
         ".github",
         ".ruler",
         ".vscode",
@@ -114,8 +114,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 1976568,
-        "interpretation": "At 1,976,568 changed lines across 196 files, the change scale is huge due to a broad merge of origin/dev; the core fix (~160 lines) is small. The PR was closed without merge, likely because the large noise from the merge obscured the fix and maintainer decided not to proceed."
+        "pr_change_lines": 21939,
+        "interpretation": "At 21939 changed lines across 303 files, the change scale is large due to a broad merge of origin/dev; the core fix (~160 lines) is small. The PR was closed without merge, likely because the large noise from the merge obscured the fix and maintainer decided not to proceed."
       },
       "lifecycle": {
         "lifespan_hours": 1.661,

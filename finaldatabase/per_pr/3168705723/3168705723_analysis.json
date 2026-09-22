@@ -21,19 +21,29 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 7,
-      "file_count": 3,
-      "additions": 250,
-      "deletions": 150,
-      "changes": 400,
-      "top1_file": "packages/core/src/fetch.ts",
-      "top1_changes": 150,
-      "top1_change_ratio": 0.375,
+      "file_count": 312,
+      "additions": 8545,
+      "deletions": 16214,
+      "changes": 24759,
+      "top1_file": "docs/yarn.lock",
+      "top1_changes": 5429,
+      "top1_change_ratio": 0.219,
       "files_by_status": {
-        "modified": 2,
-        "added": 1
+        "added": 63,
+        "modified": 128,
+        "removed": 37,
+        "renamed": 84
       },
-      "directory_count": 1,
+      "directory_count": 9,
       "directories": [
+        ".devcontainer",
+        "(root)",
+        ".github",
+        ".vscode",
+        "demo",
+        "docs",
+        "examples",
+        "genaisrc",
         "packages"
       ]
     },
@@ -110,8 +120,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 400,
-        "interpretation": "At an estimated 400 changed lines across 3 files, this is a small edit. The PR merged quickly after bot-flagged issues were fixed, consistent with a low-risk performance improvement."
+        "pr_change_lines": 24759,
+        "interpretation": "At an estimated 24759 changed lines across 312 files, this is a large change by absolute volume. The PR merged quickly after bot-flagged issues were fixed, consistent with a low-risk performance improvement."
       },
       "lifecycle": {
         "lifespan_hours": 0.641,

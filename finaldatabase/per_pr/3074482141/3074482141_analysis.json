@@ -21,24 +21,25 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 11,
-      "file_count": 180,
-      "additions": 10930,
-      "deletions": 2001,
-      "changes": 12931,
-      "top1_file": "src/node-fallbacks/buffer.js",
-      "top1_changes": 2046,
-      "top1_change_ratio": 0.1583,
+      "file_count": 361,
+      "additions": 19852,
+      "deletions": 9184,
+      "changes": 29036,
+      "top1_file": "src/install/lockfile.zig",
+      "top1_changes": 7486,
+      "top1_change_ratio": 0.258,
       "files_by_status": {
-        "added": 38,
-        "modified": 134,
-        "removed": 8
+        "modified": 311,
+        "added": 39,
+        "renamed": 11
       },
-      "directory_count": 10,
+      "directory_count": 11,
       "directories": [
         ".buildkite",
-        ".github",
         ".cursor",
+        ".github",
         ".vscode",
+        "(root)",
         "cmake",
         "docs",
         "packages",
@@ -113,8 +114,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 12931,
-        "interpretation": "At 12931 changed lines, this is a large change by absolute volume, but most changes are from merges from main rather than the feature itself. The core feature change (~356 lines in bun.zig and test file) is small. As a feature addition PR with small effective scope, it merged after review cycle."
+        "pr_change_lines": 29036,
+        "interpretation": "At 29036 changed lines, this is a large change by absolute volume, but most changes are from merges from main rather than the feature itself. The core feature change (~356 lines in bun.zig and test file) is small. As a feature addition PR with small effective scope, it merged after review cycle."
       },
       "lifecycle": {
         "lifespan_hours": 123.63,

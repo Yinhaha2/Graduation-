@@ -21,28 +21,33 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 7,
-      "file_count": 188,
-      "additions": 12463,
-      "deletions": 25193,
-      "changes": 37656,
+      "file_count": 439,
+      "additions": 24679,
+      "deletions": 25204,
+      "changes": 49883,
       "top1_file": "package-lock.json",
-      "top1_changes": 24731,
-      "top1_change_ratio": 0.657,
+      "top1_changes": 24743,
+      "top1_change_ratio": 0.496,
       "files_by_status": {
-        "added": 26,
-        "modified": 156,
-        "removed": 6
+        "modified": 150,
+        "added": 279,
+        "removed": 6,
+        "renamed": 4
       },
-      "directory_count": 8,
+      "directory_count": 12,
       "directories": [
+        ".circleci",
+        ".devcontainer",
+        ".github",
+        "(root)",
+        "[REDACTED_AWS_SECRET_KEY]",
+        "creative",
+        "integrationExamples",
         "libraries",
+        "metadata",
         "modules",
         "src",
-        "test",
-        "integrationExamples",
-        "metadata",
-        ".circleci",
-        ".github"
+        "test"
       ]
     },
     "collaboration": {
@@ -108,8 +113,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 37656,
-        "interpretation": "At 37656 changed lines, this PR is large by absolute volume, but most changes are from a large master merge (24k lines in package-lock.json). The actual performance-related change is a small library refactor (~60 lines). The PR was closed without merge, suggesting that the scale of extraneous changes or lack of evidence outweighed the core improvement."
+        "pr_change_lines": 49883,
+        "interpretation": "At 49883 changed lines, this PR is large by absolute volume, but most changes are from a large master merge (24k lines in package-lock.json). The actual performance-related change is a small library refactor (~60 lines). The PR was closed without merge, suggesting that the scale of extraneous changes or lack of evidence outweighed the core improvement."
       },
       "lifecycle": {
         "lifespan_hours": 1238.955,

@@ -398,7 +398,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         f"- Median changes — merged: **{merged['changes'].median():.0f}**; closed: **{closed['changes'].median():.0f}**",
         f"- Zero-line churn (`changes=0`) is counted in ≤100 ({int((terminal['changes']==0).sum())} PRs, all closed).",
         f"- Change-size bins sum to {int(terminal['changes_bin'].notna().sum())}/{len(terminal)}.",
-        "- **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; >10k is near the closed-side average.",
+        "- **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; the >10k bin does not exceed it.",
         "",
         "### 3.2 Comment volume (review + PR comments)",
         "",

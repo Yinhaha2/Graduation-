@@ -24,10 +24,10 @@
       "file_count": 7,
       "additions": 107,
       "deletions": 77,
-      "changes": 192,
+      "changes": 184,
       "top1_file": "examples/stable/test/property/ic_api/crypto_get_random_values/test/tests.ts",
       "top1_changes": 155,
-      "top1_change_ratio": 0.807,
+      "top1_change_ratio": 0.8424,
       "files_by_status": {
         "modified": 7
       },
@@ -111,8 +111,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 192,
-        "interpretation": "At 192 changed lines across 7 files, this is a small change by absolute volume. It fits a narrow-scope CI optimization PR that merged after two rounds of style-focused review."
+        "pr_change_lines": 184,
+        "interpretation": "At 184 changed lines across 7 files, this is a small change by absolute volume. It fits a narrow-scope CI optimization PR that merged after two rounds of style-focused review."
       },
       "lifecycle": {
         "lifespan_hours": 8.04,

@@ -24,10 +24,10 @@
       "file_count": 70,
       "additions": 2083,
       "deletions": 1099,
-      "changes": 4140,
+      "changes": 3182,
       "top1_file": "packages/app-store/googlecalendar/lib/__tests__/CalendarService.test.ts",
       "top1_changes": 600,
-      "top1_change_ratio": 0.145,
+      "top1_change_ratio": 0.1886,
       "files_by_status": {
         "added": 20,
         "modified": 48,
@@ -110,8 +110,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 4140,
-        "interpretation": "At 4140 changed lines across 70 files, the absolute volume is large, but only ~84 lines constitute the actual perf-related change in page.tsx; the rest are merge commits from main. This refactor PR was closed despite approval, likely due to being stale rather than technical rejection."
+        "pr_change_lines": 3182,
+        "interpretation": "At 3182 changed lines across 70 files, the absolute volume is large, but only ~84 lines constitute the actual perf-related change in page.tsx; the rest are merge commits from main. This refactor PR was closed despite approval, likely due to being stale rather than technical rejection."
       },
       "lifecycle": {
         "lifespan_hours": 309.792,

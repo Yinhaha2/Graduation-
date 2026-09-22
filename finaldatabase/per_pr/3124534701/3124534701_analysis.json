@@ -21,20 +21,21 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 30,
-      "file_count": 184,
-      "additions": 2253,
-      "deletions": 772,
-      "changes": 3025,
-      "top1_file": "test/spec/modules/intentIqIdSystem_spec.js",
-      "top1_changes": 590,
-      "top1_change_ratio": 0.195,
+      "file_count": 290,
+      "additions": 7585,
+      "deletions": 10725,
+      "changes": 18310,
+      "top1_file": "package-lock.json",
+      "top1_changes": 8898,
+      "top1_change_ratio": 0.486,
       "files_by_status": {
-        "modified": 175,
-        "added": 6,
+        "modified": 272,
+        "added": 15,
         "removed": 3
       },
-      "directory_count": 6,
+      "directory_count": 7,
       "directories": [
+        ".github",
         "(root)",
         "integrationExamples",
         "libraries",
@@ -100,8 +101,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 3025,
-        "interpretation": "At 3025 changed lines across 184 files, this is a large change by volume, but the bulk consists of merges and documentation updates; the actual CI performance improvement is a small configuration change, consistent with a low-risk merged PR."
+        "pr_change_lines": 18310,
+        "interpretation": "At 18310 changed lines across 290 files, this is a large change by volume, but the bulk consists of merges and documentation updates; the actual CI performance improvement is a small configuration change, consistent with a low-risk merged PR."
       },
       "lifecycle": {
         "lifespan_hours": 435.74,

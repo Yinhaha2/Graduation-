@@ -21,24 +21,29 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 6,
-      "file_count": 197,
-      "additions": 8070,
-      "deletions": 525,
-      "changes": 8595,
-      "top1_file": "drizzle/meta/0015_snapshot.json",
-      "top1_changes": 1003,
-      "top1_change_ratio": 0.1167,
+      "file_count": 304,
+      "additions": 17441,
+      "deletions": 7461,
+      "changes": 24902,
+      "top1_file": "package-lock.json",
+      "top1_changes": 13616,
+      "top1_change_ratio": 0.547,
       "files_by_status": {
-        "added": 50,
-        "modified": 100,
-        "removed": 10
+        "modified": 210,
+        "added": 80,
+        "removed": 9,
+        "renamed": 5
       },
-      "directory_count": 6,
+      "directory_count": 10,
       "directories": [
+        "(root)",
         ".cursor",
         ".github",
+        ".vscode",
         "drizzle",
         "examples",
+        "scripts",
+        "site",
         "src",
         "test"
       ]
@@ -115,8 +120,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 8595,
-        "interpretation": "The total changed lines are large (8595) due to an unrelated merge from main, but the core performance change is tiny (about 5 lines in src/database/index.ts to set journal_mode=WAL and a small test file). Despite the inflated line count, the actual change is minimal, consistent with a small-step performance PR that merged without objections."
+        "pr_change_lines": 24902,
+        "interpretation": "The total changed lines are large (24902) due to an unrelated merge from main, but the core performance change is tiny (about 5 lines in src/database/index.ts to set journal_mode=WAL and a small test file). Despite the inflated line count, the actual change is minimal, consistent with a small-step performance PR that merged without objections."
       },
       "lifecycle": {
         "lifespan_hours": 984.805,

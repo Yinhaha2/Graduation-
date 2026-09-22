@@ -24,10 +24,10 @@
       "file_count": 17,
       "additions": 273,
       "deletions": 2005,
-      "changes": 2286,
+      "changes": 2278,
       "top1_file": "docs/docs/genai/developer-workflow/phase3-monitor.mdx",
       "top1_changes": 366,
-      "top1_change_ratio": 0.16,
+      "top1_change_ratio": 0.1607,
       "files_by_status": {
         "added": 2,
         "modified": 6,
@@ -112,8 +112,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 2286,
-        "interpretation": "At 2286 changed lines across 17 files, this is a medium-sized refactor by absolute volume, but includes many unrelated doc deletions from a merge. As a CI workflow performance PR, it merged after extensive review and fixes."
+        "pr_change_lines": 2278,
+        "interpretation": "At 2278 changed lines across 17 files, this is a medium-sized refactor by absolute volume, but includes many unrelated doc deletions from a merge. As a CI workflow performance PR, it merged after extensive review and fixes."
       },
       "lifecycle": {
         "lifespan_hours": 14.1,

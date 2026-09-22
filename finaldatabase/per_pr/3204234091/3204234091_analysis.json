@@ -24,10 +24,10 @@
       "file_count": 6,
       "additions": 373,
       "deletions": 154,
-      "changes": 718,
+      "changes": 527,
       "top1_file": "OPTIMIZATION_REPORT.md",
       "top1_changes": 448,
-      "top1_change_ratio": 0.624,
+      "top1_change_ratio": 0.8501,
       "files_by_status": {
         "added": 1,
         "modified": 4,
@@ -96,8 +96,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 718,
-        "interpretation": "At 718 changed lines, this is a medium-sized build system refactor, but most churn is in OPTIMIZATION_REPORT.md (448 lines) rather than production code. The PR was closed without merge and no review activity, which is atypical for a successful performance PR in this context."
+        "pr_change_lines": 527,
+        "interpretation": "At 527 changed lines, this is a medium-sized build system refactor, but most churn is in OPTIMIZATION_REPORT.md (448 lines) rather than production code. The PR was closed without merge and no review activity, which is atypical for a successful performance PR in this context."
       },
       "lifecycle": {
         "lifespan_hours": 5615.684,

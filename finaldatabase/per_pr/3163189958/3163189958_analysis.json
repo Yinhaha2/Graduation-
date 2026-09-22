@@ -21,15 +21,15 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 2,
-      "file_count": 199,
-      "additions": 199,
+      "file_count": 300,
+      "additions": 300,
       "deletions": 0,
-      "changes": 199,
-      "top1_file": "packages/google-fonts/src/42dotSans.ts",
+      "changes": 300,
+      "top1_file": "packages/google-fonts/src/Charmonman.ts",
       "top1_changes": 1,
-      "top1_change_ratio": 0.005025,
+      "top1_change_ratio": 0.003,
       "files_by_status": {
-        "modified": 199
+        "modified": 300
       },
       "directory_count": 1,
       "directories": [
@@ -93,14 +93,14 @@
     "reproducibility": "insufficient",
     "regression_handling": "reject_close",
     "confidence": "medium",
-    "notes": "Copilot added AbortController to loadFont() across 199 font files; PR closed ~1.9h by maintainer without review interaction; narrative performance claim for virtualized font pickers."
+    "notes": "Copilot added AbortController to loadFont() across 300 font files; PR closed ~1.9h by maintainer without review interaction; narrative performance claim for virtualized font pickers."
   },
   "structured_analysis": {
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 199,
-        "interpretation": "At 199 changed lines across 199 files, this is a small but wide-reaching mechanical edit. It fits a feature enhancement that was closed quickly without review engagement."
+        "pr_change_lines": 300,
+        "interpretation": "At 300 changed lines across 300 files, this is a small but wide-reaching mechanical edit. It fits a feature enhancement that was closed quickly without review engagement."
       },
       "lifecycle": {
         "lifespan_hours": 1.86,
@@ -110,7 +110,7 @@
     "review_details": {
       "review_comment_bucket": "no_review_text",
       "primary_concern": "lack_of_maintainer_engagement",
-      "concern_detail": "No formal review or comment from maintainer on the PR; only a Vercel bot deployment comment. PR was closed by maintainer JonnyBurger without substantive feedback, possibly due to the mechanical nature of the change across 199 font files.",
+      "concern_detail": "No formal review or comment from maintainer on the PR; only a Vercel bot deployment comment. PR was closed by maintainer JonnyBurger without substantive feedback, possibly due to the mechanical nature of the change across 300 font files.",
       "performance_claim": "Adding AbortController support allows cancellation of font loads, improving responsiveness in virtualized font pickers and avoiding unnecessary network requests.",
       "performance_evidence_in_review": false,
       "antipattern_addressed": "repeated_io",
@@ -122,7 +122,7 @@
       "topic": "40",
       "agent": "Copilot",
       "boundary_type": "process",
-      "boundary_notes": "Copilot produced a mechanical 199-file change to add an optional AbortController parameter; despite linking an issue, no maintainer review was provided and the PR was closed. This suggests a process boundary where large but simple changes may still not be accepted without maintainer buy-in.",
+      "boundary_notes": "Copilot produced a mechanical 300-file change to add an optional AbortController parameter; despite linking an issue, no maintainer review was provided and the PR was closed. This suggests a process boundary where large but simple changes may still not be accepted without maintainer buy-in.",
       "success_factors": []
     },
     "maintainer_practices": {
@@ -141,7 +141,7 @@
   },
   "evidence": {
     "core_change_summary": {
-      "description": "Added optional `controller?: AbortController` parameter to `loadFont()` in all 199 individual font module files under `packages/google-fonts/src/`. Each file got a one-line addition to the options type. The core cancellation logic was likely added in a shared module, but only the per-font files appear in the commit stats.",
+      "description": "Added optional `controller?: AbortController` parameter to `loadFont()` in all 300 individual font module files under `packages/google-fonts/src/`. Each file got a one-line addition to the options type. The core cancellation logic was likely added in a shared module, but only the per-font files appear in the commit stats.",
       "files_primary": [
         "packages/google-fonts/src/42dotSans.ts (and 198 other font files)"
       ],
@@ -149,7 +149,7 @@
       "secondary_note": "Only font-specific files are listed in commits; any shared loadFont logic changes are not captured in the file stats.",
       "change_trajectory": [
         "Initial plan commit.",
-        "Second commit: Added AbortController option to 199 font files; each modified with one-line addition."
+        "Second commit: Added AbortController option to 300 font files; each modified with one-line addition."
       ]
     },
     "review_signals": [
@@ -163,7 +163,7 @@
       }
     ],
     "collaboration_trajectory": [
-      "Copilot opened PR linked to issue with AbortController addition across 199 font files.",
+      "Copilot opened PR linked to issue with AbortController addition across 300 font files.",
       "Vercel bot posted deployment previews.",
       "PR closed by maintainer JonnyBurger after ~1.9h without review comments."
     ]

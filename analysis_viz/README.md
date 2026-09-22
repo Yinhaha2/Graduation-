@@ -17,10 +17,10 @@ Numbers below match the current distilled table. Merge-rate charts use the termi
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
 | ≤100 | 490 | **63.1%** |
-| 101–500 | 350 | 53.1% |
-| 501–2k | 196 | 56.6% |
-| 2k–10k | 107 | 61.7% |
-| >10k | 40 | 55.0% |
+| 101–500 | 349 | 53.0% |
+| 501–2k | 197 | 55.8% |
+| 2k–10k | 98 | 61.2% |
+| >10k | 49 | 61.2% |
 
 Median `changes`: merged **143**, closed **170**. Zero-line churn (`changes=0`) is **13** PRs (all closed) and is counted in ≤100. Bins sum to 1183.
 
@@ -36,10 +36,10 @@ Median `changes`: merged **143**, closed **170**. Zero-line churn (`changes=0`) 
 |-----------|--------------|------------|
 | 0 | 13 | 0.0% |
 | 1 | 240 | **65.4%** |
-| 2–5 | 466 | 56.0% |
-| 6–20 | 287 | 56.8% |
-| 21–100 | 114 | 63.2% |
-| >100 | 63 | 65.1% |
+| 2–5 | 464 | 56.0% |
+| 6–20 | 287 | 56.4% |
+| 21–100 | 115 | 63.5% |
+| >100 | 64 | 65.6% |
 
 The 13 zero-file PRs are the same 13 zero-churn closed PRs. Bins sum to 1183.
 

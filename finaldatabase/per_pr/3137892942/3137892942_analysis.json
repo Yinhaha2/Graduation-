@@ -21,28 +21,27 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 11,
-      "file_count": 182,
-      "additions": 861,
-      "deletions": 493,
-      "changes": 1354,
+      "file_count": 232,
+      "additions": 1163,
+      "deletions": 642,
+      "changes": 1805,
       "top1_file": "package-lock.json",
       "top1_changes": 424,
-      "top1_change_ratio": 0.313,
+      "top1_change_ratio": 0.235,
       "files_by_status": {
-        "added": 10,
-        "modified": 172,
-        "removed": 0
+        "modified": 217,
+        "added": 15
       },
       "directory_count": 8,
       "directories": [
         ".changeset",
         ".github",
         ".playwright",
+        "(root)",
         "contributor-docs",
         "e2e",
         "examples",
-        "packages",
-        "(root)"
+        "packages"
       ]
     },
     "collaboration": {
@@ -120,8 +119,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 1354,
-        "interpretation": "At 1354 changed lines but with many secondary files from a merge commit, the core change is a moderate-sized frontend refactor affecting 8 story files. It fits a typical incremental migration task that underwent multiple review iterations and merged successfully."
+        "pr_change_lines": 1805,
+        "interpretation": "At 1805 changed lines but with many secondary files from a merge commit, the core change is a moderate-sized frontend refactor affecting 8 story files. It fits a typical incremental migration task that underwent multiple review iterations and merged successfully."
       },
       "lifecycle": {
         "lifespan_hours": 138.77,

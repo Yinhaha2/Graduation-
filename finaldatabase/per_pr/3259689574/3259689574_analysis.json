@@ -22,19 +22,20 @@
     "change_scale": {
       "commit_count": 10,
       "file_count": 80,
-      "additions": 20239,
-      "deletions": 10239,
-      "changes": 30478,
-      "top1_file": "packages/apollo-forest-run/benchmarks/performance/index.js",
-      "top1_changes": 1310,
-      "top1_change_ratio": 0.043,
+      "additions": 22228,
+      "deletions": 10240,
+      "changes": 32468,
+      "top1_file": "packages/apollo-forest-run/benchmarks/performance/src/descriptor/possibleSelection.js",
+      "top1_changes": 1809,
+      "top1_change_ratio": 0.056,
       "files_by_status": {
-        "added": 65,
-        "modified": 15
+        "added": 72,
+        "modified": 8
       },
-      "directory_count": 2,
+      "directory_count": 3,
       "directories": [
         ".github",
+        "(root)",
         "packages"
       ]
     },
@@ -106,8 +107,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 30478,
-        "interpretation": "At 30478 changed lines, this is a very large addition by absolute volume, mostly adding a new benchmark package with many files, making it a substantial feature PR. It was closed without merge after extensive iterative review and remained incomplete."
+        "pr_change_lines": 32468,
+        "interpretation": "At 32468 changed lines, this is a very large addition by absolute volume, mostly adding a new benchmark package with many files, making it a substantial feature PR. It was closed without merge after extensive iterative review and remained incomplete."
       },
       "lifecycle": {
         "lifespan_hours": 7009.001,

@@ -21,29 +21,30 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 30,
-      "file_count": 176,
-      "additions": 5125,
-      "deletions": 1586,
-      "changes": 292313,
-      "top1_file": "scripts/utils.ts",
-      "top1_changes": 430,
-      "top1_change_ratio": 0.00147,
+      "file_count": 268,
+      "additions": 11092,
+      "deletions": 6051,
+      "changes": 17143,
+      "top1_file": "packages/template/src/lib/stack-app.ts",
+      "top1_changes": 3754,
+      "top1_change_ratio": 0.219,
       "files_by_status": {
-        "added": 8,
-        "modified": 160,
-        "removed": 2,
-        "renamed": 6
+        "modified": 159,
+        "added": 33,
+        "renamed": 75,
+        "removed": 1
       },
-      "directory_count": 8,
+      "directory_count": 9,
       "directories": [
         ".github",
         ".vscode",
+        "(root)",
         "apps",
+        "docker",
         "docs",
         "examples",
         "packages",
-        "scripts",
-        "(root)"
+        "scripts"
       ]
     },
     "collaboration": {
@@ -105,7 +106,7 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 292313,
+        "pr_change_lines": 17143,
         "interpretation": "Despite an enormous total line count due to repeated merge commits, the core performance change is a modest ~344-line refactor in a single backend CRUD file. The PR closed without merge, consistent with CI failure and absence of maintainer engagement."
       },
       "lifecycle": {
@@ -161,7 +162,7 @@
         "packages/stack-shared/src/utils/results.tsx",
         "packages/stack-shared/src/utils/strings.tsx"
       ],
-      "secondary_note": "The vast majority of changed files (176) were introduced by merge commits from the dev branch and are unrelated to the performance change; the core perf refactor is confined to crud.tsx (~344 lines).",
+      "secondary_note": "The vast majority of changed files (268) were introduced by merge commits from the dev branch and are unrelated to the performance change; the core perf refactor is confined to crud.tsx (~344 lines).",
       "change_trajectory": [
         "Initial commit: refactored user creation to direct Prisma operations, avoiding interactive transaction.",
         "Second commit: fixed a syntax error by removing unreachable code.",

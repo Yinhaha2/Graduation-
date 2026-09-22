@@ -21,24 +21,24 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 24,
-      "file_count": 170,
-      "additions": 8005,
-      "deletions": 3093,
-      "changes": 11098,
+      "file_count": 187,
+      "additions": 16196,
+      "deletions": 6099,
+      "changes": 22295,
       "top1_file": "agent/src/flow_generator/protocol_logs/rpc/dubbo/hessian2.rs",
-      "top1_changes": 831,
+      "top1_changes": 1662,
       "top1_change_ratio": 0.075,
       "files_by_status": {
-        "added": 20,
-        "modified": 149,
+        "modified": 177,
+        "added": 9,
         "removed": 1
       },
       "directory_count": 4,
       "directories": [
+        ".github",
         "agent",
-        "server",
         "cli",
-        ".github"
+        "server"
       ]
     },
     "collaboration": {
@@ -97,8 +97,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 11098,
-        "interpretation": "At 11098 changed lines across 170 files, this is an extremely large change driven almost entirely by upstream merges; only a small fraction relates to the multi-sender feature. As a massive PR with no review, closure without merge is expected."
+        "pr_change_lines": 22295,
+        "interpretation": "At 22295 changed lines across 187 files, this is an extremely large change driven almost entirely by upstream merges; only a small fraction relates to the multi-sender feature. As a massive PR with no review, closure without merge is expected."
       },
       "lifecycle": {
         "lifespan_hours": 5599.6,

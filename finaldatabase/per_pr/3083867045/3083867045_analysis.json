@@ -22,19 +22,19 @@
     "change_scale": {
       "commit_count": 2,
       "file_count": 9,
-      "additions": 353,
+      "additions": 351,
       "deletions": 31,
-      "changes": 384,
+      "changes": 382,
       "top1_file": "src/python/gpu_smith_waterman.py",
       "top1_changes": 205,
-      "top1_change_ratio": 0.534,
+      "top1_change_ratio": 0.537,
       "files_by_status": {
-        "added": 6,
-        "modified": 3
+        "modified": 3,
+        "added": 6
       },
       "directory_count": 3,
       "directories": [
-        ".",
+        "(root)",
         "docs",
         "src"
       ]
@@ -99,8 +99,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 384,
-        "interpretation": "At 384 changed lines across 9 files, this is a moderate-sized addition by absolute volume. The change introduces a new GPU‑accelerated module with documentation and tests, consistent with a feature PR that was self‑merged quickly without review."
+        "pr_change_lines": 382,
+        "interpretation": "At 382 changed lines across 9 files, this is a moderate-sized addition by absolute volume. The change introduces a new GPU‑accelerated module with documentation and tests, consistent with a feature PR that was self‑merged quickly without review."
       },
       "lifecycle": {
         "lifespan_hours": 0.058,

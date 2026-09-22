@@ -55,7 +55,7 @@
         "head_ref_force_pushed": 18,
         "committed": 8
       },
-      "lifespan_hours": 918.52,
+      "lifespan_hours": 921.516,
       "first_review_delay_hours": null,
       "review_rounds": 0,
       "has_revert": false,
@@ -102,7 +102,7 @@
         "interpretation": "At 425 changed lines, this is a medium‑sized feature addition. The PR was merged after a long development period with multiple force‑pushes and no peer review, suggesting a maintainer‑original merge without external review."
       },
       "lifecycle": {
-        "lifespan_hours": 918.52,
+        "lifespan_hours": 921.516,
         "fast_merge": false
       }
     },

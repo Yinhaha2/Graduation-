@@ -21,22 +21,27 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 17,
-      "file_count": 170,
-      "additions": 4300,
-      "deletions": 1057,
-      "changes": 5357,
-      "top1_file": "tests/FSharp.Compiler.ComponentTests/EmittedIL/StaticOptimizations/String_Enum.fs.il.bsl",
-      "top1_changes": 543,
-      "top1_change_ratio": 0.101,
+      "file_count": 372,
+      "additions": 22276,
+      "deletions": 15901,
+      "changes": 38177,
+      "top1_file": "setup/resources/eula/VF_EULA.KOR.rtf",
+      "top1_changes": 4840,
+      "top1_change_ratio": 0.127,
       "files_by_status": {
-        "added": 30,
-        "modified": 138,
-        "removed": 2
+        "modified": 306,
+        "added": 60,
+        "removed": 6
       },
-      "directory_count": 5,
+      "directory_count": 10,
       "directories": [
+        ".config",
         ".github",
+        "(root)",
+        "buildtools",
+        "docs",
         "eng",
+        "setup",
         "src",
         "tests",
         "vsintegration"
@@ -115,8 +120,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 5357,
-        "interpretation": "At 5357 changed lines across 170 files, this is a large-scale change by absolute volume, but most churn is from merge commits bringing main branch updates; the core feature is a new MSBuild task (~160 lines) and test infrastructure. The merge outcome is consistent: after extensive human fixes and build integration, it was merged."
+        "pr_change_lines": 38177,
+        "interpretation": "At 38177 changed lines across 372 files, this is a large-scale change by absolute volume, but most churn is from merge commits bringing main branch updates; the core feature is a new MSBuild task (~160 lines) and test infrastructure. The merge outcome is consistent: after extensive human fixes and build integration, it was merged."
       },
       "lifecycle": {
         "lifespan_hours": 1625.93,

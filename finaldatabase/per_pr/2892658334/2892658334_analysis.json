@@ -24,10 +24,10 @@
       "file_count": 34,
       "additions": 3346,
       "deletions": 794,
-      "changes": 7784,
+      "changes": 4140,
       "top1_file": "staticmemory/memory-bucket-optimizer/src/memory_bucket_optimizer.c",
       "top1_changes": 641,
-      "top1_change_ratio": 0.0823,
+      "top1_change_ratio": 0.1548,
       "files_by_status": {
         "added": 34
       },
@@ -102,8 +102,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 7784,
-        "interpretation": "At 7784 changed lines, this is a large addition of a new tool directory with many files. As a new feature performance PR, it was closed — not merged — because the core optimizer logic was incorrect and the maintainer rejected it."
+        "pr_change_lines": 4140,
+        "interpretation": "At 4140 changed lines, this is a large addition of a new tool directory with many files. As a new feature performance PR, it was closed — not merged — because the core optimizer logic was incorrect and the maintainer rejected it."
       },
       "lifecycle": {
         "lifespan_hours": 229.78,

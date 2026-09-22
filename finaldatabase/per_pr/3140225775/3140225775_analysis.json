@@ -24,10 +24,10 @@
       "file_count": 170,
       "additions": 20735,
       "deletions": 27480,
-      "changes": 313231,
+      "changes": 48215,
       "top1_file": "package-lock.json",
       "top1_changes": 38978,
-      "top1_change_ratio": 0.1244,
+      "top1_change_ratio": 0.8084,
       "files_by_status": {
         "added": 8,
         "modified": 122,
@@ -113,8 +113,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 313231,
-        "interpretation": "At 313231 changed lines, this is an enormous change by volume, but the vast majority comes from merge commits that pull in base branch updates. The core performance change is small (~50 lines across a few files). The merge outcome is consistent with a small-step utility addition that survived review."
+        "pr_change_lines": 48215,
+        "interpretation": "At 48215 changed lines, this is an enormous change by volume, but the vast majority comes from merge commits that pull in base branch updates. The core performance change is small (~50 lines across a few files). The merge outcome is consistent with a small-step utility addition that survived review."
       },
       "lifecycle": {
         "lifespan_hours": 340.7,

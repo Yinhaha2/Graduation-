@@ -24,10 +24,10 @@
       "file_count": 5,
       "additions": 516,
       "deletions": 66,
-      "changes": 596,
+      "changes": 582,
       "top1_file": "content/guides/using-explain-analyze-postgresql.md",
       "top1_changes": 566,
-      "top1_change_ratio": 0.95,
+      "top1_change_ratio": 0.9725,
       "files_by_status": {
         "added": 3,
         "modified": 1,
@@ -95,8 +95,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 596,
-        "interpretation": "At 596 changed lines across 5 files, this is a medium-sized documentation addition. The change is concentrated in the new guide markdown file (566 of 596 lines). The lack of any human review or merge activity suggests the PR was closed without acceptance."
+        "pr_change_lines": 582,
+        "interpretation": "At 582 changed lines across 5 files, this is a medium-sized documentation addition. The change is concentrated in the new guide markdown file (566 of 582 lines). The lack of any human review or merge activity suggests the PR was closed without acceptance."
       },
       "lifecycle": {
         "lifespan_hours": 2811.048,

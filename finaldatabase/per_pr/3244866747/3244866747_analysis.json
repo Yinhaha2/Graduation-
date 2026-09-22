@@ -21,24 +21,27 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 11,
-      "file_count": 199,
-      "additions": 10840,
-      "deletions": 2606,
-      "changes": 13446,
-      "top1_file": "apps/web/src/components/ui/streaming/AppMarkdownStreaming/AppMarkdownStreaming.stories.tsx",
-      "top1_changes": 744,
-      "top1_change_ratio": 0.0554,
+      "file_count": 335,
+      "additions": 14678,
+      "deletions": 5091,
+      "changes": 19769,
+      "top1_file": "pnpm-lock.yaml",
+      "top1_changes": 780,
+      "top1_change_ratio": 0.039,
       "files_by_status": {
-        "added": 100,
-        "modified": 85,
-        "removed": 14
+        "modified": 201,
+        "added": 93,
+        "removed": 33,
+        "renamed": 8
       },
-      "directory_count": 4,
+      "directory_count": 6,
       "directories": [
-        ".vscode",
+        "(root)",
         ".github",
+        ".vscode",
         "apps",
-        "packages"
+        "packages",
+        "scripts"
       ]
     },
     "collaboration": {
@@ -109,8 +112,8 @@
     "merge_outcome_context": {
       "outcome": "merged",
       "change_scale_vs_repository": {
-        "pr_change_lines": 13446,
-        "interpretation": "At 13446 changed lines across 199 files, this is a large-scale refactor by absolute volume, but much of the churn comes from merging staging (bringing in many unrelated changes); the core syntax highlight change is concentrated in a few files (~500 lines). The PR resulted in a merged fix after extensive human rework."
+        "pr_change_lines": 19769,
+        "interpretation": "At 19769 changed lines across 335 files, this is a large-scale refactor by absolute volume, but much of the churn comes from merging staging (bringing in many unrelated changes); the core syntax highlight change is concentrated in a few files (~500 lines). The PR resulted in a merged fix after extensive human rework."
       },
       "lifecycle": {
         "lifespan_hours": 95.65,
@@ -172,7 +175,7 @@
         "pnpm-lock.yaml",
         "apps/web/src/components/ui/streaming/StreamingMessageCode/StreamingMessageCode.tsx"
       ],
-      "secondary_note": "199 files changed overall due to merges; core PR changes focused on SyntaxHighlight folder (~500 lines).",
+      "secondary_note": "335 files changed overall due to merges; core PR changes focused on SyntaxHighlight folder (~500 lines).",
       "change_trajectory": [
         "Initial Devin commit: replaced PrismAsyncLight with Shiki, added theme, removed dependency.",
         "Merge staging (multiple times) to stay up-to-date.",

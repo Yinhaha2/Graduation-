@@ -84,15 +84,15 @@ Closed `outcome_reason` raw Top 5:
 | Changes bin | Terminal PRs | Merge rate |
 |-------------|--------------|------------|
 | ≤100 | 490 | 63.1% |
-| 101–500 | 350 | 53.1% |
-| 501–2k | 196 | 56.6% |
-| 2k–10k | 107 | 61.7% |
-| >10k | 40 | 55.0% |
+| 101–500 | 349 | 53.0% |
+| 501–2k | 197 | 55.8% |
+| 2k–10k | 98 | 61.2% |
+| >10k | 49 | 61.2% |
 
 - Median changes — merged: **143**; closed: **170**
 - Zero-line churn (`changes=0`) is counted in ≤100 (13 PRs, all closed).
 - Change-size bins sum to 1183/1183.
-- **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; >10k is near the closed-side average.
+- **No “more changes ⇒ more merges” pattern:** the ≤100-line bin has the highest merge rate; the >10k bin does not exceed it.
 
 ### 3.2 Comment volume (review + PR comments)
 

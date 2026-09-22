@@ -21,22 +21,25 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 6,
-      "file_count": 185,
-      "additions": 1811,
-      "deletions": 1178,
-      "changes": 6455,
+      "file_count": 309,
+      "additions": 2740,
+      "deletions": 1798,
+      "changes": 4538,
       "top1_file": "app/client/cypress/e2e/Regression/ServerSide/Datasources/Snowflake_Basic_Spec.ts",
       "top1_changes": 235,
-      "top1_change_ratio": 0.0364,
+      "top1_change_ratio": 0.052,
       "files_by_status": {
-        "added": 8,
-        "modified": 171,
-        "removed": 6
+        "modified": 280,
+        "added": 19,
+        "removed": 9,
+        "renamed": 1
       },
-      "directory_count": 2,
+      "directory_count": 4,
       "directories": [
         ".github",
-        "app"
+        "app",
+        "deploy",
+        "scripts"
       ]
     },
     "collaboration": {
@@ -94,14 +97,14 @@
     "reproducibility": "insufficient",
     "regression_handling": "reject_close",
     "confidence": "medium",
-    "notes": "Devin replaced moment with date-fns across 185 files without human review or benchmark; closed without merge."
+    "notes": "Devin replaced moment with date-fns across 309 files without human review or benchmark; closed without merge."
   },
   "structured_analysis": {
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 6455,
-        "interpretation": "At 6455 changed lines across 185 files, this is a large-scale refactor by absolute volume. It fits a broad library migration that was closed without merge, likely due to lack of review engagement and insufficient evidence."
+        "pr_change_lines": 4538,
+        "interpretation": "At 4538 changed lines across 309 files, this is a large-scale refactor by absolute volume. It fits a broad library migration that was closed without merge, likely due to lack of review engagement and insufficient evidence."
       },
       "lifecycle": {
         "lifespan_hours": 184.55,
@@ -123,7 +126,7 @@
       "topic": "7",
       "agent": "Devin",
       "boundary_type": "process",
-      "boundary_notes": "Large-scale library migration across 185 files requires significant maintainer validation and performance benchmarking; without human engagement, the PR cannot be merged.",
+      "boundary_notes": "Large-scale library migration across 309 files requires significant maintainer validation and performance benchmarking; without human engagement, the PR cannot be merged.",
       "success_factors": []
     },
     "maintainer_practices": {

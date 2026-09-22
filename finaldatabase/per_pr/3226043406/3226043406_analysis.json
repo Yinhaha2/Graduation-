@@ -21,27 +21,31 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 24,
-      "file_count": 142,
-      "additions": 12110,
-      "deletions": 7676,
-      "changes": 199681,
-      "top1_file": "package-lock.json",
-      "top1_changes": 3826,
-      "top1_change_ratio": 0.0192,
+      "file_count": 392,
+      "additions": 66032,
+      "deletions": 92440,
+      "changes": 158472,
+      "top1_file": "examples/redteam-medical-agent/redteam.yaml",
+      "top1_changes": 66998,
+      "top1_change_ratio": 0.423,
       "files_by_status": {
-        "added": 45,
-        "modified": 95,
-        "removed": 2
+        "added": 127,
+        "modified": 255,
+        "removed": 9,
+        "renamed": 1
       },
-      "directory_count": 7,
+      "directory_count": 10,
       "directories": [
-        ".",
-        "src",
-        "test",
+        "(root)",
+        ".cursor",
+        ".github",
+        ".vscode",
         "drizzle",
         "examples",
+        "scripts",
         "site",
-        "scripts"
+        "src",
+        "test"
       ]
     },
     "collaboration": {
@@ -111,8 +115,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 199681,
-        "interpretation": "At 199,681 changed lines across 142 files, this is a massive change by absolute volume, largely inflated by merge commits that brought unrelated main branch changes. The core refactor involved restructuring every CLI command to use dynamic imports, a large-scale architectural overhaul. The outcome (closed without merge) reflects that the change introduced many functional regressions and required extensive iteration, ultimately not gaining maintainer acceptance."
+        "pr_change_lines": 158472,
+        "interpretation": "At 158472 changed lines across 392 files, this is a massive change by absolute volume, largely inflated by merge commits that brought unrelated main branch changes. The core refactor involved restructuring every CLI command to use dynamic imports, a large-scale architectural overhaul. The outcome (closed without merge) reflects that the change introduced many functional regressions and required extensive iteration, ultimately not gaining maintainer acceptance."
       },
       "lifecycle": {
         "lifespan_hours": 1186.519,

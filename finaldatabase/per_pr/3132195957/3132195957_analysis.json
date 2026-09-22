@@ -21,21 +21,22 @@
   "quantitative_metrics": {
     "change_scale": {
       "commit_count": 3,
-      "file_count": 4,
+      "file_count": 6,
       "additions": 402,
       "deletions": 180,
       "changes": 582,
-      "top1_file": "test/js/web/streams/blob-stream-memory.test.js",
-      "top1_changes": 211,
-      "top1_change_ratio": 0.363,
+      "top1_file": "test_blob_stream_roundtrip.js",
+      "top1_changes": 232,
+      "top1_change_ratio": 0.399,
       "files_by_status": {
         "modified": 3,
-        "added": 1
+        "added": 3
       },
-      "directory_count": 2,
+      "directory_count": 3,
       "directories": [
         "src",
-        "test"
+        "test",
+        "(root)"
       ]
     },
     "collaboration": {

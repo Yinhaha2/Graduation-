@@ -24,10 +24,10 @@
       "file_count": 26,
       "additions": 3322,
       "deletions": 1249,
-      "changes": 5177,
+      "changes": 4571,
       "top1_file": "poetry.lock",
       "top1_changes": 1297,
-      "top1_change_ratio": 0.25,
+      "top1_change_ratio": 0.2837,
       "files_by_status": {
         "added": 10,
         "modified": 14,
@@ -107,8 +107,8 @@
     "merge_outcome_context": {
       "outcome": "closed",
       "change_scale_vs_repository": {
-        "pr_change_lines": 5177,
-        "interpretation": "At 5177 changed lines across 26 files, this is a large-scale feature addition with substantial lockfile and refactoring churn. The closure without merge is consistent with a PR that, despite review feedback fixes, remained inactive and lacked final human approval."
+        "pr_change_lines": 4571,
+        "interpretation": "At 4571 changed lines across 26 files, this is a large-scale feature addition with substantial lockfile and refactoring churn. The closure without merge is consistent with a PR that, despite review feedback fixes, remained inactive and lacked final human approval."
       },
       "lifecycle": {
         "lifespan_hours": 595.4,
