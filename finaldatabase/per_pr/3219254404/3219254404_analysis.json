@@ -47,7 +47,7 @@
       "linked_issue_count": 0
     },
     "timeline": {
-      "event_count": 31,
+      "event_count": 30,
       "event_counts": {
         "assigned": 2,
         "copilot_work_started": 4,
@@ -57,7 +57,7 @@
         "commented": 2,
         "reviewed": 3,
         "copilot_work_finished_failure": 2,
-        "committed": 12
+        "committed": 11
       },
       "lifespan_hours": 9.147,
       "first_review_delay_hours": 2.027,

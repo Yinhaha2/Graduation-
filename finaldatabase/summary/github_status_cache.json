@@ -773,18 +773,7 @@
       "closed_at": "2025-09-03T00:17:33Z",
       "updated_at": "2026-02-18T18:24:46Z",
       "fetched_at": "2026-06-21T12:36:48.456270+00:00"
-    },
-    "3077259471": {
-      "deleted": true,
-      "fetched_at": "2026-07-20T13:34:56.558299+00:00"
-    },
-    "3271610326": {
-      "deleted": true,
-      "fetched_at": "2026-07-20T13:48:39.469624+00:00"
     }
   },
-  "errors": {
-    "3077259471": "404 Client Error: Not Found for url: https://api.github.com/repos/OWASP-BLT/BLT/pulls/4294",
-    "3271610326": "404 Client Error: Not Found for url: https://api.github.com/repos/liuyanghejerry/painttyWidget/pulls/91"
-  }
+  "errors": {}
 }

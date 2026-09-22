@@ -300,8 +300,8 @@
         "rows": 196
       },
       "pr_comments.parquet": {
-        "rows": 1918,
-        "prs_with_any_row": 586
+        "rows": 1993,
+        "prs_with_any_row": 601
       },
       "pr_commit_details.parquet": {
         "rows": 31009,
@@ -312,11 +312,11 @@
         "prs_with_any_row": 1182
       },
       "pr_review_comments_v2.parquet": {
-        "rows": 1439
+        "rows": 1539
       },
       "pr_reviews.parquet": {
-        "rows": 1376,
-        "prs_with_any_row": 343
+        "rows": 1409,
+        "prs_with_any_row": 346
       },
       "pr_timeline.parquet": {
         "rows": 13491,
@@ -327,7 +327,7 @@
         "prs_with_any_row": 203
       },
       "repository.parquet": {
-        "rows": 447
+        "rows": 418
       }
     },
     "pr_count": 1183

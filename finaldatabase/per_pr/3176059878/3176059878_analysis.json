@@ -48,12 +48,12 @@
       "linked_issue_count": 0
     },
     "timeline": {
-      "event_count": 31,
+      "event_count": 30,
       "event_counts": {
         "committed": 9,
         "commented": 4,
         "deployed": 9,
-        "reviewed": 8,
+        "reviewed": 7,
         "assigned": 1
       },
       "lifespan_hours": 143.75,

@@ -216,8 +216,8 @@ Reading: volume is split between technical and process (588 vs 562), but merge r
 | Review count | Terminal PRs | Merge rate |
 |--------------|--------------|------------|
 | 0 | 837 | 53.8% |
-| 1 | 146 | **65.1%** |
-| 2–3 | 97 | 63.9% |
+| 1 | 147 | **64.6%** |
+| 2–3 | 96 | 64.6% |
 | ≥4 | 103 | 63.1% |
 
 ---

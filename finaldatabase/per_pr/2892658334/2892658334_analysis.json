@@ -37,9 +37,9 @@
       ]
     },
     "collaboration": {
-      "review_count": 2,
+      "review_count": 1,
       "review_states": {
-        "COMMENTED": 2
+        "COMMENTED": 1
       },
       "review_comment_count": 1,
       "pr_comment_count": 3,
