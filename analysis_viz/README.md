@@ -49,7 +49,7 @@ The 13 zero-file PRs are the same 13 zero-churn closed PRs. Bins sum to 1183.
 
 **What it shows:** Lifespan (`lifespan_hours`) by outcome, plus merge rate by lifetime bin.
 
-**Phenomenon:** Merged PRs are much shorter-lived; long-open PRs rarely merge (often stale / no interaction, not slow rejection).
+**Phenomenon:** Merged PRs are much shorter-lived. The >7d bin merge rate is 22.0% (48/218). Among the 170 closed PRs in that bin, `silent_abandonment` is 89 and `real_rejection` is 62. Long lifespan is not the same as slow rejection after review, and it is not only abandonment.
 
 | Lifespan | Terminal PRs | Merge rate |
 |----------|--------------|------------|
@@ -119,7 +119,7 @@ Top layers: `application_service` **193 (16.3%)**, `build` **163 (13.8%)**, `fro
 
 **What it shows:** How regression / review issues are handled (`regression_handling`).
 
-**Phenomenon:** Most PRs have no clear regression-handling story; when they do, reject/close dominates over in-PR fix.
+**Phenomenon:** Most rows are `not_applicable`. The label `reject_close` is not `close_motivation=real_rejection`.
 
 | Label | Count | Share |
 |-------|-------|-------|
@@ -176,7 +176,7 @@ Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_
 
 **What it shows:** Stacked outcomes by `reproducibility` label.
 
-**Phenomenon:** Materials are usually weak; “sufficient” is rare. Better material labels correlate with higher merge share, but sample for `sufficient` is tiny.
+**Phenomenon:** Materials are usually weak; `sufficient` is rare (24). Merge rate is 51.0% for `insufficient` (372/730), 74.9% for `partial` (176/235), 67.0% for `unknown` (130/194), and 66.7% for `sufficient` (16/24). The highest rate is `partial`, and the `sufficient` sample is too small to treat as a higher-merge tier.
 
 | reproducibility | Count | Share | Merged / Closed |
 |-----------------|-------|-------|-----------------|

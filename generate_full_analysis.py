@@ -158,34 +158,6 @@ def top_counter(series: pd.Series, n: int = 10) -> str:
     return "\n".join(lines)
 
 
-def classify_merge_reason(reason: str) -> str:
-    r = (reason or "").lower()
-    if "small_scope" in r or "low_risk" in r:
-        return "small_scope_low_risk"
-    if "after_review" in r or "maintainer_fix" in r or "iterative" in r:
-        return "after_review_iteration"
-    if "no_review" in r or "self_merge" in r or "self_approved" in r:
-        return "without_formal_review"
-    return "other"
-
-
-def classify_close_reason(reason: str) -> str:
-    r = (reason or "").lower()
-    if "stale" in r or "inactiv" in r:
-        return "stale_or_inactivity"
-    if "no_review" in r or "self_closed" in r or "author_closed" in r:
-        return "closed_without_meaningful_review"
-    if "functional" in r or "correctness" in r or "bug" in r or "test_failure" in r:
-        return "functional_or_correctness"
-    if "benchmark" in r or "evidence" in r or "missing" in r:
-        return "missing_evidence_or_benchmark"
-    if "scope" in r:
-        return "scope_too_large"
-    if "regression" in r or "no_gain" in r or ("performance" in r and "fail" in r):
-        return "performance_regression_or_no_gain"
-    return "other"
-
-
 def classify_fix_mode(detail: str, trajectory: str) -> str:
     text = f"{detail} {trajectory}".lower()
     if re.search(r"requested changes|changes_requested|review requested|maintainer requested", text):
@@ -208,9 +180,6 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     closed = df[df["status"] == "closed"]
     open_ = df[df["status"] == "open"]
     terminal = df[df["status"].isin(["merged", "closed"])]
-
-    merged_groups = merged["merge_reason_group"].value_counts()
-    closed_groups = closed["close_reason_group"].value_counts()
 
     terminal = terminal.copy()
     terminal["changes_bin"] = assign_bin(terminal["changes"], CHANGES_BINS, CHANGES_LABELS)
@@ -271,7 +240,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     anti_closed = Counter()
     for _, row in df.iterrows():
         for ap in (row["inefficiency_antipattern"] or "").split("|"):
-            if not ap or ap == "none":
+            if not ap or ap in {"none", "unknown"}:
                 continue
             if row["status"] == "merged":
                 anti_merged[ap] += 1
@@ -301,7 +270,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "# Full Analysis — Agent Performance PR Corpus",
         "",
         f"> **最终数据集**：{n} PR，{len(merged)} merged，{len(closed)} closed。合并率 **{pct(len(merged), n)}**（{len(merged)}/{n}）。全库统一口径：仅终态 merged / closed，不含 open。",
-        f"> Built from `finaldatabase/per_pr/{{pr_id}}/{{pr_id}}_analysis.json` (plus 6 root few-shot gold labels).",
+        "> Built from `finaldatabase/per_pr/{pr_id}/{pr_id}_analysis.json`.",
         f"> Wide table: `full_analysis_distilled.csv` (regenerate with `python generate_full_analysis.py`).",
         "",
         "---",
@@ -316,67 +285,44 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "---",
         "",
-        "## 2. Main reasons for merge vs close",
+        "## 2. Merge path and close motivation",
         "",
-        "Grouped from `perf_labels.outcome_reason` (LLM labels in analysis JSON, not raw review text).",
-        "This is a **string-cluster of `outcome_reason`**, not the RQ1.2 behavioral `merged_path` taxonomy (`fast_low_friction` / `reviewed_iteration` / `no_formal_review`). Do not treat the two tables as the same partition.",
+        "Same partition as `RQ_Analysis.md`: `merged_path` on merged PRs, `close_motivation` on closed PRs.",
         "",
-        "### 2.1 Merged — grouped reasons",
+        "### 2.1 `merged_path`",
         "",
-        "| Group | Count | Share of merged |",
-        "|-------|-------|-----------------|",
+        "| merged_path | Count | Share of merged |",
+        "|-------------|-------|-----------------|",
     ]
-    for k, v in merged_groups.items():
-        lines.append(f"| {k} | {v} | {pct(v, len(merged))} |")
+    path_counts = merged["merged_path"].value_counts()
+    for k, v in path_counts.items():
+        lines.append(f"| `{k}` | {int(v)} | {pct(int(v), len(merged))} |")
     lines.append("")
-    lines.append(
-        f"Grouped-reason rows sum to {int(merged_groups.sum())}/{len(merged)}. "
-        "This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review)."
-    )
-    blank_reason = int(merged["outcome_reason"].fillna("").eq("").sum())
-    if blank_reason:
+    lines.append(f"Rows sum to {int(path_counts.sum())}/{len(merged)}.")
+    blank = merged[merged["outcome_reason"].fillna("").astype(str).str.strip().eq("")]
+    if len(blank):
+        bits = ", ".join(f"`{k}` {int(v)}" for k, v in blank["merged_path"].value_counts().items())
         lines.append("")
         lines.append(
-            f"{blank_reason} merged PRs have an empty `outcome_reason`. "
-            "Their GitHub `merged_at` was restored from the status-refresh cache after an earlier pass had stored them as closed, "
-            "so the closed-state reason strings were removed rather than counted as merge reasons."
+            f"{len(blank)} merged PRs have an empty `outcome_reason` "
+            "(status restored to merged from the refresh cache). "
+            f"They are already inside the path table: {bits}."
         )
 
+    mot_counts = closed["close_motivation"].value_counts()
     lines += [
         "",
-        "**Reading (descriptive, not causal):** most merged PRs have an `outcome_reason` that clusters as **small scope / low risk**; next is **after review iteration**. The `without_formal_review` cluster here is an `outcome_reason` string group, not the RQ1.2 path `no_formal_review`.",
+        "### 2.2 `close_motivation`",
         "",
-        "Merged `outcome_reason` raw Top 5:",
+        "Status `closed` is not merged. The rows below split that status; they are not a second corpus.",
         "",
-        "| outcome_reason | Count |",
-        "|----------------|-------|",
+        "| close_motivation | Count | Share of closed |",
+        "|------------------|-------|-----------------|",
     ]
-    for k, v in merged["outcome_reason"].value_counts().head(5).items():
-        lines.append(f"| `{k}` | {v} |")
-
-    lines += [
-        "",
-        "### 2.2 Closed — grouped reasons",
-        "",
-        "| Group | Count | Share of closed |",
-        "|-------|-------|-----------------|",
-    ]
-    for k, v in closed_groups.items():
-        lines.append(f"| {k} | {v} | {pct(v, len(closed))} |")
+    for k, v in mot_counts.items():
+        lines.append(f"| `{k}` | {int(v)} | {pct(int(v), len(closed))} |")
     lines.append("")
-    lines.append(f"Grouped-reason rows sum to {int(closed_groups.sum())}/{len(closed)}.")
-
-    lines += [
-        "",
-        "**Reading:** closed is dominated by **process closes** (stale / no review / author closed), not a single “perf failed” label; among PRs with review text, `functional_failure` and `correctness_edge_case` stand out more.",
-        "",
-        "Closed `outcome_reason` raw Top 5:",
-        "",
-        "| outcome_reason | Count |",
-        "|----------------|-------|",
-    ]
-    for k, v in closed["outcome_reason"].value_counts().head(5).items():
-        lines.append(f"| `{k}` | {v} |")
+    lines.append(f"Rows sum to {int(mot_counts.sum())}/{len(closed)}.")
 
     lines += [
         "",
@@ -438,7 +384,17 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         f"- Median lifespan — closed: **{closed['lifespan_hours'].median():.1f} h** (~{closed['lifespan_hours'].median()/24:.1f} d)",
         f"- Share with `fast_merge=true` — merged: **{merged['fast_merge'].mean()*100:.1f}%**; closed: 0%",
         "",
-        "**Association:** merged PRs are much shorter-lived; long-lived closed PRs often track stale / no interaction, not slow rejection after review.",
+        (
+            lambda lc, ls, lr: (
+                f"**Association:** merged PRs are much shorter-lived. Among closed PRs with lifespan >7d ({lc}), "
+                f"`silent_abandonment` is {ls} and `real_rejection` is {lr}. "
+                "Long lifespan is not the same as slow rejection after review, and it is not only abandonment."
+            )
+        )(
+            int((closed["lifespan_hours"] > 168).sum()),
+            int(((closed["lifespan_hours"] > 168) & (closed["close_motivation"] == "silent_abandonment")).sum()),
+            int(((closed["lifespan_hours"] > 168) & (closed["close_motivation"] == "real_rejection")).sum()),
+        ),
         "",
         "---",
         "",
@@ -456,7 +412,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         f"Top 12 sum to {int(opt_layer.sum())}; the remaining {n - int(opt_layer.sum())} PRs sit in less frequent layers and are not listed.",
         "",
-        "### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none)",
+        "### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none / unknown)",
         "",
         "**Merged top:** " + ", ".join(f"`{k}`({v})" for k, v in anti_merged.most_common(6)),
         "",
@@ -503,7 +459,6 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "Auxiliary signals:",
         f"- `body_has_repro_steps=true`: **{int(df['body_has_repro_steps'].sum())}** ({pct(int(df['body_has_repro_steps'].sum()), n)})",
         f"- `body_has_benchmark_table=true`: **{int(df['body_has_benchmark_table'].sum())}**",
-        f"- `material_reproducibility=sufficient`: **{int((df['material_reproducibility']=='sufficient').sum())}**",
         "",
         "**Material-dimension takeaway:** most PRs are **insufficient or partial**; only ~**2%** reach sufficient.",
         "",
@@ -520,11 +475,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
     fix_total = int((df["regression_handling"] == "fix_in_pr").sum())
     lines += [
         "",
-        f"Rows sum to {int(reg.sum())}/{n}.",
-        "",
-        f"- **`not_applicable`** ({pct(int((df['regression_handling']=='not_applicable').sum()), n)}): no clear regression-handling context (often direct merge or process close).",
-        f"- **`reject_close`** ({pct(int((df['regression_handling']=='reject_close').sum()), n)}): reject/close dominant; mostly among closed.",
-        f"- **`fix_in_pr`** ({fix_total}): fixed in the same PR; `revert` only **{int((df['regression_handling']=='revert').sum())}**.",
+        f"Rows sum to {int(reg.sum())}/{n}. `reject_close` is this field's label, not `close_motivation=real_rejection`.",
         "",
         "### 8.1 Who fixes in `fix_in_pr` (heuristic text labels, not ground truth)",
         "",
@@ -554,7 +505,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "",
         "---",
         "",
-        "## 10. Pass rate, focus distribution, capability boundaries",
+        "## 10. Merge rate, focus distribution, capability boundaries",
         "",
         f"- **Merge rate for AI perf PRs: {100*len(merged)/n:.1f}%** ({len(merged)}/{n}).",
         "",
@@ -595,14 +546,23 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "### 10.4 Strengths vs boundaries (label-based; needs human check)",
         "",
         "**Strengths (merged-side signals)**",
-        "- Small-scope control-flow / compiler constant-folding / build-and-cache changes merge more easily under low review friction.",
-        f"- `technical_stack` dominates ({int((df['boundary_tag']=='technical_stack').sum())}); this is an analytic tag for routine stack-layer work, not a measured agent ability.",
+        (
+            f"- In the lists above, `constant_folding` is {pf_m.get('constant_folding', 0)} merged / "
+            f"{pf_c.get('constant_folding', 0)} closed, and `compiler_optimization` is "
+            f"{pf_m.get('compiler_optimization', 0)} / {pf_c.get('compiler_optimization', 0)}. "
+            f"`cache` is {pf_m.get('cache', 0)} / {pf_c.get('cache', 0)}, "
+            f"`caching` is {pf_m.get('caching', 0)} / {pf_c.get('caching', 0)}, and "
+            f"`build_performance` is {pf_m.get('build_performance', 0)} / {pf_c.get('build_performance', 0)}: "
+            "those three do not have a higher merged count. "
+            f"`technical_stack` is a separate analytic tag; its median `changes` is "
+            f"{df.loc[df['boundary_tag']=='technical_stack', 'changes'].median():.0f}, "
+            f"and `process` is {df.loc[df['boundary_tag']=='process', 'changes'].median():.0f}."
+        ),
+        f"- `technical_stack` ({int((df['boundary_tag']=='technical_stack').sum())}) is an analytic tag for routine stack-layer work, not a measured agent ability.",
         "",
         "**Boundaries (closed / higher-risk signals)**",
-        "- Process closes (stale / no review) dominate and mask true “perf rejected” rates.",
-        f"- `evidence_required` boundaries ({int((df['boundary_tag']=='evidence_required').sum())}) align with `missing_benchmark` / insufficient reproducibility.",
+        f"- Among closed, `silent_abandonment` is {int((closed['close_motivation']=='silent_abandonment').sum())} and `real_rejection` is {int((closed['close_motivation']=='real_rejection').sum())} (same split as §2.2).",
         "- Large churn (>10k changes) does not merge better; `repeated_io` is slightly higher on closed.",
-        "- Without reproducible materials, review is hard to close.",
         "",
         "---",
         "",
@@ -621,7 +581,7 @@ def build_markdown(df: pd.DataFrame, records: list[dict]) -> str:
         "## 12. Data & method notes",
         "",
         "- Stats use **labels and narrative fields** in analysis JSON, not a fresh GitHub event re-crawl.",
-        "- Labels such as `outcome_reason` are LLM-generated (synonym inflation); this report coarsens merge/close groups.",
+        "- `merged_path` / `close_motivation` are the same partition as `RQ_Analysis.md`. `outcome_reason` strings are not a second grouping.",
         "- Fix actor / new-issue-in-fix findings are **text heuristics** — sample-check before paper use.",
         "- Merge rate is merged / corpus n on the terminal snapshot (open PRs are not in this dataset).",
         "- `merged_at` / `closed_at` on the formerly-open cohort follow `summary/github_status_cache.json` (the refresh log). Where that cache showed a merge the master had missed, status is merged and the old closed-state `outcome_reason` is left empty.",
@@ -635,10 +595,33 @@ def main() -> None:
     if not records:
         raise SystemExit("No analysis JSON files found.")
 
-    df = pd.DataFrame([flatten_record(d) for d in records])
-    df["merge_reason_group"] = df["outcome_reason"].fillna("").map(classify_merge_reason)
-    df["close_reason_group"] = df["outcome_reason"].fillna("").map(classify_close_reason)
-    df.to_csv(OUT_CSV, index=False, encoding="utf-8")
+    from generate_rq_analysis import (
+        classify_close_motivation,
+        classify_merged_path,
+        enrich_row,
+    )
+
+    df = pd.DataFrame([enrich_row(d, flatten_record(d)) for d in records])
+    merged_mask = df["status"].eq("merged")
+    closed_mask = df["status"].eq("closed")
+    df["merged_path"] = pd.NA
+    df["close_motivation"] = pd.NA
+    df.loc[merged_mask, "merged_path"] = df.loc[merged_mask].apply(classify_merged_path, axis=1)
+    df.loc[closed_mask, "close_motivation"] = df.loc[closed_mask].apply(
+        classify_close_motivation, axis=1
+    )
+    drop_cols = [
+        c
+        for c in (
+            "rejection_signals",
+            "concern_detail",
+            "changes_requested_n",
+            "review_states_json",
+            "collaboration_trajectory",
+        )
+        if c in df.columns
+    ]
+    df.drop(columns=drop_cols).to_csv(OUT_CSV, index=False, encoding="utf-8")
 
     md = build_markdown(df, records)
     OUT_MD.write_text(md, encoding="utf-8")

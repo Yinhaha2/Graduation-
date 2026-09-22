@@ -452,6 +452,19 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         .query("n >= 20")
         .sort_values("merge_rate", ascending=False)
     )
+    gt7 = t2[t2["lifespan_bin"] == ">7d"]
+    gt7_m = int((gt7["status"] == "merged").sum())
+    big = t2[t2["changes_bin"] == ">10k"]
+    big_m = int((big["status"] == "merged").sum())
+    suff_n = int((df["reproducibility"] == "sufficient").sum())
+
+    def _bound_mc(tag: str) -> tuple[int, int]:
+        sub = terminal[terminal["boundary_tag"] == tag]
+        return int((sub["status"] == "merged").sum()), len(sub)
+
+    ts_m, ts_n = _bound_mc("technical_stack")
+    pr_m, pr_n = _bound_mc("process")
+    ev_m, ev_n = _bound_mc("evidence_required")
 
     def evidence_rate(sub: pd.DataFrame, col: str) -> float:
         return float(sub[col].fillna(False).mean()) if len(sub) else 0.0
@@ -496,13 +509,36 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
     ex_abn = pick_examples(
         ranked_closed[ranked_closed["close_motivation"] == "silent_abandonment"].sort_values("_score", ascending=False)
     )
+    reason_l = ranked_rev["outcome_reason"].fillna("").str.lower()
     ex_func = pick_examples(
-        ranked_rev[ranked_rev["failure_type"] == "functional_or_correctness"].sort_values("_score", ascending=False)
+        ranked_rev[
+            (ranked_rev["failure_type"] == "functional_or_correctness")
+            & (ranked_rev["close_motivation"] == "real_rejection")
+            & reason_l.str.contains("functional|correctness|incorrect|bug|regression")
+        ].sort_values("_score", ascending=False)
     )
     ex_design = pick_examples(
-        ranked_rev[ranked_rev["failure_type"] == "design_or_approach"].sort_values("_score", ascending=False)
+        ranked_rev[
+            (ranked_rev["failure_type"] == "design_or_approach")
+            & (ranked_rev["close_motivation"] == "real_rejection")
+            & (ranked_rev["boundary_tag"] != "evidence_required")
+            & reason_l.str.contains("design|approach")
+            & ~reason_l.str.contains("evidence|benchmark|perf_gain|abandon|stale")
+        ].sort_values("_score", ascending=False)
     )
-    ex_ev = pick_examples(closed[closed["boundary_tag"] == "evidence_required"])
+    ev_reason = ranked_closed["outcome_reason"].fillna("").str.lower()
+    ex_ev = pick_examples(
+        ranked_closed[
+            (ranked_closed["boundary_tag"] == "evidence_required")
+            & (ranked_closed["close_motivation"] == "real_rejection")
+            & (
+                ranked_closed["blocking"].fillna(False).astype(bool)
+                | (ranked_closed["review_count"].fillna(0) > 0)
+            )
+            & ev_reason.str.contains("benchmark|evidence|repro")
+            & ~ev_reason.str.contains("abandon|stale|self_closed|author_closed")
+        ].sort_values("_score", ascending=False)
+    )
 
     metrics = {
         "n": n,
@@ -619,6 +655,31 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "bot_or_auto_stale": "bot / 自动过期关闭",
     }
 
+    rate_hi = agent_tbl.loc[agent_tbl["merge_rate"].idxmax()]
+    rate_lo = agent_tbl.loc[agent_tbl["merge_rate"].idxmin()]
+    agent_ratio = (
+        float(rate_hi["merge_rate"]) / float(rate_lo["merge_rate"]) if float(rate_lo["merge_rate"]) else 0.0
+    )
+    top3 = opt_layer.head(3)
+    top3_n = int(top3.sum())
+    top3_txt = "、".join(f"`{k}`（{int(v)}）" for k, v in top3.items())
+    small = t2[t2["changes_bin"] == "≤100"]
+    small_n = int(len(small))
+    small_m = int((small["status"] == "merged").sum())
+    ts_med = float(terminal.loc[terminal["boundary_tag"] == "technical_stack", "changes"].median())
+    pr_med = float(terminal.loc[terminal["boundary_tag"] == "process", "changes"].median())
+    proc_closed = closed[closed["boundary_tag"] == "process"]
+    proc_silent = int((proc_closed["close_motivation"] == "silent_abandonment").sum())
+    proc_real = int((proc_closed["close_motivation"] == "real_rejection").sum())
+    proc_unclear = int((proc_closed["close_motivation"] == "unclear").sum())
+    proc_other = int((proc_closed["close_motivation"] == "other_process").sum())
+    proc_rev0 = int((terminal.loc[terminal["boundary_tag"] == "process", "review_count"].fillna(0) == 0).sum())
+    rest = closed[~closed["is_reviewed_closed"]]
+    rest_counts = rest["close_motivation"].value_counts()
+
+    def _pf(counter: Counter, label: str) -> int:
+        return int(counter.get(label, 0))
+
     lines = [
         "# RQ 分析报告",
         "",
@@ -678,12 +739,16 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         f"上表是频次 Top 12（合计 {int(opt_layer.sum())}），其余层面 {n - int(opt_layer.sum())} 条未列，不是 1183 条的穷尽表。",
         "",
         f"**RQ1.1 小结**：终态语料里合入占 {pct(len(merged), n)}、被拒（closed）占 {pct(len(closed), n)}。"
-        "不同 Agent 的合入机会差一倍以上；改动主要落在应用服务、构建和前端。",
+        f"{rate_hi['agent']} 合并率 {pct(int(rate_hi['merged']), int(rate_hi['n']))}"
+        f"（{int(rate_hi['merged'])}/{int(rate_hi['n'])}），"
+        f"{rate_lo['agent']} 为 {pct(int(rate_lo['merged']), int(rate_lo['n']))}"
+        f"（{int(rate_lo['merged'])}/{int(rate_lo['n'])}），前者约为后者的 {agent_ratio:.1f} 倍。"
+        f"频次最高的三个 optimization_layer 是 {top3_txt}，合计 {top3_n}/{n}（{pct(top3_n, n)}），不是全库多数。",
         "",
         "### RQ1.2 Merged 的真实情况如何划分",
         "",
-        "合入不是单一路径。按**行为规则**划分（优先「经审查迭代」，其次「极速低摩擦」，再次「无 formal review」）。"
-        "这套 `merged_path` 与 `FullAnalysis.md` §2 的 `outcome_reason` 粗分组不是同一张表，不能把 small_scope 计数和快合并计数加在一起或互相替代。",
+        "合入不是单一路径。按行为规则划分（优先经审查迭代，其次低摩擦快合并，再次无 formal review 且非极速）。"
+        "与 `FullAnalysis.md` §2 使用同一套 `merged_path`。",
         "",
         md_table(
             ["Merged 路径", "数量", "占 merged"],
@@ -693,7 +758,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
             ],
         ),
         "",
-        f"上表合计 {int(path_counts.sum())}/{len(merged)}。规则见附录 A，不要和 FullAnalysis §2 的 small_scope 分组混用。",
+        f"上表合计 {int(path_counts.sum())}/{len(merged)}。规则见附录 A。`fast_merge=true` 是另一指标，不与本表路径数相加。",
         "",
         "配套行为事实：",
         "",
@@ -718,7 +783,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         fmt_examples(ex_rev),
         "",
-        "**小结**：Merged 的主流是短命、小范围、常常没有 formal review 的低摩擦合入；"
+        "**小结**：Merged 的主流是短命、改动较小、常常 `review_count=0` 的低摩擦合入；"
         "经审查来回修改再合入的是少数路径。把「合入」理解成「高质量审查通过」会严重高估审查深度。",
         "",
         "### RQ1.3 Closed 的真实情况如何划分",
@@ -732,14 +797,14 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
             [
                 [
                     "真正拒绝 real rejection",
-                    "有否决信号：blocking / CHANGES_REQUESTED / 技术或设计类标签",
+                    "有否决信号：blocking / CHANGES_REQUESTED / 技术、设计、证据或 CI 类标签",
                     int(mot_counts.get("real_rejection", 0)),
                     pct(int(mot_counts.get("real_rejection", 0)), len(closed)),
                     pct(int(mot_counts.get("real_rejection", 0)), n),
                 ],
                 [
                     "沉默遗弃 silent abandonment",
-                    "关闭但无明确技术/设计否决：stale、无审查、作者放弃、自动过期",
+                    "关闭但无上述否决信号：stale、无审查、作者放弃、自动过期",
                     int(mot_counts.get("silent_abandonment", 0)),
                     pct(int(mot_counts.get("silent_abandonment", 0)), len(closed)),
                     pct(int(mot_counts.get("silent_abandonment", 0)), n),
@@ -793,7 +858,12 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         f"Closed 中 `blocking=true` 仅 {blocking_closed} 条；"
         f"「真正被审过或有否决信号」的子集 {len(reviewed_closed)} 条（{pct(len(reviewed_closed), len(closed))} of closed）。"
-        "其余多数被拒发生在几乎没有审查文本的情况下——这是遗弃，不是书面 reject，但终态仍是未合入。",
+        f"不在这 {len(reviewed_closed)} 条里的有 {len(rest)} 条："
+        f"沉默遗弃 {int(rest_counts.get('silent_abandonment', 0))}，"
+        f"真正拒绝 {int(rest_counts.get('real_rejection', 0))}，"
+        f"其他流程 {int(rest_counts.get('other_process', 0))}，"
+        f"原因不明 {int(rest_counts.get('unclear', 0))}。"
+        "这四类都是终态未合入，不是同一种关闭机制。",
         "",
         "**真正拒绝示例：**",
         "",
@@ -804,7 +874,9 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         fmt_examples(ex_abn),
         "",
         "**小结**：研究对照里 closed 就是被拒。"
-        "被拒再分成真正拒绝、沉默遗弃、其他流程、原因不明四类；主导机制是沉默遗弃，真正技术/设计否决大约占被拒的三分之一。",
+        f"被拒再分成真正拒绝、沉默遗弃、其他流程、原因不明四类；主导机制是沉默遗弃，"
+        f"真正拒绝占被拒的 {pct(int(mot_counts.get('real_rejection', 0)), len(closed))}"
+        f"（{int(mot_counts.get('real_rejection', 0))}/{len(closed)}）。",
         "",
         "---",
         "",
@@ -872,7 +944,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                     f"{closed['comment_total'].median():.0f}",
                 ],
                 [
-                    "无 formal review",
+                    "review_count=0",
                     pct(merged_no_review, len(merged)),
                     pct(int((closed['review_count'].fillna(0) == 0).sum()), len(closed)),
                 ],
@@ -946,18 +1018,23 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         ),
         "",
         "**放行依据**：可观测时以静态读码为主，CI 自动化是少数，profiler / load_test / benchmark 几乎看不见。"
-        f"`technical_stack` 合并率 {pct(float(bound_term.loc['technical_stack']['merge_rate']), 1) if 'technical_stack' in bound_term.index else 'n/a'}，"
-        "小补丁更容易过。成功 PR 并不更常带 benchmark 表——材料不是这条快路径的通行证。",
+        f"`technical_stack` 合并率 {pct(ts_m, ts_n)}（{ts_m}/{ts_n}）。"
+        f"changes ≤100 档合并率 {pct(small_m, small_n)}（{small_m}/{small_n}），是五个规模档里最高的一档。"
+        f"这两件事不要写成同一件事：`technical_stack` 的 changes 中位数是 {ts_med:.0f}，`process` 是 {pr_med:.0f}。"
+        "成功 PR 并不更常带 benchmark 表。",
         "",
         "**为何不审**：无人审既可以合入也可以关闭。"
         f"merged 中 {pct(merged_no_review, len(merged))}、closed 中 "
-        f"{pct(int((closed['review_count'].fillna(0) == 0).sum()), len(closed))} 无 formal review。"
+        f"{pct(int((closed['review_count'].fillna(0) == 0).sum()), len(closed))} 为 `review_count=0`。"
         f"`process` 边界合并率只有 {pct(float(bound_term.loc['process']['merge_rate']), 1) if 'process' in bound_term.index else 'n/a'}；"
         f"{pct(no_issue_n, n)} 的 PR 没有关联 Issue，优化常是 Agent 主动发起，不在维护者既有队列里。"
-        "存活超过 7 天的合并率掉到约 17%。这些更像评审注意力和流程错配，而不是「质量门槛把差 PR 拦下来」。",
+        f"存活超过 7 天的合并率掉到 {pct(gt7_m, len(gt7))}（{gt7_m}/{len(gt7)}）。"
+        "这些更像评审注意力和流程错配，而不是「质量门槛把差 PR 拦下来」。",
         "",
-        "**小结**：维护者放行主要靠「改动小、读得懂、没把 CI 搞红」；"
-        "大量 PR 无人审，成功与失败都发生在低注意力环境中。把这些 PR 留在未合入状态的，经常不是审查标准本身，而是有没有人愿意看。",
+        "**小结**：可观测的排查里，非 unknown 的最大项是 `code_reading`。"
+        "数据集没有「CI 没变红才放行」这一计数。"
+        "大量 PR 的 `review_count=0`，合入和关闭都出现在 formal review 为零的 PR 上。"
+        "未合入的机制划分见 RQ1.3，不是一条测得的放行规则。",
         "",
         "---",
         "",
@@ -1015,7 +1092,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         fmt_examples(ex_design),
         "",
-        "反模式（`inefficiency_antipattern` ≠ none）只作伴随现象：",
+        "反模式（`inefficiency_antipattern` ≠ none / unknown）只作伴随现象：",
         "",
         "- Merged 侧 Top：",
         ", ".join(f"`{k}`({v})" for k, v in anti_m.most_common(6)) or "（几乎全为 none）",
@@ -1026,7 +1103,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "两侧都是 `repeated_io` 最多，数量接近，**不能当成主拒因**。",
         "",
         "**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。"
-        "静默 maintainer 关闭仍需单独看待，它介于拒绝和遗弃之间。",
+        "静默 maintainer 关闭仍放在沉默遗弃里看，不单列一类。",
         "",
         "### RQ3.2 证据生成、流程协作与同 PR 修复分别暴露了哪些能力边界？",
         "",
@@ -1040,7 +1117,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                     {
                         "technical_stack": "常规技术栈改动（分析标签，不是能力测定）",
                         "process": "协作 / 审查 / 流程推进",
-                        "evidence_required": "维护者要求可复现性能证据",
+                        "evidence_required": "需要性能证据（分析标签）",
                         "unknown": "未归入以上三档",
                     }.get(str(idx), str(idx)),
                     int(r["n"]),
@@ -1081,8 +1158,10 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "**小结**：",
         "",
-        "- **证据生成**：一进入 `evidence_required`，合并率掉到约一成；sufficient 材料只有约 2%。",
-        "- **流程协作**：process 边界合入率大约只有 technical_stack 的一半；closed 里沉默遗弃仍是大头。",
+        f"- **证据生成**：一进入 `evidence_required`，合并率掉到 {pct(ev_m, ev_n)}（{ev_m}/{ev_n}）；"
+        f"sufficient 材料只有 {pct(suff_n, n)}（{suff_n}/{n}）。",
+        f"- **流程协作**：process 边界合入率是 {pct(pr_m, pr_n)}（{pr_m}/{pr_n}），"
+        f"约为 technical_stack（{pct(ts_m, ts_n)}，{ts_m}/{ts_n}）的一半；closed 里沉默遗弃仍是大头。",
         "- **同 PR 修复**：能在原 PR 里把问题修完的是少数，且过半要人类主导。现有启发式并不支持把 CHANGES_REQUESTED 主要写成 Agent 独立消化。",
         "",
         "---",
@@ -1098,7 +1177,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
                     "寿命",
                     f"中位 {merged['lifespan_hours'].median():.3f} h，fast_merge {pct(fast_n, len(merged))}",
                     f"中位 {closed['lifespan_hours'].median():.1f} h，fast_merge 0",
-                    "成功是快路径",
+                    "合入侧寿命更短",
                 ],
                 [
                     "规模",
@@ -1129,7 +1208,12 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "- Closed：",
         ", ".join(f"`{k}`({v})" for k, v in pf_c.most_common(8)),
         "",
-        "成功侧更偏常量折叠、编译优化、缓存；关闭侧更常见包体积、复杂构建、code splitting。",
+        f"列出的 perf_focus 里，`constant_folding` 为 merged {_pf(pf_m, 'constant_folding')} / closed {_pf(pf_c, 'constant_folding')}，"
+        f"`compiler_optimization` 为 merged {_pf(pf_m, 'compiler_optimization')} / closed {_pf(pf_c, 'compiler_optimization')}。"
+        f"`cache` 为 merged {_pf(pf_m, 'cache')} / closed {_pf(pf_c, 'cache')}，"
+        f"`caching` 为 merged {_pf(pf_m, 'caching')} / closed {_pf(pf_c, 'caching')}，这两项不是成功侧更高。"
+        f"关闭侧 `bundle_size_reduction` 为 closed {_pf(pf_c, 'bundle_size_reduction')}（merged {_pf(pf_m, 'bundle_size_reduction')}），"
+        f"`code_splitting` 为 closed {_pf(pf_c, 'code_splitting')}（merged {_pf(pf_m, 'code_splitting')}）。",
         "",
         "### RQ4.2 合入和关闭在 AI 能力边界上有哪些区别？是否影响合并结果？",
         "",
@@ -1147,9 +1231,11 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "**现象（描述性）**：能力边界和合并结果同向变化。",
         "",
-        "- 落在 `technical_stack` 的 PR 合并率接近八成：小范围、可模板化的缓存 / 常量 / 编译类改动。",
-        "- 落在 `process` 的 PR 只有约三成合入：无人审、stale、作者放弃。这是协作边界，不一定是代码写错。",
-        "- 落在 `evidence_required` 的 PR 合并率约一成：维护者要数字，Agent 给的是叙述。",
+        f"- `technical_stack` 合并率 {pct(ts_m, ts_n)}（{ts_m}/{ts_n}）。该标签不是「小范围缓存、常量折叠或编译改动」的同义词：这组 changes 中位数是 {ts_med:.0f}，`process` 组是 {pr_med:.0f}。",
+        f"- `process` 合并率 {pct(pr_m, pr_n)}（{pr_m}/{pr_n}）。{pr_n} 条里有 {pr_m} 条已合入。"
+        f"未合入的 {pr_n - pr_m} 条里，沉默遗弃 {proc_silent}、真正拒绝 {proc_real}、原因不明 {proc_unclear}、其他流程 {proc_other}。"
+        f"`review_count=0` 为 {proc_rev0}/{pr_n}。不要把整个 `process` 标签读成「都是无人审后的作者放弃」。",
+        f"- 落在 `evidence_required` 的 PR 合并率是 {pct(ev_m, ev_n)}（{ev_m}/{ev_n}）。",
         "- 层面信号一致但样本更小：`compiler` / `compiler_backend` 合入高，`runtime_vm` 明显低。",
         "",
         "因此：**存在「能力边界与合并结果一起分层」的现象**，但还不是「边界导致失败」的因果证明。"
@@ -1161,10 +1247,10 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "**路径 A — 已经在走的低摩擦合入（RQ1.2 / RQ2）**",
         "",
-        "- 保持原子补丁，优先 `technical_stack` 上的缓存、常量折叠、构建层改动。",
+        "- 保持单次改动可以单独审查。不要把 `boundary_tag=technical_stack` 当成缓存、常量折叠或构建层的同义词。",
         "- 降低维护者注意力成本：标题/正文写清「改了什么、为什么安全」，而不是先堆 benchmark。",
         "- 无 Issue 的主动优化不要默认丢进需要深度审的队列；需要仓库侧的分诊（bot 标 `small/perf-safe`）。",
-        "- **不要**强制所有 PR <100 行：≤100 行合并率最高，但大 PR 仍有约一半合入。",
+        f"- **不要**强制所有 PR <100 行：≤100 行合并率最高，但 >10k 行档仍有 {pct(big_m, len(big))}（{big_m}/{len(big)}）合入。",
         "",
         "**路径 B — 需要被认真审的难 PR（RQ1.3 / RQ3）**",
         "",
@@ -1180,10 +1266,12 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "## 总结",
         "",
-        "1. **RQ1**：语料为终态 merged / closed。Closed 即被拒，内部以沉默遗弃为主，真正技术/设计拒绝约占被拒三分之一。Merged 以低摩擦快合并为主。Agent 之间合并率差一倍以上。",
-        "2. **RQ2**：成功 PR 极短命、常无审查；放行靠读码和小补丁，不靠 profiler。无人审同时出现在合入和关闭两侧，更像注意力 / 流程问题。",
+        f"1. **RQ1**：语料为终态 merged / closed。Closed 即被拒，内部以沉默遗弃为主，真正拒绝占被拒的 {pct(int(mot_counts.get('real_rejection', 0)), len(closed))}（{int(mot_counts.get('real_rejection', 0))}/{len(closed)}）。Merged 以低摩擦快合并为主。"
+        f"{rate_hi['agent']} 合并率 {pct(int(rate_hi['merged']), int(rate_hi['n']))}（{int(rate_hi['merged'])}/{int(rate_hi['n'])}），"
+        f"{rate_lo['agent']} 为 {pct(int(rate_lo['merged']), int(rate_lo['n']))}（{int(rate_lo['merged'])}/{int(rate_lo['n'])}），前者约为后者的 {agent_ratio:.1f} 倍。",
+        "2. **RQ2**：成功 PR 寿命更短，且常 `review_count=0`。可观测的排查以 `code_reading` 为主，profiler / load_test / benchmark 很少。`review_count=0` 同时出现在合入和关闭两侧。`technical_stack` 的高合并率与 ≤100 行档的高合并率是两项分开的描述。",
         "3. **RQ3**：真正被审的失败以正确性、设计、CI 为主；证据边界和流程边界比「又套了一层循环」更能解释合不进去；同 PR 修复少且依赖人类。",
-        "4. **RQ4**：寿命、边界类型、优化层面差异清楚，材料差异方向与「多写 benchmark 就能合」相反。改进必须分快路径和难路径。",
+        "4. **RQ4**：寿命、边界类型、优化层面差异清楚，材料差异方向与「多写 benchmark 就能合」相反。改进必须分低摩擦合入和难 PR。",
         "",
         "## 附录 A 分类规则（可复现）",
         "",
@@ -1214,8 +1302,7 @@ def build_report(df: pd.DataFrame, records: list[dict]) -> tuple[str, dict]:
         "",
         "1. 标签来自 LLM 分析 JSON，建议对 real rejection / silent abandonment 各抽检数十条 `rejection_signals`。",
         "2. Agent 差异、边界与合并率、benchmark 与合并率都是相关不是因果。合并率分母为最终数据集 n。",
-        "3. `fix_in_pr` 主体与 `antipattern_in_fix` 是启发式。",
-        "4. `FullAnalysis.md` §2 的 `outcome_reason` 粗分组（如 small_scope_low_risk）与本报告 RQ1.2 的 `merged_path`（如低摩擦快合并）是两套规则，数字不可互换。两侧都从同一终态 1183 条聚合。",
+        "3. `fix_in_pr` 主体与 `antipattern_in_fix` 是启发式。`FullAnalysis.md` §2 使用本附录的 `merged_path` / `close_motivation`。",
         "",
     ]
 

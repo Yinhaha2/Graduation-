@@ -59,11 +59,11 @@ n≥30 的断层仍然清楚：OpenAI_Codex 合并率最高，Devin / Copilot �
 
 上表是频次 Top 12（合计 865），其余层面 318 条未列，不是 1183 条的穷尽表。
 
-**RQ1.1 小结**：终态语料里合入占 58.7%、被拒（closed）占 41.3%。不同 Agent 的合入机会差一倍以上；改动主要落在应用服务、构建和前端。
+**RQ1.1 小结**：终态语料里合入占 58.7%、被拒（closed）占 41.3%。OpenAI_Codex 合并率 73.1%（460/629），Devin 为 32.9%（74/225），前者约为后者的 2.2 倍。频次最高的三个 optimization_layer 是 `application_service`（193）、`build`（163）、`frontend_ui`（135），合计 491/1183（41.5%），不是全库多数。
 
 ### RQ1.2 Merged 的真实情况如何划分
 
-合入不是单一路径。按**行为规则**划分（优先「经审查迭代」，其次「极速低摩擦」，再次「无 formal review」）。这套 `merged_path` 与 `FullAnalysis.md` §2 的 `outcome_reason` 粗分组不是同一张表，不能把 small_scope 计数和快合并计数加在一起或互相替代。
+合入不是单一路径。按行为规则划分（优先经审查迭代，其次低摩擦快合并，再次无 formal review 且非极速）。与 `FullAnalysis.md` §2 使用同一套 `merged_path`。
 
 | Merged 路径 | 数量 | 占 merged |
 |---|---|---|
@@ -71,7 +71,7 @@ n≥30 的断层仍然清楚：OpenAI_Codex 合并率最高，Devin / Copilot �
 | 经 review 迭代后合入 | 155 | 22.3% |
 | 无 formal review 合入（非极速） | 32 | 4.6% |
 
-上表合计 694/694。规则见附录 A，不要和 FullAnalysis §2 的 small_scope 分组混用。
+上表合计 694/694。规则见附录 A。`fast_merge=true` 是另一指标，不与本表路径数相加。
 
 配套行为事实：
 
@@ -103,7 +103,7 @@ n≥30 的断层仍然清楚：OpenAI_Codex 合并率最高，Devin / Copilot �
 - [3083186670](https://github.com/dotnet/fsharp/pull/18592) `Copilot` — Auto-generate ILLink.Substitutions.xml to Remove F# Metadata Resources  
   `outcome_reason=merged_after_review_fix`
 
-**小结**：Merged 的主流是短命、小范围、常常没有 formal review 的低摩擦合入；经审查来回修改再合入的是少数路径。把「合入」理解成「高质量审查通过」会严重高估审查深度。
+**小结**：Merged 的主流是短命、改动较小、常常 `review_count=0` 的低摩擦合入；经审查来回修改再合入的是少数路径。把「合入」理解成「高质量审查通过」会严重高估审查深度。
 
 ### RQ1.3 Closed 的真实情况如何划分
 
@@ -113,8 +113,8 @@ Closed=被拒 是状态层定义，不是「维护者写了拒绝意见」。被
 
 | Closed 内部类型（均属被拒） | 操作定义 | 数量 | 占 closed | 占 n |
 |---|---|---|---|---|
-| 真正拒绝 real rejection | 有否决信号：blocking / CHANGES_REQUESTED / 技术或设计类标签 | 154 | 31.5% | 13.0% |
-| 沉默遗弃 silent abandonment | 关闭但无明确技术/设计否决：stale、无审查、作者放弃、自动过期 | 273 | 55.8% | 23.1% |
+| 真正拒绝 real rejection | 有否决信号：blocking / CHANGES_REQUESTED / 技术、设计、证据或 CI 类标签 | 154 | 31.5% | 13.0% |
+| 沉默遗弃 silent abandonment | 关闭但无上述否决信号：stale、无审查、作者放弃、自动过期 | 273 | 55.8% | 23.1% |
 | 其他流程 other_process | 被替代 PR、误提交撤回、重复提交等（仍未合入） | 26 | 5.3% | 2.2% |
 | 原因不明 unclear | 现有文本不足以归入以上三类（仍未合入） | 36 | 7.4% | 3.0% |
 | **closed 合计（被拒）** | 终态未合入 | 489 | 100% | 41.3% |
@@ -132,7 +132,7 @@ Closed=被拒 是状态层定义，不是「维护者写了拒绝意见」。被
 | 长期不活跃后关闭 | 58 | 21.2% | 11.9% |
 | bot / 自动过期关闭 | 38 | 13.9% | 7.8% |
 
-Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」的子集 182 条（37.2% of closed）。其余多数被拒发生在几乎没有审查文本的情况下——这是遗弃，不是书面 reject，但终态仍是未合入。
+Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」的子集 182 条（37.2% of closed）。不在这 182 条里的有 307 条：沉默遗弃 249，真正拒绝 21，其他流程 18，原因不明 19。这四类都是终态未合入，不是同一种关闭机制。
 
 **真正拒绝示例：**
 
@@ -152,7 +152,7 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 - [3240409748](https://github.com/mochilang/mochi/pull/9390) `OpenAI_Codex` — Improve Zig backend constant folding  
   `outcome_reason=author_self_close`；拒因摘要：No review rejection; author self-closed.
 
-**小结**：研究对照里 closed 就是被拒。被拒再分成真正拒绝、沉默遗弃、其他流程、原因不明四类；主导机制是沉默遗弃，真正技术/设计否决大约占被拒的三分之一。
+**小结**：研究对照里 closed 就是被拒。被拒再分成真正拒绝、沉默遗弃、其他流程、原因不明四类；主导机制是沉默遗弃，真正拒绝占被拒的 31.5%（154/489）。
 
 ---
 
@@ -188,7 +188,7 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 | 存活时间中位数 | 0.122 h | 37.6 h |
 | changes 中位数 | 143 | 170 |
 | 评论数中位数 | 0 | 2 |
-| 无 formal review | 66.3% | 77.1% |
+| review_count=0 | 66.3% | 77.1% |
 
 成功侧常见 `perf_focus`：
 `constant_folding`(24), `compiler_optimization`(21), `benchmark_infrastructure`(11), `cache`(8), `lazy_loading`(7), `compile_time_optimization`(7), `build_performance`(6), `caching`(6)
@@ -237,11 +237,11 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 | `unknown` | 194 | 16.4% |
 | `sufficient` | 24 | 2.0% |
 
-**放行依据**：可观测时以静态读码为主，CI 自动化是少数，profiler / load_test / benchmark 几乎看不见。`technical_stack` 合并率 80.4%，小补丁更容易过。成功 PR 并不更常带 benchmark 表——材料不是这条快路径的通行证。
+**放行依据**：可观测时以静态读码为主，CI 自动化是少数，profiler / load_test / benchmark 几乎看不见。`technical_stack` 合并率 80.4%（473/588）。changes ≤100 档合并率 63.1%（309/490），是五个规模档里最高的一档。这两件事不要写成同一件事：`technical_stack` 的 changes 中位数是 192，`process` 是 145。成功 PR 并不更常带 benchmark 表。
 
-**为何不审**：无人审既可以合入也可以关闭。merged 中 66.3%、closed 中 77.1% 无 formal review。`process` 边界合并率只有 38.1%；82.8% 的 PR 没有关联 Issue，优化常是 Agent 主动发起，不在维护者既有队列里。存活超过 7 天的合并率掉到约 17%。这些更像评审注意力和流程错配，而不是「质量门槛把差 PR 拦下来」。
+**为何不审**：无人审既可以合入也可以关闭。merged 中 66.3%、closed 中 77.1% 为 `review_count=0`。`process` 边界合并率只有 38.1%；82.8% 的 PR 没有关联 Issue，优化常是 Agent 主动发起，不在维护者既有队列里。存活超过 7 天的合并率掉到 22.0%（48/218）。这些更像评审注意力和流程错配，而不是「质量门槛把差 PR 拦下来」。
 
-**小结**：维护者放行主要靠「改动小、读得懂、没把 CI 搞红」；大量 PR 无人审，成功与失败都发生在低注意力环境中。把这些 PR 留在未合入状态的，经常不是审查标准本身，而是有没有人愿意看。
+**小结**：可观测的排查里，非 unknown 的最大项是 `code_reading`。数据集没有「CI 没变红才放行」这一计数。大量 PR 的 `review_count=0`，合入和关闭都出现在 formal review 为零的 PR 上。未合入的机制划分见 RQ1.3，不是一条测得的放行规则。
 
 ---
 
@@ -294,12 +294,12 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 - [2876006908](https://github.com/zenml-io/zenml/pull/3375) `Claude_Code` — Improve list and collection materializers performance  
   `outcome_reason=rejected_design_approach`；拒因摘要：Maintainer CHANGES_REQUESTED with inline comment stating the code is not using ZenML materializers and instead uses pickle for everything, requiring a major rework.
-- [3241523087](https://github.com/doodlum/skyrim-community-shaders/pull/1281) `Copilot` — perf: cache GetRuntimeData usage for improved performance  
-  `outcome_reason=closed_minimal_perf_gain_no_evidence`；拒因摘要：PR closed after maintainer questioned evidence of hot path and Copilot's own analysis admitted minimal benefit; no benchmark or additional justification provided.
-- [3184463362](https://github.com/dotnet/maui/pull/30291) `Copilot` — Fix RealParent garbage collection warning to reduce noise in production apps  
-  `outcome_reason=abandoned_after_testing`；拒因摘要：Maintainer used PR as a test for Copilot instructions; after multiple resets and instruction updates, PR was closed without merge, likely because the process was experimental.
+- [3129773117](https://github.com/microsoft/vscode-cosmosdb/pull/2706) `Copilot` — Implement error node caching for improved TreeView user experience  
+  `outcome_reason=closed_design_review_unresolved`；拒因摘要：Design objection on making contextValue non-readonly, no resolution found; PR closed without merge.
+- [3189195714](https://github.com/dotnet/runtime/pull/117160) `Copilot` — Replace Math.DivRem with bit operations in BitArray for WASM performance  
+  `outcome_reason=closed_approach_rejected_compiler_intrinsic_preferred`；拒因摘要：Maintainers unanimously agreed the fix should be in the JIT, not the library; PR reverted and later auto-closed as draft after 30 days of inactivity.
 
-反模式（`inefficiency_antipattern` ≠ none）只作伴随现象：
+反模式（`inefficiency_antipattern` ≠ none / unknown）只作伴随现象：
 
 - Merged 侧 Top：
 `repeated_io`(33), `nested_loop`(10), `lock_misuse`(2), `main_thread_blocking`(2), `memory_leak`(2), `string_traversal`(2)
@@ -309,7 +309,7 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 两侧都是 `repeated_io` 最多，数量接近，**不能当成主拒因**。
 
-**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。静默 maintainer 关闭仍需单独看待，它介于拒绝和遗弃之间。
+**小结**：一旦把「没人看就关了」的 PR 拿掉，剩下的失败更接近「补丁错了 / 方案不对 / CI 过不了 / 缺材料」。静默 maintainer 关闭仍放在沉默遗弃里看，不单列一类。
 
 ### RQ3.2 证据生成、流程协作与同 PR 修复分别暴露了哪些能力边界？
 
@@ -319,19 +319,19 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 |---|---|---|---|
 | `technical_stack` | 常规技术栈改动（分析标签，不是能力测定） | 588 | 80.4% |
 | `process` | 协作 / 审查 / 流程推进 | 562 | 38.1% |
-| `evidence_required` | 维护者要求可复现性能证据 | 32 | 21.9% |
+| `evidence_required` | 需要性能证据（分析标签） | 32 | 21.9% |
 | `unknown` | 未归入以上三档 | 1 | 0.0% |
 
 上表合计 1183/1183。
 
 **证据边界示例（evidence_required × closed）：**
 
-- [2839448717](https://github.com/pyth-network/pyth-crosschain/pull/2359) `Devin` — build: add parallel and concurrency flags to test:ci and build:ci  
-  `outcome_reason=no_performance_improvement`；拒因摘要：Agent self-closed after concluding no performance improvement; no external CHANGES_REQUESTED.
-- [3033886992](https://github.com/calcom/cal.com/pull/21052) `Devin` — perf: optimize app loading and rendering performance with CI fix  
-  `outcome_reason=closed_harmful_ci_change_fabricated_benchmark`；拒因摘要：PR closed after retrogtx's 'insane, closing' comment on type-check CI change; no further fixes attempted.
-- [3053649404](https://github.com/calcom/cal.com/pull/21220) `Devin` — perf: optimize .tz() calls with proper timezone detection  
-  `outcome_reason=closed_not_performance_focused_approach`；拒因摘要：Devin AI bot closed the PR, stating the approach was not properly focused on performance optimization.
+- [3194284966](https://github.com/vercel/turborepo/pull/10623) `Cursor` — perf: improve hashing performance for manual path  
+  `outcome_reason=missing_benchmark`；拒因摘要：Maintainer anthonyshew closed the PR agreeing that real benchmarking is required before accepting the change.
+- [3241523087](https://github.com/doodlum/skyrim-community-shaders/pull/1281) `Copilot` — perf: cache GetRuntimeData usage for improved performance  
+  `outcome_reason=closed_minimal_perf_gain_no_evidence`；拒因摘要：PR closed after maintainer questioned evidence of hot path and Copilot's own analysis admitted minimal benefit; no benchmark or additional justification provided.
+- [3153767187](https://github.com/dotnet/msbuild/pull/12033) `Copilot` — Add Microsoft.Extensions.FileSystemGlobbing support to MSBuildGlob with trait-ba  
+  `outcome_reason=perf_change_not_significant_after_benchmark`；拒因摘要：PR closed without merge after PerfStar benchmark showed no significant performance improvement; maintainer requested further testing but no follow-up commits occurred.
 
 退化 / 审查问题处置（`regression_handling`）：
 
@@ -365,8 +365,8 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 **小结**：
 
-- **证据生成**：一进入 `evidence_required`，合并率掉到约一成；sufficient 材料只有约 2%。
-- **流程协作**：process 边界合入率大约只有 technical_stack 的一半；closed 里沉默遗弃仍是大头。
+- **证据生成**：一进入 `evidence_required`，合并率掉到 21.9%（7/32）；sufficient 材料只有 2.0%（24/1183）。
+- **流程协作**：process 边界合入率是 38.1%（214/562），约为 technical_stack（80.4%，473/588）的一半；closed 里沉默遗弃仍是大头。
 - **同 PR 修复**：能在原 PR 里把问题修完的是少数，且过半要人类主导。现有启发式并不支持把 CHANGES_REQUESTED 主要写成 Agent 独立消化。
 
 ---
@@ -377,7 +377,7 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 | 维度 | Merged | Closed | 读法 |
 |---|---|---|---|
-| 寿命 | 中位 0.122 h，fast_merge 76.1% | 中位 37.6 h，fast_merge 0 | 成功是快路径 |
+| 寿命 | 中位 0.122 h，fast_merge 76.1% | 中位 37.6 h，fast_merge 0 | 合入侧寿命更短 |
 | 规模 | 中位 changes 143；≤100 行档合并率最高 | 中位 170 | 小补丁占优，但 >10k 仍可合，不能写成越大越不能合 |
 | 互动 | 评论中位 0；57.3% 为 0 | 评论中位 2 | 高评论量不对应更高合并率 |
 | 材料 | benchmark 表 2.6%；数字声称 13.3% | benchmark 表 6.1%；数字声称 25.2% | Closed 更常给证据，证据是难 PR 门槛而非成功标配 |
@@ -390,7 +390,7 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 - Closed：
 `bundle_size_reduction`(12), `cache`(9), `constant_folding`(9), `lazy_load`(7), `build_performance`(6), `caching`(6), `code_splitting`(6), `compiler_optimization`(6)
 
-成功侧更偏常量折叠、编译优化、缓存；关闭侧更常见包体积、复杂构建、code splitting。
+列出的 perf_focus 里，`constant_folding` 为 merged 24 / closed 9，`compiler_optimization` 为 merged 21 / closed 6。`cache` 为 merged 8 / closed 9，`caching` 为 merged 6 / closed 6，这两项不是成功侧更高。关闭侧 `bundle_size_reduction` 为 closed 12（merged 5），`code_splitting` 为 closed 6（merged 1）。
 
 ### RQ4.2 合入和关闭在 AI 能力边界上有哪些区别？是否影响合并结果？
 
@@ -412,9 +412,9 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 **现象（描述性）**：能力边界和合并结果同向变化。
 
-- 落在 `technical_stack` 的 PR 合并率接近八成：小范围、可模板化的缓存 / 常量 / 编译类改动。
-- 落在 `process` 的 PR 只有约三成合入：无人审、stale、作者放弃。这是协作边界，不一定是代码写错。
-- 落在 `evidence_required` 的 PR 合并率约一成：维护者要数字，Agent 给的是叙述。
+- `technical_stack` 合并率 80.4%（473/588）。该标签不是「小范围缓存、常量折叠或编译改动」的同义词：这组 changes 中位数是 192，`process` 组是 145。
+- `process` 合并率 38.1%（214/562）。562 条里有 214 条已合入。未合入的 348 条里，沉默遗弃 238、真正拒绝 63、原因不明 24、其他流程 23。`review_count=0` 为 486/562。不要把整个 `process` 标签读成「都是无人审后的作者放弃」。
+- 落在 `evidence_required` 的 PR 合并率是 21.9%（7/32）。
 - 层面信号一致但样本更小：`compiler` / `compiler_backend` 合入高，`runtime_vm` 明显低。
 
 因此：**存在「能力边界与合并结果一起分层」的现象**，但还不是「边界导致失败」的因果证明。流程边界尤其可能是维护者注意力问题，而不是 Agent 写不出补丁。
@@ -425,10 +425,10 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 **路径 A — 已经在走的低摩擦合入（RQ1.2 / RQ2）**
 
-- 保持原子补丁，优先 `technical_stack` 上的缓存、常量折叠、构建层改动。
+- 保持单次改动可以单独审查。不要把 `boundary_tag=technical_stack` 当成缓存、常量折叠或构建层的同义词。
 - 降低维护者注意力成本：标题/正文写清「改了什么、为什么安全」，而不是先堆 benchmark。
 - 无 Issue 的主动优化不要默认丢进需要深度审的队列；需要仓库侧的分诊（bot 标 `small/perf-safe`）。
-- **不要**强制所有 PR <100 行：≤100 行合并率最高，但大 PR 仍有约一半合入。
+- **不要**强制所有 PR <100 行：≤100 行合并率最高，但 >10k 行档仍有 61.2%（30/49）合入。
 
 **路径 B — 需要被认真审的难 PR（RQ1.3 / RQ3）**
 
@@ -443,10 +443,10 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 ## 总结
 
-1. **RQ1**：语料为终态 merged / closed。Closed 即被拒，内部以沉默遗弃为主，真正技术/设计拒绝约占被拒三分之一。Merged 以低摩擦快合并为主。Agent 之间合并率差一倍以上。
-2. **RQ2**：成功 PR 极短命、常无审查；放行靠读码和小补丁，不靠 profiler。无人审同时出现在合入和关闭两侧，更像注意力 / 流程问题。
+1. **RQ1**：语料为终态 merged / closed。Closed 即被拒，内部以沉默遗弃为主，真正拒绝占被拒的 31.5%（154/489）。Merged 以低摩擦快合并为主。OpenAI_Codex 合并率 73.1%（460/629），Devin 为 32.9%（74/225），前者约为后者的 2.2 倍。
+2. **RQ2**：成功 PR 寿命更短，且常 `review_count=0`。可观测的排查以 `code_reading` 为主，profiler / load_test / benchmark 很少。`review_count=0` 同时出现在合入和关闭两侧。`technical_stack` 的高合并率与 ≤100 行档的高合并率是两项分开的描述。
 3. **RQ3**：真正被审的失败以正确性、设计、CI 为主；证据边界和流程边界比「又套了一层循环」更能解释合不进去；同 PR 修复少且依赖人类。
-4. **RQ4**：寿命、边界类型、优化层面差异清楚，材料差异方向与「多写 benchmark 就能合」相反。改进必须分快路径和难路径。
+4. **RQ4**：寿命、边界类型、优化层面差异清楚，材料差异方向与「多写 benchmark 就能合」相反。改进必须分低摩擦合入和难 PR。
 
 ## 附录 A 分类规则（可复现）
 
@@ -477,5 +477,4 @@ Closed 中 `blocking=true` 仅 81 条；「真正被审过或有否决信号」�
 
 1. 标签来自 LLM 分析 JSON，建议对 real rejection / silent abandonment 各抽检数十条 `rejection_signals`。
 2. Agent 差异、边界与合并率、benchmark 与合并率都是相关不是因果。合并率分母为最终数据集 n。
-3. `fix_in_pr` 主体与 `antipattern_in_fix` 是启发式。
-4. `FullAnalysis.md` §2 的 `outcome_reason` 粗分组（如 small_scope_low_risk）与本报告 RQ1.2 的 `merged_path`（如低摩擦快合并）是两套规则，数字不可互换。两侧都从同一终态 1183 条聚合。
+3. `fix_in_pr` 主体与 `antipattern_in_fix` 是启发式。`FullAnalysis.md` §2 使用本附录的 `merged_path` / `close_motivation`。

@@ -1,7 +1,7 @@
 # Full Analysis — Agent Performance PR Corpus
 
 > **最终数据集**：1183 PR，694 merged，489 closed。合并率 **58.7%**（694/1183）。全库统一口径：仅终态 merged / closed，不含 open。
-> Built from `finaldatabase/per_pr/{pr_id}/{pr_id}_analysis.json` (plus 6 root few-shot gold labels).
+> Built from `finaldatabase/per_pr/{pr_id}/{pr_id}_analysis.json`.
 > Wide table: `full_analysis_distilled.csv` (regenerate with `python generate_full_analysis.py`).
 
 ---
@@ -19,61 +19,34 @@ Note: this snapshot is **terminal-only** (`merged` vs `closed` without merge). S
 
 ---
 
-## 2. Main reasons for merge vs close
+## 2. Merge path and close motivation
 
-Grouped from `perf_labels.outcome_reason` (LLM labels in analysis JSON, not raw review text).
-This is a **string-cluster of `outcome_reason`**, not the RQ1.2 behavioral `merged_path` taxonomy (`fast_low_friction` / `reviewed_iteration` / `no_formal_review`). Do not treat the two tables as the same partition.
+Same partition as `RQ_Analysis.md`: `merged_path` on merged PRs, `close_motivation` on closed PRs.
 
-### 2.1 Merged — grouped reasons
+### 2.1 `merged_path`
 
-| Group | Count | Share of merged |
-|-------|-------|-----------------|
-| small_scope_low_risk | 437 | 63.0% |
-| other | 91 | 13.1% |
-| after_review_iteration | 89 | 12.8% |
-| without_formal_review | 77 | 11.1% |
+| merged_path | Count | Share of merged |
+|-------------|-------|-----------------|
+| `fast_low_friction` | 507 | 73.1% |
+| `reviewed_iteration` | 155 | 22.3% |
+| `no_formal_review` | 32 | 4.6% |
 
-Grouped-reason rows sum to 694/694. This is not the RQ1.2 `merged_path` table (fast_low_friction / reviewed_iteration / no_formal_review).
+Rows sum to 694/694.
 
-22 merged PRs have an empty `outcome_reason`. Their GitHub `merged_at` was restored from the status-refresh cache after an earlier pass had stored them as closed, so the closed-state reason strings were removed rather than counted as merge reasons.
+22 merged PRs have an empty `outcome_reason` (status restored to merged from the refresh cache). They are already inside the path table: `reviewed_iteration` 12, `no_formal_review` 10.
 
-**Reading (descriptive, not causal):** most merged PRs have an `outcome_reason` that clusters as **small scope / low risk**; next is **after review iteration**. The `without_formal_review` cluster here is an `outcome_reason` string group, not the RQ1.2 path `no_formal_review`.
+### 2.2 `close_motivation`
 
-Merged `outcome_reason` raw Top 5:
+Status `closed` is not merged. The rows below split that status; they are not a second corpus.
 
-| outcome_reason | Count |
-|----------------|-------|
-| `merged_small_scope_low_risk` | 388 |
-| `merged_after_review_fix` | 71 |
-| `merged_small_scope_no_review` | 18 |
-| `merged_self_merge_no_review` | 7 |
-| `merged_small_scope_self_merge` | 6 |
+| close_motivation | Count | Share of closed |
+|------------------|-------|-----------------|
+| `silent_abandonment` | 273 | 55.8% |
+| `real_rejection` | 154 | 31.5% |
+| `unclear` | 36 | 7.4% |
+| `other_process` | 26 | 5.3% |
 
-### 2.2 Closed — grouped reasons
-
-| Group | Count | Share of closed |
-|-------|-------|-----------------|
-| other | 195 | 39.9% |
-| stale_or_inactivity | 130 | 26.6% |
-| closed_without_meaningful_review | 125 | 25.6% |
-| functional_or_correctness | 24 | 4.9% |
-| missing_evidence_or_benchmark | 11 | 2.2% |
-| performance_regression_or_no_gain | 3 | 0.6% |
-| scope_too_large | 1 | 0.2% |
-
-Grouped-reason rows sum to 489/489.
-
-**Reading:** closed is dominated by **process closes** (stale / no review / author closed), not a single “perf failed” label; among PRs with review text, `functional_failure` and `correctness_edge_case` stand out more.
-
-Closed `outcome_reason` raw Top 5:
-
-| outcome_reason | Count |
-|----------------|-------|
-| `stale_no_review_engagement` | 44 |
-| `stale_inactivity` | 33 |
-| `closed_by_author_no_review` | 13 |
-| `self_closed_no_review` | 12 |
-| `closed_no_review_engagement` | 11 |
+Rows sum to 489/489.
 
 ---
 
@@ -121,7 +94,7 @@ Closed `outcome_reason` raw Top 5:
 - Median lifespan — closed: **37.6 h** (~1.6 d)
 - Share with `fast_merge=true` — merged: **76.1%**; closed: 0%
 
-**Association:** merged PRs are much shorter-lived; long-lived closed PRs often track stale / no interaction, not slow rejection after review.
+**Association:** merged PRs are much shorter-lived. Among closed PRs with lifespan >7d (170), `silent_abandonment` is 89 and `real_rejection` is 62. Long lifespan is not the same as slow rejection after review, and it is not only abandonment.
 
 ---
 
@@ -146,9 +119,9 @@ Closed `outcome_reason` raw Top 5:
 
 Top 12 sum to 865; the remaining 318 PRs sit in less frequent layers and are not listed.
 
-### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none)
+### 5.2 Inefficiency antipatterns (`inefficiency_antipattern` ≠ none / unknown)
 
-**Merged top:** `repeated_io`(33), `nested_loop`(10), `unknown`(5), `lock_misuse`(2), `main_thread_blocking`(2), `memory_leak`(2)
+**Merged top:** `repeated_io`(33), `nested_loop`(10), `lock_misuse`(2), `main_thread_blocking`(2), `memory_leak`(2), `string_traversal`(2)
 
 **Closed top:** `repeated_io`(35), `nested_loop`(4), `lock_misuse`(3), `repeated_computation`(2), `redundant_computation`(2), `blocking_io`(2)
 
@@ -194,7 +167,6 @@ Rows sum to 1183/1183.
 Auxiliary signals:
 - `body_has_repro_steps=true`: **53** (4.5%)
 - `body_has_benchmark_table=true`: **48**
-- `material_reproducibility=sufficient`: **24**
 
 **Material-dimension takeaway:** most PRs are **insufficient or partial**; only ~**2%** reach sufficient.
 
@@ -217,11 +189,7 @@ Auxiliary signals:
 | `closed_no_merge` | 1 | 0.1% |
 | `draft_converted_no_fix` | 1 | 0.1% |
 
-Rows sum to 1183/1183.
-
-- **`not_applicable`** (50.5%): no clear regression-handling context (often direct merge or process close).
-- **`reject_close`** (33.6%): reject/close dominant; mostly among closed.
-- **`fix_in_pr`** (143): fixed in the same PR; `revert` only **2**.
+Rows sum to 1183/1183. `reject_close` is this field's label, not `close_motivation=real_rejection`.
 
 ### 8.1 Who fixes in `fix_in_pr` (heuristic text labels, not ground truth)
 
@@ -246,7 +214,7 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 
 ---
 
-## 10. Pass rate, focus distribution, capability boundaries
+## 10. Merge rate, focus distribution, capability boundaries
 
 - **Merge rate for AI perf PRs: 58.7%** (694/1183).
 
@@ -270,14 +238,12 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 ### 10.4 Strengths vs boundaries (label-based; needs human check)
 
 **Strengths (merged-side signals)**
-- Small-scope control-flow / compiler constant-folding / build-and-cache changes merge more easily under low review friction.
-- `technical_stack` dominates (588); this is an analytic tag for routine stack-layer work, not a measured agent ability.
+- In the lists above, `constant_folding` is 24 merged / 9 closed, and `compiler_optimization` is 21 / 6. `cache` is 8 / 9, `caching` is 6 / 6, and `build_performance` is 6 / 6: those three do not have a higher merged count. `technical_stack` is a separate analytic tag; its median `changes` is 192, and `process` is 145.
+- `technical_stack` (588) is an analytic tag for routine stack-layer work, not a measured agent ability.
 
 **Boundaries (closed / higher-risk signals)**
-- Process closes (stale / no review) dominate and mask true “perf rejected” rates.
-- `evidence_required` boundaries (32) align with `missing_benchmark` / insufficient reproducibility.
+- Among closed, `silent_abandonment` is 273 and `real_rejection` is 154 (same split as §2.2).
 - Large churn (>10k changes) does not merge better; `repeated_io` is slightly higher on closed.
-- Without reproducible materials, review is hard to close.
 
 ---
 
@@ -296,7 +262,7 @@ Most agent perf PRs are **not** clearly opened to fix a linked issue; optimizati
 ## 12. Data & method notes
 
 - Stats use **labels and narrative fields** in analysis JSON, not a fresh GitHub event re-crawl.
-- Labels such as `outcome_reason` are LLM-generated (synonym inflation); this report coarsens merge/close groups.
+- `merged_path` / `close_motivation` are the same partition as `RQ_Analysis.md`. `outcome_reason` strings are not a second grouping.
 - Fix actor / new-issue-in-fix findings are **text heuristics** — sample-check before paper use.
 - Merge rate is merged / corpus n on the terminal snapshot (open PRs are not in this dataset).
 - `merged_at` / `closed_at` on the formerly-open cohort follow `summary/github_status_cache.json` (the refresh log). Where that cache showed a merge the master had missed, status is merged and the old closed-state `outcome_reason` is left empty.
