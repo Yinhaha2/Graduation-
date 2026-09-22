@@ -16,6 +16,7 @@ METRICS = SHADOW / "analysis_viz" / "rq_analysis_metrics.json"
 PAPER = Path(
     r"C:\Users\Y2698\Desktop\研究生\毕设\Agentic_Performance_PR_Analysis__EMSE_\pics\results"
 )
+RQFIGURE = PAPER / "RQFigure"
 
 C_TOP = "#8C2F28"
 C_REST = "#8A8A8A"
@@ -56,10 +57,12 @@ plt.rcParams.update(
 
 def save(fig: plt.Figure, stem: str) -> None:
     PAPER.mkdir(parents=True, exist_ok=True)
+    RQFIGURE.mkdir(parents=True, exist_ok=True)
     fig.savefig(PAPER / f"{stem}.png", dpi=300, bbox_inches="tight", facecolor="white")
     fig.savefig(PAPER / f"{stem}.pdf", bbox_inches="tight", facecolor="white")
+    fig.savefig(RQFIGURE / f"{stem}.pdf", bbox_inches="tight", facecolor="white")
     plt.close(fig)
-    print("wrote", stem)
+    print("wrote", stem, "-> RQFigure")
 
 
 def load_metrics() -> dict:
@@ -88,8 +91,9 @@ def plot_failure() -> None:
         ax.text(p + 0.7, yi, f"{p:.1f}%  (n={n})", ha="left", va="center", fontsize=8.2, color="#222")
     ax.set_yticks(y)
     ax.set_yticklabels(labs)
-    xmax = max(50.0, (max(pcts) + 8) if pcts else 50.0)
-    ax.set_xlim(0, xmax)
+    ax.set_xlim(0, 50)
+    ax.set_xticks([0, 10, 20, 30, 40, 50])
+    ax.set_xticklabels(["0%", "10%", "20%", "30%", "40%", "50%"])
     ax.set_xlabel("Share of reviewed failures")
     ax.set_title(rf"Reviewed failures  ($n = {reviewed_n}$)", loc="center", fontsize=11, pad=8, color="#222")
     ax.spines["top"].set_visible(False)
@@ -127,7 +131,7 @@ def plot_aux() -> None:
     ax.set_xticks(x)
     ax.set_xticklabels(names)
     ax.set_ylim(0, 96)
-    ax.set_ylabel("Merge rate (%)")
+    ax.set_ylabel("Terminal merge rate (%)")
     ax.set_title("Capability boundary", loc="left", fontsize=10.5, pad=6, color="#222")
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)

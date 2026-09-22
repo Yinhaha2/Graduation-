@@ -17,6 +17,7 @@ CSV = SHADOW / "full_analysis_distilled.csv"
 PAPER = Path(
     r"C:\Users\Y2698\Desktop\研究生\毕设\Agentic_Performance_PR_Analysis__EMSE_\pics\results"
 )
+RQFIGURE = PAPER / "RQFigure"
 
 C_BAR = "#C5C5C5"
 C_LINE = "#1F4E3A"
@@ -37,10 +38,12 @@ plt.rcParams.update(
 
 def save(fig: plt.Figure, stem: str) -> None:
     PAPER.mkdir(parents=True, exist_ok=True)
+    RQFIGURE.mkdir(parents=True, exist_ok=True)
     fig.savefig(PAPER / f"{stem}.png", dpi=300, bbox_inches="tight", facecolor="white")
     fig.savefig(PAPER / f"{stem}.pdf", bbox_inches="tight", facecolor="white")
+    fig.savefig(RQFIGURE / f"{stem}.pdf", bbox_inches="tight", facecolor="white")
     plt.close(fig)
-    print("wrote", stem)
+    print("wrote", stem, "-> RQFigure")
 
 
 def plot_lifespan() -> None:

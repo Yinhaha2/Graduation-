@@ -21,6 +21,7 @@ METRICS = SHADOW / "analysis_viz" / "rq_analysis_metrics.json"
 PAPER = Path(
     r"C:\Users\Y2698\Desktop\研究生\毕设\Agentic_Performance_PR_Analysis__EMSE_\pics\results"
 )
+RQFIGURE = PAPER / "RQFigure"
 
 # Colorblind-safer academic palette
 C_ALL = "#3D5A80"
@@ -48,12 +49,14 @@ plt.rcParams.update(
 
 def save(fig: plt.Figure, stem: str) -> None:
     PAPER.mkdir(parents=True, exist_ok=True)
+    RQFIGURE.mkdir(parents=True, exist_ok=True)
     png = PAPER / f"{stem}.png"
     pdf = PAPER / f"{stem}.pdf"
     fig.savefig(png, dpi=300, bbox_inches="tight", facecolor="white")
     fig.savefig(pdf, bbox_inches="tight", facecolor="white")
+    fig.savefig(RQFIGURE / f"{stem}.pdf", bbox_inches="tight", facecolor="white")
     plt.close(fig)
-    print("wrote", png.name, "and", pdf.name)
+    print("wrote", png.name, "and", pdf.name, "-> RQFigure")
 
 
 def flow(ax, x0, x1, y0_top, y0_bot, y1_top, y1_bot, color, alpha=0.42, lw=0.0):
