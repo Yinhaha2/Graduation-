@@ -1,7 +1,7 @@
 # Full Analysis — Agent Performance PR Corpus
 
 > **最终数据集**：1183 PR，672 merged，511 closed。合并率 **56.8%**（672/1183）。全库统一口径：仅终态 merged / closed，不含 open。
-> Built from `finaldatabase/per_pr/{pr_id}/{pr_id}_analysis.json` (plus 6 root few-shot gold labels).
+> Built from `finaldatabase/per_pr/{pr_id}/{pr_id}_analysis.json`. The six few-shot gold labels are stored both in that directory and at the repo root; the two copies match.
 > Wide table: `full_analysis_distilled.csv` (regenerate with `python generate_full_analysis.py`).
 
 ---

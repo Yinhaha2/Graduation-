@@ -88,7 +88,7 @@ finaldatabase/
 
 ### `finaldatabase/auxiliary/`
 
-全库级 **Parquet 大表**：所有 PR 的某类 GitHub 数据纵向合并，通过列 **`pr_id`**（或下表中的其它键）与主表 `id` 关联。`refresh.py` 删除 PR 时会按 `pr_id` 过滤这些表。
+全库级 **Parquet 大表**：由 `per_pr/{pr_id}/` 下同名切片纵向合并而成，通过列 **`pr_id`**（或下表中的其它键）与主表 `id` 关联。行集与切片一致；`repository.parquet` 只保留主表仍出现的仓库（418 行）。`refresh.py` 删除 PR 时会按 `pr_id` 过滤这些表。
 
 | 文件 | 内容概要 | 关联主键 |
 |------|----------|----------|
@@ -116,6 +116,8 @@ finaldatabase/
 
 并非每条 PR 都具备全部附属文件（例如无 review 则可能没有 `reviews.parquet`）；`run_pr_analysis.py` 读取单 PR 目录时，缺失文件按空表处理。
 
+`pr_review_comments_v2.parquet` 里每条行内评论的 `pull_request_review_id` 都能在 `pr_reviews.parquet` 里找到。`3205497325`（DeepLabCut#3046）的分析 JSON 仍记着分析当时的 `review_count=3`；该 PR 的 `reviews.parquet` 另有 8 条 review，是补上后才和已有的 56 条行内评论接上的。全库统计用的是分析 JSON 里的 `review_count`，不是这 8 条补记。
+
 ---
 
 ### `finaldatabase/classification/`
@@ -123,10 +125,10 @@ finaldatabase/
 | 文件 | 含义 |
 |------|------|
 | `bertopic_topic_assignments.parquet` | 各 PR 的 BERTopic 主题分配 |
-| `bertopic_topic_info.csv` | 主题 id、关键词等主题表信息 |
+| `bertopic_topic_info.csv` | 主题 id、关键词等主题表信息。`Count` 是**当前主表**里该 `Topic` 的 PR 数，53 行合计 1183，不是当初 BERTopic 拟合时的文档数 |
 | `aidev_pr_task_type_for_perf_prs.parquet` | AIDev 任务类型（fix / perf / feat 等）分类结果 |
 
-字段与主表中的 `Topic`、`aidev_task_type` 等列相互对应，可用于离线分析或校验。
+两张分类表都只保留主表 `id`。`Topic`、`aidev_task_type` 与主表同名列一致，可用来校验。
 
 ---
 

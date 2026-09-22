@@ -145,7 +145,7 @@ Rows sum to 1183/1183. Rare labels (`abandon` / `recreated_in_new_pr` / `closed_
 
 **What it shows:** Whether the fix itself introduces a new antipattern (`antipattern_in_fix`).
 
-**Phenomenon:** Almost never labeled as introducing a new issue — **`none` on 1174 / 1183 (99.2%)**. Non-none cases are **7** one-off labels (e.g. `fabricated_benchmark`, `mutable_global_state`, `incorrect_lru_eviction`), each n=1. Treat as rare anecdotes, not a systematic failure mode.
+**Phenomenon:** Almost never labeled as introducing a new issue. Of 1,183 PRs, **`none` is 1,174 (99.2%)**, **2 are null** (`3198202667`, `3267689271`), and **7** are one-off non-none labels (e.g. `fabricated_benchmark`, `mutable_global_state`, `incorrect_lru_eviction`), each n=1. 1,174 + 2 + 7 = 1,183. Treat the 7 labels as rare anecdotes, not a systematic failure mode.
 
 ---
 
