@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Introduce p-limit in _getUsersAvailability to cap concurrent executions at 10, aiming to prevent resource exhaustion and improve stability."
   },
   "quantitative_metrics": {

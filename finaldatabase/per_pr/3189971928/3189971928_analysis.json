@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 10,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Add build tags to conditionally exclude cloud archiver providers (S3 and GCloud) to reduce binary size by ~24MB."
   },
   "quantitative_metrics": {

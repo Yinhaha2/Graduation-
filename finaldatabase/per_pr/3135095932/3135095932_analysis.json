@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 45,
-    "topic_name": "45",
+    "topic_name": "45_firecrawl_scrape_scraping_authority",
     "body_summary": "Precompute _headers and _timeout at client initialization and reuse them across requests; refresh headers when API key changes."
   },
   "quantitative_metrics": {

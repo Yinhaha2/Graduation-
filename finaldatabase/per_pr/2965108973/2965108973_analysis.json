@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 34,
-    "topic_name": "34",
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Implement performance optimizations for default channel migration and API endpoints by replacing row-by-row processing with set-based operations, adding indexes, and consolidating database operations."
   },
   "quantitative_metrics": {

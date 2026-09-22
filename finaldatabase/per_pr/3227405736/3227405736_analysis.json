@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Deduplicate struct names in Python query compilation and regenerate test outputs including TPCH q1; closed immediately after creation with no review."
   },
   "quantitative_metrics": {

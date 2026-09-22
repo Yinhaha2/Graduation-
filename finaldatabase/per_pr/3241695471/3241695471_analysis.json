@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Optimize Lua compiler code generation for `in`, `contains`, and `starts_with` membership operations and add list type helpers."
   },
   "quantitative_metrics": {

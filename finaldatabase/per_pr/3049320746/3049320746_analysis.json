@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Switch team booking limit checks from per-user to batch database query to reduce queries and improve performance."
   },
   "quantitative_metrics": {

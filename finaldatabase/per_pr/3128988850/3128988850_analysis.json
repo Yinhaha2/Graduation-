@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "10",
+    "topic_id": 10,
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Update interpreter folding logic to store let-bound constants in the environment and fold pure calls using them, enabling static evaluation of simple expressions."
   },
   "quantitative_metrics": {

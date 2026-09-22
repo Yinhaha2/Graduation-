@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Replace synchronous requests library with httpx.AsyncClient for the business demo bridge, adapting functions to async/await and updating tests."
   },
   "quantitative_metrics": {

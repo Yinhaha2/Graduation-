@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Refactor OpenKeeper's asset conversion into a standalone CLI tool and enable direct WAD file loading to eliminate startup conversion delays and reduce disk usage."
   },
   "quantitative_metrics": {

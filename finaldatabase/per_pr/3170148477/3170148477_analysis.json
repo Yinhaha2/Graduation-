@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "10",
+    "topic_id": 10,
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Fold pure function calls during VM compilation; store constant let bindings in compiler environment; update golden IR outputs."
   },
   "quantitative_metrics": {

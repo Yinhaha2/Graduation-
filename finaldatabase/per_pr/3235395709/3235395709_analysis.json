@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 37,
-    "topic_name": "37",
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Make refresh_entry non-blocking during file save to reduce hot reload detection latency; moves the refresh to a background task so save returns immediately after disk write."
   },
   "quantitative_metrics": {

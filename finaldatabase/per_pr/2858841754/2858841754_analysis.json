@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "chore",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "ci_cache_rust_workspace",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add Cargo workspace paths to the rust-cache GitHub Action to improve CI build cache hits across multiple Rust crates."
   },
   "quantitative_metrics": {

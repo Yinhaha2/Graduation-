@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Add --cpus CLI/config option to coturn to manually override CPU detection in containers, preventing resource exhaustion from host CPU overcount."
   },
   "quantitative_metrics": {

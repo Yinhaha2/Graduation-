@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 16,
-    "topic_name": "16_flow_control_data_llm",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Add complete GCS cloud storage infrastructure with automatic expiration for file uploads, replacing base64 data with file_uri references for improved performance and scalability."
   },
   "quantitative_metrics": {

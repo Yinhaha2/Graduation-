@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 8,
     "topic_id": 0,
-    "topic_name": "0_ci_workflow_optimization",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add CI caching for docs browser assets and exclude Insight browser tests from ESLint; build sandbox image in docs-build job."
   },
   "quantitative_metrics": {

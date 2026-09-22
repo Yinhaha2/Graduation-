@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Add tx_index column to dex.trades and propagate to related models (enrichment macros, OneInch, 0x) to improve efficiency of spells like dex.sandwiches and dex.atomic_arbitrages."
   },
   "quantitative_metrics": {

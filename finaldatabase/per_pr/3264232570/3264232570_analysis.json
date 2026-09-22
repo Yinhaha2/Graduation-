@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Add x86-64 Tail Call Optimization in instruction execution loop via assembly stubs with c-unwind ABI to eliminate stack frame overhead while preserving panic unwinding, claiming >50% performance improvement."
   },
   "quantitative_metrics": {

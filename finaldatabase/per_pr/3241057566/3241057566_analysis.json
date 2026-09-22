@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 9,
-    "topic_name": "9",
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Freeze garbage collection during CUDA graph capture to dramatically speed up initialization, e.g., Qwen3-0.6B capture from 35s to 2s."
   },
   "quantitative_metrics": {

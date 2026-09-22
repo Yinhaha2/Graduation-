@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": 0,
-    "topic_name": "9",
+    "topic_id": 9,
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Fix CUDA graph memory leak when record_stream is used during capture by processing pending events at the end of allocation to the pool; includes a test for no leak."
   },
   "quantitative_metrics": {

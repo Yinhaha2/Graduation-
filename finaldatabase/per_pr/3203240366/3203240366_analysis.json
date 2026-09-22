@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 9,
-    "topic_name": "9",
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Convert harness and Docker management to async using asyncio/anyio/aiodocker for reliable Ctrl+C cleanup and improved concurrency via task groups and semaphores."
   },
   "quantitative_metrics": {

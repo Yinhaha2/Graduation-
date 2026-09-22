@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Migrate EBS snapshots intel module to the new datamodel approach, addressing performance and stability issues from #665 and #1414, with integration tests and AGENTS.md update."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 14,
-    "topic_name": "14",
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Enhance Fortran compiler constant folding by folding len for constant strings, and update documentation."
   },
   "quantitative_metrics": {

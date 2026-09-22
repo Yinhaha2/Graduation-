@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 40,
-    "topic_name": "40",
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Reduce mock setTimeout delays from 60s to 5s in timeout.test.ts to speed up unit test execution."
   },
   "quantitative_metrics": {

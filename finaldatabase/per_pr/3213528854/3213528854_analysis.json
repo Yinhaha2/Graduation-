@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": 0,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Simplify visible item counting and precompute ad configurations before dashboard rendering to improve performance."
   },
   "quantitative_metrics": {

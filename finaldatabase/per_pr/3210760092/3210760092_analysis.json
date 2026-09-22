@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": 0,
-    "topic_name": "8",
+    "topic_id": 8,
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Introduce automated benchmarking system with CI workflow, benchmark scripts, and GitHub Pages publishing to track memory/CPU metrics for NNTrainer."
   },
   "quantitative_metrics": {

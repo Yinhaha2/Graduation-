@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "29",
+    "topic_id": 29,
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Replace sequential user availability calls with batched parallel processing (8 users/batch, 100ms delay) to reduce end-to-end latency from minutes to seconds for teams with many users."
   },
   "quantitative_metrics": {

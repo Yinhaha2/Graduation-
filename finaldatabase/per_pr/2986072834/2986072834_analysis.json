@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Add explicit connection pool with configurable min_size, max_size, and max_idle settings for PostgreSQL, plus documentation updates."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "chore",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Remove stream_state interpolation from source-open-exchange-rates connector and update to latest CDK to support concurrent stream execution; bump patch version."
   },
   "quantitative_metrics": {

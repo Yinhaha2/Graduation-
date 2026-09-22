@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "28",
+    "topic_id": 28,
+    "topic_name": "28_scroll_debounce_search_debouncing",
     "body_summary": "Make scroll wheel in Windows App SDK respect system 'lines per notch' setting and DPI by using SystemParametersInfo, fixing sluggish scrolling in React Native Windows."
   },
   "quantitative_metrics": {

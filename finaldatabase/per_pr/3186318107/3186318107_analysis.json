@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 21,
-    "topic_name": "",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Optimize VM group-by compilation to avoid extra index lookups and update IR golden files accordingly."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Chunk group hashes into batches of 1000 when dispatching delete tasks for Seer grouping records to improve scalability and task distribution."
   },
   "quantitative_metrics": {

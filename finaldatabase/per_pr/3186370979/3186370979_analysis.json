@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "21",
+    "topic_id": 21,
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Optimize group-by query compilation by maintaining a list of groups during accumulation and regenerating IR outputs for group-by tests."
   },
   "quantitative_metrics": {

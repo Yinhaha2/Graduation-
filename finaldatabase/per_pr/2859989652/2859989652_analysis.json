@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Rate-limit the SFTP status callback in sftpclient.c to output at most once per second to mitigate a high-bandwidth performance bottleneck."
   },
   "quantitative_metrics": {

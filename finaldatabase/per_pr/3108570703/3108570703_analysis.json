@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "19",
+    "topic_id": 19,
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Add proxy verification and retry-on-failure logic to improve reliability of TTI providers across Webscout."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 10,
-    "topic_name": "10",
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Fold user-defined pure function calls at compile time using the VM's constant evaluator to eliminate runtime overhead, with a new test for folding in the presence of a global constant."
   },
   "quantitative_metrics": {

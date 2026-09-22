@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "4_page_table_allocation",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Optimize page allocation loop to skip invalid sequence IDs and iterate only for updated sequences, with testing instructions noting a failing pytest."
   },
   "quantitative_metrics": {

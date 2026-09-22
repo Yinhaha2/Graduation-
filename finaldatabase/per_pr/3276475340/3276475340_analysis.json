@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Refactor scanning from batch collection to streaming via Kotlin Flow for incremental file emission and improved responsiveness."
   },
   "quantitative_metrics": {

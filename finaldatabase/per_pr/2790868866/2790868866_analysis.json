@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 7,
-    "topic_name": "7",
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Remove react-router-dom dependency and replace with custom NavRouter implementation using the history package to reduce bundle size and improve routing control, while converting related components to TypeScript."
   },
   "quantitative_metrics": {

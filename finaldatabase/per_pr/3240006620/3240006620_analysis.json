@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Reduce collection node hotstuff-min-timeout default from 1500ms to 1000ms to align with SN timeout (1.045s) and reduce impact of offline nodes on finalization rate."
   },
   "quantitative_metrics": {

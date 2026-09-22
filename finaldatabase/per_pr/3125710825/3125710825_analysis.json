@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "23",
+    "topic_id": 23,
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Increase parts channel capacity from 1000 to 2500 to prevent blocking during processing of large blocks (128MB)."
   },
   "quantitative_metrics": {

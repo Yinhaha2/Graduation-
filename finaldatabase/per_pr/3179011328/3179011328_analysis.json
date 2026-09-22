@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": 0,
-    "topic_name": "30",
+    "topic_id": 30,
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Add concurrent fetching of BigQuery table columns in getDatabaseSummary and include column metadata in summary output, with test updates."
   },
   "quantitative_metrics": {

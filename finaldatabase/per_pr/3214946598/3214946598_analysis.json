@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "16",
+    "topic_id": 16,
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Switch lyric translation API from OpenAI to Gemini 2.5 Flash for improved performance and cost efficiency."
   },
   "quantitative_metrics": {

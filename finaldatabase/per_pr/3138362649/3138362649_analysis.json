@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Implement the MODEXP precompile (address 0x05) for EVM compatibility with EIP-198 modular exponentiation and EIP-2565 gas optimization, including a custom BigInteger library, test suite, and integration."
   },
   "quantitative_metrics": {

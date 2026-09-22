@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Replace Regex.Split in TrimStackTrace with a span-based loop to reduce allocations and overhead, with conditional compilation for .NET 6+ and unit tests."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "15",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Optimize VM by removing freshConst and reusing constant registers for map/struct literals, reducing hash join register increments, and updating IR golden files."
   },
   "quantitative_metrics": {

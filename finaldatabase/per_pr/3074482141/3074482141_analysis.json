@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Add BUN_OPTIONS environment variable to pass additional CLI options to bun, including a parser for quoted arguments and integration into initArgv."
   },
   "quantitative_metrics": {

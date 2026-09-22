@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "34",
+    "topic_id": 34,
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Add tracing instrumentation spans for gen_witness and PCS prove methods in IPA and Hyrax implementations to provide detailed timing breakdown; maintainer requested start/end log format matching Spartan codebase."
   },
   "quantitative_metrics": {

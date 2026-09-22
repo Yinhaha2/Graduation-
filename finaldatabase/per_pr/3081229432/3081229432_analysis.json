@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "ci",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Remove the --skip-nx-cache flag from all CI/build configurations across the codebase to enable NX caching and speed up subsequent CI runs."
   },
   "quantitative_metrics": {

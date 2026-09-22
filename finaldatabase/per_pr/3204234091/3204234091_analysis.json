@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Complete Android project optimization: KAPT to KSP migration, Gradle 8.14 update, dependency bumps, and build performance tuning with parallel builds/caching, claiming 40-60% faster clean builds and 20-30% faster incremental builds."
   },
   "quantitative_metrics": {

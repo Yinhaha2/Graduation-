@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Refactor GitHub config validation to run at app boot time instead of on every API call, moving env var checks to instrumentation.ts and caching result."
   },
   "quantitative_metrics": {

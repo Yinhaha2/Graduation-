@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 21,
-    "topic_name": "21",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Keep trailing newline in JOB dataset IR writing and propagate move results into Expect instructions for tighter VM code."
   },
   "quantitative_metrics": {

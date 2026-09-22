@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Adjust Ruby transpiler to use integer division for AvgExpr and simplify boolean printing, updating golden test outputs and VM expected results."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 50,
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Simplify get_bone_name cache by removing a secondary cache layer for cross-platform compatibility, but provided benchmarks show a slight performance regression (2.629s → 2.692s)."
   },
   "quantitative_metrics": {

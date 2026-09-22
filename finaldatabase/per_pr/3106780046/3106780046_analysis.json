@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Improve Wget.fetch efficiency with char buffer, lazy default connection provider, and document maxResponseBytes default."
   },
   "quantitative_metrics": {

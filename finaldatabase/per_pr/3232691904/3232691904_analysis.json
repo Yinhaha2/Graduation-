@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 44,
-    "topic_name": "44_enveditor note update",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Add VAAPI-based GPU hardware acceleration for Intel and AMD GPUs in video conversion, with detection, settings, and Docker driver installation."
   },
   "quantitative_metrics": {

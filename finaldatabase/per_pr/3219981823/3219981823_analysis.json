@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Add Next.js matcher config to edge middleware so that API routes are skipped, aiming to reduce unnecessary middleware execution and improve performance."
   },
   "quantitative_metrics": {

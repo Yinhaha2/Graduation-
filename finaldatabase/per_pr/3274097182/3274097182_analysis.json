@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Expose limiter and metrics middleware objects on app.state for reuse, adjusting static server tests accordingly."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "9",
+    "topic_id": 9,
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Simplify task ordering in terminal-bench by defaulting to duration-based descending sort, removing the --order-by-duration CLI option, and integrating sorting directly into the Dataset class."
   },
   "quantitative_metrics": {

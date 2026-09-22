@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "6",
+    "topic_id": 6,
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Moves GitHub config validation from per-request execution to module initialization, claiming reduced overhead."
   },
   "quantitative_metrics": {

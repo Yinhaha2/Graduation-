@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 10,
-    "topic_name": "10",
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Add compile-time evaluation of pure functions in VM compiler to constant fold calls, with updated IR golden files and test instructions."
   },
   "quantitative_metrics": {

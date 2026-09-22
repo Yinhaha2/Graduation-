@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "28",
+    "topic_id": 28,
+    "topic_name": "28_scroll_debounce_search_debouncing",
     "body_summary": "Resolves #138 by implementing debounced QR code generation in the Vue component."
   },
   "quantitative_metrics": {

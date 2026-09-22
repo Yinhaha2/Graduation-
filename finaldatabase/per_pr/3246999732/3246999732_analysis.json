@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Implement SQLite database caching for folder scan results in AppDataCleaner so subsequent scans load from cache, claiming ~10-100x speed improvement over full filesystem scans."
   },
   "quantitative_metrics": {

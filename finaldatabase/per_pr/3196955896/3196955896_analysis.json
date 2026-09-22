@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 40,
-    "topic_name": "40",
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Replace a loop of 1000 individual set calls with a single mset bulk operation in test_scan.py to eliminate test flakiness and timeout failures."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Add GPU shader plugin system (createWebGLProcessor), adaptive resolution flags in CLI, capture metrics in VR HUD/remote pages, and a sample invert plugin."
   },
   "quantitative_metrics": {

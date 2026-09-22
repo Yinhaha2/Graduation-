@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": 0,
-    "topic_name": "0_unknown",
+    "topic_id": 20,
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Enhance the C transpiler to inline membership checks for constant lists and record latest progress in TASKS.md."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 29,
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Backport of parallel freshness retrieval for Iceberg materialized views from PR #24734 to release-474-e, claiming to reduce refresh time from 560ms to 310ms, but actual commits only contain JVM config changes and no performance code."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Optimize clock functions using shell arithmetic for faster tests, adjust runner and unit tests."
   },
   "quantitative_metrics": {

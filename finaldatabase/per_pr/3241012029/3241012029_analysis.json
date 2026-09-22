@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1_unclassified",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Add a comprehensive performance test suite for the getSlots logic with complex team scenarios, measuring slot generation latency and comparing before/after an optimization."
   },
   "quantitative_metrics": {

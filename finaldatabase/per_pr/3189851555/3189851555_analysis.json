@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "test",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "40",
+    "topic_id": 40,
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Eliminate real-time waits in test suites for digital garage and consent management utilities by shortening timeouts and using Jest fake timers."
   },
   "quantitative_metrics": {

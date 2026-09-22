@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Simplify verifyReplicationTasks logic and enable concurrent verification with configurable concurrency for better throughput."
   },
   "quantitative_metrics": {

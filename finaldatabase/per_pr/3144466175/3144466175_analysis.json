@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 48,
-    "topic_name": "48",
+    "topic_name": "48_chat_schema_workflow state_workflow node",
     "body_summary": "Cursors agent added localStorage persistence with Zod schemas for AI config and user input, debounced input persistence, and useMemo to optimize performance, then author refactored and merged instantly."
   },
   "quantitative_metrics": {

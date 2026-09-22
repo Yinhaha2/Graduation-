@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "45",
+    "topic_id": 45,
+    "topic_name": "45_firecrawl_scrape_scraping_authority",
     "body_summary": "Add a per-project caching layer for identical non-streaming API requests, with configurable cache duration and API endpoints to toggle; aims to reduce latency for frequent identical calls."
   },
   "quantitative_metrics": {

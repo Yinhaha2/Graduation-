@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 21,
-    "topic_name": "21",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Add unreachable code removal in VM liveness analysis while keeping division/modulo for runtime errors, regenerate IR test outputs, and add update_job helper tool."
   },
   "quantitative_metrics": {

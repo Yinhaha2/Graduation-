@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Add benchmark output for Rosetta programs 46-55, update Lua progress table, and refactor transpiler to emit only used helper functions to reduce output size."
   },
   "quantitative_metrics": {

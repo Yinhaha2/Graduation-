@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Add error node caching in base branch data provider to prevent repeated failed operations on tree refresh, with retry command and contextValue non-readonly changes for improved UX."
   },
   "quantitative_metrics": {

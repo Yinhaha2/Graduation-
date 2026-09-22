@@ -15,7 +15,7 @@
     "aidev_task_type": "ci",
     "aidev_task_confidence": 9,
     "topic_id": 0,
-    "topic_name": "",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Enhance browser size CI workflow by reusing built-in pip and npm caches via actions/setup-python and actions/setup-node."
   },
   "quantitative_metrics": {

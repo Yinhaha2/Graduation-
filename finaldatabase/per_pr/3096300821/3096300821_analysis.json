@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Modify docs watcher to only process a single changed markdown file (and similarly for examples) to speed up docs development iterations."
   },
   "quantitative_metrics": {

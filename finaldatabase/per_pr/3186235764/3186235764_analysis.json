@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5_vm_set_operations",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Optimize Union, Except, Intersect opcodes in VM using map-based lookups for better runtime performance."
   },
   "quantitative_metrics": {

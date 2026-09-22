@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Enable previously skipped pull request trigger tests by mocking network calls and adding conditional diff fetching to avoid unnecessary API calls when 'diff' accessor is not requested."
   },
   "quantitative_metrics": {

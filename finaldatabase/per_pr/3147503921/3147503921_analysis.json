@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "docs",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Upgrade Docusaurus from 3.7.0 to 3.8.1 with required future flag and resolve useColorMode hydration error by refactoring custom components to CSS-based theme switching."
   },
   "quantitative_metrics": {

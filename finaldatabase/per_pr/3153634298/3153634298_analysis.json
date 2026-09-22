@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Upgrade packages/convert to Tailwind CSS v4.1.1 with new Vite plugin and CSS-based configuration, claiming better performance and alignment with promo-pages."
   },
   "quantitative_metrics": {

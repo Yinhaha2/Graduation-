@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "11",
+    "topic_id": 11,
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Adjust gensx start command for non-TTY environments, keep CLI running on build errors instead of exiting, add console logging in quiet/non-TTY mode, and fix linter issues."
   },
   "quantitative_metrics": {

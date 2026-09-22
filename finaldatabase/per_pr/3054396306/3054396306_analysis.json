@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": "41",
-    "topic_name": "41",
+    "topic_id": 41,
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Adds @tanstack/react-virtual to implement vertical virtualization in the documents DataTable, claiming improved mobile performance and scrollability for large tables."
   },
   "quantitative_metrics": {

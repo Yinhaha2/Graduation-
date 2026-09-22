@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Optimize inner join code generation in the VM, regenerate benchmark results, and update join benchmark documentation."
   },
   "quantitative_metrics": {

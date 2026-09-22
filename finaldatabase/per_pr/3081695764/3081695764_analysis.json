@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Replace fixed-size arrays with a lazily-initialized List of structs in ValidationEndpointFilterFactory to reduce allocations when few or no parameters require validation."
   },
   "quantitative_metrics": {

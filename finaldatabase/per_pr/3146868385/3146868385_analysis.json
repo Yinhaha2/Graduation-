@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 9,
-    "topic_name": "9",
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Prevent memory leak in ItemInputCharset::commitCharEdit by adding a missing delete[]."
   },
   "quantitative_metrics": {

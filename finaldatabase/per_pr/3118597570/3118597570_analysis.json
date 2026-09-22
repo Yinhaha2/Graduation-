@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "47",
+    "topic_id": 47,
+    "topic_name": "47_inference_ops_bytecode_opcodes",
     "body_summary": "Inline arithmetic operations for unknown types in the Go compiler, drop deprecated runtime helpers, and raise compile errors for ambiguous operand types."
   },
   "quantitative_metrics": {

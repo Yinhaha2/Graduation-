@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 25,
-    "topic_name": "25",
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Add string expression detection and inline list builtins (sum/avg/min/max/first) in Ruby compiler, regenerating golden test outputs."
   },
   "quantitative_metrics": {

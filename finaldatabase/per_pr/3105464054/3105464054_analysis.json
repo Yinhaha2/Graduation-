@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "6",
+    "topic_id": 6,
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Introduces a simplified event-driven dynamic tool registration system for Flutter MCP tools that uses DTD events and VM service connections, eliminating periodic polling and enabling immediate tool discovery."
   },
   "quantitative_metrics": {

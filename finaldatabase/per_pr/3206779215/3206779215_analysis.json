@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "17",
+    "topic_id": 17,
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Add LIMIT env var to vm_roundtrip tool to cap checks, making them faster, and regenerate ERRORS.md accordingly."
   },
   "quantitative_metrics": {

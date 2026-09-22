@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Replace inefficient string concatenation with fmt.Fprintf in Go template generation to reduce memory allocations and GC pressure; includes a performance analysis report and go.mod fixes."
   },
   "quantitative_metrics": {

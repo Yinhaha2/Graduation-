@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Add multi-client Gemini support with GeminiClientPool for round-robin load balancing, attach client_id to conversations, and update health/chat endpoints to use the pool."
   },
   "quantitative_metrics": {

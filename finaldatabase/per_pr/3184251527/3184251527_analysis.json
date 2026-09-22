@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 33,
-    "topic_name": "33",
+    "topic_name": "33_ahash_uint_methods_fnv",
     "body_summary": "Add LittleEndian TryRead methods and replace Math.Pow/division loops with bit shifts for BigEndian in SuperSocket ProtoBase Extensions, claiming 10-100x faster uint/ulong reading."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Add ESLint rule @remotion/slow-css-property to warn about CSS properties (boxShadow, textShadow, filter) that may slow rendering on machines without GPU; later extended to string keys and Tailwind classes."
   },
   "quantitative_metrics": {

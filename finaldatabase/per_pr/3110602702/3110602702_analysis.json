@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 24,
-    "topic_name": "24",
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Implement React.lazy() and Vite chunk splitting to reduce editor main bundle size by 40% (306.24 kB → 182.37 kB) with on-demand plugin loading."
   },
   "quantitative_metrics": {

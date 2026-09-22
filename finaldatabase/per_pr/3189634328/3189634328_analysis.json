@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 46,
-    "topic_name": "46",
+    "topic_name": "46_timezone_slot_ranges_mrge",
     "body_summary": "WIP planning PR to optimize Placement class with cached computations and Copy-on-Write; checklist of uncompleted tasks with aspirational 60-80% performance claim."
   },
   "quantitative_metrics": {

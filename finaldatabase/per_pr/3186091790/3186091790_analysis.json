@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 15,
-    "topic_name": "15",
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Add EnableOptimizations flag to runtime/vm and skip Optimize when flag is off; regenerate TPC-H IR outputs with optimizations disabled."
   },
   "quantitative_metrics": {

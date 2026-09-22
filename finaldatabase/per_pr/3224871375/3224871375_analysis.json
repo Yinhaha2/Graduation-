@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
     "topic_id": 14,
-    "topic_name": "14",
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Expand C helper functions with isListBoolType, use compile-time length for len on constant lists, and index bool lists as arrays instead of struct data."
   },
   "quantitative_metrics": {

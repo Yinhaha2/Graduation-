@@ -15,7 +15,7 @@
     "aidev_task_type": "ci",
     "aidev_task_confidence": 8,
     "topic_id": 0,
-    "topic_name": "",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Persist babel cache between CircleCI runs to speed up test builds."
   },
   "quantitative_metrics": {

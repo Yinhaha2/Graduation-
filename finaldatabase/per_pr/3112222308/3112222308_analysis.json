@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "51",
+    "topic_id": 51,
+    "topic_name": "51_chart_gpu_interactive chart_interactive",
     "body_summary": "Add GPU flag handling to evolver worker, extending mutate signature and adding unit test, to enable GPU utilization in the alpha factory insight browser."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "build",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Enable rush build cache for @typespec/ts-http-runtime by adding a rush-project.json config that extends the common repo cache configuration, claiming improved build times because many packages depend on it."
   },
   "quantitative_metrics": {

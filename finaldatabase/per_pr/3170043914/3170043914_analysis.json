@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 42,
-    "topic_name": "42",
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Add PutMany RPC to kv.proto, regenerate protobuf code, implement batch writes on NATS store and server, update sync poller to batch KV writes, and revise interfaces/mocks for PutMany support."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Skip offline nodes in the storage controller's get_top_tenant_shards to avoid optimizer background loop delays caused by waiting for timeouts when nodes are unreachable."
   },
   "quantitative_metrics": {

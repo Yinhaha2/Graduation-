@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "12",
+    "topic_id": 12,
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Implement lazy loading for Stripe SDK via a useStripe() hook to reduce initial bundle size and avoid loading Stripe for users who never access payment features."
   },
   "quantitative_metrics": {

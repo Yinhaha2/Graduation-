@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "46",
+    "topic_id": 46,
+    "topic_name": "46_timezone_slot_ranges_mrge",
     "body_summary": "Optimized slot generation by reducing expensive .tz() timezone conversions inside loops and improving timezone detection, especially for IST and 45-minute intervals."
   },
   "quantitative_metrics": {

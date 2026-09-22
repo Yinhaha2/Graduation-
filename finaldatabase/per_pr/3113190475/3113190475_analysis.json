@@ -15,7 +15,7 @@
     "aidev_task_type": "docs",
     "aidev_task_confidence": 10,
     "topic_id": 34,
-    "topic_name": "34",
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Update celestia-node-trusted-hash.md to use a single API call instead of two separate curl commands, reducing network calls and improving user experience."
   },
   "quantitative_metrics": {

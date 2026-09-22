@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "build_tooling_compile_speed",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Remove --turbopack flag from dev script in packages/web/package.json to improve compilation speed on Mac, claiming 50-70% improvement from 15.1s to 5-7s."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 47,
-    "topic_name": "47",
+    "topic_name": "47_inference_ops_bytecode_opcodes",
     "body_summary": "Add specialized VM bytecode operations for integer and float arithmetic and comparisons, with static type inference in the compiler, and update golden test outputs."
   },
   "quantitative_metrics": {

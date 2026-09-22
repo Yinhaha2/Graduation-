@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 47,
-    "topic_name": "47",
+    "topic_name": "47_inference_ops_bytecode_opcodes",
     "body_summary": "Add CFG-based type inference pass that rewrites arithmetic/comparison bytecodes with register types, and update golden IR outputs."
   },
   "quantitative_metrics": {

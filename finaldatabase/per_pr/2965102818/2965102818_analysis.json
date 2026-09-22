@@ -14,8 +14,9 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
-    "topic_name": "34",
-    "body_summary": "Performance analysis document for PR #1107, identifying inefficiencies in the default channel migration (row-by-row processing, subqueries, sequential operations) and recommending set-based migration, JOINs, batching, and indexes."
+    "topic_name": "34_telemetry_phase_history_deploy",
+    "body_summary": "Performance analysis document for PR #1107, identifying inefficiencies in the default channel migration (row-by-row processing, subqueries, sequential operations) and recommending set-based migration, JOINs, batching, and indexes.",
+    "topic_id": 34
   },
   "quantitative_metrics": {
     "change_scale": {

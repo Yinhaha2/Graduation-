@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Adds .cursorignore to prevent Cursor AI from indexing sensitive files and large build artifacts, claiming improved AI editor performance and security."
   },
   "quantitative_metrics": {

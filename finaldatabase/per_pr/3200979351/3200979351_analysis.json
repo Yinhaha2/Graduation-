@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": 0,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Optimize sliding logits worker by reducing per-element conversions, storing batches as Parquet record batches, and computing log-probs on device before CPU transfer."
   },
   "quantitative_metrics": {

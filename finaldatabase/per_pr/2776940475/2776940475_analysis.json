@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 37,
-    "topic_name": "37",
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Refactor processNode in the AST manager to use requestIdleCallback-based chunked processing and DOM update batching to prevent UI blocking in the renderer."
   },
   "quantitative_metrics": {

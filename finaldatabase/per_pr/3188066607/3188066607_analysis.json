@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Reuse constant registers in VM compiler to avoid re-emitting repeated constants, reducing IR output size; update TPC-H q22 IR reference."
   },
   "quantitative_metrics": {

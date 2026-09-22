@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Copilot added a batched billboard rendering fast path with RenderStaticBillboards type for 3D particle systems, claiming performance benefits for hundreds/thousands of billboards."
   },
   "quantitative_metrics": {

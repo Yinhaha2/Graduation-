@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "11",
+    "topic_id": 11,
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Reduce Vercel deploy time by offloading TypeScript checks to GitHub Actions and optimizing Webpack/build steps, aiming for ~2x speedup."
   },
   "quantitative_metrics": {

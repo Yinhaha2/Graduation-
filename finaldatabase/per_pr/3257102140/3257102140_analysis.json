@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "18",
+    "topic_id": 18,
+    "topic_name": "18_runtime_err_racket_helpers",
     "body_summary": "Extract Flambda2 block index primitives (Read_offset/Write_offset) and expose %raw_field / %set_raw_field for faster unboxed memory access, with tests but still a draft awaiting user-facing wrappers."
   },
   "quantitative_metrics": {

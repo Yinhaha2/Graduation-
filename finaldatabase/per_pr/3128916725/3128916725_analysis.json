@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": 0,
-    "topic_name": "0_cache_memoization",
+    "topic_id": 10,
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Add an optional memoization flag for pure functions in the interpreter, toggled via MOCHI_MEMO environment variable, and wire it into mochi run and mochi test commands."
   },
   "quantitative_metrics": {

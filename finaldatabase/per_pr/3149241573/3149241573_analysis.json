@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "39",
+    "topic_id": 39,
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Replace toFixed(2) with Math.round in HSL color formatting to remove unwanted decimal places and improve consistency with inline CSS color picker."
   },
   "quantitative_metrics": {

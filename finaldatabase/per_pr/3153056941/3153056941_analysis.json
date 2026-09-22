@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 1,
-    "topic_name": "1",
+    "topic_name": "1_rosetta_transpiler_benchmark_benchmark mode",
     "body_summary": "Add compile/c package to compile Mochi to C via Cython, verified with a LeetCode example."
   },
   "quantitative_metrics": {

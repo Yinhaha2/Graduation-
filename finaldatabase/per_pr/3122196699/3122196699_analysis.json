@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 51,
-    "topic_name": "51",
+    "topic_name": "51_chart_gpu_interactive chart_interactive",
     "body_summary": "Switch plotCanvas to WebGL via regl, call plotCanvas for large populations, include regl devDependency, and cover fps with a new Playwright test."
   },
   "quantitative_metrics": {

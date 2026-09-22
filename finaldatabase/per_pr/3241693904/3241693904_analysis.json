@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 14,
-    "topic_name": "14",
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Fold constant string list operations in the Fortran compiler to precompute append and set membership checks during code generation."
   },
   "quantitative_metrics": {

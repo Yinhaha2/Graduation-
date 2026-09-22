@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Release v2.0 with version bump, README updates, permission check refactor for readability, and precomputed glob patterns for performance."
   },
   "quantitative_metrics": {

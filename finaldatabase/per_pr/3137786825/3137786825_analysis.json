@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "33",
+    "topic_id": 33,
+    "topic_name": "33_ahash_uint_methods_fnv",
     "body_summary": "Replace List<T> with array in StringExtensions.ToList() and MessageExtensions.ToList() to reduce memory allocations and improve performance for single-item collections."
   },
   "quantitative_metrics": {

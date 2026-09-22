@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add incremental output writing to GenerateDepsFile and GenerateRuntimeConfigurationFiles tasks: compute XxHash64 hash of new content, compare with existing file, and skip write when identical to prevent unnecessary cascading rebuilds."
   },
   "quantitative_metrics": {

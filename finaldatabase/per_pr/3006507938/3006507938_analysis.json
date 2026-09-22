@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 50,
-    "topic_name": "50",
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Optimize Spring Bone animation processing in Blender addon via pose bone caching, armature filtering, and matrix operation reuse, backed by before/after cProfile statistics."
   },
   "quantitative_metrics": {

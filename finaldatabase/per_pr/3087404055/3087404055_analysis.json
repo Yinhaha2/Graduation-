@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
     "topic_id": 22,
-    "topic_name": "22",
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Remove duplicative video parameter validations across multiple bid adapter modules in Prebid.js."
   },
   "quantitative_metrics": {

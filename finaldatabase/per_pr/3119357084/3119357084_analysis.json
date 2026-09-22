@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Conditionally build sequence length tensors only when flash attention is enabled to avoid unnecessary computation; also ignore nested mistral.rs repo in gitignore."
   },
   "quantitative_metrics": {

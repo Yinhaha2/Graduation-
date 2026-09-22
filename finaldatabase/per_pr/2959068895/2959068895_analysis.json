@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "19",
+    "topic_id": 19,
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Add HTTP caching for PyAirbyte connectors using mitmproxy, with native format serialization instead of pickle, cache modes, and executor integration."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "16",
+    "topic_id": 16,
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Implements CloudFileAttachmentAdapter with promise-based uploads and progress bar in the registry template, claiming performance gains via parallel uploads."
   },
   "quantitative_metrics": {

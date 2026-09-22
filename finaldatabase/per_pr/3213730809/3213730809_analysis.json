@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 43,
-    "topic_name": "43",
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Reduce copies in Result struct equality operators by passing parameters as readonly reference (`in`)."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Fix excessive re-rendering of the invoice preview component when accordion sections open/close by isolating the PDF preview from React's rendering lifecycle using global state and DOM manipulation."
   },
   "quantitative_metrics": {

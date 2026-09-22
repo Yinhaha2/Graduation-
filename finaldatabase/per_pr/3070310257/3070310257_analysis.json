@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Add module presence checks for openai and openai_agents in the preflight script to improve startup validation."
   },
   "quantitative_metrics": {

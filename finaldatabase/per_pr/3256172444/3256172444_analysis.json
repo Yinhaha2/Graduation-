@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Add transformer architecture for processing tool outputs before LLM consumption; implement llm_summarize transformer with fast secondary models to summarize lengthy outputs, global config flags, tool-level config, and backward compatibility."
   },
   "quantitative_metrics": {

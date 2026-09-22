@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Parallelize metadata generation in regenerate_test_rustdocs.sh by creating per-worker placeholder crates and running them concurrently."
   },
   "quantitative_metrics": {

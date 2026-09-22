@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Replace copyto! with copyto_unaliased! in specific _collect_indices methods to skip an unnecessary aliasing check on newly created arrays, improving performance for custom array types (e.g., GarbageVector from 179 ns to 30 ns)."
   },
   "quantitative_metrics": {

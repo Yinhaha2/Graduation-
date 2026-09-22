@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "Unknown",
+    "topic_id": -1,
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Refactor HtmlCleaner.kt with cached constants, precompiled regex, Set data structures, lazy initialization, and CSS extraction for claimed performance and readability improvements."
   },
   "quantitative_metrics": {

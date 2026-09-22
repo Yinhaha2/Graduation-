@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "35",
+    "topic_id": 35,
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Refactor PWA state management to initialize state before Vue app mounts, add loading state manager, and enhance Service Worker caching to eliminate loading screens and flickering during background-to-foreground transitions."
   },
   "quantitative_metrics": {

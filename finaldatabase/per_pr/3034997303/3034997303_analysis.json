@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Optimize CLI dependency footprint by replacing heavy libraries (chalk→picocolors, node-fetch→native fetch), inlining small utilities, consolidating duplicate versions, and removing deprecated packages, aiming to reduce compressed node_modules size from ~125MB to ≤50MB."
   },
   "quantitative_metrics": {

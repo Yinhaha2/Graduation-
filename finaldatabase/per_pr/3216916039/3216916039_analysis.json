@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Optimize Clojure query helpers by adding join key extraction helpers, emitting join key functions in compiler, speeding up _group_by using transients, and using hash join when key functions are provided in _query."
   },
   "quantitative_metrics": {

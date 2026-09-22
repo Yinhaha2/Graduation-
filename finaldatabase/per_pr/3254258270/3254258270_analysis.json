@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 51,
-    "topic_name": "51",
+    "topic_name": "51_chart_gpu_interactive chart_interactive",
     "body_summary": "Adds OpenCL capability checks to enable bitselect and LUT3 optimizations for modern NVIDIA GPUs."
   },
   "quantitative_metrics": {

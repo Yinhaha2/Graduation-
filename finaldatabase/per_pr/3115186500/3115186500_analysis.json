@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 21,
-    "topic_name": "21",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Optimize boolean selection in group_match using vectorized mask operations in static-frame's type_blocks.py."
   },
   "quantitative_metrics": {

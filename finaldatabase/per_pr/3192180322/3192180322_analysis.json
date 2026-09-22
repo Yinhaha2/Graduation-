@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Increase visual diff concurrency to 4 and filter sitemap URLs to /tests/ paths for faster CI preview checks."
   },
   "quantitative_metrics": {

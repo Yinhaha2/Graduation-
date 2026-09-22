@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 8,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Tighten bundle size checks by enabling tree shaking, reducing gzip max size to 2 MiB, and enforcing the limit in testing and manual build scripts."
   },
   "quantitative_metrics": {

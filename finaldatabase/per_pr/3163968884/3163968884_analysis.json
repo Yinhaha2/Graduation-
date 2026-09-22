@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Avoids repeated pubkey fetch calls during coin activation by tracking in-flight requests in CoinsBloc, aiming to reduce wallet page jank."
   },
   "quantitative_metrics": {

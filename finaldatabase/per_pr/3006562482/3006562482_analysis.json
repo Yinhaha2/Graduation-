@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 50,
-    "topic_name": "50",
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Attempt to optimize Spring Bone animation by caching parent-child bone relationships, but self-provided cProfile benchmark shows no improvement (202.010s vs 202.048s) and even a slight increase; PR is closed after agent concludes caching overhead cancelled out benefits."
   },
   "quantitative_metrics": {

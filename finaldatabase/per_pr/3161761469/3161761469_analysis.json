@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 40,
-    "topic_name": "40",
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Conditionally import Google Fonts (Inter) and KHTeka font-face declarations only when no custom font family is provided via --w3m-font-family CSS variable, to skip unnecessary network requests."
   },
   "quantitative_metrics": {

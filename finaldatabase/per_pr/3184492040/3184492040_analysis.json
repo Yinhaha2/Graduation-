@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 21,
-    "topic_name": "21",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Add a peephole optimizer pass to the VM to remove redundant instructions and simplify arithmetic, with documentation update."
   },
   "quantitative_metrics": {

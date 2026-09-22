@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Replace drag-based RightPane resize with click-based expand/collapse using useResize hook and requestAnimationFrame for better performance and UX."
   },
   "quantitative_metrics": {

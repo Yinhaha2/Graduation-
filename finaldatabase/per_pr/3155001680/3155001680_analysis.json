@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Fix N+1 database query pattern in search API by merging two prisma.repo.findMany() calls into one OR query, with a supporting PERFORMANCE_REPORT.md."
   },
   "quantitative_metrics": {

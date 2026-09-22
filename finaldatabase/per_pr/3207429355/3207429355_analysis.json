@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 0,
-    "topic_name": "",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add Cargo caching to CI workflows for develop and s3s-e2e jobs to speed up builds by caching dependencies and target directory."
   },
   "quantitative_metrics": {

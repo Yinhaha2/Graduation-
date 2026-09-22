@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "15",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Update expected IR output for TPC-H query 7 after VM performance improvement."
   },
   "quantitative_metrics": {

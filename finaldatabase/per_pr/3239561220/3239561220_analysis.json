@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 35,
-    "topic_name": "35",
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Add a service worker to cache dashboard bundles and register it in login/dashboard entry points, with config option enableResourceCache for faster loading in additional browser tabs."
   },
   "quantitative_metrics": {

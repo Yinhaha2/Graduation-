@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 25,
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Inline reduce calls in Zig compiler for potential performance gain; add new failing Zig machine output test files; update progress documentation."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "14",
+    "topic_id": 14,
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Improve list element type inference to avoid AnyType, inline string index/slice operations instead of calling runtime helpers, and drop unused helper flags for string headers."
   },
   "quantitative_metrics": {

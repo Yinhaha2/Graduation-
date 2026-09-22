@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 42,
-    "topic_name": "42",
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Fix VM map construction by ensuring contiguous register usage via temporary copies; update TPCH q1 IR golden file."
   },
   "quantitative_metrics": {

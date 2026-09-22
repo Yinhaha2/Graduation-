@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 10,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Implement optional Go build tags (fuzzy, mounts) to exclude heavy dependencies, reducing binary size from 16.7 MiB to 7.4M (lite) and providing custom build configurations."
   },
   "quantitative_metrics": {

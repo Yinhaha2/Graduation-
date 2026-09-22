@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "build",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add Turborepo configuration (turbo.json, yarn dependency) and scripts to optimize monorepo build times via caching and parallel task execution."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Convert GitLab getGroups() to async generator to stream groups instead of collecting in memory, improving memory efficiency for large GitLab instances."
   },
   "quantitative_metrics": {

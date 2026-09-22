@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 26,
-    "topic_name": "26",
+    "topic_name": "26_matching_x64_egraph_quantization",
     "body_summary": "Proposes three low-level optimizations in ggml_interface.cpp: BS::thread_pool instead of OpenMP, a memory pool for quantization buffers, and SIMD-accelerated quantization for ARM NEON / x64 AVX2, claiming 3–5x overall performance improvement."
   },
   "quantitative_metrics": {

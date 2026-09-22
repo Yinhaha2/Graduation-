@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 8,
-    "topic_name": "8",
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Replace random sampling with Farthest Point Sampling (FPS) in hierarchical merge labelling to achieve better spatial coverage of opinions and 100x faster performance using a Rust-based library."
   },
   "quantitative_metrics": {

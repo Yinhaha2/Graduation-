@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "32",
+    "topic_id": 32,
+    "topic_name": "32_dto_income_sale_report",
     "body_summary": "Add TestCountDTO and optimized Test Wise Count report in LaborataryReportController with navigation between legacy and DTO-based versions."
   },
   "quantitative_metrics": {

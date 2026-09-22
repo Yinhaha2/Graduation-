@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 41,
-    "topic_name": "41",
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Replace VList virtualization with ag-grid in mail-list.tsx for better mail list scrolling performance, adding ag-grid dependencies, custom CSS, and infinite row model."
   },
   "quantitative_metrics": {

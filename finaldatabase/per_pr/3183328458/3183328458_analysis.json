@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 7,
-    "topic_name": "7",
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Migrate Praeco from Vue CLI/webpack to Vite for ~60% faster builds, instant HMR, and modern tooling, with updated component imports and environment variable handling."
   },
   "quantitative_metrics": {

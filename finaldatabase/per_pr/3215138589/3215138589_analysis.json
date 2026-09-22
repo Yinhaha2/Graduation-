@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 23,
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Optimize memory analysis functions by introducing timeouts, object limits, and simplified deep analysis to prevent 100% CPU utilization and system freezes."
   },
   "quantitative_metrics": {

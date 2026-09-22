@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 49,
-    "topic_name": "49",
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Optimize avatar rendering during sidebar navigation by reducing unnecessary API calls and re-renders, eliminating avatar flashing and improving navigation smoothness."
   },
   "quantitative_metrics": {

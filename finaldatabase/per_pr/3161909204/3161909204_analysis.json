@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
-    "topic_id": -1,
-    "topic_name": "46",
+    "topic_id": 46,
+    "topic_name": "46_timezone_slot_ranges_mrge",
     "body_summary": "Implement DOM element caching and loop optimizations in jQuery Schedule plugin to reduce DOM queries and improve drag/drop performance, with an efficiency analysis report."
   },
   "quantitative_metrics": {

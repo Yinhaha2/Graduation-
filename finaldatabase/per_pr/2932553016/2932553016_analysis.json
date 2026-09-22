@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 8,
-    "topic_name": "8",
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Add a new parallel execution method kickoff_for_each_parallel using ThreadPoolExecutor for running a crew on multiple inputs concurrently, linked to issue #2406."
   },
   "quantitative_metrics": {

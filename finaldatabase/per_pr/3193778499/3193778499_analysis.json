@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 9,
     "topic_id": 7,
-    "topic_name": "7",
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Migrate the dashboard build tooling from Vite to rolldown-vite for improved build performance, claiming a ~10s production build time."
   },
   "quantitative_metrics": {

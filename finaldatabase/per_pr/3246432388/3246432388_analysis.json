@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "20",
+    "topic_id": 20,
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Add string trimming and consistent float handling to Go transpiler, update golden test outputs, and record progress in TASKS.md."
   },
   "quantitative_metrics": {

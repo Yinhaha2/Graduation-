@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 43,
-    "topic_name": "43",
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Add MethodImplOptions.AggressiveInlining attribute to frequently used Result helper methods to hint JIT inlining."
   },
   "quantitative_metrics": {

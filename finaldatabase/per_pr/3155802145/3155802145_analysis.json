@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Add a 2Gi /dev/shm volume mount to selenium pod recipe in Justfile, mirroring devcontainer and CI configurations."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "49",
+    "topic_id": 49,
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Updated hufilter filter list URLs from deprecated raw GitHub URLs to jsDelivr CDN for better reliability and performance; added missing EF Core migration and updated copilot instructions."
   },
   "quantitative_metrics": {

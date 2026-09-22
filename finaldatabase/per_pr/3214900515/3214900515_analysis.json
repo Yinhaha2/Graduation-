@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "17",
+    "topic_id": 17,
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Add //go:build slow build tag to archived packages and a cmd that imports them, so they are skipped during normal test runs to speed up the suite."
   },
   "quantitative_metrics": {

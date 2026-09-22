@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 48,
-    "topic_name": "48",
+    "topic_name": "48_chat_schema_workflow state_workflow node",
     "body_summary": "Optimize Chat API/Job by removing large schemaData from HTTP payloads, instead fetching schema via repository pattern within the job context, reducing network overhead."
   },
   "quantitative_metrics": {

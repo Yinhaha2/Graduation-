@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "WIP PR to implement delta diff sync for GitHub token storage, but body template was empty and no performance evidence provided."
   },
   "quantitative_metrics": {

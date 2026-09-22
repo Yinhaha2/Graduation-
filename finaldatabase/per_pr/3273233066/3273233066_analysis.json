@@ -14,7 +14,7 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
+    "topic_id": 2,
     "topic_name": "2_hydration_species_component_children",
     "body_summary": "Add a comprehensive species tracking system with lifetime, yearly, and seasonal detection badges, database indexing, caching, and frontend dashboard optimizations."
   },

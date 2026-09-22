@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Improve UniqueIdGenerator by switching to java.util.logging, reducing CPU spinning while waiting for next millisecond, tightening exception handling, and updating changelog."
   },
   "quantitative_metrics": {

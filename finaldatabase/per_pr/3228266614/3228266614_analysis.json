@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": "37",
-    "topic_name": "37",
+    "topic_id": 37,
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Add exponential backoff with early exit detection to Copilot timeline refresh after commenting, reducing delay from fixed 1s to adaptable 500ms-5s polling, improving responsiveness."
   },
   "quantitative_metrics": {

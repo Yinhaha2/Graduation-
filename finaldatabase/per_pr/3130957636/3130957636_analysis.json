@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 7,
-    "topic_id": null,
-    "topic_name": "39",
+    "topic_id": 39,
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Adjust log formatting in src/utils.js to improve CircleCI output readability; PR closed immediately due to CI failure."
   },
   "quantitative_metrics": {

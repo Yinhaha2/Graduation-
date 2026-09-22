@@ -15,7 +15,7 @@
     "aidev_task_type": "chore",
     "aidev_task_confidence": 10,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Refactor CLI commands to use async fs.promises instead of sync fs methods, with async parseEnv helper and await in deploy/upgrade actions."
   },
   "quantitative_metrics": {

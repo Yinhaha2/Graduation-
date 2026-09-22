@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 50,
-    "topic_name": "50",
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Optimize Spring Bone animation processing by caching matrix inverse and other repeated computations, achieving 5.1% overall execution time reduction with benchmark data."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
     "topic_id": 41,
-    "topic_name": "41",
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Refactor multiple useEffect calls to useMemo to eliminate unnecessary re-renders, improving React rendering performance."
   },
   "quantitative_metrics": {

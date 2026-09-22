@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 19,
-    "topic_name": "19",
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Add caching for RunPod PDF markdown results in Google Cloud Storage using content hash, reducing redundant API calls and improving response times for repeated PDF conversions."
   },
   "quantitative_metrics": {

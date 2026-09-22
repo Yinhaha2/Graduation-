@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "22",
+    "topic_id": 22,
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Tune ReflectionUtils cache size via system property, use ConcurrentHashMapNullSafe, log access errors in ClassUtilities.trySetAccessible, generate parameter keys with fully qualified names, and document cache tuning."
   },
   "quantitative_metrics": {

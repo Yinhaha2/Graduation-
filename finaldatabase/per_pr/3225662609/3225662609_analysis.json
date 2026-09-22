@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Cache the byte offset of the last terminal clear sequence in SessionInfo so stream replay can skip previously sent content and start from that position instead of scanning the entire asciicast file from the beginning."
   },
   "quantitative_metrics": {

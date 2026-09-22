@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "36",
+    "topic_id": 36,
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Change SecondaryIndex::insert() to accept &str instead of String to reduce heap allocations by ~30-50% and improve write throughput ~10-15%, along with a performance optimization report."
   },
   "quantitative_metrics": {

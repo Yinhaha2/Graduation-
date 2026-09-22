@@ -15,7 +15,7 @@
     "aidev_task_type": "docs",
     "aidev_task_confidence": 10,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Copilot addresses multiple performance issues: LRU cache for SVG network requests, HTTP timeouts, async file I/O, ListView.builder optimization, and adds a performance monitoring helper; includes documentation and unit test."
   },
   "quantitative_metrics": {

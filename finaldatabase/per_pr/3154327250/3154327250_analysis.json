@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Add a memory record cap using AGI_INSIGHT_MEMORY_LIMIT environment variable, trimming history when exceeded, with test for cap behavior."
   },
   "quantitative_metrics": {

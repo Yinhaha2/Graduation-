@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "36",
+    "topic_id": 36,
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "WIP placeholder PR to reduce N+1 SQL queries on homepage posts by batching user/contributor lookups; contains only an initial plan with no code changes."
   },
   "quantitative_metrics": {

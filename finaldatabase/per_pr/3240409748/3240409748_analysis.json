@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "25",
+    "topic_id": 25,
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Implement constant folding for sum and avg on list literals in the Zig compiler backend to optimize compile-time evaluation."
   },
   "quantitative_metrics": {

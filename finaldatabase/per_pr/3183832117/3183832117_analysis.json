@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 42,
-    "topic_name": "42_register_coalescing_pass",
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Add a register coalescing optimization pass to the Mochi runtime/VM, including a new coalesceRegisters pass and its integration into Optimize."
   },
   "quantitative_metrics": {

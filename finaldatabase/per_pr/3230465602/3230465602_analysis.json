@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Forward OpenAI streaming response deltas (output text and reasoning summary) to the TUI incrementally, update conversation history, and handle deltas in exec/MCP tool runner."
   },
   "quantitative_metrics": {

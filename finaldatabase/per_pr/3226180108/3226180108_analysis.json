@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "JIT-compile the autoregressive decode loop in sample_lm and remove unused timing code to improve generation performance."
   },
   "quantitative_metrics": {

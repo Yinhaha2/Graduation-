@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "15",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Add support for constant folding of the `lower` builtin in the VM compiler, and regenerate TPC-DS query IR outputs for q50–q59 to match the updated compiler behavior."
   },
   "quantitative_metrics": {

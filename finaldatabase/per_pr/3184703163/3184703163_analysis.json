@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 28,
-    "topic_name": "28",
+    "topic_name": "28_scroll_debounce_search_debouncing",
     "body_summary": "Add debounce to share search and in-place DOM updates to prevent UI flashing in sidebar.js."
   },
   "quantitative_metrics": {

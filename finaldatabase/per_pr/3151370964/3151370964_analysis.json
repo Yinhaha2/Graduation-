@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 38,
-    "topic_name": "38",
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Add fast-path implementations for MSBuild ToolLocationHelper property functions to avoid expensive reflection calls during project evaluation, linked to performance issue #12024."
   },
   "quantitative_metrics": {

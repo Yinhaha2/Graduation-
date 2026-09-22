@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 13,
-    "topic_name": "13_metrics_cardinality_reduction",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Add configurable error label mode and histogram buckets to reduce Prometheus metric cardinality in erpc."
   },
   "quantitative_metrics": {

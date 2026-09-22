@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Optimize theme application in figma-plugin by skipping deep recursive traversal of subtrees that lack relevant style IDs, addressing 30-60 minute freezes on deeply nested components."
   },
   "quantitative_metrics": {

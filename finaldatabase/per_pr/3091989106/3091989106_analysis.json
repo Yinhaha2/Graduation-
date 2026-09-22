@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 22,
-    "topic_name": "22",
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Defer class resolution in the JSON parser by storing unresolved type names in JsonValue instead of loading classes eagerly, and resolve them later in the Resolver, with a unit test verifying the deferred type behavior."
   },
   "quantitative_metrics": {

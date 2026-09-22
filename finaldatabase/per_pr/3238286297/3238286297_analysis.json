@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Add automatic terrain patching system to subdivide large terrains into 64x64 vertex patches for per-patch frustum culling, aiming to reduce GPU load and enable proximity debug drawing."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Add bumpalo allocator to temp buffers in minhash update functions; pytest fails with missing 'rensa' module."
   },
   "quantitative_metrics": {

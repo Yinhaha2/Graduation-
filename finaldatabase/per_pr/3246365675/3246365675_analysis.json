@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "39",
+    "topic_id": 39,
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Inline join loops in the TS transpiler and update golden outputs to improve performance."
   },
   "quantitative_metrics": {

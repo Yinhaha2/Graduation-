@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 45,
+    "topic_name": "45_firecrawl_scrape_scraping_authority",
     "body_summary": "Set a 24-hour Cache-Control header for blog posts older than six months to improve caching efficiency, with tests verifying TTL behavior."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "docs",
     "aidev_task_confidence": 9,
     "topic_id": 43,
-    "topic_name": "43",
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Replace C# documentation example for `in` parameter modifier from an ineffective `int` case to a struct-based example that illustrates performance benefit of passing by reference to avoid large struct copies."
   },
   "quantitative_metrics": {

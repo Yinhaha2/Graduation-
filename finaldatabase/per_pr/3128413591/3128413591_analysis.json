@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "24",
+    "topic_id": 24,
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Add HTML import manifest generation to `bun build`, producing a JSON manifest of all bundled files for ahead‑of‑time compilation and better full‑stack application support."
   },
   "quantitative_metrics": {

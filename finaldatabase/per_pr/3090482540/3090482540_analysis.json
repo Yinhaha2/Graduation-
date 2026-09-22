@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "35",
+    "topic_id": 35,
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Copilot attempted to fix notification delay caused by service worker pre-caching, but failed before making changes."
   },
   "quantitative_metrics": {

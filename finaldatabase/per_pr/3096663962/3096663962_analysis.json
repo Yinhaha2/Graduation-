@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "16",
+    "topic_id": 16,
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Add execution time and token usage display to the text generation panel in the Giselle workflow designer UI."
   },
   "quantitative_metrics": {

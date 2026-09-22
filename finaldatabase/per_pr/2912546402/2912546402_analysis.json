@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add a script to cache GitHub API responses to prevent rate limiting, integrated into devcontainer setup including Dockerfile, init-firewall.sh, and devcontainer.json."
   },
   "quantitative_metrics": {

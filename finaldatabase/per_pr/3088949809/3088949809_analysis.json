@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 24,
-    "topic_name": "24",
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Migrate the entire application from NextJS to RedwoodJS to reduce bundle size and improve code organization, adding a GraphQL API layer and RedwoodJS project structure."
   },
   "quantitative_metrics": {

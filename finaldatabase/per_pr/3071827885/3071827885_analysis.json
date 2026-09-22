@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Refactor string and comment parsing in json_parser.py to accumulate characters in lists instead of repeated concatenation, claiming performance improvement."
   },
   "quantitative_metrics": {

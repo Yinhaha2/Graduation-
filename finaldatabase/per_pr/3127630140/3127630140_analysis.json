@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "23",
+    "topic_id": 23,
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Remove stored alt->point-idxs in alt-table and compute lazily via invert-index, claiming behavior unchanged."
   },
   "quantitative_metrics": {

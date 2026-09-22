@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Eliminate 37 XC0022 XAML binding warnings by adding x:DataType attributes to enable compiled bindings, claiming improved runtime performance in DeviceTests.Runners UI."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 8,
-    "topic_name": "8",
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Process multiple comments in a single LLM extraction request to reduce processing time and OpenAI rate limits, with batch extraction logic in extraction.py."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Regenerate benchmark outputs for mochi and rename Go benchmark label to 'Mochi (Go)'."
   },
   "quantitative_metrics": {

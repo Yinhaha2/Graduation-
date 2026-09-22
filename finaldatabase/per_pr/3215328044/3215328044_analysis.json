@@ -15,7 +15,7 @@
     "aidev_task_type": "chore",
     "aidev_task_confidence": 9,
     "topic_id": 7,
-    "topic_name": "7",
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Remove unused junderw-crc32c dependency to reduce bundle size and clean up the dependency tree."
   },
   "quantitative_metrics": {

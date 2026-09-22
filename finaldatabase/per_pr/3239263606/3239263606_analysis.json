@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 23,
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Refactor draw shape pressure storage: omit z field when no pressure (mouse), use integer 0-100 for pen pressure, and include migration to reduce data size and improve clarity."
   },
   "quantitative_metrics": {

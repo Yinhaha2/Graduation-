@@ -1,7 +1,7 @@
 {
   "pr_id": 3171069351,
   "meta": {
-    "title": "@remotion/renderer: Improved render time estimates",
+    "title": "`@remotion/renderer`: Improved render time estimates",
     "html_url": "https://github.com/remotion-dev/remotion/pull/5463",
     "repo": "remotion-dev/remotion",
     "agent": "Copilot",
@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Improve renderEstimatedTime calculation in render-media.ts by switching from a full cumulative average to a rolling window of the most recent 50 frame timings to eliminate cold-start bias."
   },
   "quantitative_metrics": {

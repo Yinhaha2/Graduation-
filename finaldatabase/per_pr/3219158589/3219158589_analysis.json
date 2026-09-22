@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "21",
+    "topic_id": 21,
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Refine Swift code generation for grouped queries by returning typed groups in compiler.go."
   },
   "quantitative_metrics": {

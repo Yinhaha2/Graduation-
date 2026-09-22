@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 51,
-    "topic_name": "51",
+    "topic_name": "51_chart_gpu_interactive chart_interactive",
     "body_summary": "Replace static chart image on gh-pages with interactive Chart.js chart, adding agent toggles, view modes, and JSON data export for improved performance and interactivity."
   },
   "quantitative_metrics": {

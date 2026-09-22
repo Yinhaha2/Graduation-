@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 40,
-    "topic_name": "40",
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Add optional AbortController support to loadFont() in remotion/google-fonts to enable cancellation of font loading requests, claiming improved responsiveness for virtualized font picker UIs."
   },
   "quantitative_metrics": {

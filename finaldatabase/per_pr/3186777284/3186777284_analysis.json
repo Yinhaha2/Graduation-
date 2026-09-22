@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Refactor CLI parsing to separate syntax parsing from option validation, avoiding loading the full FFmpeg options dictionary and thus reducing package size and improving parsing speed."
   },
   "quantitative_metrics": {

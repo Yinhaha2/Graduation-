@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 7,
-    "topic_name": "7",
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Update dependencies and migrate from react-router-dom to react-router to align with latest React Router v7 recommendations and improve performance."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": -1,
-    "topic_name": "-1_unassigned",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Eliminate a hardcoded 300ms async delay on Windows terminal shell type detection by using the executable path already known at creation, making detection immediate (~1ms) like macOS."
   },
   "quantitative_metrics": {

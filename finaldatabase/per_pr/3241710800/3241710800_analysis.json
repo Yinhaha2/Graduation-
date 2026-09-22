@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Compile left_join_multi/right_join/outer_join queries without intermediate _query helper to reduce overhead; update README with PHP join improvements."
   },
   "quantitative_metrics": {

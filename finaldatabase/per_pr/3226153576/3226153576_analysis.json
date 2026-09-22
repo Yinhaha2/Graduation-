@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 18,
-    "topic_name": "18",
+    "topic_name": "18_runtime_err_racket_helpers",
     "body_summary": "Specialize the Racket backend's len builtin for string literals in compiler.go, along with a TASKS.md tracker and README update."
   },
   "quantitative_metrics": {

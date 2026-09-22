@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 35,
-    "topic_name": "35",
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Avoid adding a WASM preload link tag when the WASM file is embedded inline, refresh generated dist/index.html, and update CSP/browser tests accordingly."
   },
   "quantitative_metrics": {

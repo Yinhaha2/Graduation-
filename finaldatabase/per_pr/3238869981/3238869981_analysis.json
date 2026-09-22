@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Fix streaming real-time output in PraisonAI agents; adds StreamableResponse class to enable chunked iteration when stream=True, addressing issue where responses were accumulated internally."
   },
   "quantitative_metrics": {

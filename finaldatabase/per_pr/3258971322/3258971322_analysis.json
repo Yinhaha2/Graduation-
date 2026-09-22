@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 40,
-    "topic_name": "40_socket_exhaustion_connection_reuse",
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Fix CI socket exhaustion by reusing client connections, adding coordinated delays, and adjusting Jest timeouts to prevent resource contention in Valkey GLIDE Node.js tests."
   },
   "quantitative_metrics": {

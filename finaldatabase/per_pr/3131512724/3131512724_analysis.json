@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Remove forceMount prop from CollapsibleContent in a code block component so heavy CodeMirror instances unmount when collapsed, aiming to improve DOM performance."
   },
   "quantitative_metrics": {

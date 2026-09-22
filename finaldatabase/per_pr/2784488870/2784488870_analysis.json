@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "45",
+    "topic_id": 45,
+    "topic_name": "45_firecrawl_scrape_scraping_authority",
     "body_summary": "Move findExploresFromCache call inside the compiledExplores undefined condition and use Object.values on cache to avoid unnecessary database queries when explores are already in memory."
   },
   "quantitative_metrics": {

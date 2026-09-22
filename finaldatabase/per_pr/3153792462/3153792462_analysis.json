@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "test",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "17",
+    "topic_id": 17,
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Skip slow interpreter and LeetCode example tests across multiple compiler test suites to speed up `go test ./...`."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": 0,
-    "topic_name": "13",
+    "topic_id": 13,
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Improve LK tracker efficiency and move timing logic, add unit tests, and ensure English-only docstrings/comments."
   },
   "quantitative_metrics": {

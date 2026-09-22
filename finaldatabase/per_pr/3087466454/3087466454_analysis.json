@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "test",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "40",
+    "topic_id": 40,
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Break the Karma test suite into chunks to avoid CircleCI timeouts and flakiness."
   },
   "quantitative_metrics": {

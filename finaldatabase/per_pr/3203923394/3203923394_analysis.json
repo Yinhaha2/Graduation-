@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "docs",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Update docs workflow cache key to include asset URLs, triggering cache refresh when mirrors change."
   },
   "quantitative_metrics": {

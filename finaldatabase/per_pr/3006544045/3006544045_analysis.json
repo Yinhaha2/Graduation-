@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "50",
+    "topic_id": 50,
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Optimize get_bone_name caching by replacing full cache clear with targeted eviction and adding a secondary armature-level cache, claiming 3% function improvement and 1.4% overall Spring Bone speedup based on profiling."
   },
   "quantitative_metrics": {

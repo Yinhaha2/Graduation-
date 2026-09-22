@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "32",
+    "topic_id": 32,
+    "topic_name": "32_dto_income_sale_report",
     "body_summary": "Add StockDTO for lighter stock queries and use DTO results for fast retail autocomplete to speed up response."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Proposes ListMetadataKeys and GetAllMetadata RPC methods to improve metadata discovery and reduce network round trips, with no code changes committed."
   },
   "quantitative_metrics": {

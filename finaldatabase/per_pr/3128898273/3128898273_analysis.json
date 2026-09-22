@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 10,
-    "topic_name": "10",
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Improve memoization key generation by avoiding JSON serialization, likely replacing it with a direct string-building approach, and update benchmark outputs."
   },
   "quantitative_metrics": {

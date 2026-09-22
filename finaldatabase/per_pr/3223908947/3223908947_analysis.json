@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 25,
-    "topic_name": "25",
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Tweak the mochi Rust compiler to print simple string literals without format placeholders and regenerate machine Rust sources."
   },
   "quantitative_metrics": {

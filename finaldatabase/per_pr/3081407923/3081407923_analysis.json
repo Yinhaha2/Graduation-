@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Update deprecated CodeQL GitHub Actions from v1 to v2 and bump actions/checkout to v4 to resolve deprecation warnings and improve CI performance."
   },
   "quantitative_metrics": {

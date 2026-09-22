@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Add benchmarking support to Swift transpiler: enable benchmark mode, record memory via /proc/self/status, update Rosetta checklist with table format, and regenerate code for 100-doors-2."
   },
   "quantitative_metrics": {

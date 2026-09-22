@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Implements an intelligent test selection system that reduces CI runtime from 5+ minutes to targeted windows (1-5 minutes) based on the scope of changes in a pull request."
   },
   "quantitative_metrics": {

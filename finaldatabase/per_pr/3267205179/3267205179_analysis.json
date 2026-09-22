@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 32,
-    "topic_name": "32",
+    "topic_name": "32_dto_income_sale_report",
     "body_summary": "Add OPD income report DTO and optimized page with navigation toggle between legacy and DTO-based views."
   },
   "quantitative_metrics": {

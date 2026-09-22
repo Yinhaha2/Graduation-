@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Refactor RegistryInstance to use lazy loading via mutable struct and getproperty, deferring decompression and Registry.toml parsing until first access, with before/after benchmark showing Pkg.instantiate() latency drop from 0.390s to 0.162s and allocation reduction from 148MB to 28MB."
   },
   "quantitative_metrics": {

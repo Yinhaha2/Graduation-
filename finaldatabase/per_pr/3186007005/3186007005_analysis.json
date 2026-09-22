@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Add hash-based optimization for left joins in the Mochi VM, update left join intermediate representation and benchmarks to reflect improved performance."
   },
   "quantitative_metrics": {

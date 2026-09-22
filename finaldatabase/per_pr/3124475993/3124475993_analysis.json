@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "26",
+    "topic_id": 26,
+    "topic_name": "26_matching_x64_egraph_quantization",
     "body_summary": "Add new kornia-nn crate with linear layer using matrixmultiply::sgemm, migrate SIMD linear layer and benchmarks, remove old dnn module from kornia-tensor-ops."
   },
   "quantitative_metrics": {

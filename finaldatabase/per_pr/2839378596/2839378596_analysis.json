@@ -15,7 +15,7 @@
     "aidev_task_type": "ci",
     "aidev_task_confidence": 10,
     "topic_id": 0,
-    "topic_name": "",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Optimize CI turbo build and test workflows by adding parallelism flags and optimizing turbo.json dependencies; claims to reduce build from ~4m45s to 2-3m and test from ~11m15s to 6-7m."
   },
   "quantitative_metrics": {

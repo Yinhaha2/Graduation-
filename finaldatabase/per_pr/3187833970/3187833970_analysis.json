@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Add TXT file support with line-by-line splitting to the Lingo.dev CLI loader, enabling translation of fastlane metadata files by treating each line as a separate translatable unit with numeric keys."
   },
   "quantitative_metrics": {

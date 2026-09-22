@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Convert WormholeContract to sol_storage! macro for TestVM compatibility and achieve contract size under 24 KiB by removing k256 dependency and optimizing compiler flags, ultimately achieving 24.9 KB with signature verification preserved."
   },
   "quantitative_metrics": {

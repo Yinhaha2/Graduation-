@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 28,
-    "topic_name": "28",
+    "topic_name": "28_scroll_debounce_search_debouncing",
     "body_summary": "Fix sticky scroll performance by using correct array for minContentWidth calculation to avoid forced layout recalculations and stuttering."
   },
   "quantitative_metrics": {

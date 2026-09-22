@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "14",
+    "topic_id": 14,
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Optimize C code generation by using stack arrays for list expressions when possible, emitting contains_array_int instead of contains_list_int, and using listLenExpr/listItemExpr for query loops."
   },
   "quantitative_metrics": {

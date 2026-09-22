@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Upgrade the deep-modeling-workflow Trigger.dev task from default (512MB) to medium-1x (2GB) machine spec to prevent Out-of-Memory crashes."
   },
   "quantitative_metrics": {

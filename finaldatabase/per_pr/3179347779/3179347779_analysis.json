@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 42,
-    "topic_name": "42",
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Add liveness analysis pass for VM functions, track register usage, eliminate dead writes, and shrink function register counts after optimization."
   },
   "quantitative_metrics": {

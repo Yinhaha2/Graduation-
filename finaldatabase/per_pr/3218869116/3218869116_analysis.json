@@ -15,7 +15,7 @@
     "aidev_task_type": "chore",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Add a .cursorignore file to exclude sensitive files (keys, credentials) and large generated artifacts (build outputs, node_modules) from Cursor AI indexing, aiming to improve editor performance and security."
   },
   "quantitative_metrics": {

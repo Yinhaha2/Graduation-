@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Implement HBlank DMA transfers with HDMA_CYCLES_PER_BLOCK constant and cycle-accurate timing; enable in MMU clock via proper PPU mode checks, and add unit tests for General and HBlank DMA correctness."
   },
   "quantitative_metrics": {

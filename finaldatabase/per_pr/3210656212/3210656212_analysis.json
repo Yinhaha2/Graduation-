@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Improve welcome slideshow responsiveness to prevent overflow and enable interaction on mobile."
   },
   "quantitative_metrics": {

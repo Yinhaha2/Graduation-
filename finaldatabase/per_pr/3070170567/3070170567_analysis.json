@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 46,
-    "topic_name": "46",
+    "topic_name": "46_timezone_slot_ranges_mrge",
     "body_summary": "Avoid accumulating event listeners in the useNetworkStatus React hook by adding a cleanup function to remove online/offline event listeners on unmount."
   },
   "quantitative_metrics": {

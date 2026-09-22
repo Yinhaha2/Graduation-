@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 38,
-    "topic_name": "38",
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Add Microsoft.Extensions.FileSystemGlobbing as an alternative glob implementation behind a trait flag to evaluate performance and maintainability vs the built-in regex-based MSBuildGlob."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "6",
+    "topic_id": 6,
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Replace GitHub API calls for chess workflow with local file storage to avoid rate limiting, using files for recent moves, leaderboard, and last mover tracking."
   },
   "quantitative_metrics": {

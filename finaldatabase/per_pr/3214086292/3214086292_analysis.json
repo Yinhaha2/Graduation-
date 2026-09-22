@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "test",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Modernize 28 async unit tests in the dependencies extension from deprecated testCaseAsync pattern to modern asyncQueue pattern, claiming better performance and error handling."
   },
   "quantitative_metrics": {

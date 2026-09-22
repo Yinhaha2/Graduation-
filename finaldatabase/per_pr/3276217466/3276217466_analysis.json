@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Make Go json-ast nodes omit positions unless IncludePositions is enabled and regenerate the cross_join AST without position info to reduce output size."
   },
   "quantitative_metrics": {

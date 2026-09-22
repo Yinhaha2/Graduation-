@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "39",
+    "topic_id": 39,
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Skip printing skipped tasks in bruin CLI run output and show a success tick when only skips occur, reducing verbosity."
   },
   "quantitative_metrics": {

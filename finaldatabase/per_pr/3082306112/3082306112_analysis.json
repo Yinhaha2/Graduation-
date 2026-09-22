@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 19,
-    "topic_name": "19_cache_redis_llm",
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Add optional Redis caching for LLM calls with configuration via llm_redis_cache_url, LangChain RedisCache integration, and manual instructor caching."
   },
   "quantitative_metrics": {

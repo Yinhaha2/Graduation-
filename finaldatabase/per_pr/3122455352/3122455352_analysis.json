@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "19",
+    "topic_id": 19,
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Implement an in-memory cache for thread message API calls in Environment class to avoid repeated network round-trips and reduce latency."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "8",
+    "topic_id": 8,
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Replace JavaScript xml2js sitemap XML parsing with Rust roxmltree, add FFI wrapper, and gradually move post-processing logic to Rust through an instruction-based approach to improve performance."
   },
   "quantitative_metrics": {

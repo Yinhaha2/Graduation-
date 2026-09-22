@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Overhaul MAUI Designer property tab with caching, sequential processing, and categorized UI; add robust element creation with error handling."
   },
   "quantitative_metrics": {

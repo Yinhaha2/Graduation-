@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 32,
-    "topic_name": "32",
+    "topic_name": "32_dto_income_sale_report",
     "body_summary": "Optimize pharmacy income & cost report using a bill-item DTO: add PharmacyIncomeCostBillItemDTO, fetch in BillService, support DTO rows in IncomeBundle and IncomeRow, adjust report controller and JSF view, fix constructor clash and import."
   },
   "quantitative_metrics": {

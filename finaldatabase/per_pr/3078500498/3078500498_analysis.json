@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Add averaging over 20 benchmark runs and note in README to improve measurement stability."
   },
   "quantitative_metrics": {

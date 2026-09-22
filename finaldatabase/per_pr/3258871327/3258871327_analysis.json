@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Add HTTP connection pooling via Apache HttpClient's PoolingHttpClientConnectionManager to WxPayServiceApacheHttpImpl, with separate SSL/non‑SSL pools, configurable max connections, and automatic reuse of pooled clients to eliminate per‑request HttpClient creation."
   },
   "quantitative_metrics": {

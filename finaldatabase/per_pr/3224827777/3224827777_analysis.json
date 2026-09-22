@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "25",
+    "topic_id": 25,
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Improve avg, sum, min, max implementations in C backend when input list length is known, and regenerate machine translation test outputs."
   },
   "quantitative_metrics": {

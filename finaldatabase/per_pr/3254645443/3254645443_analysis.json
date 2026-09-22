@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
-    "topic_id": 0,
-    "topic_name": "1",
+    "topic_id": 1,
+    "topic_name": "1_rosetta_transpiler_benchmark_benchmark mode",
     "body_summary": "Switch F# transpiler from lists to arrays for performance, adjusting index operations and regenerating test artifacts."
   },
   "quantitative_metrics": {

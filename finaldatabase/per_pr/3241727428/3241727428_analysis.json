@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 14,
-    "topic_name": "14",
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Extend Fortran compiler constant folding for boolean and float list constants to fold len, count, append, union, union_all, except, and intersect operations."
   },
   "quantitative_metrics": {

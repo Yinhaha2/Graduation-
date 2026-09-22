@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 38,
-    "topic_name": "38",
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Add support for public static fields as data sources in DynamicDataAttribute to improve test data management performance by avoiding repeated object creation from property getters or methods."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Make optional dependencies (pandas, gradio, openai_agents) lazy-loaded with fallbacks; add CSV reading helper with pandas/csv dual path; skip demo UI if packages missing to improve offline resilience."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "docs",
     "aidev_task_confidence": 9,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "PR adds documentation on WAL tuning for PostgreSQL, links it from README, updates compose and CI configs to align with WAL tuning for better queue performance."
   },
   "quantitative_metrics": {

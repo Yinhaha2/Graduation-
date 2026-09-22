@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Add optional flush control in Store.save, expose flush through Cog APIs, add flush_all for batch flushing, and bump version to 3.0.8 to improve bulk data loading performance."
   },
   "quantitative_metrics": {

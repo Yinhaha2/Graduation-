@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 50,
-    "topic_name": "50",
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Refactor 15 EngineTests files to use direct DataDescription::getCellRef instead of helper methods getCell/getCellById, claiming more efficient cell access without intermediate maps."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 39,
-    "topic_name": "39",
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Improve TypeScript backend print calls to format each argument separately, simplify _fmt array formatting, and regenerate machine test outputs."
   },
   "quantitative_metrics": {

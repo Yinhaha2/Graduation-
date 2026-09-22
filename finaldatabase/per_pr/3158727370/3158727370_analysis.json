@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Optimize RPKI origin validation performance in rpkiv.rov by first filtering VRPs by ASN to reduce search space, with caching and early termination to improve speed while maintaining RFC 6483 compliance."
   },
   "quantitative_metrics": {

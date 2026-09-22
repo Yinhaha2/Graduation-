@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Implement paged file listing, lazy loading, and lightweight directory summaries in WhatsApp media UI to improve loading performance."
   },
   "quantitative_metrics": {

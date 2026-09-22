@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Prompt optimization to reduce orchestrator prompt verbosity by providing only concise instructions for tool agents and listing full schemas only when running them directly, adding a flag for schema inclusion."
   },
   "quantitative_metrics": {

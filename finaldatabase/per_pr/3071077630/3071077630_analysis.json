@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "22",
+    "topic_id": 22,
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Optimize reflection by introducing caching for type/property lookups and compiling expression-based setters/delegates in ChangePropertyAction and CallMethodAction."
   },
   "quantitative_metrics": {

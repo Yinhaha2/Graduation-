@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "35",
+    "topic_id": 35,
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Update service worker to precache pyodide assets, add local cache fallback for external asset failures, and bump cache version to improve initial load performance."
   },
   "quantitative_metrics": {

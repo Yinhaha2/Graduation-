@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Add documentation, runtime warnings, and debugging utilities to guide Raspberry Pi 4 users to enable hardware video acceleration by removing bundled FFmpeg libraries, aiming to resolve playback lag."
   },
   "quantitative_metrics": {

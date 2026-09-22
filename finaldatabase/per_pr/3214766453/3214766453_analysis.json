@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": 0,
-    "topic_name": "30",
+    "topic_id": 30,
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Compute duplicate groups during scanning and store in scanner state, then access them in the tabs UI, to avoid re-grouping on main thread."
   },
   "quantitative_metrics": {

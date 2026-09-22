@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 22,
-    "topic_name": "22",
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Cache GPT slot lookups in the ix bid adapter to reduce repeated calls and speed up the adapter."
   },
   "quantitative_metrics": {

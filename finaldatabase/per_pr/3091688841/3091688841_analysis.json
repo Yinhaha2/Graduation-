@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "42",
+    "topic_id": 42,
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Add binary search to CompactMap's internal compact array operations (put, get, containsKey, remove) and include tests for sorted ordering."
   },
   "quantitative_metrics": {

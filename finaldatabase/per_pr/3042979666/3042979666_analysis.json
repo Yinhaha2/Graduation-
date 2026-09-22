@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Batch-load team bookings and busy times for multiple users to reduce sequential database calls, particularly beneficial for team and collective scheduling with many members."
   },
   "quantitative_metrics": {

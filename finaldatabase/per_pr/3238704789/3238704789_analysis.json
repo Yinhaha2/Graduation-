@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Implement a terrain patch system that subdivides large terrains into smaller geometry chunks to reduce GPU load, with configurable patch sizes, material support, and backward compatibility."
   },
   "quantitative_metrics": {

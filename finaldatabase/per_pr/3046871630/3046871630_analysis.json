@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Refactors schedule loading to stream data, showing the first week of availability right away and loading the remaining weeks in the background for at least 3x faster initial render."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "48",
+    "topic_id": 48,
+    "topic_name": "48_chat_schema_workflow state_workflow node",
     "body_summary": "Split static and dynamic system prompts in api/chat.ts and send both before user messages to improve LLM caching."
   },
   "quantitative_metrics": {

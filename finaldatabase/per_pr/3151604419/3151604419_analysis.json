@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 41,
-    "topic_name": "41",
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Memoize Array.from() calls in five React components with useMemo to reduce unnecessary re-renders and improve chat UI performance."
   },
   "quantitative_metrics": {

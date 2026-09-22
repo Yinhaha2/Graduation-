@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "22",
+    "topic_id": 22,
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Introduce a PassThrough stream to decouple listeners from the original HTTP stream, avoiding MaxListenersExceededWarning and memory leaks in the read-through data cache."
   },
   "quantitative_metrics": {

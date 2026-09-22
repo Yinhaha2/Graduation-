@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Optimize filter dialog DOM handling by replacing innerHTML string assembly with template-based DocumentFragment creation, removing a stale review notes file, and using fragment-based chart option row building for better performance."
   },
   "quantitative_metrics": {

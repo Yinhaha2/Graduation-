@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 26,
-    "topic_name": "26",
+    "topic_name": "26_matching_x64_egraph_quantization",
     "body_summary": "Replace element-by-element iteration in ONNX Resize with vectorized numpy implementation, achieving ~7,400x speedup for large tensors and cutting time from ~24min to 0.2s."
   },
   "quantitative_metrics": {

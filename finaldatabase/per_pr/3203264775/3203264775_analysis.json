@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Remove an unused vector<float> buffer allocation in FileSourceModule::floatWorker to clean up dead code and slightly reduce memory overhead."
   },
   "quantitative_metrics": {

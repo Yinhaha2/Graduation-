@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 44,
-    "topic_name": "44",
+    "topic_name": "44_terrain_hardware_acceleration_patches",
     "body_summary": "Add GPU-accelerated little planet projection using a shader in CubemapToEquirectangular and wire it into downloadLittlePlanet when GPU is available, with documentation and a regression test."
   },
   "quantitative_metrics": {

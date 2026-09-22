@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 22,
-    "topic_name": "22",
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Replace direct reflection calls with ReflectionUtils caching in ClassUtilities, SystemUtilities, and Unsafe to improve performance."
   },
   "quantitative_metrics": {

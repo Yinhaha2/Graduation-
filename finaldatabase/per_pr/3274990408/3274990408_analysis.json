@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "37",
+    "topic_id": 37,
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Add RuntimeConfig with rate_target_hz, propagate through CuConfig and CuRuntime, enforce in generated run loop, and showcase in cu_rate_target example."
   },
   "quantitative_metrics": {

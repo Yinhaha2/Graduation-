@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": 9,
-    "topic_name": "9",
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Add disposal of old bitmap sources when ZoomBorder child images are replaced, document the requirement, and provide a swapping sample demonstrating correct cleanup."
   },
   "quantitative_metrics": {

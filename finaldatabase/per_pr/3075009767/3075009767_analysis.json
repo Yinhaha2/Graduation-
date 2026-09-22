@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 8,
-    "topic_name": "8",
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Allow parallel execution in AgentPopulation.simulate with a one-time warning flag if parallel execution fails."
   },
   "quantitative_metrics": {

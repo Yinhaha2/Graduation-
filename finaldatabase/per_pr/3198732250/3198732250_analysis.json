@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Replace the Python script dev/preview_docs.py with a JavaScript implementation using github-script to eliminate Python dependency and speed up CI runs in the preview-docs workflow."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "11",
+    "topic_id": 11,
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Helped fix PR #4051 by migrating from mihomo_api to kode-bridge IPC for better performance and security; delivered summary documents but included no actual source code changes."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 34,
-    "topic_name": "34",
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Phase 1-3 of async notification/telemetry system: introduces a non-blocking event bus with error deduplication and adapter-based integration, preventing blocking operations during error handling."
   },
   "quantitative_metrics": {

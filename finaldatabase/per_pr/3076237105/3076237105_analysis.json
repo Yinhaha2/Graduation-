@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 2,
-    "topic_name": "2",
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Adds optional segments prop to DataTableProvider, allowing pre‑fetched segments to be passed directly instead of always fetching on the client."
   },
   "quantitative_metrics": {

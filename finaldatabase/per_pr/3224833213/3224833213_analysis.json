@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Adds paste handling to Codex TUI: collapses large pasted blocks to a placeholder like '[Pasted Content X characters]' while storing full text for submission, avoiding per-character processing overhead."
   },
   "quantitative_metrics": {

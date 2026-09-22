@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 33,
-    "topic_name": "33",
+    "topic_name": "33_ahash_uint_methods_fnv",
     "body_summary": "Replace Math.DivRem with bitwise shifts and masks in BitArray to mitigate 1.1x-5.4x WASM performance regressions caused by inefficient WASM code generation for constant divisions."
   },
   "quantitative_metrics": {

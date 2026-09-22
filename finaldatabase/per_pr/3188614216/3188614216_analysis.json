@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 15,
-    "topic_name": "15",
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Enhance VM constant intern table so empty lists and maps reuse registers to reduce memory allocations."
   },
   "quantitative_metrics": {

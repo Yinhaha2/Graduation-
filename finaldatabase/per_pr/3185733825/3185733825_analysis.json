@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Update benchmark results in BENCHMARK.md and precompiled outputs in bench/out; skip C benchmark generation for join tests."
   },
   "quantitative_metrics": {

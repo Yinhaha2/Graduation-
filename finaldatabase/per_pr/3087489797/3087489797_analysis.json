@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Reduce subprocess count and iterations in ReentrantFileLockTest to avoid os::commit_memory errors from excessive memory consumption."
   },
   "quantitative_metrics": {

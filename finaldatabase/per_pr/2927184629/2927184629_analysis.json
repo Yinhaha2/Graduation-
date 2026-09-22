@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "37",
+    "topic_id": 37,
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Add a 1-second delay between restoring changes and refreshing webviews to ensure restored files are properly loaded before UI refresh."
   },
   "quantitative_metrics": {

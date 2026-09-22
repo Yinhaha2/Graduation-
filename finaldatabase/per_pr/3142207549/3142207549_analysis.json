@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Avoid array allocation in list rev_fold by replacing it with direct recursion, and implement rev_foldi without list reversal."
   },
   "quantitative_metrics": {

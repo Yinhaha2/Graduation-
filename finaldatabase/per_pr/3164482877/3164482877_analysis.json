@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 49,
-    "topic_name": "49",
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Optimize AttributeToUser query by replacing a two-step database call with a single Prisma join to improve performance."
   },
   "quantitative_metrics": {

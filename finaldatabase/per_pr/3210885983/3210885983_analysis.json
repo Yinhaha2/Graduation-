@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 38,
-    "topic_name": "38",
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "WIP PR to fix long‑standing Antd table performance lag when rendering >100 rows without pagination; Copilot agent failed to produce any code before it was closed."
   },
   "quantitative_metrics": {

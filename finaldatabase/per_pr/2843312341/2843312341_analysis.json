@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Introduce performance optimizations: skip unnecessary cache clearing, environment-aware token counting, debug metadata, and assertion type handling; claims gradual memory leak and cache invalidation under high load are addressed."
   },
   "quantitative_metrics": {

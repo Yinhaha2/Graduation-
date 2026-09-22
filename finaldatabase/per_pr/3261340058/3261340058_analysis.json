@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "32",
+    "topic_id": 32,
+    "topic_name": "32_dto_income_sale_report",
     "body_summary": "Delegate payment creation to PaymentProcessingService in PharmacyFastRetailSaleController to streamline fast retail sales."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "31",
+    "topic_id": 31,
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Add Zstd decompression and encoding support to Bun's HTTP client with streaming decompressor for fetch responses."
   },
   "quantitative_metrics": {

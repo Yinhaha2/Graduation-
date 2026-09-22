@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "docs",
     "aidev_task_confidence": 9,
-    "topic_id": -1,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add a changelog entry documenting that ci.yml now caches Node dependencies correctly."
   },
   "quantitative_metrics": {

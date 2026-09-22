@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "chore",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "34",
+    "topic_id": 34,
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Update lotus-shed miner fees commands with hierarchical trace filtering to follow expected cron execution flow, reducing noisy output by filtering irrelevant traces."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Introduce parallel batch processing (size 3) in ProcessRules handleRunAll to reduce sequential email processing time in inbox-zero."
   },
   "quantitative_metrics": {

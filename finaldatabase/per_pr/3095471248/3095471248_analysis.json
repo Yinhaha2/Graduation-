@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "49",
+    "topic_id": 49,
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Replace trpc server calls with direct repository calls (ScheduleRepository, TravelScheduleRepository) and add unstable_cache with 1-hour revalidation for improved performance in availability schedule page."
   },
   "quantitative_metrics": {

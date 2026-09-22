@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "37",
+    "topic_id": 37,
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Move processNode function from renderer to main process to prevent UI blocking, add WebviewUpdate IPC interface, and batch webview updates."
   },
   "quantitative_metrics": {

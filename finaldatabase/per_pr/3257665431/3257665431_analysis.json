@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Refactor bulk file selection to use path strings for maps, move work to background dispatcher, and batch large selections with yielding for performance improvement."
   },
   "quantitative_metrics": {

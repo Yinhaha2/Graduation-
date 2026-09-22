@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 41,
-    "topic_name": "41",
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Replace O(n) array.some() duplicate checking in useRealtimeMessages with O(1) Set/Map lookups for message ID and content, reducing cognitive complexity and addressing a TODO."
   },
   "quantitative_metrics": {

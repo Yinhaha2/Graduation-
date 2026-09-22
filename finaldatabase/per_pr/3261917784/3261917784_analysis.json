@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 16,
-    "topic_name": "16_token_efficiency_configuration",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Optimize project_config.md and workflow_state.md for token efficiency with state machine and token reduction; includes implementation guide and optimization report."
   },
   "quantitative_metrics": {

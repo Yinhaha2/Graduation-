@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Optimize evaluation script by incorporating DataLoader for text windows, storing character ranges, adding config options for memory/throughput trade-offs, and batching suffix probability gathering to reduce host transfers."
   },
   "quantitative_metrics": {

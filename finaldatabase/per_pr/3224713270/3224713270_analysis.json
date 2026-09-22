@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": 0,
-    "topic_name": "8",
+    "topic_id": 8,
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "PR template with no description; commits add a ticket broker optimization system and unrelated mushroom game files to the LangChain repository."
   },
   "quantitative_metrics": {

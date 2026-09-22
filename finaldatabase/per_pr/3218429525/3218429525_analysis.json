@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Update Lua compiler to generate inline print helpers instead of __print and sort map keys in for loops for deterministic output."
   },
   "quantitative_metrics": {

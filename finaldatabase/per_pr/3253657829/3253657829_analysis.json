@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "13",
+    "topic_id": 13,
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Add restart logic for metrics test server, show subprocess output on failure, and poll server readiness every 50ms for faster startup."
   },
   "quantitative_metrics": {

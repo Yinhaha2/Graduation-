@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 9,
-    "topic_name": "9",
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Implement per-frame D3D12 command allocators to avoid potential contention and improve GPU command recording latency."
   },
   "quantitative_metrics": {

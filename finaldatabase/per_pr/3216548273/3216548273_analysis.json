@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 47,
-    "topic_name": "47",
+    "topic_name": "47_inference_ops_bytecode_opcodes",
     "body_summary": "Improve Go compiler's concat type inference to use append instead of _concat helper for typed lists, claiming performance benefit."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 42,
-    "topic_name": "42",
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Implement simple liveness analysis to allocate physical registers, update compiler to run register allocation after building a function, and regenerate golden files for VM tests."
   },
   "quantitative_metrics": {

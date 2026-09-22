@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 28,
-    "topic_name": "28_pagination_search_visual_feedback",
+    "topic_name": "28_scroll_debounce_search_debouncing",
     "body_summary": "Add pagination, multi-term search, loading spinner, and reduced debounce (300ms) to dashboard AppTable for better search performance."
   },
   "quantitative_metrics": {

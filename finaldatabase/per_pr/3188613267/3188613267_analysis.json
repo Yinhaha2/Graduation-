@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "unknown",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Deduplicate list and map constant values in the VM to improve constant reuse, adding 4 lines in runtime/vm/vm.go."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "14",
+    "topic_id": 14,
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Specialize string slicing helpers for Go, Python, and TypeScript compilers and add compilation tests."
   },
   "quantitative_metrics": {

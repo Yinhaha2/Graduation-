@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 27,
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Add threaded buffer implementation with five-argument scaling and benchmarking for sparse buffer multiplication; benchmark output included."
   },
   "quantitative_metrics": {

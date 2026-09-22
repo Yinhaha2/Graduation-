@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "10",
+    "topic_id": 10,
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Add FoldPureCalls for ahead-of-time constant folding in the interpreter, expose via --aot CLI flag, and use in benchmarks; also move TS runtime helpers before program execution, updating test outputs."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 19,
-    "topic_name": "19",
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Add MemoryCache, RedisCache, and ContextCache to enrichmcp; extend EnrichContext with cache property; patch FastMCP.get_context; provide caching example and documentation."
   },
   "quantitative_metrics": {

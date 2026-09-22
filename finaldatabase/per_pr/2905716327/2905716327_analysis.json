@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "15",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Refactor TWAP module to use strategy pattern for accumulator updates, making geometric calculations optional to avoid unnecessary work for arithmetic strategy."
   },
   "quantitative_metrics": {

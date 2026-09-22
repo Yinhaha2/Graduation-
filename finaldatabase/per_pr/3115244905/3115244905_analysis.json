@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Embed JS library code into the bundle and remove legacy script tags to reduce network requests for the alpha factory insight browser demo."
   },
   "quantitative_metrics": {

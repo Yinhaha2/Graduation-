@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Switch benchmark templates from milliseconds to microseconds, update runner to handle duration_us and display µs, regenerate benchmark outputs and markdown."
   },
   "quantitative_metrics": {

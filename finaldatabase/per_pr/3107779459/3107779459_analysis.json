@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Migrate the Tokens Studio Figma plugin to use Figma's dynamic page loading API, replacing sync calls with async equivalents and adding loadAllPagesAsync to improve performance on large files."
   },
   "quantitative_metrics": {

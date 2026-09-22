@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "43",
+    "topic_id": 43,
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Streamline hash calculation in Error.GetHashCode."
   },
   "quantitative_metrics": {

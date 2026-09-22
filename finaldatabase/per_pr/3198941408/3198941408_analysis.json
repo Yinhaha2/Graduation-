@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "6",
+    "topic_id": 6,
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Add a comprehensive optimization plan document and implement code-level performance enhancements (async processing, caching, metrics) for the GB28181 SIP proxy."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "test",
     "aidev_task_confidence": 9,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Refresh VM rosetta benchmark golden files for the first 10 tasks and skip the interactive puzzle game (index 5)."
   },
   "quantitative_metrics": {

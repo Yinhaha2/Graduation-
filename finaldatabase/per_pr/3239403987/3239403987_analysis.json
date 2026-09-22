@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Optimize Lua compiler to skip helper calls for indexing simple lists/strings, update boolean printing to match golden expectations, regenerate Lua machine outputs, and note new capabilities in README."
   },
   "quantitative_metrics": {

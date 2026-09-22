@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 5,
-    "topic_name": "5_python_compiler_list_set_ops",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Optimize Python compiler to avoid generating helper functions for optional list set operations by unwrapping optional types, updating golden tests accordingly."
   },
   "quantitative_metrics": {

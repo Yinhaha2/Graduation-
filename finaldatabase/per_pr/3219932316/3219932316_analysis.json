@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 7,
-    "topic_name": "7",
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Adds Get-SqlDscServerProtocol public command with CIM and SMO fallback for SQL Server protocol info; later redesigned to remove CIM and introduce new composable commands."
   },
   "quantitative_metrics": {

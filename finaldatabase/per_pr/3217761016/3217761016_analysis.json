@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 18,
-    "topic_name": "18",
+    "topic_name": "18_runtime_err_racket_helpers",
     "body_summary": "Modify Haskell compiler to avoid importing Aeson unless JSON features are used, split AnyValue runtime from JSON loader runtime, and regenerate machine Haskell outputs with the lighter runtime."
   },
   "quantitative_metrics": {

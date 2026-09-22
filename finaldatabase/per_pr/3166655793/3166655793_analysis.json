@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Add simple function inlining to the Mochi interpreter: track inline candidates, count calls, and inline hot pure single-expression functions to reduce call overhead."
   },
   "quantitative_metrics": {

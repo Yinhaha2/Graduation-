@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 19,
-    "topic_name": "19",
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Switch the LLM model used for app name and commit message generation to gemini-flash-lite to improve performance, with a dedicated client for these operations."
   },
   "quantitative_metrics": {

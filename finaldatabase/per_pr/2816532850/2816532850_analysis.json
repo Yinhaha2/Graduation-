@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Split the monolithic Gradle check CI job into parallel matrix jobs (compile, spotbugs, unit tests, integration tests) to improve build feedback and reduce redundant task execution."
   },
   "quantitative_metrics": {

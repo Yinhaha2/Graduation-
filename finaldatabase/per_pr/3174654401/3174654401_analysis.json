@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "25",
+    "topic_id": 25,
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Replace string literal .to_string() calls with .to_owned() for &str to String conversions across relay codebase, claiming small performance gain; maintainer notes that Cursor only handled trivial cases and regex found more occurrences."
   },
   "quantitative_metrics": {

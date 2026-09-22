@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Add CachedCalendarService with in-memory cache to reduce database and Google Calendar API calls during booking."
   },
   "quantitative_metrics": {

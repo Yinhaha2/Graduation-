@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 23,
-    "topic_name": "23",
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Adds a web worker (src/gitWorker.js) and worker interface (src/git.ts) to run isomorphic-git operations in the background, offloading from the main thread. PR has empty body; closed by author after ~15 minutes."
   },
   "quantitative_metrics": {

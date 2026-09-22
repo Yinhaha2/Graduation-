@@ -15,7 +15,7 @@
     "aidev_task_type": "test",
     "aidev_task_confidence": 8,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Speed up SLT generator execution timeout and regenerate select1 cases 1-1000, removing old .error files for cases that now pass."
   },
   "quantitative_metrics": {

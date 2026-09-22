@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 49,
-    "topic_name": "49",
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Refactor attribute filtering feature from PR #531 with TypeScript type safety, component decomposition, React memoization, and scattergl performance improvements."
   },
   "quantitative_metrics": {

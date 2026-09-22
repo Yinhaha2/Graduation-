@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
     "topic_id": 20,
-    "topic_name": "20_compiler_lua_optimization",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Remove __eq and __print helper functions in the Lua compiler to inline print handling and use native equality checks, improving generated code performance."
   },
   "quantitative_metrics": {

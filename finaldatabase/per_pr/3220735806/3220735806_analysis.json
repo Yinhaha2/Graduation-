@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Reduce welcome message latency from 3-4 seconds to below 1000ms by caching audio decoding, reducing polling/output sleep times, and adding timing instrumentation."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "31",
+    "topic_id": 31,
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Remove unnecessary async declarations from manager methods that contain no await, updating call sites and tests to improve code clarity and reduce coroutine overhead."
   },
   "quantitative_metrics": {

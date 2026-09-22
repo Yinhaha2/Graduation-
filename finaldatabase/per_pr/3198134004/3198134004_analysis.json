@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "14",
+    "topic_id": 14,
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Improve C++ type inference for selectors and if-expressions in the mochi compiler backend."
   },
   "quantitative_metrics": {

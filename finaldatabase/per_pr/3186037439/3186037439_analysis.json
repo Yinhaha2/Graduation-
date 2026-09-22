@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "5",
+    "topic_id": 5,
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Optimize VM hash join bytecode generation by constant list length detection to reduce code size and skip unused branches for simple inner joins."
   },
   "quantitative_metrics": {

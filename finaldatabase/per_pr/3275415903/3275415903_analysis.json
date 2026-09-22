@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": 0,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Replace static Jest validation arrays with pattern-based validation and unify Jest/Vitest validation using a single is_valid_test_fn_call function to reduce linter binary size."
   },
   "quantitative_metrics": {

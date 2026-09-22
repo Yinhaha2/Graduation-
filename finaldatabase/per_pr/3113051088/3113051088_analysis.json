@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 50,
-    "topic_name": "50",
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Remove preemptive deepcopy calls in ExtendedDataSquare exported methods, returning direct references to internal data and providing an exported DeepCopy utility for callers who need mutable copies; claims dramatic speedup."
   },
   "quantitative_metrics": {

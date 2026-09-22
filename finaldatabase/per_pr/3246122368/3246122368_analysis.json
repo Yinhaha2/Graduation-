@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Add async executor for temp file cleanup, replace Files.list with DirectoryStream, introduce configurable batching and pause settings."
   },
   "quantitative_metrics": {

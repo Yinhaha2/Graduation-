@@ -14,7 +14,7 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
+    "topic_id": 33,
     "topic_name": "33_ahash_uint_methods_fnv",
     "body_summary": "Two small Rust optimizations (iterator chaining in message drain, clone removal in benchmarking) plus an efficiency report claiming 10-20% allocation overhead reduction."
   },

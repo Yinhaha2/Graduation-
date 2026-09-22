@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Introduce DEFAULT_TEST_URL pointing directly to Mastodon schema ERD page, replacing '/' navigation in E2E tests to eliminate 300-600ms redirect delays and improve test suite performance."
   },
   "quantitative_metrics": {

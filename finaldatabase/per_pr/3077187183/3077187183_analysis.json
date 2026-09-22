@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 26,
-    "topic_name": "26",
+    "topic_name": "26_matching_x64_egraph_quantization",
     "body_summary": "Vectorize numpy operations in HARK: optimize kernel regression, streamline epanechnikov kernel, use numpy indexing for interest rates, polyval, eliminate loops in consumer functions, use boolean arrays in core.AgentType."
   },
   "quantitative_metrics": {

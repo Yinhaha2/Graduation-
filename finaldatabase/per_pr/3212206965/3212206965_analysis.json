@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Implement a float32 buffer pool using sync.Pool for audio conversion, reducing memory allocations by 99.99% and improving performance by 3.97x according to benchmarks."
   },
   "quantitative_metrics": {

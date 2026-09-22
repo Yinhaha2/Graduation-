@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 39,
-    "topic_name": "39",
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Inline simple print calls as console.log in the TypeScript compiler backend for Mochi; regenerate golden test outputs and document the optimization in TASKS.md."
   },
   "quantitative_metrics": {

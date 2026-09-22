@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Optimize GitHub sync by using lastSyncedState to skip remote pulls and only push changed files, reducing API calls and sync time."
   },
   "quantitative_metrics": {

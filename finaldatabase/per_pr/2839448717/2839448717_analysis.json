@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 10,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Add --concurrency=100% flag to package.json test:ci and build:ci scripts to improve build performance via parallel execution."
   },
   "quantitative_metrics": {

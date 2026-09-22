@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "35",
+    "topic_id": 35,
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Inline Pyodide asm and wasm-gpt2 placeholders in the Insight build, expose a base64 Pyodide loader, allow the LLM loader to read a base64 model, and verify Simulator initialization speed."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 38,
-    "topic_name": "38",
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Deprecate BuildEventArgs.ThreadId to return 0 instead of thread hash code, reducing performance overhead and memory usage, with obsolete warnings."
   },
   "quantitative_metrics": {

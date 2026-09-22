@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "build",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 18,
+    "topic_name": "18_runtime_err_racket_helpers",
     "body_summary": "Switch release LTO from fat to thin to reduce build time, providing benchmark data showing ~2x build time reduction with minimal runtime performance impact."
   },
   "quantitative_metrics": {

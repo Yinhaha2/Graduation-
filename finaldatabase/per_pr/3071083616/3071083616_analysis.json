@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Replace SQLite with DuckDB as the default database for raglite to enable HNSW vector search, BM25 full-text search, and easier extension management."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 38,
-    "topic_name": "38",
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Fix always-true condition (Count >= 0) in LazyItemEvaluator.LazyItemOperation.cs that disabled an optimization path for metadata expansion; evolve through review feedback to simplify redundant if/else and remove outdated comments."
   },
   "quantitative_metrics": {

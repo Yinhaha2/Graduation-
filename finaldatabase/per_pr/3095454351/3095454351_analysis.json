@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 49,
-    "topic_name": "49",
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Devin migrated the attributes list database query from a tRPC handler into AttributeRepository; the maintainer then added RSC caching with revalidation to reduce repeated fetches and improve rendering performance."
   },
   "quantitative_metrics": {

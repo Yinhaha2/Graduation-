@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "docs",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "34",
+    "topic_id": 34,
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Adds documentation for consensus node operators on migrating from IAVL v0 to v1 in celestia-app v4, covering lazy migration and state sync options; later simplified and moved to v4 release notes per review."
   },
   "quantitative_metrics": {

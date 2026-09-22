@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 24,
-    "topic_name": "24",
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Replace emotion styling with CSS modules throughout the Simorgh codebase, claiming improved performance and reduced bundle size by eliminating runtime CSS-in-JS overhead."
   },
   "quantitative_metrics": {

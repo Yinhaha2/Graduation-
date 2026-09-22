@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": 19,
-    "topic_name": "19",
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Refactor chat API to move the static system prompt from the `system` parameter to a message with Anthropic `cacheControl` tag, enabling prompt caching and reducing token usage."
   },
   "quantitative_metrics": {

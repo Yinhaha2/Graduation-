@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "48",
+    "topic_id": 48,
+    "topic_name": "48_chat_schema_workflow state_workflow node",
     "body_summary": "Refactor the IE generation endpoint to split the prompt into a static system message for caching and a dynamic user message containing URL/year, reducing repeated LLM processing."
   },
   "quantitative_metrics": {

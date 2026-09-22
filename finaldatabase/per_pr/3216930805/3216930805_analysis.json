@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Add optional hash join support to Go runtime _query helper with equality join detection and leftKey/rightKey extraction."
   },
   "quantitative_metrics": {

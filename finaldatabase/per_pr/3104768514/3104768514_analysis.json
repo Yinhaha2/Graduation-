@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Add multi-objective evaluation metrics (accuracy, novelty_simhash, latency) and a fast Pareto front selection with NSGA-II, claiming Pareto frontier computation under 50 ms."
   },
   "quantitative_metrics": {

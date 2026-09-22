@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "8",
+    "topic_id": 8,
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Add an ignored integration test that benchmarks execute_sequence wall-clock time against a real website, comparing client-side elapsed time with agent-reported duration."
   },
   "quantitative_metrics": {

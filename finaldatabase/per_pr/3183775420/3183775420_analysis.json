@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Rework Catalyst Test Runner to pass test names via startup arguments (environment variables) instead of UI navigation, eliminating brittle keyboard interactions and reducing test overhead."
   },
   "quantitative_metrics": {

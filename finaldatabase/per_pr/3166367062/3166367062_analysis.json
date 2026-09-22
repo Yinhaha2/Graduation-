@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 31,
-    "topic_name": "31",
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Optimize Headers constructor when called without arguments by exposing and using toJSNewlyConstructed; includes C++ changes in JSFetchHeaders."
   },
   "quantitative_metrics": {

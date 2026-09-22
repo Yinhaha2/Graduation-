@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 10,
-    "topic_name": "10",
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Optimize Go compilation of 'exists' builtin to avoid runtime helper when argument types are known, with added compiler output tests."
   },
   "quantitative_metrics": {

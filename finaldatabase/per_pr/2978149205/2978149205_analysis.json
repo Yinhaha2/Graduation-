@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 19,
+    "topic_name": "19_knowledge_deepseek_crew_cache",
     "body_summary": "Add context caching support via LiteLLM cache_control, introducing cache_enabled and cache_ttl parameters to the LLM class, updating documentation, and adding basic tests."
   },
   "quantitative_metrics": {

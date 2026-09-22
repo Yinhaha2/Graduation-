@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "20",
+    "topic_id": 20,
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Enhance PrintStmt.emit to combine multiple print arguments into a single printf call, reducing C function call overhead and improving output formatting."
   },
   "quantitative_metrics": {

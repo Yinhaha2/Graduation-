@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add Docker image caching and exclude unnecessary Supabase services in CI workflows to reduce supabase start time from ~1:40 to ~0:40 minutes."
   },
   "quantitative_metrics": {

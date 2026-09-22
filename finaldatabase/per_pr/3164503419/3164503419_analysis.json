@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 41,
-    "topic_name": "41",
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Claude Code's PR to reduce terminal animation flickering by introducing vt10x-inspired deduplication, dirty tracking, and debouncing of WebSocket updates, claiming a 72% reduction in updates."
   },
   "quantitative_metrics": {

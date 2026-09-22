@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Implement hashed outer join in the VM by adding compileHashOuterJoin and wiring it into compileJoinQuery, with updated benchmark docs and expected IR output."
   },
   "quantitative_metrics": {

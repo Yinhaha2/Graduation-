@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Optimize event types listing page by adding lightweight repository methods and 30-second TTL caching for event types, workflows, and integrations, aiming to reduce data transfer and improve load time."
   },
   "quantitative_metrics": {

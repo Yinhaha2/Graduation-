@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 0,
-    "topic_name": "",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add web asset caching for Windows smoke job in CI to reduce build times."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add dev server performance optimization configs, benchmark reports, and docs to reduce Langfuse development server startup time from ~53s to estimated 30-35s or lower."
   },
   "quantitative_metrics": {

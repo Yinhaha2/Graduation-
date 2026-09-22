@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Add trimmed responses for Azure DevOps MCP server tools to dramatically reduce LLM token consumption while maintaining backward compatibility via an optional fullResponse parameter."
   },
   "quantitative_metrics": {

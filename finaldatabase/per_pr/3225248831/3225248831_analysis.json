@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "8",
+    "topic_id": 8,
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Enable parallel installation for mise upgrade to improve performance by refactoring the installation pipeline to run tool upgrades concurrently."
   },
   "quantitative_metrics": {

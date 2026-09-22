@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": 0,
-    "topic_name": "37",
+    "topic_id": 37,
+    "topic_name": "37_exponential backoff_backoff_exponential_refresh",
     "body_summary": "Implement asynchronous segment execution with configurable timeout and caching to reduce prompt latency in large repositories, allowing cached data to be used when git operations exceed the threshold while background refresh updates the cache."
   },
   "quantitative_metrics": {

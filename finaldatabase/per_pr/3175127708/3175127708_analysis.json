@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "-1",
+    "topic_id": -1,
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Implement predicate pushdown in dataset query loops by detecting variables referenced in WHERE filters and pushing filters down to reduce intermediate data; add cross join filter pushdown test."
   },
   "quantitative_metrics": {

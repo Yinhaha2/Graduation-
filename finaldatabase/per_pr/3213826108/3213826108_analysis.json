@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Fix router memory leaks via timeout cleanup and improve case sensitivity consistency in route path matching."
   },
   "quantitative_metrics": {

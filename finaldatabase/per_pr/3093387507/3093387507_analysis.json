@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "23",
+    "topic_id": 23,
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "PR adds a benchmark for deserializing large added vocabularies and attempts performance optimizations, but provides no body text. The commits indicate heavy manual iteration on normalization overhead reduction."
   },
   "quantitative_metrics": {

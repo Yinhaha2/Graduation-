@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Add main function call emission, optimize append translation to mutate list in place, add pow builtin, and mark brilliant-numbers test as transpiled."
   },
   "quantitative_metrics": {

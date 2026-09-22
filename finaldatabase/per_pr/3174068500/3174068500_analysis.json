@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Add server-side cached data helper in data.ts, make fetchFromAPI support caching, and apply caching in dashboard, poller, and network pages."
   },
   "quantitative_metrics": {

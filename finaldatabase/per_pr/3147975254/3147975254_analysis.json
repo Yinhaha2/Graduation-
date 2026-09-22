@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Systematically replace findFirst/findFirstOrThrow with findUnique/findUniqueOrThrow on queries using unique indexes, excluding API and test files, to leverage database unique constraints for better performance and type safety."
   },
   "quantitative_metrics": {

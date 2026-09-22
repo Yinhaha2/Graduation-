@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "1",
+    "topic_id": 1,
+    "topic_name": "1_rosetta_transpiler_benchmark_benchmark mode",
     "body_summary": "Regenerate Ruby transpiler benchmark outputs for Rosetta indices 51-72 via go test with benchmark flag; update checklist timestamps and benchmark values."
   },
   "quantitative_metrics": {

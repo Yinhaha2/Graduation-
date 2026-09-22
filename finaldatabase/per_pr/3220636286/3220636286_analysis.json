@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Add a `ragged_paged_attention` helper to gate optional TPU ragged paged attention import and dispatch to TPU kernel or reference implementation, used from `paged_decode`."
   },
   "quantitative_metrics": {

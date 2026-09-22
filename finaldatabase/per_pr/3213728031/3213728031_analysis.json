@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": 0,
-    "topic_name": "43",
+    "topic_id": 43,
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Reduce reflection in Error.ToString by caching the type name when the runtime type is Error."
   },
   "quantitative_metrics": {

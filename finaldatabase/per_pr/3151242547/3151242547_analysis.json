@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "38",
+    "topic_id": 38,
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Improve dotnet restore performance by automatically adding EnableDefaultItems=false to MSBuild arguments, aiming to reduce evaluation from ~45s to ~300ms on large projects."
   },
   "quantitative_metrics": {

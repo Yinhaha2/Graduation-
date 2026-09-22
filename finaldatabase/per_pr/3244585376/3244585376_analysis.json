@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Adds a stress test for buildDateRanges with 2 years of availability, travel schedules, date overrides, OOO entries, and performance monitoring (~35k ranges in ~19s, ~50MB memory)."
   },
   "quantitative_metrics": {

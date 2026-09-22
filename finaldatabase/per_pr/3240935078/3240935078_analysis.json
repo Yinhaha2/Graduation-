@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "5",
+    "topic_id": 5,
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Add comprehensive self-join tests to verify correct behavior and investigate a reported cartesian product bug, suggesting the core join logic works correctly and the issue might lie in useLiveQuery integration."
   },
   "quantitative_metrics": {

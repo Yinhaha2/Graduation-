@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 41,
-    "topic_name": "41",
+    "topic_name": "41_uid_conversation_terminal_typing",
     "body_summary": "Add content-based UIDs (later refactored to Symfony UUID v5) to message types and MessageBag for efficient frontend sync by avoiding redundant data transfer."
   },
   "quantitative_metrics": {

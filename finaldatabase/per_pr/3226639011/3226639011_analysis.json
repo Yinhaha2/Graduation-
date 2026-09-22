@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 26,
-    "topic_name": "26",
+    "topic_name": "26_matching_x64_egraph_quantization",
     "body_summary": "Introduce a two-phase depth-limited search for Windows UI element lookup: shallow depth‑15 pass first, falling back to depth‑50 if not found, to reduce average latency without losing accuracy."
   },
   "quantitative_metrics": {

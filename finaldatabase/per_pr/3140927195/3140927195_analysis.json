@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "9",
+    "topic_id": 9,
+    "topic_name": "9_leak_cleanup_memory_proper cleanup",
     "body_summary": "Add memory leak fixes in EditorEngine including MobX reaction disposal, cache size limits, and nested Map cleanup to prevent unbounded growth."
   },
   "quantitative_metrics": {

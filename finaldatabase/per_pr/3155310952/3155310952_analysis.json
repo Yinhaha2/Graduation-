@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Replace tsc with the native TypeScript implementation tsgo for faster linting across 12 packages, removing unsupported baseUrl settings."
   },
   "quantitative_metrics": {

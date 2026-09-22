@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 50,
-    "topic_name": "50",
+    "topic_name": "50_percall_bone_spring_tottime",
     "body_summary": "Cache GetRuntimeData/GetVRRuntimeData calls to eliminate repeated pointer arithmetic and VR checks, claiming performance improvement in the Skyrim Community Shaders mod."
   },
   "quantitative_metrics": {

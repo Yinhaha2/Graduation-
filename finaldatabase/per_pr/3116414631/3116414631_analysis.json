@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 27,
-    "topic_name": "27",
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Update benchmark runner to execute only Mochi language templates, skip matrix_mul, add bench make target, and fix mutability in benchmark templates."
   },
   "quantitative_metrics": {

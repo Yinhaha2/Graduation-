@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Optimize Union/Interface resolveType in gqtx by replacing O(n) linear typeMap search with O(1) WeakMap reverse lookup, claiming better scalability for large schemas."
   },
   "quantitative_metrics": {

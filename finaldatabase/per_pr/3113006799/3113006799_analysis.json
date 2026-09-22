@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 36,
-    "topic_name": "36_graphql_batch_changelog_update",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Replace per-PR REST API calls in dev/update_changelog.py with batched GraphQL queries, reducing API calls from N to ceil(N/50) and claiming a 5-50x improvement for changelog generation."
   },
   "quantitative_metrics": {

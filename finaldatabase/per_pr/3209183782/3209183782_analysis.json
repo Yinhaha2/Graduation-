@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 35,
-    "topic_name": "35",
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Implement comprehensive PWA optimizations: critical CSS inlining, CacheFirst caching strategy with versioning, background sync, and improved install prompt with offline page."
   },
   "quantitative_metrics": {

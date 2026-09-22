@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 21,
-    "topic_name": "21",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Update group append logic in runtime/vm to avoid unnecessary slice copies and refresh golden IR output for TPC-DS q63."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "47",
+    "topic_id": 47,
+    "topic_name": "47_inference_ops_bytecode_opcodes",
     "body_summary": "Refine variable usage tracking with typed maps and avoid runtime conversions when options are already map[string]any in the Go compiler."
   },
   "quantitative_metrics": {

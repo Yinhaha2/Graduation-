@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "14",
+    "topic_id": 14,
+    "topic_name": "14_fortran_constant_fold_lists",
     "body_summary": "Enhance compilePostfix in C# compiler to emit direct indexing when list or string type is known, adding test and doc update."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 47,
-    "topic_name": "47",
+    "topic_name": "47_inference_ops_bytecode_opcodes",
     "body_summary": "Refine Go compiler type inference for selectors on union types by adding a helper to check field consistency across variants."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 49,
-    "topic_name": "49",
+    "topic_name": "49_avatar_trpc_repository_prisma",
     "body_summary": "Cache multiple UI subview references in DYYY.xm tweak to reduce repeated lookups and improve layout performance."
   },
   "quantitative_metrics": {

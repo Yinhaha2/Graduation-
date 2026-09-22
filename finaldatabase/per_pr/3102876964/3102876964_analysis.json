@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 48,
-    "topic_name": "48",
+    "topic_name": "48_chat_schema_workflow state_workflow node",
     "body_summary": "Guard AI chat query execution behind the chat pane open state to prevent unnecessary API calls when the AI assistant is closed."
   },
   "quantitative_metrics": {

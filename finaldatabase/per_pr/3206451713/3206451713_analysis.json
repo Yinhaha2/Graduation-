@@ -15,7 +15,7 @@
     "aidev_task_type": "test",
     "aidev_task_confidence": 9,
     "topic_id": 0,
-    "topic_name": "",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Add a regression test and scheduling fix for a lockfile install hang issue; CI shows unrelated test timeouts."
   },
   "quantitative_metrics": {

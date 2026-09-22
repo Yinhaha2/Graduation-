@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "31",
+    "topic_id": 31,
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Audit PolicyAgent methods and convert I/O heavy operations to async for improved responsiveness."
   },
   "quantitative_metrics": {

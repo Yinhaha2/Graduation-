@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "17",
+    "topic_id": 17,
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Improve `_now` handling and seed PRNG in the Swift transpiler to speed up rosetta benchmark programs, with regenerated code and updated docs."
   },
   "quantitative_metrics": {

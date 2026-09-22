@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "40",
+    "topic_id": 40,
+    "topic_name": "40_font_font loading_fonts_cluster",
     "body_summary": "Shorten CI runtime by conditionally testing only Uint8Array in crypto_get_random_values when on feature branches, using env vars to decide scope; claims reduction from ~20 min to <1 min."
   },
   "quantitative_metrics": {

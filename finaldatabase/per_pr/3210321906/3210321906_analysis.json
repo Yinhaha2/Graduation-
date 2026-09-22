@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Replace ad-hoc logging with high-performance loggers using LoggerMessage.Define (later changed to [LoggerMessage] attribute) in OidcFIC credential providers to reduce allocations and improve performance."
   },
   "quantitative_metrics": {

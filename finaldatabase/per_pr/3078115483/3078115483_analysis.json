@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Lazy load JBrowsePanel with React.lazy and show a loading spinner to improve initial bundle performance."
   },
   "quantitative_metrics": {

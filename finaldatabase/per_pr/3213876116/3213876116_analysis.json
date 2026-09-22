@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 43,
-    "topic_name": "43",
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Add [MethodImpl(MethodImplOptions.AggressiveInlining)] attributes to frequently used helper methods, enumerators, and string helpers in LightResults library to hint JIT inlining."
   },
   "quantitative_metrics": {

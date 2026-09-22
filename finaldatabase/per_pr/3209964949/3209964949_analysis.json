@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "2",
+    "topic_id": 2,
+    "topic_name": "2_hydration_species_component_children",
     "body_summary": "Offload dataset serialization to a FastAPI threadpool to avoid blocking the async event loop, and update the admin UI to use `minimal=true` query to avoid fetching full dataset contents, reducing latency for large datasets."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "36",
+    "topic_id": 36,
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Eliminate N+1 queries in homepage post loading by implementing batch user fetching with a single IN query and cache-aware post conversion."
   },
   "quantitative_metrics": {

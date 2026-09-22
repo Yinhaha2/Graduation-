@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "test",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Add local_gpt2_tokenizer fixture to avoid network downloads in GPT2-related tests; switch tests to use this fixture and use passthrough tokenizer for validation-set test."
   },
   "quantitative_metrics": {

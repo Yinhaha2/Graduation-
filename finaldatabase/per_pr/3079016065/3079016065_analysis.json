@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "3",
+    "topic_id": 3,
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Make the CPU usage collection interval in EnvironmentStatisticsProvider configurable via EnvironmentStatisticsOptions and extension methods, with default of 1 second, to reduce impact on other EventListener implementations like Application Insights."
   },
   "quantitative_metrics": {

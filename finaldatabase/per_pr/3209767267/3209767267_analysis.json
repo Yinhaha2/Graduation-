@@ -15,7 +15,7 @@
     "aidev_task_type": "build",
     "aidev_task_confidence": 9,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Label Cobol and Rust compiler packages with //go:build slow to exclude them from fast test runs, improving CI test selection speed."
   },
   "quantitative_metrics": {

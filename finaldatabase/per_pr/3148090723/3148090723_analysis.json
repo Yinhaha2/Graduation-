@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Lazy-load JacMachine in meta_importer to avoid expensive import on Python startup, aiming to speed up pytest runs."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 23,
-    "topic_name": "23",
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "No body provided; the PR adds a drain benchmark strategy and job progress helper for pgqueuer."
   },
   "quantitative_metrics": {

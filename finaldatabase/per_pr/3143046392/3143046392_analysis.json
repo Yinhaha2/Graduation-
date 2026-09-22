@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 9,
     "topic_id": 39,
-    "topic_name": "39",
+    "topic_name": "39_transpiler_decimal places_color_picker",
     "body_summary": "Remove helperIndex and helperLen runtime helpers; instead infer indexing and length directly in the TypeScript compiler, reducing generated code overhead."
   },
   "quantitative_metrics": {

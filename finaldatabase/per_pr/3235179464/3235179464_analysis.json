@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Replace LINQ Any+Single patterns with Where+FirstOrDefault across 14 instances in test platform managers to avoid double enumeration and improve debug information."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 51,
+    "topic_name": "51_chart_gpu_interactive chart_interactive",
     "body_summary": "Defer plotly script loading in the alpha_agi_insight_v1 demo docs to improve page load performance and prevent blocking."
   },
   "quantitative_metrics": {

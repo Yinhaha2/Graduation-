@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 9,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Cherry-pick fix from #256506 to address out-of-memory crashes in VS Code by introducing AsyncIterableProducer with different iteration semantics to prevent memory leaks from unconsumed values."
   },
   "quantitative_metrics": {

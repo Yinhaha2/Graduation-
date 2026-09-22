@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 43,
-    "topic_name": "43",
+    "topic_name": "43_modifier_structs_demonstration_int",
     "body_summary": "Introduce SingleItemReadOnlyDictionary optimized for single key/value pairs and use it in Error constructors and Result helpers to reduce small metadata allocations."
   },
   "quantitative_metrics": {

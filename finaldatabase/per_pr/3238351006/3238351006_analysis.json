@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 22,
-    "topic_name": "22",
+    "topic_name": "22_prefetch_mvn_bid_reflection",
     "body_summary": "Prefetch info panel data when browsing sequential rows; add config options `prefetchObjects` and `prefetchStale`."
   },
   "quantitative_metrics": {

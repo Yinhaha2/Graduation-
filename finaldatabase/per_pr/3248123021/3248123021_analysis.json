@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Fix commit counter to use project name instead of stale loop index, and add cursor-based pagination to reduce redundant GitLab API calls."
   },
   "quantitative_metrics": {

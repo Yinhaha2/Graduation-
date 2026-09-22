@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 23,
-    "topic_name": "23",
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Add a tool to analyze wolfSSL memory allocation patterns and recommend optimal static memory bucket configurations to minimize wasted overhead, with visualization and WOLFSSL_NO_MALLOC testing support."
   },
   "quantitative_metrics": {

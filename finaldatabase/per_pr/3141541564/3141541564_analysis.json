@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Introduce Direct FFI integration as a lightweight alternative to gRPC, claiming 500x faster latency and 40x smaller binary size; includes Objective‑C interfaces, Rust FFI bindings, an extensive FBProcess→FBIDBProcess rename, CI workflows, and a Rust calibration client."
   },
   "quantitative_metrics": {

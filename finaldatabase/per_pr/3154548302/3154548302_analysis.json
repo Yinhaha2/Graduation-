@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Add a batch timeout constant to limit wait time for JetStream batches in zen-consumer."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Add pagination, year archives, featured posts, tag normalization, and browse components to debbie.codes blog, claiming 1.1s load time vs slow infinite scroll of 90+ posts."
   },
   "quantitative_metrics": {

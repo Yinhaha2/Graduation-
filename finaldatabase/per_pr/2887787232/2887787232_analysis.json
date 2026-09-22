@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 29,
-    "topic_name": "29",
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Refactor user creation in backend CRUD to use direct Prisma client operations instead of interactive transaction, claiming improved efficiency."
   },
   "quantitative_metrics": {

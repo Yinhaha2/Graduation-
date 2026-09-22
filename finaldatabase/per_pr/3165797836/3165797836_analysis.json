@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 30,
-    "topic_name": "30",
+    "topic_name": "30_columns_column_database_scan",
     "body_summary": "Fix Application Not Responding (ANR) on TV show detail screen by loading poster with Glide's CustomTarget instead of blocking the main thread."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "48",
+    "topic_id": 48,
+    "topic_name": "48_chat_schema_workflow state_workflow node",
     "body_summary": "Integrate chatAudioIO module from Moddable SDK by refactoring microphone to use embedded:io/audio/in, claiming improved real-time audio capabilities."
   },
   "quantitative_metrics": {

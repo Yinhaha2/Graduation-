@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "45",
+    "topic_id": 45,
+    "topic_name": "45_firecrawl_scrape_scraping_authority",
     "body_summary": "Optimize explore caching in ValidationService by moving findExploresFromCache call inside the condition where compiledExplores is undefined, preventing unnecessary DB requests when explores are in memory."
   },
   "quantitative_metrics": {

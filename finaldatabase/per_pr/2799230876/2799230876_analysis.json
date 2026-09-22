@@ -15,7 +15,7 @@
     "aidev_task_type": "chore",
     "aidev_task_confidence": 10,
     "topic_id": 0,
-    "topic_name": "0_unknown",
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Optimize pnpm cache configuration in CI workflow to improve package reuse by reordering steps, adding architecture-specific and package.json cache keys, and configuring store-dir."
   },
   "quantitative_metrics": {

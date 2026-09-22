@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Add ftruncate operation to tokio-epoll-uring library and update set_len to use it, aiming to improve I/O performance; PR closed after maintainer noted failure with multi-repo handling."
   },
   "quantitative_metrics": {

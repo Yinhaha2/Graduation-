@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 8,
-    "topic_name": "8",
+    "topic_name": "8_guidelines_benchmarks_sampling_sitemap",
     "body_summary": "Add GitHub Codespaces prebuild support via updateContentCommand in devcontainer.json, and automate Azure CLI installation in setup_env.sh to reduce manual setup steps and speed up container startup."
   },
   "quantitative_metrics": {

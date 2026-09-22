@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Implement lazy loading for all CLI command actions, deferring heavy imports and startup operations (update checks, DB migrations, config loading) to reduce CLI startup time by ~15.7% according to internal benchmarks."
   },
   "quantitative_metrics": {

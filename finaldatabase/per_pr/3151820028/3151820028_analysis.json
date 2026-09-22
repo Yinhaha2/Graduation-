@@ -15,7 +15,7 @@
     "aidev_task_type": "docs",
     "aidev_task_confidence": 9,
     "topic_id": 16,
-    "topic_name": "16",
+    "topic_name": "16_nbsp_tool_token_upload",
     "body_summary": "Discussion document proposing pagination, sorting, and output optimization to fix MCP tool responses exceeding the 25,000 token limit."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": 28,
-    "topic_name": "28",
+    "topic_name": "28_scroll_debounce_search_debouncing",
     "body_summary": "Implement server-side pagination, filtering, and search for eval results to handle large evaluations, with a new /eval/table/:id endpoint, database indices, and frontend hooks."
   },
   "quantitative_metrics": {

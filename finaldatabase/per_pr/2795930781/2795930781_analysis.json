@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "ci",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "",
+    "topic_id": 0,
+    "topic_name": "0_workflow_jobs_job_ci",
     "body_summary": "Reduce GitHub Actions workflow timeouts (playwright.yml, test_cli.yaml) based on historical run duration analysis to save CI minutes while preserving sufficient buffers."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "42",
+    "topic_id": 42,
+    "topic_name": "42_register_liveness analysis_liveness_coalescing",
     "body_summary": "Add liveness analysis with dead code elimination and constant folding to the VM optimizer, updating golden IR outputs across many tests."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "27",
+    "topic_id": 27,
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Replace Date.now() with performance.now() for benchmark timing in TypeScript compiler and update all generated benchmark output files."
   },
   "quantitative_metrics": {

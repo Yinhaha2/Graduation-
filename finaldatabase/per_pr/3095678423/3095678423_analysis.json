@@ -15,7 +15,7 @@
     "aidev_task_type": "test",
     "aidev_task_confidence": 8,
     "topic_id": 6,
-    "topic_name": "6",
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Split several end-to-end test files into separate JS and no-JS variants to speed up parallel Playwright runs."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "13",
+    "topic_id": 13,
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Add pass@k evaluation metric to EnvStateManager.get_rollout_states in the RAGEN framework."
   },
   "quantitative_metrics": {

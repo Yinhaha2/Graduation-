@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": 0,
-    "topic_name": "15",
+    "topic_id": 15,
+    "topic_name": "15_tpch_vm_reuse_constant reuse",
     "body_summary": "Update the disassembled IR for TPCH query q1 after VM constant reuse improvements, reflecting a compiler performance enhancement."
   },
   "quantitative_metrics": {

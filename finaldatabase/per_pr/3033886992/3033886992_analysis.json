@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 10,
     "topic_id": 12,
-    "topic_name": "12",
+    "topic_name": "12_tickets_invoices_scopes_sort",
     "body_summary": "Optimize Cal.com app loading via in-memory caching, React memoization, lazy loading, and package optimization; also attempt to fix a TypeScript compiler bug by changing CI type-check commands."
   },
   "quantitative_metrics": {

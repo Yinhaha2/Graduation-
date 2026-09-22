@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 23,
-    "topic_name": "23",
+    "topic_name": "23_draw_pressure_capacity_queue",
     "body_summary": "Add spatial index (rstar) to SceneCache for point-intersection queries; update HitTester to use it for efficient hit testing, with logging and documentation improvements."
   },
   "quantitative_metrics": {

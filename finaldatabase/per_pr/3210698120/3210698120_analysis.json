@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 25,
-    "topic_name": "25",
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Inline simple builtins (count, append, values, exists, avg, sum, min, max) in the C# compiler, removing runtime helper calls and updating golden outputs."
   },
   "quantitative_metrics": {

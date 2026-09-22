@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "34",
+    "topic_id": 34,
+    "topic_name": "34_telemetry_phase_history_deploy",
     "body_summary": "Add testing infrastructure (MockTransport, test helpers), integration/e2e tests, performance benchmarks, and optimized fast-path capture using atomic flag to minimize telemetry overhead when disabled."
   },
   "quantitative_metrics": {

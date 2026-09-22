@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 8,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Disable gradient tracking during inference in MiniMu (minimuzero.py) and add type hints for policy and reset methods."
   },
   "quantitative_metrics": {

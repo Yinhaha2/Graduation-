@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
     "topic_id": 4,
-    "topic_name": "4",
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Switch the stack in deepEquals and deepHashCode from LinkedList to ArrayDeque for better performance."
   },
   "quantitative_metrics": {

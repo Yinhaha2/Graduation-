@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 1,
-    "topic_name": "1",
+    "topic_name": "1_rosetta_transpiler_benchmark_benchmark mode",
     "body_summary": "Add benchmark block option to CS transpiler, capture durations and memory in Rosetta tests, skip MOCHI_NOW_SEED when benchmarking, and parse JSON results from output."
   },
   "quantitative_metrics": {

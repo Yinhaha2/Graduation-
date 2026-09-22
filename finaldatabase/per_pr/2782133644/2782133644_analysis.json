@@ -15,7 +15,7 @@
     "aidev_task_type": "refactor",
     "aidev_task_confidence": 10,
     "topic_id": 24,
-    "topic_name": "24",
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Remove framer-motion AnimatePresence and motion wrappers from ChatInput and ShareProject, replacing with static divs to eliminate MobX-triggered animation overhead and simplify rendering."
   },
   "quantitative_metrics": {

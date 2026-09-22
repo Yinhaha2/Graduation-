@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 11,
-    "topic_name": "11",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Replace synchronous file system API calls with async equivalents in VSCode extension install script for better performance and Node.js best practices."
   },
   "quantitative_metrics": {

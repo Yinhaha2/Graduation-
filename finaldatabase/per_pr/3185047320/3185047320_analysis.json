@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 13,
-    "topic_name": "13",
+    "topic_name": "13_pytest_fails_pareto_metrics",
     "body_summary": "Open demo links in new tab and lazy-load preview images for faster gallery rendering in scripts/generate_gallery_html.py."
   },
   "quantitative_metrics": {

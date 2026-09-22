@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "24",
+    "topic_id": 24,
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Implement bundle size optimizations for the web app targeting ~740KB: fix Next.js config for bundle analyzer, replace `export *` with explicit named exports, dynamic Chart.js loading, and restrict icon exports to 16 commonly used ones (later reverted)."
   },
   "quantitative_metrics": {

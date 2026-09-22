@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
     "topic_id": -1,
-    "topic_name": "",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Implement pre-computed etag support in mbtiles sources to eliminate unnecessary xxhash CPU overhead by reusing stored hashes; adds trait method and pipeline integration with full backward compatibility."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": -1,
-    "topic_name": "-1",
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Implement lazy loading of social networks via dynamic imports, convert useSocialShare to async, and update components/docs accordingly."
   },
   "quantitative_metrics": {

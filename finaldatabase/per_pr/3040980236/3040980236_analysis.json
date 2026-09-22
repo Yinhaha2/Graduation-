@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "29",
+    "topic_id": 29,
+    "topic_name": "29_deletion_queries_bookings_batch",
     "body_summary": "Add a Prisma middleware to detect slow queries (>SLOW_QUERY_THRESHOLD_MS) and report them to Sentry with rate limiting, targeting better database performance observability."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "7",
+    "topic_id": 7,
+    "topic_name": "7_npm_dns_block_command",
     "body_summary": "Upgrade Nx from v20.3.0 to v21.0.4, remove legacy cache configuration from nx.json, and update nx-cloud runner settings."
   },
   "quantitative_metrics": {

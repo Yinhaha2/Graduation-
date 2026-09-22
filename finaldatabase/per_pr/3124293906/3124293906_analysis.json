@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "6",
+    "topic_id": 6,
+    "topic_name": "6_psutil_e2e_github_validation",
     "body_summary": "Add --preplanned flag to skip expensive terraform plan operations by reading existing plan files, with concurrent multi-directory support and auto-detection of JSON vs binary formats."
   },
   "quantitative_metrics": {

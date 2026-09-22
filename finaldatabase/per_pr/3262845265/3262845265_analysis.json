@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 17,
-    "topic_name": "17",
+    "topic_name": "17_fuzzy_production_swift_slow",
     "body_summary": "Replace the PRNG in OpNow with a faster xorshift algorithm, update Rosetta golden test outputs and benchmark data, and add MOCHI_NOW_SEED for deterministic seeding."
   },
   "quantitative_metrics": {

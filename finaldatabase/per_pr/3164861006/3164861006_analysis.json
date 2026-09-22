@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "31",
+    "topic_id": 31,
+    "topic_name": "31_connection_pooling_yoga_methods",
     "body_summary": "Experiment adding native Yoga layout engine bindings for Bun's JavaScript runtime, including C++ classes, JSC GC integration, and module exposure, acknowledging it likely won't merge."
   },
   "quantitative_metrics": {

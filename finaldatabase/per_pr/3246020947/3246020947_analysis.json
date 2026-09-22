@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "1",
+    "topic_id": 1,
+    "topic_name": "1_rosetta_transpiler_benchmark_benchmark mode",
     "body_summary": "Improve Prolog transpiler by folding trivial zero-arg functions during compilation, add bool_chain golden test output, and update Prolog README checklist."
   },
   "quantitative_metrics": {

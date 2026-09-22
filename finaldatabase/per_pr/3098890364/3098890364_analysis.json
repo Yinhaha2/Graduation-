@@ -15,7 +15,7 @@
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
     "topic_id": 36,
-    "topic_name": "36",
+    "topic_name": "36_statement_extensions_limit_users",
     "body_summary": "Address CodeRabbit feedback on Query Node by adding input validation, type safety improvements, DB query optimization, and error handling across multiple packages."
   },
   "quantitative_metrics": {

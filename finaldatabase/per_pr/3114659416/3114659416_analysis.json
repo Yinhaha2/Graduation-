@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "35",
+    "topic_id": 35,
+    "topic_name": "35_worker_service_assets_offline",
     "body_summary": "Inline pyodide.asm.wasm and wasm-gpt2.tar during manual build; decode embedded WASM in runtime loader; test that window.PYODIDE_WASM_BASE64 exists in the built UI."
   },
   "quantitative_metrics": {

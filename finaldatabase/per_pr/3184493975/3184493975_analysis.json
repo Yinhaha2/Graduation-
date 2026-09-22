@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 21,
-    "topic_name": "21",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Add profiling-guided optimization infrastructure to the VM: track instruction counts, collect execution profiles, and provide passes to remove cold instructions."
   },
   "quantitative_metrics": {

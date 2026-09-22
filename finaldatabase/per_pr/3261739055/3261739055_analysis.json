@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 20,
-    "topic_name": "20",
+    "topic_name": "20_lua_transpiler_printing_slow",
     "body_summary": "Add optional benchmark wrapping for Lua transpiler to collect execution time and memory usage; update golden tests to support MOCHI_BENCHMARK env and regenerate ROSETTA.md checklist."
   },
   "quantitative_metrics": {

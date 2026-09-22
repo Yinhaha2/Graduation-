@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 3,
-    "topic_name": "3",
+    "topic_name": "3_audio_tts_cpu_cpus",
     "body_summary": "Add Bash and PowerShell scripts to run Catch2 tests in parallel via sharding, update CI workflows and README, claiming faster execution."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "aidev_pr_task_type_perf_only",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 8,
-    "topic_id": null,
-    "topic_name": "27",
+    "topic_id": 27,
+    "topic_name": "27_bench_benchmarks_tsgo_benchmark",
     "body_summary": "Re-run benchmarks, drop interpreter from benchmark runs, and rename sum to sum_loop in benchmark template to avoid builtin conflict."
   },
   "quantitative_metrics": {

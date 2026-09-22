@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "38",
+    "topic_id": 38,
+    "topic_name": "38_dotnet_dns_block_command",
     "body_summary": "Add optimized call sites for Char.IsDigit property functions in MSBuild WellKnownFunctions to bypass reflection, with support for both single-character and string+index overloads, after initial attempt at ASCII range check was rescoped per maintainer feedback."
   },
   "quantitative_metrics": {

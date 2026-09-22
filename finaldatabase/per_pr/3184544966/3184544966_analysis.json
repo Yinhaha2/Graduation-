@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 5,
-    "topic_name": "5",
+    "topic_name": "5_join_joins_left_left join",
     "body_summary": "Optimize VM join performance by mutating lists in-place via OpAppend when safe, updating query compilation to use in-place append for joins."
   },
   "quantitative_metrics": {

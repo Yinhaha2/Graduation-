@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "chore",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "24",
+    "topic_id": 24,
+    "topic_name": "24_bundle_css_components_splitting",
     "body_summary": "Remove intermediate ProjectSelectOption state and use projects array directly from context to populate selector list, reducing redundant state management and improving performance."
   },
   "quantitative_metrics": {

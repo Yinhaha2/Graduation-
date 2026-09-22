@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
-    "topic_id": null,
-    "topic_name": "4",
+    "topic_id": 4,
+    "topic_name": "4_moon_buffer_logits_sequence",
     "body_summary": "Optimize string operations by using write_substring to avoid intermediate allocations, remove unused TODO comments, and update array joining helpers for direct view appends."
   },
   "quantitative_metrics": {

@@ -14,8 +14,8 @@
     "detection_source": "llm_title_body_classifier",
     "aidev_task_type": "fix",
     "aidev_task_confidence": 10,
-    "topic_id": null,
-    "topic_name": "-1",
+    "topic_id": -1,
+    "topic_name": "-1_uv_pip_calendar_unified",
     "body_summary": "Remove redundant status index from conversations table as the mailboxAssignedToStatusIdIdx composite index already includes status context."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 10,
-    "topic_name": "10",
+    "topic_name": "10_pure_folding_constant_pure function",
     "body_summary": "Add constant evaluation of pure function calls in the interpreter and avoid recursion by disabling pure evaluation when invoked from EvalPureCall."
   },
   "quantitative_metrics": {

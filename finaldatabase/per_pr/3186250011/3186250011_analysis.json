@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 25,
-    "topic_name": "25",
+    "topic_name": "25_bufread_temporary_machine_scheme",
     "body_summary": "Extend compile-time constant folding to builtins count, exists, avg, sum, min, max, and values; regenerate IR golden files to reflect reduced instructions."
   },
   "quantitative_metrics": {

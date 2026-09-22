@@ -15,7 +15,7 @@
     "aidev_task_type": "perf",
     "aidev_task_confidence": 9,
     "topic_id": 51,
-    "topic_name": "51",
+    "topic_name": "51_chart_gpu_interactive chart_interactive",
     "body_summary": "Add canvas layer drawing utilities, offload heavy evolution work to a Web Worker, and switch to canvas for large populations to improve in-browser frontier rendering performance."
   },
   "quantitative_metrics": {

@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 8,
     "topic_id": 21,
-    "topic_name": "21_zig_backend_grouping",
+    "topic_name": "21_group_peephole_vm_swift",
     "body_summary": "Optimize Zig query grouping with an AutoHashMap, update TPCH Q1 generated Zig code, and add dataset compiler output for TPCH Q1."
   },
   "quantitative_metrics": {

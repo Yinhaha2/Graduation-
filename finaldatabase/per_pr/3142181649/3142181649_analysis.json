@@ -15,7 +15,7 @@
     "aidev_task_type": "feat",
     "aidev_task_confidence": 9,
     "topic_id": 11,
-    "topic_name": "11_sdk_query_function_dependency",
+    "topic_name": "11_constructors_claude_parsing_startup",
     "body_summary": "Replace CLI subprocess execution with Claude Code SDK for better performance, type safety, and error handling while maintaining the same interface."
   },
   "quantitative_metrics": {
