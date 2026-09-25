@@ -11,7 +11,7 @@
 | 2 | 无效。合并 PR 的关闭机制默认是 2，不再判断。关闭 PR 的关闭机制，以及全部 PR 的 `boundary_tag`、`detection_method`，由复检人填写 1、-1 或 0。 |
 
 抽样框为终态语料 1,183 条（merged 694 / closed 489）。其中 6 条 prompt few-shot 已从抽样框剔除，剩余 1,177 条。随机种子 `20260925`。合并与关闭各 60 条。
-每个 agent 在 A、B、A&B 三份名单里都出现。A 与 B 各 50 条专属工作量，且各自合并 25、关闭 25；A&B 为 20 条公共工作量。
+每个 agent 在 A、B 和公共集里都出现。A 与 B 各 50 条专属工作量，且各自合并 25、关闭 25。公共集 20 条由两人各做一遍，并分成两张表。A 的表含专属 workload A 与公共 A&B；B 的表含专属 workload B 与公共 B&A。含 & 的是同一批公共 PR，两人各自打分。
 
 分层配额（agent × status；每层先保底 4，其余 40 个名额按该状态下的层规模用最大余数法分配）：
 
@@ -154,10 +154,13 @@
 }
 ```
 
-## 对照表
+JSON 仍是 120 个互不重复的 PR。下面分成两张表，各 70 行。
+`pr_id` 是主表 `id`。最后三列是复检打分。合并 PR 的关闭机制已填 2；其余判断格留空。
 
-下表便于打开 GitHub。`workload` 与上面的 JSON 分组一致，`pr_id` 是主表 `id`。
-最后三列是复检打分。合并 PR 的关闭机制已填 2；其余判断格留空。
+
+## A 的对照表
+
+A 的工作量：专属 50 条（workload A），公共 20 条（workload A&B）。
 
 | pr_id | workload | status | agent | repo | number | url | 关闭机制 | boundary_tag | detection_method |
 |---|---|---|---|---|---:|---|---:|---:|---:|
@@ -211,6 +214,33 @@
 | 3266937953 | A | merged | OpenAI_Codex | mochilang/mochi | 13718 | https://github.com/mochilang/mochi/pull/13718 | 2 |  |  |
 | 3275676664 | A | closed | Copilot | halo-dev/halo | 7645 | https://github.com/halo-dev/halo/pull/7645 |  |  |  |
 | 3276475340 | A | merged | OpenAI_Codex | MihaiCristianCondrea/Smart-Cleaner-for-Android | 240 | https://github.com/MihaiCristianCondrea/Smart-Cleaner-for-Android/pull/240 | 2 |  |  |
+| 2927184629 | A&B | merged | Devin | onlook-dev/onlook | 1634 | https://github.com/onlook-dev/onlook/pull/1634 | 2 |  |  |
+| 2976324699 | A&B | closed | Devin | digitaldemocracy2030/kouchou-ai | 246 | https://github.com/digitaldemocracy2030/kouchou-ai/pull/246 |  |  |  |
+| 3099825876 | A&B | merged | Devin | neondatabase/neon | 12057 | https://github.com/neondatabase/neon/pull/12057 | 2 |  |  |
+| 3106804055 | A&B | merged | OpenAI_Codex | OpenHFT/Chronicle-Core | 814 | https://github.com/OpenHFT/Chronicle-Core/pull/814 | 2 |  |  |
+| 3133544722 | A&B | merged | Claude_Code | meilisearch/meilisearch-mcp | 42 | https://github.com/meilisearch/meilisearch-mcp/pull/42 | 2 |  |  |
+| 3137902575 | A&B | merged | Copilot | PowerShell/vscode-powershell | 5212 | https://github.com/PowerShell/vscode-powershell/pull/5212 | 2 |  |  |
+| 3138324206 | A&B | merged | Cursor | elie222/inbox-zero | 505 | https://github.com/elie222/inbox-zero/pull/505 | 2 |  |  |
+| 3138362649 | A&B | merged | Claude_Code | evmts/tevm-monorepo | 1847 | https://github.com/evmts/tevm-monorepo/pull/1847 | 2 |  |  |
+| 3140054883 | A&B | closed | Copilot | tokens-studio/figma-plugin | 3422 | https://github.com/tokens-studio/figma-plugin/pull/3422 |  |  |  |
+| 3161909204 | A&B | closed | Devin | ateliee/jquery.schedule | 58 | https://github.com/ateliee/jquery.schedule/pull/58 |  |  |  |
+| 3188612213 | A&B | closed | OpenAI_Codex | mochilang/mochi | 4190 | https://github.com/mochilang/mochi/pull/4190 |  |  |  |
+| 3197078069 | A&B | merged | Cursor | epicweb-dev/restore-scroll | 13 | https://github.com/epicweb-dev/restore-scroll/pull/13 | 2 |  |  |
+| 3197380367 | A&B | closed | OpenAI_Codex | featureform/enrichmcp | 104 | https://github.com/featureform/enrichmcp/pull/104 |  |  |  |
+| 3207831434 | A&B | closed | Cursor | nnstreamer/nntrainer | 3293 | https://github.com/nnstreamer/nntrainer/pull/3293 |  |  |  |
+| 3208320625 | A&B | closed | Copilot | NG-ZORRO/ng-zorro-antd | 9278 | https://github.com/NG-ZORRO/ng-zorro-antd/pull/9278 |  |  |  |
+| 3219088212 | A&B | closed | Cursor | selfxyz/self | 756 | https://github.com/selfxyz/self/pull/756 |  |  |  |
+| 3226043406 | A&B | closed | Claude_Code | promptfoo/promptfoo | 4902 | https://github.com/promptfoo/promptfoo/pull/4902 |  |  |  |
+| 3242428313 | A&B | merged | OpenAI_Codex | xrdevrob/QuestCameraKit | 23 | https://github.com/xrdevrob/QuestCameraKit/pull/23 | 2 |  |  |
+| 3257102140 | A&B | closed | Claude_Code | oxcaml/oxcaml | 4363 | https://github.com/oxcaml/oxcaml/pull/4363 |  |  |  |
+| 3258539679 | A&B | merged | Copilot | CarGuo/gsy_github_app_flutter | 913 | https://github.com/CarGuo/gsy_github_app_flutter/pull/913 | 2 |  |  |
+
+## B 的对照表
+
+B 的工作量：专属 50 条（workload B），公共 20 条（workload B&A）。B&A 与 A&B 是同一批 PR。
+
+| pr_id | workload | status | agent | repo | number | url | 关闭机制 | boundary_tag | detection_method |
+|---|---|---|---|---|---:|---|---:|---:|---:|
 | 2838837697 | B | merged | Devin | pyth-network/pyth-crosschain | 2351 | https://github.com/pyth-network/pyth-crosschain/pull/2351 | 2 |  |  |
 | 2855302194 | B | closed | Devin | pdfme/pdfme | 711 | https://github.com/pdfme/pdfme/pull/711 |  |  |  |
 | 2876006908 | B | closed | Claude_Code | zenml-io/zenml | 3375 | https://github.com/zenml-io/zenml/pull/3375 |  |  |  |
@@ -261,23 +291,23 @@
 | 3262707090 | B | closed | OpenAI_Codex | mochilang/mochi | 13030 | https://github.com/mochilang/mochi/pull/13030 |  |  |  |
 | 3262887238 | B | closed | OpenAI_Codex | mochilang/mochi | 13066 | https://github.com/mochilang/mochi/pull/13066 |  |  |  |
 | 3274990408 | B | merged | OpenAI_Codex | copper-project/copper-rs | 410 | https://github.com/copper-project/copper-rs/pull/410 | 2 |  |  |
-| 2927184629 | A&B | merged | Devin | onlook-dev/onlook | 1634 | https://github.com/onlook-dev/onlook/pull/1634 | 2 |  |  |
-| 2976324699 | A&B | closed | Devin | digitaldemocracy2030/kouchou-ai | 246 | https://github.com/digitaldemocracy2030/kouchou-ai/pull/246 |  |  |  |
-| 3099825876 | A&B | merged | Devin | neondatabase/neon | 12057 | https://github.com/neondatabase/neon/pull/12057 | 2 |  |  |
-| 3106804055 | A&B | merged | OpenAI_Codex | OpenHFT/Chronicle-Core | 814 | https://github.com/OpenHFT/Chronicle-Core/pull/814 | 2 |  |  |
-| 3133544722 | A&B | merged | Claude_Code | meilisearch/meilisearch-mcp | 42 | https://github.com/meilisearch/meilisearch-mcp/pull/42 | 2 |  |  |
-| 3137902575 | A&B | merged | Copilot | PowerShell/vscode-powershell | 5212 | https://github.com/PowerShell/vscode-powershell/pull/5212 | 2 |  |  |
-| 3138324206 | A&B | merged | Cursor | elie222/inbox-zero | 505 | https://github.com/elie222/inbox-zero/pull/505 | 2 |  |  |
-| 3138362649 | A&B | merged | Claude_Code | evmts/tevm-monorepo | 1847 | https://github.com/evmts/tevm-monorepo/pull/1847 | 2 |  |  |
-| 3140054883 | A&B | closed | Copilot | tokens-studio/figma-plugin | 3422 | https://github.com/tokens-studio/figma-plugin/pull/3422 |  |  |  |
-| 3161909204 | A&B | closed | Devin | ateliee/jquery.schedule | 58 | https://github.com/ateliee/jquery.schedule/pull/58 |  |  |  |
-| 3188612213 | A&B | closed | OpenAI_Codex | mochilang/mochi | 4190 | https://github.com/mochilang/mochi/pull/4190 |  |  |  |
-| 3197078069 | A&B | merged | Cursor | epicweb-dev/restore-scroll | 13 | https://github.com/epicweb-dev/restore-scroll/pull/13 | 2 |  |  |
-| 3197380367 | A&B | closed | OpenAI_Codex | featureform/enrichmcp | 104 | https://github.com/featureform/enrichmcp/pull/104 |  |  |  |
-| 3207831434 | A&B | closed | Cursor | nnstreamer/nntrainer | 3293 | https://github.com/nnstreamer/nntrainer/pull/3293 |  |  |  |
-| 3208320625 | A&B | closed | Copilot | NG-ZORRO/ng-zorro-antd | 9278 | https://github.com/NG-ZORRO/ng-zorro-antd/pull/9278 |  |  |  |
-| 3219088212 | A&B | closed | Cursor | selfxyz/self | 756 | https://github.com/selfxyz/self/pull/756 |  |  |  |
-| 3226043406 | A&B | closed | Claude_Code | promptfoo/promptfoo | 4902 | https://github.com/promptfoo/promptfoo/pull/4902 |  |  |  |
-| 3242428313 | A&B | merged | OpenAI_Codex | xrdevrob/QuestCameraKit | 23 | https://github.com/xrdevrob/QuestCameraKit/pull/23 | 2 |  |  |
-| 3257102140 | A&B | closed | Claude_Code | oxcaml/oxcaml | 4363 | https://github.com/oxcaml/oxcaml/pull/4363 |  |  |  |
-| 3258539679 | A&B | merged | Copilot | CarGuo/gsy_github_app_flutter | 913 | https://github.com/CarGuo/gsy_github_app_flutter/pull/913 | 2 |  |  |
+| 2927184629 | B&A | merged | Devin | onlook-dev/onlook | 1634 | https://github.com/onlook-dev/onlook/pull/1634 | 2 |  |  |
+| 2976324699 | B&A | closed | Devin | digitaldemocracy2030/kouchou-ai | 246 | https://github.com/digitaldemocracy2030/kouchou-ai/pull/246 |  |  |  |
+| 3099825876 | B&A | merged | Devin | neondatabase/neon | 12057 | https://github.com/neondatabase/neon/pull/12057 | 2 |  |  |
+| 3106804055 | B&A | merged | OpenAI_Codex | OpenHFT/Chronicle-Core | 814 | https://github.com/OpenHFT/Chronicle-Core/pull/814 | 2 |  |  |
+| 3133544722 | B&A | merged | Claude_Code | meilisearch/meilisearch-mcp | 42 | https://github.com/meilisearch/meilisearch-mcp/pull/42 | 2 |  |  |
+| 3137902575 | B&A | merged | Copilot | PowerShell/vscode-powershell | 5212 | https://github.com/PowerShell/vscode-powershell/pull/5212 | 2 |  |  |
+| 3138324206 | B&A | merged | Cursor | elie222/inbox-zero | 505 | https://github.com/elie222/inbox-zero/pull/505 | 2 |  |  |
+| 3138362649 | B&A | merged | Claude_Code | evmts/tevm-monorepo | 1847 | https://github.com/evmts/tevm-monorepo/pull/1847 | 2 |  |  |
+| 3140054883 | B&A | closed | Copilot | tokens-studio/figma-plugin | 3422 | https://github.com/tokens-studio/figma-plugin/pull/3422 |  |  |  |
+| 3161909204 | B&A | closed | Devin | ateliee/jquery.schedule | 58 | https://github.com/ateliee/jquery.schedule/pull/58 |  |  |  |
+| 3188612213 | B&A | closed | OpenAI_Codex | mochilang/mochi | 4190 | https://github.com/mochilang/mochi/pull/4190 |  |  |  |
+| 3197078069 | B&A | merged | Cursor | epicweb-dev/restore-scroll | 13 | https://github.com/epicweb-dev/restore-scroll/pull/13 | 2 |  |  |
+| 3197380367 | B&A | closed | OpenAI_Codex | featureform/enrichmcp | 104 | https://github.com/featureform/enrichmcp/pull/104 |  |  |  |
+| 3207831434 | B&A | closed | Cursor | nnstreamer/nntrainer | 3293 | https://github.com/nnstreamer/nntrainer/pull/3293 |  |  |  |
+| 3208320625 | B&A | closed | Copilot | NG-ZORRO/ng-zorro-antd | 9278 | https://github.com/NG-ZORRO/ng-zorro-antd/pull/9278 |  |  |  |
+| 3219088212 | B&A | closed | Cursor | selfxyz/self | 756 | https://github.com/selfxyz/self/pull/756 |  |  |  |
+| 3226043406 | B&A | closed | Claude_Code | promptfoo/promptfoo | 4902 | https://github.com/promptfoo/promptfoo/pull/4902 |  |  |  |
+| 3242428313 | B&A | merged | OpenAI_Codex | xrdevrob/QuestCameraKit | 23 | https://github.com/xrdevrob/QuestCameraKit/pull/23 | 2 |  |  |
+| 3257102140 | B&A | closed | Claude_Code | oxcaml/oxcaml | 4363 | https://github.com/oxcaml/oxcaml/pull/4363 |  |  |  |
+| 3258539679 | B&A | merged | Copilot | CarGuo/gsy_github_app_flutter | 913 | https://github.com/CarGuo/gsy_github_app_flutter/pull/913 | 2 |  |  |
