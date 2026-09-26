@@ -1,0 +1,1438 @@
+[
+  {
+    "pr_id": 3273233066,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Claude_Code",
+    "http_status": 200,
+    "timeline_events": 53,
+    "added": 16,
+    "end_actors": [
+      "merged:tphakala",
+      "closed:tphakala"
+    ]
+  },
+  {
+    "pr_id": 3141541564,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Claude_Code",
+    "http_status": 200,
+    "timeline_events": 31,
+    "added": 1,
+    "end_actors": [
+      "closed:arkavo-com"
+    ]
+  },
+  {
+    "pr_id": 3275149041,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Claude_Code",
+    "http_status": 200,
+    "timeline_events": 8,
+    "added": 1,
+    "end_actors": [
+      "closed:mogery"
+    ]
+  },
+  {
+    "pr_id": 3226043406,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Claude_Code",
+    "http_status": 200,
+    "timeline_events": 43,
+    "added": 4,
+    "end_actors": [
+      "closed:mldangelo"
+    ]
+  },
+  {
+    "pr_id": 3125979396,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 41,
+    "added": 11,
+    "end_actors": [
+      "merged:kellyelton",
+      "closed:kellyelton"
+    ]
+  },
+  {
+    "pr_id": 3259689574,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 255,
+    "added": 177,
+    "end_actors": [
+      "closed:pavelglac"
+    ]
+  },
+  {
+    "pr_id": 3235179464,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 45,
+    "added": 7,
+    "end_actors": [
+      "merged:Evangelink",
+      "closed:Evangelink"
+    ]
+  },
+  {
+    "pr_id": 3262668155,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 19,
+    "added": 1,
+    "end_actors": [
+      "closed:sfmskywalker"
+    ]
+  },
+  {
+    "pr_id": 3074681764,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 27,
+    "added": 3,
+    "end_actors": [
+      "closed:dmcilvaney"
+    ]
+  },
+  {
+    "pr_id": 3184463362,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 65,
+    "added": 28,
+    "end_actors": [
+      "closed:PureWeen"
+    ]
+  },
+  {
+    "pr_id": 3100789352,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 24,
+    "added": 1,
+    "end_actors": [
+      "closed:AArnott"
+    ]
+  },
+  {
+    "pr_id": 3158935716,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 40,
+    "added": 10,
+    "end_actors": [
+      "merged:JonnyBurger",
+      "closed:JonnyBurger"
+    ]
+  },
+  {
+    "pr_id": 3158983348,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 45,
+    "added": 13,
+    "end_actors": [
+      "merged:peteryang1",
+      "closed:peteryang1"
+    ]
+  },
+  {
+    "pr_id": 3219254404,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 36,
+    "added": 5,
+    "end_actors": [
+      "merged:brainkim",
+      "closed:brainkim"
+    ]
+  },
+  {
+    "pr_id": 3147503921,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 66,
+    "added": 27,
+    "end_actors": [
+      "merged:JonnyBurger",
+      "closed:JonnyBurger"
+    ]
+  },
+  {
+    "pr_id": 3245889248,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 18,
+    "added": 2,
+    "end_actors": [
+      "closed:Jaimi"
+    ]
+  },
+  {
+    "pr_id": 3201598720,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 36,
+    "added": 6,
+    "end_actors": [
+      "merged:equationzhao",
+      "closed:equationzhao"
+    ]
+  },
+  {
+    "pr_id": 3237935468,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 43,
+    "added": 10,
+    "end_actors": [
+      "closed:xxchan"
+    ]
+  },
+  {
+    "pr_id": 3107779459,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 17,
+    "added": 2,
+    "end_actors": [
+      "closed:six7"
+    ]
+  },
+  {
+    "pr_id": 3202444418,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 43,
+    "added": 10,
+    "end_actors": [
+      "merged:debs-obrien",
+      "closed:debs-obrien"
+    ]
+  },
+  {
+    "pr_id": 3214086292,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 88,
+    "added": 44,
+    "end_actors": [
+      "closed:Karlie-777"
+    ]
+  },
+  {
+    "pr_id": 3166101393,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 12,
+    "added": 3,
+    "end_actors": [
+      "closed:folke"
+    ]
+  },
+  {
+    "pr_id": 3135316626,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 43,
+    "added": 15,
+    "end_actors": [
+      "merged:AArnott",
+      "closed:AArnott"
+    ]
+  },
+  {
+    "pr_id": 3234973989,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 34,
+    "added": 3,
+    "end_actors": [
+      "closed:eagerterrier"
+    ]
+  },
+  {
+    "pr_id": 3220393301,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 28,
+    "added": 5,
+    "end_actors": [
+      "closed:scbedd"
+    ]
+  },
+  {
+    "pr_id": 3083875801,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 14,
+    "added": 2,
+    "end_actors": [
+      "closed:RickWinter"
+    ]
+  },
+  {
+    "pr_id": 3137902575,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 51,
+    "added": 27,
+    "end_actors": [
+      "merged:andyleejordan",
+      "closed:andyleejordan"
+    ]
+  },
+  {
+    "pr_id": 3113051088,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 36,
+    "added": 5,
+    "end_actors": [
+      "closed:rootulp"
+    ]
+  },
+  {
+    "pr_id": 3272405225,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 24,
+    "added": 9,
+    "end_actors": [
+      "closed:f2c-ci-robot[bot]"
+    ]
+  },
+  {
+    "pr_id": 3186447377,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 33,
+    "added": 6,
+    "end_actors": [
+      "closed:evan-forbes"
+    ]
+  },
+  {
+    "pr_id": 3158727370,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 32,
+    "added": 2,
+    "end_actors": [
+      "closed:tomhrr"
+    ]
+  },
+  {
+    "pr_id": 3160620876,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 39,
+    "added": 8,
+    "end_actors": [
+      "closed:justinchuby"
+    ]
+  },
+  {
+    "pr_id": 3120627194,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 38,
+    "added": 7,
+    "end_actors": [
+      "closed:YuliiaKovalova"
+    ]
+  },
+  {
+    "pr_id": 3275443065,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 162,
+    "added": 97,
+    "end_actors": [
+      "merged:DaveSkender",
+      "closed:DaveSkender"
+    ]
+  },
+  {
+    "pr_id": 3136041106,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 50,
+    "added": 19,
+    "end_actors": [
+      "closed:anupriya13"
+    ]
+  },
+  {
+    "pr_id": 3241523087,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 404,
+    "timeline_events": 0,
+    "added": 0,
+    "end_actors": [],
+    "error": null
+  },
+  {
+    "pr_id": 3242174192,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 11,
+    "added": 3,
+    "end_actors": [
+      "closed:JanDeDobbeleer"
+    ]
+  },
+  {
+    "pr_id": 3082541069,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 19,
+    "added": 3,
+    "end_actors": [
+      "closed:dscho"
+    ]
+  },
+  {
+    "pr_id": 3219932316,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 94,
+    "added": 42,
+    "end_actors": [
+      "merged:johlju",
+      "closed:johlju"
+    ]
+  },
+  {
+    "pr_id": 3200413496,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 28,
+    "added": 1,
+    "end_actors": [
+      "closed:tnorling"
+    ]
+  },
+  {
+    "pr_id": 3075207290,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 63,
+    "added": 28,
+    "end_actors": [
+      "closed:simongdavies"
+    ]
+  },
+  {
+    "pr_id": 3210321906,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 14,
+    "added": 1,
+    "end_actors": [
+      "closed:jennyf19"
+    ]
+  },
+  {
+    "pr_id": 3183328458,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 106,
+    "added": 71,
+    "end_actors": [
+      "merged:nsano-rururu",
+      "closed:nsano-rururu"
+    ]
+  },
+  {
+    "pr_id": 3232691904,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 194,
+    "added": 66,
+    "end_actors": [
+      "merged:nandyalu",
+      "closed:nandyalu"
+    ]
+  },
+  {
+    "pr_id": 3118187130,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 6,
+    "added": 1,
+    "end_actors": [
+      "closed:arun1729"
+    ]
+  },
+  {
+    "pr_id": 3120514991,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 4,
+    "added": 2,
+    "end_actors": [
+      "merged:grigorii-horos",
+      "closed:grigorii-horos"
+    ]
+  },
+  {
+    "pr_id": 3254258270,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "merged:3rdIteration",
+      "closed:3rdIteration"
+    ]
+  },
+  {
+    "pr_id": 3270625231,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 77,
+    "added": 31,
+    "end_actors": [
+      "merged:hackertron",
+      "closed:hackertron"
+    ]
+  },
+  {
+    "pr_id": 3261928697,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3261933492,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3132536542,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 53,
+    "added": 15,
+    "end_actors": [
+      "merged:softmarshmallow",
+      "closed:softmarshmallow"
+    ]
+  },
+  {
+    "pr_id": 3079638107,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 1,
+    "end_actors": [
+      "closed:GoodBoyDigital"
+    ]
+  },
+  {
+    "pr_id": 3148090723,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:asottile"
+    ]
+  },
+  {
+    "pr_id": 3120573460,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 6,
+    "added": 3,
+    "end_actors": [
+      "closed:thorek1"
+    ]
+  },
+  {
+    "pr_id": 3104378127,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 12,
+    "added": 4,
+    "end_actors": [
+      "merged:Chemaclass",
+      "closed:Chemaclass"
+    ]
+  },
+  {
+    "pr_id": 3246122368,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 31,
+    "added": 8,
+    "end_actors": [
+      "closed:Frooodle"
+    ]
+  },
+  {
+    "pr_id": 3186768137,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "merged:tamnd",
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3164813640,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 2,
+    "end_actors": [
+      "closed:roryaronson"
+    ]
+  },
+  {
+    "pr_id": 3253809004,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 3,
+    "added": 1,
+    "end_actors": [
+      "closed:karakanb"
+    ]
+  },
+  {
+    "pr_id": 3189971928,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 21,
+    "added": 1,
+    "end_actors": [
+      "closed:stephanos"
+    ]
+  },
+  {
+    "pr_id": 3133277192,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 34,
+    "added": 4,
+    "end_actors": [
+      "merged:kolaente",
+      "closed:kolaente"
+    ]
+  },
+  {
+    "pr_id": 3074502051,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 6,
+    "added": 4,
+    "end_actors": [
+      "closed:yiminc"
+    ]
+  },
+  {
+    "pr_id": 3187229759,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 6,
+    "added": 4,
+    "end_actors": [
+      "merged:tamnd",
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3186441704,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3239327534,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 22,
+    "added": 6,
+    "end_actors": [
+      "merged:Plytas",
+      "closed:Plytas"
+    ]
+  },
+  {
+    "pr_id": 3115186500,
+    "group": "missing",
+    "status": "merged",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 10,
+    "added": 3,
+    "end_actors": [
+      "merged:flexatone",
+      "closed:flexatone"
+    ]
+  },
+  {
+    "pr_id": 3262757781,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3262845265,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3262887238,
+    "group": "missing",
+    "status": "closed",
+    "agent": "OpenAI_Codex",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "closed:tamnd"
+    ]
+  },
+  {
+    "pr_id": 3099818675,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 18,
+    "added": 2,
+    "end_actors": [
+      "closed:six7"
+    ]
+  },
+  {
+    "pr_id": 3225248831,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 63,
+    "added": 17,
+    "end_actors": [
+      "merged:jdx",
+      "closed:jdx"
+    ]
+  },
+  {
+    "pr_id": 3196526840,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 53,
+    "added": 7,
+    "end_actors": [
+      "closed:jxnl"
+    ]
+  },
+  {
+    "pr_id": 3234904891,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 12,
+    "added": 1,
+    "end_actors": [
+      "closed:kuitos"
+    ]
+  },
+  {
+    "pr_id": 3226639011,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 3,
+    "added": 1,
+    "end_actors": [
+      "closed:louis030195"
+    ]
+  },
+  {
+    "pr_id": 3217675934,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 2,
+    "end_actors": [
+      "closed:gmathi"
+    ]
+  },
+  {
+    "pr_id": 3217742863,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 3,
+    "end_actors": [
+      "merged:gmathi",
+      "closed:gmathi"
+    ]
+  },
+  {
+    "pr_id": 3125906822,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 31,
+    "added": 5,
+    "end_actors": [
+      "closed:github-actions[bot]"
+    ]
+  },
+  {
+    "pr_id": 3191085425,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 3,
+    "added": 1,
+    "end_actors": [
+      "closed:marcklingen"
+    ]
+  },
+  {
+    "pr_id": 3250808281,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 37,
+    "added": 6,
+    "end_actors": [
+      "closed:EunjuYang"
+    ]
+  },
+  {
+    "pr_id": 3140239245,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 43,
+    "added": 8,
+    "end_actors": [
+      "merged:jonathanpwang",
+      "closed:jonathanpwang"
+    ]
+  },
+  {
+    "pr_id": 3040980236,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 52,
+    "added": 14,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3033566586,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 41,
+    "added": 8,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3179554058,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 34,
+    "added": 4,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3084608702,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 65,
+    "added": 22,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]",
+      "merged:ThyMinimalDev",
+      "closed:ThyMinimalDev"
+    ]
+  },
+  {
+    "pr_id": 3235498524,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 8,
+    "added": 2,
+    "end_actors": [
+      "closed:ismail9k"
+    ]
+  },
+  {
+    "pr_id": 3161761469,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 48,
+    "added": 15,
+    "end_actors": [
+      "merged:tomiir",
+      "closed:tomiir"
+    ]
+  },
+  {
+    "pr_id": 2887787232,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 125,
+    "added": 67,
+    "end_actors": [
+      "closed:TheCactusBlue"
+    ]
+  },
+  {
+    "pr_id": 2852546056,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 38,
+    "added": 8,
+    "end_actors": [
+      "merged:MH4GF",
+      "closed:MH4GF"
+    ]
+  },
+  {
+    "pr_id": 3208672912,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 404,
+    "timeline_events": 0,
+    "added": 0,
+    "end_actors": [],
+    "error": null
+  },
+  {
+    "pr_id": 2959068895,
+    "group": "missing",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 33,
+    "added": 3,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3095454351,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 39,
+    "added": 7,
+    "end_actors": [
+      "merged:hbjORbj",
+      "closed:hbjORbj"
+    ]
+  },
+  {
+    "pr_id": 3080933474,
+    "group": "missing",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 234,
+    "added": 115,
+    "end_actors": [
+      "merged:scopsy",
+      "closed:scopsy"
+    ]
+  },
+  {
+    "pr_id": 3151370964,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 17,
+    "added": 5,
+    "end_actors": [
+      "closed:JanProvaznik"
+    ]
+  },
+  {
+    "pr_id": 3140054883,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 13,
+    "added": 2,
+    "end_actors": [
+      "closed:six7"
+    ]
+  },
+  {
+    "pr_id": 3146327522,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 8,
+    "added": 1,
+    "end_actors": [
+      "closed:justinchuby"
+    ]
+  },
+  {
+    "pr_id": 3087519869,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 19,
+    "added": 4,
+    "end_actors": [
+      "closed:davidfowl"
+    ]
+  },
+  {
+    "pr_id": 3153634298,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 40,
+    "added": 7,
+    "end_actors": [
+      "closed:JonnyBurger"
+    ]
+  },
+  {
+    "pr_id": 3119099358,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 12,
+    "added": 2,
+    "end_actors": [
+      "closed:six7"
+    ]
+  },
+  {
+    "pr_id": 3173304702,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 12,
+    "added": 4,
+    "end_actors": [
+      "closed:aiday-mar"
+    ]
+  },
+  {
+    "pr_id": 3132109322,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 10,
+    "added": 2,
+    "end_actors": [
+      "closed:anthonykim1"
+    ]
+  },
+  {
+    "pr_id": 3116658648,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 11,
+    "added": 1,
+    "end_actors": [
+      "closed:six7"
+    ]
+  },
+  {
+    "pr_id": 3189634328,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 12,
+    "added": 2,
+    "end_actors": [
+      "closed:Krande"
+    ]
+  },
+  {
+    "pr_id": 3258871327,
+    "group": "zero",
+    "status": "merged",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 16,
+    "added": 4,
+    "end_actors": [
+      "merged:binarywang",
+      "closed:binarywang"
+    ]
+  },
+  {
+    "pr_id": 3248123021,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 9,
+    "added": 1,
+    "end_actors": [
+      "closed:alexandear"
+    ]
+  },
+  {
+    "pr_id": 3207419613,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Copilot",
+    "http_status": 200,
+    "timeline_events": 10,
+    "added": 2,
+    "end_actors": [
+      "closed:shiosyakeyakini-info"
+    ]
+  },
+  {
+    "pr_id": 3204234091,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Cursor",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 2,
+    "end_actors": [
+      "closed:gmathi"
+    ]
+  },
+  {
+    "pr_id": 3168164252,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 5,
+    "added": 2,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3155143197,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 36,
+    "added": 6,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3244866747,
+    "group": "zero",
+    "status": "merged",
+    "agent": "Devin",
+    "http_status": 404,
+    "timeline_events": 0,
+    "added": 0,
+    "end_actors": [],
+    "error": null
+  },
+  {
+    "pr_id": 3053325093,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 39,
+    "added": 4,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3161998177,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 33,
+    "added": 3,
+    "end_actors": [
+      "closed:MH4GF"
+    ]
+  },
+  {
+    "pr_id": 3050105100,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 22,
+    "added": 2,
+    "end_actors": [
+      "closed:danieltprice"
+    ]
+  },
+  {
+    "pr_id": 3128226642,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 36,
+    "added": 4,
+    "end_actors": [
+      "closed:scopsy"
+    ]
+  },
+  {
+    "pr_id": 3034903835,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 47,
+    "added": 9,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 3169607617,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 157,
+    "added": 108,
+    "end_actors": [
+      "closed:devin-ai-integration[bot]"
+    ]
+  },
+  {
+    "pr_id": 2839378596,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 36,
+    "added": 6,
+    "end_actors": [
+      "closed:jayantk"
+    ]
+  },
+  {
+    "pr_id": 3072374938,
+    "group": "zero",
+    "status": "closed",
+    "agent": "Devin",
+    "http_status": 200,
+    "timeline_events": 35,
+    "added": 4,
+    "end_actors": [
+      "closed:tokoroten"
+    ]
+  }
+]
